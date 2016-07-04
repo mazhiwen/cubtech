@@ -16,7 +16,7 @@ define(function(require,exports,module) {
 
 			$.each(array,function(index,value){
 
-				console.log(fatherDirIndex+"_"+index);
+				//console.log(fatherDirIndex+"_"+index);
 				if(value.constructor==Array) {
 					if(value[1].length>0){
 						navigationHtmlText+="<li><div>"+value[0]+"</div><ul>";

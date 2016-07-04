@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>title</title>
 <!--<link rel="stylesheet" href="../sea-modules/bootstrap/3.3.5/css/bootstrap.css">-->
-<link rel="stylesheet" href="../sea-modules/navigation-multi-level-ul/1.0.0/navigation-multi-level-ul.css">
-<link rel="stylesheet" href="../sea-modules/table-base/1.0.0/table.css">
-<link rel="stylesheet" href="../static/index-content/src/index-content.css">
+<link rel="stylesheet" href="../css/component/navigation-multi-level-ul/1.0.0/navigation-multi-level-ul.css">
+<link rel="stylesheet" href="../css/component/table-base/1.0.0/table.css">
+<link rel="stylesheet" href="../css/page/article-classify.css">
 
 </head>
 
@@ -149,20 +149,34 @@
 
 	</div>
 </div>
-
-<script src="../sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<!--
+<script src="../js/lib/seajs/2.2.0/sea.js"></script>
 <script>
   seajs.config({
-    base: "../sea-modules/",
+    base: "../js/",
     alias: {
-      "jquery": "jquery/jquery/1.10.1/jquery.js",
-      "bootstrap": "bootstrap/3.3.5/js/bootstrap.js",
-      "angular": "angular/angularjs/1.5.6/angular.js",
-      "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js" 
+      "jquery": "lib/jquery/1.10.1/jquery.js",
+      "bootstrap": "lib/bootstrap/3.3.5/bootstrap.js",
+      "navigationMultiLevelUl": "modules/navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js" 
     }
   });
 
-seajs.use("../static/index-content/src/indexContent");
+seajs.use("../js/main/articleClassify");
+</script>-->
+
+
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script>
+  seajs.config({
+    base: "../js/lib/",
+    alias: {
+      "jquery": "jquery/jquery/1.10.1/jquery.js",
+      "bootstrap": "bootstrap/3.3.5/bootstrap.js",
+      "navigationMultiLevelUl": "../modules/navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js" 
+    }
+  });
+
+seajs.use("../js/main/articleClassify");
 </script>
 </body>
 </html>

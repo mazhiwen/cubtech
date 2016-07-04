@@ -2,7 +2,6 @@ define(function(require) {
 	
 	$ = require('jquery');
 
-	
 	var hrefArray=[];
 	hrefArray[0]='index-content.html';
 	hrefArray[1]='';
