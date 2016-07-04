@@ -1,6 +1,4 @@
 /*id 必须是  navigation */
-*{padding: 0;margin: 0;border: none;}
-
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../../bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot');

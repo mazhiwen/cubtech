@@ -1,0 +1,3 @@
+.paging{ margin: auto;  }
+/*need bootstrap*/
+.paging li{/*width:30px; height:30px; line-height:30px;*/float:left;cursor: pointer;  }

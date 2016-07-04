@@ -3,7 +3,7 @@ define(function(require) {
 	$ = require('jquery');
 
 	var hrefArray=[];
-	hrefArray[0]='index-content.html';
+	hrefArray[0]='article-classify.html';
 	hrefArray[1]='';
 	hrefArray[2]='2222';
 	hrefArray[3]='4';
@@ -25,7 +25,7 @@ define(function(require) {
 
 
 
-	var directoryObj=[
+	directoryObj=[
 			[
 				"内容管理",
 				[
@@ -152,10 +152,14 @@ define(function(require) {
 	
 
 
+	var getGet = require('getGet');
+	console.log(getGet('di'));
 
+	//if(getGet('di'))
 
-	
-
+	var paging = require('paging');
+	var myPaging=new paging("#paging",10,15,4,false);
+	myPaging._init();
 	
 });
 

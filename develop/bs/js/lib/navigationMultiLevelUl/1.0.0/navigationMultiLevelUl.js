@@ -2,18 +2,12 @@ define(function(require,exports,module) {
 	
 	function navigationMultiLevelUl(outerId,hrefArray,directoryObj){
 
-		//var hrefArray=hrefArray;
-		//var directoryObj=directoryObj;
-		//var outerId=outerId;
 		var navigationHtmlText='<ul id="navigation">';
 
 		var hrefArrayInd=0;
 
 		function iterationGenerateHtml(array,fatherDirIndex){
 			
-
-			//var fatherDirIndex=fatherDirIndex;
-
 			$.each(array,function(index,value){
 
 				//console.log(fatherDirIndex+"_"+index);
