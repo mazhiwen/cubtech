@@ -1,0 +1,10 @@
+/*id 必须是  navigation */
+
+#left-content{width: 250px;float: left;}
+#right-content{margin-left: 250px;}
+#navigation{font-size: 14px;border-right: 1px solid black;width: 100%;}
+
+
+
+#title>div:nth-child(1){float: left; background-color: red;}
+#title>div:nth-child(2){float: right; background-color: blue;}
