@@ -6,7 +6,11 @@ define(function(require,exports,module) {
 
 		var hrefArrayInd=0;
 
-		function iterationGenerateHtml(array,fatherDirIndex){
+
+		
+		function iterationGenerateHtml(array){
+
+
 			
 			$.each(array,function(index,value){
 
@@ -15,14 +19,14 @@ define(function(require,exports,module) {
 					if(value[1].length>0){
 						navigationHtmlText+="<li><div>"+value[0]+"</div><ul>";
 
-						iterationGenerateHtml(value[1],fatherDirIndex+"_"+index);
+						iterationGenerateHtml(value[1]);
 						navigationHtmlText+="</ul></li>";
 					}else{
 						
-						navigationHtmlText+="<li><a href='"+hrefArray[hrefArrayInd]+"?di="+fatherDirIndex+"_"+index+"'>"+value[0]+"</a></li>";hrefArrayInd++;
+						navigationHtmlText+="<li><a href='"+hrefArray[hrefArrayInd]+"?di="+hrefArrayInd+"'>"+value[0]+"</a></li>";hrefArrayInd++;
 					}
 				}else{
-					navigationHtmlText+="<li><a href='"+hrefArray[hrefArrayInd]+"?di="+fatherDirIndex+"_"+index+"'>"+value+"</a></li>";hrefArrayInd++;
+					navigationHtmlText+="<li><a href='"+hrefArray[hrefArrayInd]+"?di="+hrefArrayInd+"'>"+value+"</a></li>";hrefArrayInd++;
 				}		
 			});
 			

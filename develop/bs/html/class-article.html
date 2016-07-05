@@ -1,23 +1,23 @@
 <!doctype html>
 <html>
-<head>
+<head lang="zh-cn">
 <meta charset="utf-8">
-<title>title</title>
-<link rel="stylesheet" href="../css/component/bootstrap/3.3.5/css/bootstrap.css">
-<link rel="stylesheet" href="../css/common/init/1.0.0/init.css">
+<!--<link rel="stylesheet" href="../css/component/bootstrap/3.3.5/css/bootstrap.css">-->
+<link rel="stylesheet" href="../css/component/init/1.0.0/init.css">
 <link rel="stylesheet" href="../css/component/navigation-multi-level-ul/1.0.0/navigation-multi-level-ul.css">
 <link rel="stylesheet" href="../css/component/table-base/1.0.0/table.css">
 <link rel="stylesheet" href="../css/component/navigation-crumb/1.0.0/navigation-crumb.css">
 <link rel="stylesheet" href="../css/component/button/1.0.0/button.css">
 <link rel="stylesheet" href="../css/component/paging/1.0.0/paging.css">
-<link rel="stylesheet" href="../css/page/article-classify.css">
-
+<link rel="stylesheet" href="../css/common/common-layout.css">
+<link rel="stylesheet" href="../css/page/class-article.css">
+<title>title</title>
 </head>
 
 <body>
 <div id="container">
-	<div id="left-content">
-	<!--<ul id="navigation">
+	<div id="left">
+	<!--<ul class="navigation-multi-level-ul">
 			<li>
 				<div>内容管理</div>
 				<ul>
@@ -100,9 +100,9 @@
 			</li>
 		</ul>-->
 	</div>
-	<div id="right-content">
-		<div id="title" class="navigation-crumb">
-			<span>内容管理</span>/<span>文章分类</span>/<span>呵呵</span>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
 			<button>添加分类</button>
 		</div>
 		<table class="table">
@@ -145,24 +145,12 @@
 		      
 		    </tbody>
   		</table>
-  		<ul class="pagination paging" id="paging"></ul>
+  		<div id="paging-outer">
+			<ul class="paging" id="paging"></ul>
+  		</div>
+  		
 	</div>
 </div>
-<!--
-<script src="../js/lib/seajs/2.2.0/sea.js"></script>
-<script>
-  seajs.config({
-    base: "../js/",
-    alias: {
-      "jquery": "lib/jquery/1.10.1/jquery.js",
-      "bootstrap": "lib/bootstrap/3.3.5/bootstrap.js",
-      "navigationMultiLevelUl": "modules/navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js" 
-    }
-  });
-
-seajs.use("../js/main/articleClassify");
-</script>-->
-
 
 <script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
 <script>
@@ -171,13 +159,13 @@ seajs.use("../js/main/articleClassify");
     alias: {
       "jquery": "jquery/jquery/1.10.1/jquery.js",
       "bootstrap": "bootstrap/3.3.5/bootstrap.js",
-      "navigationMultiLevelUl": "navigationMultiLevelUl/1.0.0/navigationMultiLevelUl.js",
+      "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js",
       "getGet": "getGet/1.0.0/getGet.js",
       "paging": "paging/1.0.0/paging.js" 
     }
   });
-
-seajs.use("../js/main/article-classify/1.0.0/articleClassify");
+seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
+seajs.use("../js/main/class-article/1.0.0/classArticle");
 </script>
 </body>
 </html>

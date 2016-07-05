@@ -11,7 +11,7 @@ define(function(require, exports, module) {
 	this.clickPaging=0;
 	this.getPagingLiIndex=0;
 	/*
-	pagingDom <ul class="pagination"></ul>
+	pagingDom <ul class="paging"></ul>
 	maxPaging   需要是奇数 即2x+1
 	*/		
   }

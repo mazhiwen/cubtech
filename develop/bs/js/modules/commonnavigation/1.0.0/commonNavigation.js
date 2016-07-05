@@ -1,31 +1,24 @@
 define(function(require) {
 	
+
+
+	
 	$ = require('jquery');
 
-	var hrefArray=[];
-	hrefArray[0]='article-classify.html';
-	hrefArray[1]='';
-	hrefArray[2]='2222';
-	hrefArray[3]='4';
-	hrefArray[4]='5';
-	hrefArray[5]='6';
-	hrefArray[6]='7';
-	hrefArray[7]='8';
-	hrefArray[8]='9';
-	hrefArray[9]='10';
-	hrefArray[10]='11';
-	hrefArray[11]='12';
-	hrefArray[12]='13';
-	hrefArray[13]='';
-	hrefArray[14]='';
-	hrefArray[15]='';
-	hrefArray[16]='';
-	hrefArray[17]='';
-	hrefArray[18]='';
+	var hrefArray=[
+		'class-article.html',
+		'class-edit.html',
+		'article-list.html',
+		'1.html',
+		'1.html',
+		'1.html'
+	];
+	
+	
 
 
 
-	directoryObj=[
+	var directoryObj=[
 			[
 				"内容管理",
 				[
@@ -148,18 +141,30 @@ define(function(require) {
 
 
 	var navigationMultiLevelUl = require('navigationMultiLevelUl');
-	var my_navigationMultiLevelUl = new navigationMultiLevelUl("#left-content",hrefArray,directoryObj);
+	var my_navigationMultiLevelUl = new navigationMultiLevelUl("#left",hrefArray,directoryObj);
 	
-
+	//获取当前页面的 目录位置  
 
 	var getGet = require('getGet');
-	console.log(getGet('di'));
+	var getDi=getGet('di');
+	if(getDi){
+		var a=getDi.split("_");
+		if(a.length==4){
+			$(".navigation-multi-level-ul>li:eq("+a[1]+")>ul>li:eq("+a[2]+")>ul a:eq("+a[3]+")").css("color","rgb(0, 162, 202)");
+			$("#navigation-crumb>span:eq(0)").text(directoryObj[a[1]][0]+"/");
+			$("#navigation-crumb>span:eq(1)").text(directoryObj[a[1]][1][a[2]][0]+"/");
+			$("#navigation-crumb>span:eq(2)").text(directoryObj[a[1]][1][a[2]][1][a[3]]);
 
-	//if(getGet('di'))
+		}else{
 
-	var paging = require('paging');
-	var myPaging=new paging("#paging",10,15,4,false);
-	myPaging._init();
-	
+			$(".navigation-multi-level-ul>li:eq("+a[1]+")>ul a:eq("+a[2]+")").css("color","rgb(0, 162, 202)");
+			$("#navigation-crumb>span:eq(0)").text(directoryObj[a[1]][0]+"/");
+			$("#navigation-crumb>span:eq(1)").text(directoryObj[a[1]][1][a[2]][0]);
+		}
+
+	}
+
+
+
 });
 
