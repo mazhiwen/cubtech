@@ -1,0 +1,14 @@
+
+.navigation-hori{list-style: none;padding: 0;text-align: center;background-color: rgb(229,229,229); text-align: left;}
+.navigation-hori>li{display: inline-block;padding:10px 0px;width: 100px;text-align: center; }
+.navigation-hori>li:hover{ background-color: rgb(242,242,242);cursor: pointer;}
+
+#sub-content{border:1px solid rgb(229,229,229);text-align: center;}
+.form-input>span{width:150px;}
+
+#edit-article-outer{width: 80%;margin:10px auto;text-align: left; }
+#input-title{width: 100%;}
+#commit-button{display: block;margin:40px auto 200px;padding:10px 30px;}
+
+
+

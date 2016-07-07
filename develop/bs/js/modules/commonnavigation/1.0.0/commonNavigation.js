@@ -6,12 +6,13 @@ define(function(require) {
 	$ = require('jquery');
 
 	var hrefArray=[
+		'information-list.html','fetched-news-list.html','add-fetch-source.html','morningpost-edit.html','news-edit.html',
 		'class-article.html',
 		'class-edit.html',
 		'article-list.html',
-		'1.html',
-		'1.html',
-		'1.html'
+		'article-edit.html',
+		'topic-list.html',
+		'subject-edit.html'
 	];
 	
 	
@@ -22,13 +23,14 @@ define(function(require) {
 			[
 				"内容管理",
 				[
+					
+					[
+						"资讯管理",
+						["资讯列表","新闻抓取列表","添加抓取源","上传/编辑早报","上传/编辑要闻"]
+					],
 					[
 						"文章管理",
 						["文章分类","添加编辑分类","文章列表","添加/编辑文章"]
-					],
-					[
-						"资讯管理",
-						["资讯列表","新闻抓取列表","上传/编辑早报","上传/编辑要闻"]
 					],
 					[
 						"专题管理",
@@ -40,7 +42,7 @@ define(function(require) {
 					],
 					[
 						"匿名八卦管理",
-						[]
+						["匿名八卦列表","花名、头像列表","添加花名"]
 					],
 					[
 						"Q&A管理（尚未收到，待定）",
@@ -151,14 +153,14 @@ define(function(require) {
 		var a=getDi.split("_");
 		if(a.length==4){
 			$(".navigation-multi-level-ul>li:eq("+a[1]+")>ul>li:eq("+a[2]+")>ul a:eq("+a[3]+")").css("color","rgb(0, 162, 202)");
-			$("#navigation-crumb>span:eq(0)").text(directoryObj[a[1]][0]+"/");
-			$("#navigation-crumb>span:eq(1)").text(directoryObj[a[1]][1][a[2]][0]+"/");
+			$("#navigation-crumb>span:eq(0)").text(directoryObj[a[1]][0]+"-");
+			$("#navigation-crumb>span:eq(1)").text(directoryObj[a[1]][1][a[2]][0]+"-");
 			$("#navigation-crumb>span:eq(2)").text(directoryObj[a[1]][1][a[2]][1][a[3]]);
 
 		}else{
 
 			$(".navigation-multi-level-ul>li:eq("+a[1]+")>ul a:eq("+a[2]+")").css("color","rgb(0, 162, 202)");
-			$("#navigation-crumb>span:eq(0)").text(directoryObj[a[1]][0]+"/");
+			$("#navigation-crumb>span:eq(0)").text(directoryObj[a[1]][0]+"-");
 			$("#navigation-crumb>span:eq(1)").text(directoryObj[a[1]][1][a[2]][0]);
 		}
 
