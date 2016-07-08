@@ -6,13 +6,25 @@ define(function(require) {
 	$ = require('jquery');
 
 	var hrefArray=[
-		'information-list.html','fetched-news-list.html','add-fetch-source.html','morningpost-edit.html','news-edit.html',
+		'information-list.html',
+		'fetched-news-list.html',
+		'add-fetch-source.html',
+		'morningpost-edit.html',
+		'news-edit.html',
 		'class-article.html',
 		'class-edit.html',
 		'article-list.html',
 		'article-edit.html',
+		'subject-list.html',
+		'subject-edit.html',
 		'topic-list.html',
-		'subject-edit.html'
+		'topic-edit.html',
+		'anonymousjuicy-list.html',
+		'anonymousname-list.html',
+		'anonymousname-add.html',
+		'',
+		'banner-list.html',
+		'banner-edit.html'
 	];
 	
 	
@@ -51,14 +63,14 @@ define(function(require) {
 				]
 			],
 			[
-				"广告位管理",
+				"banner位管理",
 				[
 					[
-						"广告列表",
+						"banner列表",
 						[]
 					],
 					[
-						"添加/编辑广告",
+						"添加/编辑banner",
 						[]
 					]
 				]

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/component/init/1.0.0/init.css">
+<link rel="stylesheet" href="../css/component/navigation-multi-level-ul/1.0.0/navigation-multi-level-ul.css">
+<link rel="stylesheet" href="../css/component/navigation-crumb/1.0.0/navigation-crumb.css">
+<link rel="stylesheet" href="../css/component/button/1.0.0/button.css">
+<link rel="stylesheet" href="../css/component/form-input/1.0.0/form-input.css">
+<link rel="stylesheet" href="../css/common/common-layout.css">
+<link rel="stylesheet" href="../css/page/topic-edit.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<button>话题列表</button>
+		</div>
+		<div id="right-center">
+			<label class="form-input"><span>话题名称:</span><input type="text" placeholder="名称"></label>
+			<label class="form-input"><span>是否显示:</span><input type="checkbox" name=""></label>
+			<label class="form-input"><span>排序:</span><input type="text" value="51"></label>
+			<h4>话题描述</h4>
+			<div id="edit">
+			</div>
+			<button id="commit-button">确认</button>
+		</div>
+  		
+  		
+	</div>
+</div>
+
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/lib/ueditor/1_4_3_3/utf8-php/utf8-php/ueditor.config.js"></script>
+<script type="text/javascript" src="../js/lib/ueditor/1_4_3_3/utf8-php/utf8-php/ueditor.all.js"></script>
+<script>
+  seajs.config({
+    base: "../js/lib/",
+    alias: {
+      "jquery": "jquery/jquery/1.10.1/jquery.js",
+      "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js",
+      "getGet": "getGet/1.0.0/getGet.js"
+    }
+  });
+seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
+seajs.use("../js/main/topic-edit/1.0.0/index");
+</script>
+</body>
+</html>

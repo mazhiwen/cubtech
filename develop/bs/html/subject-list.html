@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../css/component/button/1.0.0/button.css">
 <link rel="stylesheet" href="../css/component/paging/1.0.0/paging.css">
 <link rel="stylesheet" href="../css/common/common-layout.css">
-<link rel="stylesheet" href="../css/page/topic-list.css">
+<link rel="stylesheet" href="../css/page/subject-list.css">
 <title>title</title>
 </head>
 
@@ -21,16 +21,16 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<button>添加话题</button>
+			<button>添加专题</button>
 		</div>
 		<table class="table">
 		    <caption></caption>
 		    <thead>
 		      <tr>
 		        <th>序号</th>
-		        <th>话题名称</th>
+		        <th>专题名称</th>
 		        <th>文章数量</th>
-		        <th>排序（话题列表页中的排序）</th>
+		        <th>排序（专题列表页中的排序）</th>
 		        <th>是否显示</th>
 		        <th>创建时间</th>
 		        <th>操作</th>
@@ -70,6 +70,11 @@
   		<div id="paging-outer">
 			<ul class="paging" id="paging"></ul>
   		</div>
+  		<div id="">
+			<label>专题栏是否在首页导航栏显示示<input type="checkbox" name="if-show-home"></label>
+			<label>在导航栏的排序<input type="number"></label>
+			<button>确定</button>
+		</div>
   		
 	</div>
 </div>
@@ -87,7 +92,7 @@
     }
   });
 seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
-seajs.use("../js/main/topic-list/1.0.0/index");
+seajs.use("../js/main/subject-list/1.0.0/index");
 </script>
 </body>
 </html>
