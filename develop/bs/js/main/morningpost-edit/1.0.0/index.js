@@ -5,8 +5,8 @@ define(function(require) {
 	
 
 	var dateTimePicker=require('dateTimePicker');
-	var my_chooseDate=new dateTimePicker('#activedate','#filldate',function(d){});
-	my_chooseDate._init();
+	var my_dateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){});
+	my_dateTimePicker._init();
 
 	ue.ready(function(){
 

@@ -2,11 +2,17 @@
 .form-input{
 	display:block;margin-top: 20px;
 }
-.form-input span{ 
+.form-input>span{ 
 /*label宽度*/
 	width: 110px;
 	text-align: left;
 	display: inline-block; 
+/*
+
+垂直布局
+	display: block;
+*/
+
 	 }
 	 
 input,select{
@@ -17,6 +23,10 @@ input,select{
 	width: 200px;
 
 }
+textarea{
+	width: 200px;border: 1px solid rgb(0,162,202);
+}
+
 
 
 input[type="radio"],input[type="checkbox"]{
@@ -39,11 +49,8 @@ input:disabled{
 .form-input>label:hover,select,input[type="radio"]{
 	cursor: pointer;
 }
-input:enabled:hover,select:hover{
+input:enabled:hover,select:hover,textarea:hover{
 	border-color: orange;
-}
-textarea{
-	width: 100%;border: 1px solid black;
 }
 
 

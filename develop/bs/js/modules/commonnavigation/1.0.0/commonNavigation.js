@@ -24,7 +24,15 @@ define(function(require) {
 		'anonymousname-add.html',
 		'',
 		'banner-list.html',
-		'banner-edit.html'
+		'banner-edit.html',
+		'comment-list.html',
+		'comment-details.html',
+		'sys-push-list.html',
+		'sys-push-edit.html',
+		'app-push-list.html',
+		'app-push-edit.html',
+		'user-list.html',
+		'user-edit.html'
 	];
 	
 	

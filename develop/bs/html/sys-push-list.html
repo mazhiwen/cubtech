@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/component/init/1.0.0/init.css">
+<link rel="stylesheet" href="../css/component/navigation-multi-level-ul/1.0.0/navigation-multi-level-ul.css">
+<link rel="stylesheet" href="../css/component/navigation-crumb/1.0.0/navigation-crumb.css">
+<link rel="stylesheet" href="../css/component/table-base/1.0.0/table.css">
+<link rel="stylesheet" href="../css/component/button/1.0.0/button.css">
+<link rel="stylesheet" href="../css/component/form-input/1.0.0/form-input.css">
+<link rel="stylesheet" href="../css/component/paging/1.0.0/paging.css">
+<link rel="stylesheet" href="../css/common/common-layout.css">
+<link rel="stylesheet" href="../css/page/sys-push-list.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<select><option>全部</option><option>未过期</option><option>已过期</option></select>
+			<button>添加</button>
+		</div>
+		<table class="table">
+		    <caption></caption>
+		    <thead>
+		      <tr>
+		        <th>序号</th>
+		        <th>推送内容</th>
+		        <th>推送链接</th>
+		        <th>推送时间</th>
+		        <th>操作</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>一级分类</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
+		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
+		      </tr>
+		      <tr>
+		        <td>一级分类</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
+		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
+		      </tr>
+		      <tr>
+		        <td>一级分类</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
+		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
+		      </tr>
+		      
+		    </tbody>
+  		</table>
+  		<div id="paging-outer">
+			<ul class="paging" id="paging"></ul>
+  		</div>
+  		
+	</div>
+</div>
+
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script>
+  seajs.config({
+    base: "../js/lib/",
+    alias: {
+      "jquery": "jquery/jquery/1.10.1/jquery.js",
+      "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.0/navigationMultiLevelUl.js",
+      "getGet": "getGet/1.0.0/getGet.js",
+      "paging": "paging/1.0.0/paging.js" 
+    }
+  });
+seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
+seajs.use("../js/main/sys-push-list/1.0.0/index");
+</script>
+</body>
+</html>
