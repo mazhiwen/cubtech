@@ -2,7 +2,7 @@ define(function(require,exports,module) {
 
 
 	var $ = require('jquery');
-	function navigationMultiLevelUl(outerId,hrefArray,directoryObj){
+	function navigationMultiLevelUl(outerId,directoryObj){
 
 		/*
 			outerId
@@ -12,22 +12,21 @@ define(function(require,exports,module) {
 
 		var navigationHtmlText='<ul class="navigation-multi-level-ul">';
 
-		var hrefArrayInd=0;
+		
 
 		function iterationGenerateHtml(array,fatherDirIndex){
 			
 			$.each(array,function(index,value){
 				if(value.constructor==Array) {
-					if(value[1].length>0){
+					if(!(value[1] instanceof Array)||value[1].length>0){
 						navigationHtmlText+="<li><div>"+value[0]+"</div><ul>";
-
 						iterationGenerateHtml(value[1],fatherDirIndex+"_"+index);
 						navigationHtmlText+="</ul></li>";
 					}else{
-						navigationHtmlText+="<li><a href='"+hrefArray[hrefArrayInd]+"?di="+fatherDirIndex+"_"+index+"'>"+value[0]+"</a></li>";hrefArrayInd++;
+						navigationHtmlText+="<li><a href='"+value[0][Object.keys(value[0])[0]]+"?di="+fatherDirIndex+"_"+index+"'>"+Object.keys(value[0])[0]+"</a></li>";
 					}
 				}else{
-					navigationHtmlText+="<li><a href='"+hrefArray[hrefArrayInd]+"?di="+fatherDirIndex+"_"+index+"'>"+value+"</a></li>";hrefArrayInd++;
+					navigationHtmlText+="<li><a href='"+value[Object.keys(value)[0]]+"?di="+fatherDirIndex+"_"+index+"'>"+Object.keys(value)[0]+"</a></li>";
 				}		
 			});
 			
