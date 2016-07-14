@@ -1,6 +1,6 @@
 /*id 必须是  navigation */
 
-#left{width: 250px;float: left;}
+#left{width: 250px;float: left; height: 1000px; overflow-y:scroll;overflow-x:hidden; }
 #right{margin-left: 250px;padding: 0 10px;}
 .navigation-multi-level-ul{font-size: 14px;border-right: 1px solid black;width: 100%;}
 #navigation-crumb{padding: 10px 50px;}

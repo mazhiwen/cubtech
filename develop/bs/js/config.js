@@ -41,7 +41,7 @@ var pageVersionObj = {
 seajs.config({
     base: "../js/lib/",
     alias: {
-      "jquery": "jquery/jquery/1.10.1/jquery.js",
+      "jquery": "jquery/jquery/1.10.1/jquery-debug.js",
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.2/navigationMultiLevelUl.js",
       "getGet": "getGet/1.0.0/getGet.js",
       "paging": "paging/1.0.0/paging.js",

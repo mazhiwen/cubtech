@@ -1,4 +1,12 @@
+/*
 
+全行label
+<label><span></span><input></label>
+
+非label
+<div><span></span><input></div>
+
+*/
 .form-input{
 	display:block;margin-top: 20px;
 }

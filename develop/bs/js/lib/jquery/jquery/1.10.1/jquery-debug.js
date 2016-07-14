@@ -61,6 +61,8 @@ var
 	jQuery = function( selector, context ) {
 		// The jQuery object is actually just the init constructor 'enhanced'
 		return new jQuery.fn.init( selector, context, rootjQuery );
+
+
 	},
 
 	// Used for matching numbers
@@ -218,8 +220,9 @@ jQuery.fn = jQuery.prototype = {
 			this.selector = selector.selector;
 			this.context = selector.context;
 		}
-
+		
 		return jQuery.makeArray( selector, this );
+
 	},
 
 	// Start with an empty selector
@@ -370,9 +373,10 @@ jQuery.extend = jQuery.fn.extend = function() {
 			}
 		}
 	}
-
+	
 	// Return the modified object
 	return target;
+
 };
 
 jQuery.extend({
@@ -6122,9 +6126,9 @@ jQuery.fn.extend({
 	},
 
 	empty: function() {
+
 		var elem,
 			i = 0;
-
 		for ( ; (elem = this[i]) != null; i++ ) {
 			// Remove element nodes and prevent memory leaks
 			if ( elem.nodeType === 1 ) {
@@ -6142,7 +6146,7 @@ jQuery.fn.extend({
 				elem.options.length = 0;
 			}
 		}
-
+		//console.log(this);
 		return this;
 	},
 
