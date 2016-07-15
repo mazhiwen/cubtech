@@ -1627,10 +1627,13 @@ EventBase.prototype = {
      */
     fireEvent:function () {
         var types = arguments[0];
+
         types = utils.trim(types).split(' ');
+        
         for (var i = 0, ti; ti = types[i++];) {
             var listeners = getListener(this, ti),
                 r, t, k;
+
             if (listeners) {
                 k = listeners.length;
                 while (k--) {
@@ -8081,7 +8084,7 @@ UE.Editor.defaultOptions = function(editor){
 
                 var configUrl = me.getActionUrl('config'),
                     isJsonp = utils.isCrossDomainUrl(configUrl);
-
+                   
                 /* 发出ajax请求 */
                 me._serverConfigLoaded = false;
 
@@ -8089,8 +8092,10 @@ UE.Editor.defaultOptions = function(editor){
                     'method': 'GET',
                     'dataType': isJsonp ? 'jsonp':'',
                     'onsuccess':function(r){
+
                         try {
                             var config = isJsonp ? r:eval("("+r.responseText+")");
+
                             utils.extend(me.options, config);
                             me.fireEvent('serverConfigLoaded');
                             me._serverConfigLoaded = true;
@@ -23832,6 +23837,7 @@ UE.plugin.register('autoupload', function (){
                     errorHandler(json.state);
                 }
             }catch(er){
+                
                 errorHandler(me.getLang('autoupload.loadError'));
             }
         });
@@ -24478,7 +24484,10 @@ UE.plugin.register('simpleupload', function (){
                 btnIframeBody;
 
             btnIframeDoc = (btnIframe.contentDocument || btnIframe.contentWindow.document);
+              
             btnIframeBody = btnIframeDoc.body;
+           
+
             wrapper = btnIframeDoc.createElement('div');
 
             wrapper.innerHTML = '<form id="edui_form_' + timestrap + '" target="edui_iframe_' + timestrap + '" method="POST" enctype="multipart/form-data" action="' + me.getOpt('serverUrl') + '" ' +
@@ -24519,11 +24528,13 @@ UE.plugin.register('simpleupload', function (){
                     try{
                         var link, json, loader,
                             body = (iframe.contentDocument || iframe.contentWindow.document).body,
+
                             result = body.innerText || body.textContent || '';
+                        
                         json = (new Function("return " + result))();
                         link = me.options.imageUrlPrefix + json.url;
                         if(json.state == 'SUCCESS' && json.url) {
-                            console.log(json.url);
+                           
                             loader = me.document.getElementById(loadingId);
                             loader.setAttribute('src', link);
                             loader.setAttribute('_src', link);
@@ -24535,6 +24546,7 @@ UE.plugin.register('simpleupload', function (){
                             showErrorLoader && showErrorLoader(json.state);
                         }
                     }catch(er){
+                       
                         showErrorLoader && showErrorLoader(me.getLang('simpleupload.loadError'));
                     }
                     form.reset();

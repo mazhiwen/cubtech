@@ -34,7 +34,7 @@ define(function(require) {
 			});*/
 		
 		});
-		xhr.open("POST", "../js/main/subject-edit/1.0.0/upload.php", true);
+		xhr.open("POST", "http://localhost/e-quanta/develop/bs/js/main/subject_edit/1.0.0/upload.php", true);
 		xhr.send(formData);
 	},false);
 });

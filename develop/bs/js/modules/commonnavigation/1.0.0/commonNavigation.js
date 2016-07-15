@@ -34,6 +34,15 @@ define(function(require) {
 			]
 		],
 		[
+			"推荐页管理",
+			[
+				[
+					{"推荐tab列表":'recommendtab_list.html'},
+					[]
+				]	
+			]
+		],
+		[
 			"banner位管理",
 			[
 				[

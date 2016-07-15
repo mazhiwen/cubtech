@@ -1,3 +1,4 @@
+
 seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
 seajs.use("../js/modules/commonedit/1.0.0/commonEdit");
 define(function(require) {
