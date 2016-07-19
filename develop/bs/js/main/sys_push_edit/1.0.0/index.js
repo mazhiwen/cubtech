@@ -1,7 +1,9 @@
-seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
+
 define(function(require) {
 	
 	var $ = require('jquery');
+	var commonNavigation=require('commonNavigation');
+	new commonNavigation();
 	var dateTimePicker=require('dateTimePicker');
 	var my_dateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){});
 	my_dateTimePicker._init();

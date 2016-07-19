@@ -1,7 +1,11 @@
-seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
+
 define(function(require) {
 	var $=require('jquery');
 
+
+	var commonNavigation=require('commonNavigation');
+	new commonNavigation();
+	
 	$("#confirm-button").click(function(){
 		
 		var regexp=new RegExp('\\s+','g');

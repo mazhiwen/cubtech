@@ -1,9 +1,11 @@
-seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
+
 define(function(require) {
 
 	$=require('jquery');
 
-
+	var commonNavigation=require('commonNavigation');
+	new commonNavigation();
+	
 	$("#other-outer").hide();
 	$("#navigation-article").click(function(){
 

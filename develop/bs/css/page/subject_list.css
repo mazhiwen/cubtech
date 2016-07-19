@@ -1,5 +1,2 @@
 #paging-outer{text-align: center;margin-top: 50px;}
-
-/*
-#subject_list_tbody>tr>td>a{text-decoration: underline;}
-*/
+#subject_list_tbody>tr>td>a{text-decoration: underline;cursor: pointer;}

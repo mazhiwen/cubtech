@@ -1,4 +1,4 @@
-//入口
+
 var pageVersionObj = {
     login:"1.0.0",
     information_list : "1.0.0",
@@ -11,7 +11,7 @@ var pageVersionObj = {
     article_list: "1.0.0",
     article_edit:"1.0.1",
     subject_list : "1.0.0",
-    subject_edit: "1.0.0",
+    subject_edit: "1.0.1",
     topic_list:"1.0.0",
     topic_edit : "1.0.0",
     anonymousjuicy_list: "1.0.0",
@@ -35,9 +35,8 @@ var pageVersionObj = {
     administrator_list:"1.0.0",
     administrator_edit:"1.0.0"
 
-}
-
-
+},
+pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({
     base: "../js/lib/",
     alias: {
@@ -45,16 +44,12 @@ seajs.config({
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.2/navigationMultiLevelUl.js",
       "getGet": "getGet/1.0.0/getGet.js",
       "paging": "paging/1.0.0/paging.js",
-      "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js"
-
+      "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
+      "ajaxMy":'ajaxMy/1.0.1/ajaxMy.js',
+      "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
+      "uploadFile":'../../../modules/uploadfile/1.0.0/uploadFile.js'
     }
 });
-
-
-
-var pageName=document.getElementById('page_main').getAttribute('data-main');
-
-//seajs.use("../js/modules/commonnavigation/1.0.0/commonNavigation");
 seajs.use("../js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
 
 
