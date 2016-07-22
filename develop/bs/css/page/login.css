@@ -2,3 +2,5 @@
 #login_outer{display: inline-block;margin-top:200px;}
 #login_outer>label:nth-child(3){text-align: left;}
 #login_outer input[type="text"]{width: 250px;}
+
+

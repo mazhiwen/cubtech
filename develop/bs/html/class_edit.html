@@ -3,6 +3,8 @@
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="class_edit">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/class_edit.css">
@@ -18,20 +20,17 @@
 			<span></span><span></span><span></span>
 			<button>文章列表</button>
 		</div>
-		<div id="edit-area">
-			<div  class="form-input-outer">
-				<label class="form-input"><span>分类名称:</span><input type="text" placeholder="名称"></label>
-				<label class="form-input"><span>在导航栏的排序:</span><input type="text" disabled value="51"></label>
-				<div class="form-input"><span>是否在前台展示:</span><label><input type="radio"  name="is">是</label><label><input type="radio"  name="is">否</label></div>	
-				<div id="confirm-outer"><button>确认</button></div>
-			</div>
+		<div id="edit_area">
+			<label class="form-input"><span>分类ID:</span><input type="text" disabled placeholder="分类ID" id="class_code"></label>
+			<label class="form-input"><span>分类名称:</span><input type="text" placeholder="分类名称" id="class_name"></label>
+			<div class="form-input"><span>是否在前台展示:</span><input id="class_directoryStatus" type="checkbox"></div>	
+			<div id="confirm-outer"><button id="confirm_button">确认</button></div>
 		</div>
   		
   		
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

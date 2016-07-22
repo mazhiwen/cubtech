@@ -12,7 +12,9 @@ define(function(require, exports, module) {
 	this.getPagingLiIndex=0;
 	/*
 	pagingDom <ul class="paging"></ul>
-	maxPaging   需要是奇数 即2x+1
+	pagingCount 总页数
+	maxPaging   最大显示几个可点击页  需要是奇数 即2x+1
+	getPaging 当前页
 	*/		
   }
   

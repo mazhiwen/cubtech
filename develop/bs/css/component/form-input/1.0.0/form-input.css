@@ -38,10 +38,11 @@ textarea{
 
 
 input[type="radio"],input[type="checkbox"]{
-height: 0;
+vertical-align: middle;
 /*input宽度*/
 width: 20px;
 cursor: pointer;
+height: 20px;
 
 }
 

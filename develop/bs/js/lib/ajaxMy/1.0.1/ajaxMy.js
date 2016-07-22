@@ -12,24 +12,24 @@ define(function(require, exports, module) {
 		url:urlHead+urlTail,
 		data:sendData,
 		dataType:"json",
-		success:successFunction
+		success:function(d){
+			if(d['sys']==200){
+				if(d['code']==0){
+					successFunction.call(this,d['data']);
+				}
+				else{
+					alert('操作失败：'+d['desc']);
+				}
+			}else{
+				alert('操作失败：Nancy今天不开心，拒绝操作');
+			}
+
+		}
 	});
 
 
 		
   }
   
-  
-  ajaxMy.prototype._init=function(){
-	
-  }
-  
-  
-
-  
-  
-
-
-
 });
 

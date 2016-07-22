@@ -1,6 +1,9 @@
 define(function(require,exports,module) {
 	module.exports=uploadFile;
-	function uploadFile(inputEleId,responseFunction){
+	function uploadFile(inputEleId,articleType,responseFunction){
+		/*
+			articleType: 1 文章  2专题  3话题
+		*/
 		var InputEleDom=document.getElementById(inputEleId),
 			myFormData=new FormData();
 		InputEleDom.addEventListener("change",function(event){
@@ -9,6 +12,7 @@ define(function(require,exports,module) {
 			for(var i=0,file;file=files[i];i++){
 				myFormData.append('file', file);
 			}
+			myFormData.append('articleType',articleType);
 			xhr.addEventListener('load',function(event){
 				var responseUrl=JSON.parse(this.responseText)['data']['head_pic'];
 				responseFunction.call(this,responseUrl);

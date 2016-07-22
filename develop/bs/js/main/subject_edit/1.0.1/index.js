@@ -69,7 +69,7 @@ define(function(require) {
 		}
 	});
 
-	uploadFile('cover_image_input',function(responseUrl){
+	uploadFile('cover_image_input',1,function(responseUrl){
 		coverImgUrl=responseUrl;
 		coverImgDom.attr("src",coverImgUrl);
 	});

@@ -1,4 +1,3 @@
-
 var pageVersionObj = {
     login:"1.0.0",
     information_list : "1.0.0",
@@ -41,15 +40,21 @@ seajs.config({
     base: "../js/lib/",
     alias: {
       "jquery": "jquery/jquery/1.10.1/jquery-debug.js",
-      "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.2/navigationMultiLevelUl.js",
+      "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.3/navigationMultiLevelUl.js",
       "getGet": "getGet/1.0.0/getGet.js",
       "paging": "paging/1.0.0/paging.js",
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
       "ajaxMy":'ajaxMy/1.0.1/ajaxMy.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
-      "uploadFile":'../../../modules/uploadfile/1.0.0/uploadFile.js'
+      "uploadFile":'../../../modules/uploadfile/1.0.0/uploadFile.js',
+      "docCookies":"doccookies/1.0.0/docCookies.js"
     }
 });
+//分页相关
+//最大显示几个分页数
+MAXPAGING=5;
+//每页最大显示几条记录
+PERPAGINGCOUNT=2;
 seajs.use("../js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
 
 
