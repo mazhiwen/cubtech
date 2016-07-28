@@ -1,0 +1,29 @@
+@import url('../common/main_layout.css');
+@import url('../common/main_style.css');
+
+body{background-color: rgb(246,246,246);}
+#center{text-align: center;}
+#main_outer{overflow: hidden;display: inline-block;margin-top: 100px;}
+
+
+#login_outer{background-color: white;float: left;padding:0 80px 80px 80px;}
+#login_outer>p{text-align: center;margin: 50px 0;font-size: 1.3em;letter-spacing: 0.1em;}
+#login_outer>div:nth-child(2){position: relative;}
+#phone_select{width: 300px;}
+#phone_input{width: 240px;position: absolute;right: 0;}
+#login_button{width: 300px;float: right;margin-top: 40px; height: 40px;}
+#login_right_outer{float: left;
+width: 350px; height: 409px; 
+background: url("../../images/login_right.png") no-repeat center 40%;
+
+}
+
+
+
+
+
+
+
+
+
+

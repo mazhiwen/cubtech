@@ -1,0 +1,23 @@
+@import url('../common/main_style.css');
+@import url('../common/main_layout.css');
+/***********************author_like.css*/
+/*作者+点赞  外部*/
+.author_like{margin-top: 10px;}
+.author_like span{vertical-align: middle;}
+/*点赞*/
+.author_like>div{display: inline-block;float: right;}
+/*点赞图标*/
+.author_like>div>img{vertical-align: middle;height: 16px;margin: 0 5px 0 20px;cursor: pointer;}
+/*author_like.css***************************/
+
+
+body{background-color: rgb(242,242,242);}
+/*文章外层块*/
+.article_info_block{width: 60%;background-color:white;margin: 40px auto;padding: 25px;  }
+.article_info_block>div{display: table;}
+.article_info_block>div>div{vertical-align: middle;display:table-cell;}
+.article_info_block>div>div:nth-child(1){width: 80%; }
+.article_info_block>div>div:nth-child(2){text-align: right;}
+/*封面图*/
+.article_info_block>div>div:nth-child(2)>img{vertical-align: middle; width: 90%;outline: 4px solid rgb(242,242,242);}
+.article_info_block_2>div>div:nth-child(1){width: 100%;}

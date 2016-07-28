@@ -1,0 +1,6 @@
+@import url('../common/main_layout.css');
+@import url('../common/main_style.css');
+
+
+#banner_outer{background-color: red;font-size: 0;}
+#banner_outer>img{width: 100%;}
