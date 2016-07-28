@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="role_edit">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/role_edit.css">
@@ -19,8 +20,8 @@
 			<span></span><span></span><span></span>
 		</div>
 		<div id="edit-area">
-			<label class="form-input"><span>角色名:</span><span>评论审核人员</span></label>
-			<label class="form-input"><span>角色描述:</span><textarea></textarea></label>
+			<label class="form-input"><span>角色名:</span><input type="text" id="role_name"></label>
+			<label class="form-input"><span>角色描述:</span><textarea id="role_description"></textarea></label>
 			<label class="form-input"><span>资讯管理:</span><input type="checkbox" value="资讯管理"></label>
 			<label class="form-input"><span>文章管理:</span><input type="checkbox" value="文章管理"></label>
 			<label class="form-input"><span>专题管理:</span><input type="checkbox" value="专题管理"></label>
@@ -36,7 +37,6 @@
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

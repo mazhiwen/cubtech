@@ -2,14 +2,15 @@
 <html>
 <head lang="zh-cn">
 <meta charset="utf-8">
-<meta id="page_main" data-main="information_list">
-<script type="text/javascript" src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<meta id="page_main" data-main="top_tab">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
-<link rel="stylesheet" href="../css/page/information_list.css">
+<link rel="stylesheet" href="../css/page/top_tab.css">
 <title>title</title>
 </head>
+
 <body>
 <div id="container">
 	<div id="left">
@@ -17,29 +18,25 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<button>添加早报</button><button>添加要问</button>
+			<button>添加分类</button>
 		</div>
 		<table class="table">
 		    <caption></caption>
 		    <thead>
 		      <tr>
-		        <th>序号</th>
-		        <th>标题</th>
-		        <th>上传者</th>
-		        <th>上传日期</th>
-		        <th>收藏数</th>
-		        <th>分享数</th>
-		        <th>操作</th>
+		        <th>分类</th>
+		        <th>文章数量</th>
+		        <th>是否在顶栏tab显示</th>
+		        <th>排序（在导航栏的排序）</th>
+		        <th>从该列表中移除（此操作不对文章分类产生其他影响）</th>
 		      </tr>
 		    </thead>
-		    <tbody>
+		    <tbody id="table_body">
 		      <tr>
 		        <td>一级分类</td>
 		        <td>2</td>
 		        <td>3</td>
-		        <td>2</td>
-		        <td><span class="glyphicon glyphicon-user">ds</span></td>
-		        <td>1</td>
+		        <td><input type="checkbox"></td>
 		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
 		      </tr>
 		    </tbody>
@@ -50,5 +47,7 @@
   		
 	</div>
 </div>
+
+
 </body>
 </html>

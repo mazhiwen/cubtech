@@ -1,12 +1,9 @@
 define(function(require) {
-	var $=require('jquery'),
-		commonNavigation=new(require('commonNavigation')),
+	$=require('jquery');
+	var	commonMain=require('commonMain'),
 		paging = require('paging'),
 		ajaxMy=require('ajaxMy'),
 		table_body=$("#table_body");
-		//myPaging=new paging("#paging",13,10,11,function(){ console.log(this);  });
-		//myPaging._init();
-
 	function request(getPaging){
 		new ajaxMy('/category/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();

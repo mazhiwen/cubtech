@@ -1,20 +1,21 @@
 define(function(require) {
-	var $=require('jquery'),
-		ajaxMy=require('ajaxMy'),
+	$=require('jquery');
+	var	ajaxMy=require('ajaxMy'),
 		getGet=require('getGet'),
-		commonNavigation=require('commonNavigation'),
+		commonMain=require('commonMain'),
+		uploadFile=require('uploadFile'),
 		subjectNameDom=$("#subject_name"),
 		subjectDescriptionDom=$("#subject_description"),
 		coverImgDom=$("#cover_img"),
 		subjectListSn=$("#subject_list_sn"),
 		subjectId,
 		coverImgUrl='',
-		uploadFile=require('uploadFile');
-	new commonNavigation();
+		ImageId=null;
+
 	subjectId=getGet('id');
 	if(subjectId){
-		ajaxMy('/subject/edit',{subject_id:subjectId},function(data){
-			var o=data['data']['result'];
+		ajaxMy('/subject/edit',{subject_id:subjectId},function(d){
+			var o=d['result'];
 			subjectNameDom.val(o['name']);
 			subjectDescriptionDom.val(o['description']);
 			coverImgUrl=o['bgPic'];
@@ -24,7 +25,7 @@ define(function(require) {
 	}
 	$("#confirm-button").click(function(){
 		$(this).prop("disabled",true);
-		var othis=$(this);
+		var that=$(this);
 		if(subjectId){
 			ajaxMy(
 				'/subject/update',
@@ -35,15 +36,13 @@ define(function(require) {
 					bgpic:coverImgUrl,
 					priority:subjectListSn.val()
 				},
-				function(data){
-					othis.prop("disabled",false);
-					if(data['data']){
-						if(data['data']['result']){
-							alert('修改成功');
-						}
+				function(d){
+					if(d['result']){
+						alert('修改成功');
 					}else{
 						alert('修改失败');
 					}
+					that.prop("disabled",false);
 				}
 			);
 		}else{
@@ -55,23 +54,21 @@ define(function(require) {
 				bgpic:coverImgUrl,
 				priority:subjectListSn.val()
 				},
-				function(data){
-					othis.prop("disabled",false);
-					if(data['data']){
-						if(data['data']['result']){
-							alert('添加成功');
-						}
+				function(d){
+					if(d['result']){
+						alert('添加成功');
 					}else{
 						alert('添加失败');
 					}
+					that.prop("disabled",false);
 				}
 			);
 		}
 	});
 
-	uploadFile('cover_image_input',1,function(responseUrl){
-		coverImgUrl=responseUrl;
-		coverImgDom.attr("src",coverImgUrl);
+	uploadFile('cover_image_input',1,function(responseUrl,sysImageId){
+		coverImgDom.attr("src",responseUrl);
+		ImageId=sysImageId;
 	});
 
 	

@@ -32,7 +32,8 @@ var pageVersionObj = {
     role_list:"1.0.0",
     role_edit:"1.0.0",
     administrator_list:"1.0.0",
-    administrator_edit:"1.0.0"
+    administrator_edit:"1.0.0",
+    top_tab:'1.0.0'
 
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
@@ -45,19 +46,19 @@ seajs.config({
       "paging": "paging/1.0.0/paging.js",
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
       "ajaxMy":'ajaxMy/1.0.1/ajaxMy.js',
+      "transformTime":'transformtime/1.0.0/transformTime.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
       "uploadFile":'../../../modules/uploadfile/1.0.0/uploadFile.js',
-      "docCookies":"doccookies/1.0.0/docCookies.js"
+      "docCookies":"doccookies/1.0.0/docCookies.js",
+      "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js'
     }
 });
 //分页相关
 //最大显示几个分页数
 MAXPAGING=5;
 //每页最大显示几条记录
-PERPAGINGCOUNT=2;
+PERPAGINGCOUNT=10;
 seajs.use("../js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
-
-
 
 /*******************************
 var debug = true;

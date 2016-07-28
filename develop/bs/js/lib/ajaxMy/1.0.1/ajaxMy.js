@@ -6,6 +6,7 @@ define(function(require, exports, module) {
   function ajaxMy(urlTail,sendData,successFunction){
 	
   	var urlHead='//123.56.237.44:8091/admin';
+  	//var urlHead='//123.56.237.44:8091';
     $.ajax({
 
 		type:"POST",
@@ -18,10 +19,12 @@ define(function(require, exports, module) {
 					successFunction.call(this,d['data']);
 				}
 				else{
-					alert('操作失败：'+d['desc']);
+					//alert('操作失败：'+d['desc']);
+					successFunction.call(this,false);
 				}
 			}else{
 				alert('操作失败：Nancy今天不开心，拒绝操作');
+
 			}
 
 		}

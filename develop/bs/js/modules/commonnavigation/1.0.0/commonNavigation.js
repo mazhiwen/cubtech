@@ -1,11 +1,9 @@
 define(function(require,exports,module) {
-	var $ = require('jquery'),
-		docCookies=new(require('docCookies'));
+	var docCookies=new(require('docCookies')),
+		navigationMultiLevelUl=require('navigationMultiLevelUl');	
 	module.exports=commonNavigation;
 	function commonNavigation(){
-		
 		var permissionObj={
-
 		    '内容管理':{
 		        '资讯管理':{
 		            '资讯列表':['information_list',1],
@@ -37,7 +35,7 @@ define(function(require,exports,module) {
 		            
 		    },
 		    '排序管理':{
-		            '顶栏tab管理':[],
+		            '顶栏tab管理':['top_tab'],
 		            '推荐页管理':[],
 		            'banner列表':['banner_list'],
 		            '添加/编辑banner':['banner_edit']
@@ -65,41 +63,16 @@ define(function(require,exports,module) {
 		        '添加/编辑管理员':['administrator_edit',5]
 		    }
 		};
-		var permissionArray=[1,3,4];
-		this.NAVIGATIONAARRAY=[];
-		
-		var that=this;
-		var NAVIGATIONHTMLTEXT='<ul class="navigation-multi-level-ul">';
-		function iteraPermissionObj(o){
-		    for(var k in o){
-		        if(o[k].constructor==Object){
-		            NAVIGATIONHTMLTEXT+='<li><div>'+k+'</div><ul>';
-		            iteraPermissionObj(o[k]);
-		        }
-		        else{
-		    
-		            NAVIGATIONHTMLTEXT+='<li><a href="'+o[k][0]+'.html">'+k+'</a></li>';
-		            that.NAVIGATIONAARRAY.push(o[k][0]);
-		            
-		        }
-		    }
-		    NAVIGATIONHTMLTEXT+='</ul></li>';
-		}
-		iteraPermissionObj(permissionObj);
-
-		$('#left').append(NAVIGATIONHTMLTEXT);
-		var href=window.location.href;
-		var nowlocation=$('.navigation-multi-level-ul a:eq('+that.NAVIGATIONAARRAY.indexOf(href.split('/').reverse()[0].split('?')[0].split('.')[0])+')');
-		nowlocation.css("color","rgb(0, 162, 202)");
-		$("#navigation-crumb>span:eq(0)").text(nowlocation.parent().parent().prev().parent().parent().prev().text()+'-');
-		$("#navigation-crumb>span:eq(1)").text(nowlocation.parent().parent().prev().text()+'-');
-		$("#navigation-crumb>span:eq(2)").text(nowlocation.text());
-		//console.log(nowlocation.parent().parent().prev().text());
-		//console.log(nowlocation.parent().parent().prev().parent().parent().prev().text());
-		$(".navigation-multi-level-ul div").click(function(){
-			$(this).next().css("display")=="block"?$(this).next().hide():$(this).next().show();				
+		var NavigationMultiLevelUlMy=new navigationMultiLevelUl('#left',permissionObj);
+		var currentDom=$('.navigation-multi-level-ul a:eq('+NavigationMultiLevelUlMy.getCurrentIndex()+')');
+		currentDom.css("color","rgb(0, 162, 202)");
+		$("#navigation-crumb>span:eq(0)").text(currentDom.parent().parent().prev().parent().parent().prev().text()+'-');
+		$("#navigation-crumb>span:eq(1)").text(currentDom.parent().parent().prev().text()+'-');
+		$("#navigation-crumb>span:eq(2)").text(currentDom.text());
+		$(".navigation-multi-level-ul a:eq(0),.navigation-multi-level-ul a:eq(1),.navigation-multi-level-ul a:eq(2),.navigation-multi-level-ul a:eq(3),.navigation-multi-level-ul a:eq(4),.navigation-multi-level-ul a:eq(16),.navigation-multi-level-ul a:eq(11),.navigation-multi-level-ul a:eq(12)").click(function(){
+			alert('功能未开放');
+			return false;
 		});
-	
 	}
 });
 

@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="article_list">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/article_list.css">
@@ -17,7 +18,7 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<button>添加文章</button>
+			<a href="article_edit.html"><button>添加文章</button></a>
 		</div>
 		<table class="table">
 		    <caption></caption>
@@ -37,7 +38,7 @@
 		        <th>操作</th>
 		      </tr>
 		    </thead>
-		    <tbody>
+		    <tbody id="table_body">
 		      <tr>
 		        <td>一级分类</td>
 		        <td>2</td>
@@ -52,20 +53,6 @@
 		        <td><input type="checkbox"></td>
 		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
 		      </tr>
-		      <tr>
-		        <td>一级分类</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td><span class="glyphicon glyphicon-user">ds</span></td>
-		        <td>1</td>
-		        <td>1</td>
-		        <td>1</td>
-		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
-		      </tr>
 		      
 		    </tbody>
   		</table>
@@ -76,7 +63,6 @@
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

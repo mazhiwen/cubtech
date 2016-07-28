@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="user_edit">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/user_edit.css">
-<title>title</title>
+<title>user_edit</title>
 </head>
 
 <body>
@@ -19,18 +20,17 @@
 			<span></span><span></span><span></span>
 		</div>
 		<div id="edit-area">
-			<label class="form-input"><span>用户类型:</span><select><option>大v</option><option>普通用户</option></select></label>
-			<label class="form-input"><span>昵称:</span><input type="text" placeholder="昵称"></label>
-			<label class="form-input"><span>个人简介:</span><input type="text" placeholder="个人简介"></label>
-			<label class="form-input"><span>手机:</span><input type="text" placeholder="手机"></label>
-			<label class="form-input"><span>微信userid:</span><input type="text" placeholder="微信userid"></label>
-			<label class="form-input"><span>微信昵称:</span><input type="text" placeholder="微信昵称"></label>	
+			<label class="form-input"><span>用户类型:</span><select id="user_type"><option value=""></option><option value="1">大v</option><option value="0">普通用户</option></select></label>
+			<label class="form-input"><span>昵称:</span><input type="text" id="nick_name" placeholder="昵称"></label>
+			<label class="form-input"><span>个人简介:</span><input type="text" id="summary" placeholder="个人简介"></label>
+			<label class="form-input"><span>手机:</span><input type="text" id="phone" placeholder="手机"></label>
+			<label class="form-input"><span>微信userid:</span><input type="text" id="wechat_id" placeholder="微信userid"></label>
+			<label class="form-input"><span>微信昵称:</span><input type="text" id="wechat_name" placeholder="微信昵称"></label>	
 			<div id="confirm-outer"><button>确认</button></div>
 		</div>
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

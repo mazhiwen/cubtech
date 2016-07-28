@@ -12,12 +12,13 @@ define(function(require,exports,module) {
 			for(var i=0,file;file=files[i];i++){
 				myFormData.append('file', file);
 			}
-			myFormData.append('articleType',articleType);
+			myFormData.append('type',articleType);
 			xhr.addEventListener('load',function(event){
-				var responseUrl=JSON.parse(this.responseText)['data']['head_pic'];
-				responseFunction.call(this,responseUrl);
+				var responseUrl=JSON.parse(this.responseText)['data']['pic_url'];
+				var sysImageId=JSON.parse(this.responseText)['data']['sysImageId'];
+				responseFunction.call(this,responseUrl,sysImageId);
 			});
-			xhr.open("POST", "http://123.56.237.44:8090/app/user/head_pic", true);
+			xhr.open("POST", "//123.56.237.44:8091/upload_image", true);
 			xhr.send(myFormData);
 		},false);
 	}

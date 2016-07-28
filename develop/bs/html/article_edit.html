@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="article_edit">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/lib/ueditor/1_4_3_3/utf8-php/utf8-php/ueditor.config.js"></script>
+<script type="text/javascript" src="../js/lib/ueditor/1_4_3_3/utf8-php/utf8-php/ueditor.all.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/article_edit.css">
@@ -17,26 +20,31 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<button>文章列表</button>
+			<a href="article_list.html"><button>文章列表</button></a>
 		</div>
 		<div>
 			<ul class="navigation-hori">
 				<li id="navigation-article">文章内容</li><li id="navigation-other">其他信息</li>
 			</ul>
 			<div id="sub-content">
-				<div id="edit-article-outer">
+				<div id="edit_article_outer">
 					<h4>标题</h4>
-					<input type="text" id="input-title">
+					<input type="text" id="title">
+					<h4>摘要</h4>
+					<textarea id="summary"></textarea>
 					<h4>内容</h4>
 					<div id="edit">
 					</div>
 					
 				</div>
-				<div id="other-outer" class="form-input-outer">
-					<label class="form-input"><span>作者:</span><input type="text" placeholder="作者"></label>
-					<label class="form-input"><span>封面:</span><input type="file"></label>
-					<label class="form-input"><span>分类:</span><select><option>d</option><option>22d</option></select></label>
-					<div class="form-input"><span>是否在首页推荐tab显示:</span><label><input type="radio"  name="is">是</label><label><input type="radio"  name="is">否</label></div>
+				<div id="other_outer" class="form-input-outer">
+					<div class="form-input"><span>作者:</span><input type="text" placeholder="作者" id="author"></div>
+					<div class="upload_preview">
+						<div class="form-input"><span>专题封面:</span><input type="file" id="cover_image_input"></div>
+						<img id="cover_img" src="">
+					</div>
+					<div class="form-input"><span>分类:</span><select id="article_class"><!--<option value="vw">VW</option><option value="audi" selected>Audi</option>--></select></div>
+					<div class="form-input"><span>是否在首页推荐tab显示:</span><input type="checkbox" id="if_show"></div>
 				</div>
 				<button id="commit-button">确认</button>
 			</div>
@@ -49,9 +57,6 @@
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/lib/ueditor/1_4_3_3/utf8-php/utf8-php/ueditor.config.js"></script>
-<script type="text/javascript" src="../js/lib/ueditor/1_4_3_3/utf8-php/utf8-php/ueditor.all.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

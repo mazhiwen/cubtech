@@ -1,7 +1,7 @@
 
 define(function(require) {
 	
-	var commonNavigation=require('commonNavigation');
-	new commonNavigation();
+	var	commonMain=require('commonMain');
+	
 });
 

@@ -1,7 +1,7 @@
 define(function(require) {
-	var $=require('jquery'),
-		ajaxMy=require('ajaxMy'),
-		commonNavigation=new(require('commonNavigation')),
+	 $=require('jquery');
+	var	ajaxMy=require('ajaxMy'),
+		commonMain=require('commonMain'),
 		edit_area=$("#edit_area"),
 		getGet=require('getGet'),
 		class_code=$("#class_code"),

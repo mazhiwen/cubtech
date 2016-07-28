@@ -1,1 +1,2 @@
 #paging-outer{text-align: center;margin-top: 50px;}
+#table_body>tr>td:nth-child(12){width: 100px;};
