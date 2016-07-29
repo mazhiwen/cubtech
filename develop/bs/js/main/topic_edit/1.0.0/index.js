@@ -1,11 +1,10 @@
-
-
 define(function(require) {
 
 	$=require('jquery');
-
-	var commonNavigation=require('commonNavigation');
-	new commonNavigation();
+	var	ajaxMy=require('ajaxMy'),
+		getGet=require('getGet'),
+		commonMain=require('commonMain'),
+		uploadFile=require('uploadFile');
 
 
 

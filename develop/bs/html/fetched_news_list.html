@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="fetched_news_list">
+<script type="text/javascript" src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/fetched_news_list.css">
@@ -18,7 +19,7 @@
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
 			<select><option>全部</option><option>审核通过</option><option>已删除</option></select>
-			<button>添加抓取源</button>
+			<a href="add_fetch_source.html"><button>添加抓取源</button></a>
 		</div>
 		<table class="table">
 		    <caption></caption>
@@ -75,7 +76,6 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

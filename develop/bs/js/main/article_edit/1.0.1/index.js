@@ -17,7 +17,7 @@ define(function(require) {
 		ImageId=null;	
 	ue.ready(function(){
 		if(id){
-			new ajaxMy('/article/edit',{id:id},function(data){
+			ajaxMy('/article/edit',{id:id},function(data){
 				var d=data['result'];
 				title.val(d['title']);
 				summary.val(d['summary']);
@@ -37,7 +37,7 @@ define(function(require) {
 			$("#commit-button").click(function(){
 				$(this).prop('disabled',true);
 				var that=$(this);
-				new ajaxMy(
+				ajaxMy(
 					'/article/update',
 					{
 						id:id,
@@ -57,7 +57,7 @@ define(function(require) {
 				);
 			});
 		}else{
-			new ajaxMy('/category/select_list',null,function(d){
+			ajaxMy('/category/select_list',null,function(d){
 				var s='';
 				$.each(d['result'],function(k,v){
 					s+='<option value="'+k+'">'+v+'</option>';
@@ -66,7 +66,7 @@ define(function(require) {
 				$("#commit-button").click(function(){
 					$(this).prop('disabled',true);
 					var that=$(this);
-					new ajaxMy(
+					ajaxMy(
 						'/article/save',
 						{
 							title:title.val(),
@@ -90,6 +90,8 @@ define(function(require) {
 	uploadFile('cover_image_input',1,function(responseUrl,sysImageId){
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
+		console.log(responseUrl);
+		console.log(sysImageId);
 	});
 	other_outer.hide();
 	$("#navigation-article").click(function(){

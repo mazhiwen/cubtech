@@ -7,7 +7,7 @@ define(function(require) {
 		ifFinishEdit=false;
 
 	function request(getPaging){
-		new ajaxMy('/directory/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+		ajaxMy('/directory/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
@@ -29,7 +29,7 @@ define(function(require) {
 	table_body.on('click','tr>td:nth-child(3)>input',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
-		new ajaxMy('/directory/update',{id:$(this).parent().parent().attr("data-id"),status:$(this).prop('checked')?1:0},function(d){
+		ajaxMy('/directory/update',{id:$(this).parent().parent().attr("data-id"),status:$(this).prop('checked')?1:0},function(d){
 			if(d['result']){
 				alert('修改成功');
 			}else{
@@ -39,40 +39,38 @@ define(function(require) {
 			that.prop('disabled',false);
 		});
 	});
+	//***********************contenteditable 改动请求**************//
 	table_body.on('input','tr>td:nth-child(4)',function(event){
 		ifFinishEdit=true;
-		console.log(ifFinishEdit);
 	});
 	table_body.on('mouseout','tr>td:nth-child(4)',function(event){
 		if(ifFinishEdit){
-			console.log($(this).text());
 			var s=$(this).text();
 			$(this).attr('contenteditable',false);
-			$(this).prop('disabled',true);
+			$(this).toggleClass('disabled');
 			that=$(this);
-			new ajaxMy('/directory/update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
-				that.prop('disabled',false);
-				that.attr('contenteditable',true);
+			ajaxMy('/directory/update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
 				if(d['result']){
 					alert('修改成功');
 				}else{
 					alert('修改失败');
-					//window.location.reload();
-					//that.text('');
 				}
+				that.toggleClass('disabled',false);
+				that.attr('contenteditable',true);
 			});
 			ifFinishEdit=false;
-		}else console.log(ifFinishEdit);
+		}
 	});
+	//***********************contenteditable 改动请求**************//
 	table_body.on('click','tr>td:nth-child(5)>button',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
-		new ajaxMy('/directory/delete',{id1:$(this).parent().parent().attr("data-id")},function(d){
+		ajaxMy('/directory/delete',{id1:$(this).parent().parent().attr("data-id")},function(d){
 			if(d['result']){
 				$(this).parent().parent().remove();
-				alert('修改成功');
+				alert('移除成功');
 			}else{
-				alert('修改失败');
+				alert('移除失败');
 			}
 			that.prop('disabled',false);
 		});

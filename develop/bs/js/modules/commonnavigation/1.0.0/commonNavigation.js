@@ -69,7 +69,7 @@ define(function(require,exports,module) {
 		$("#navigation-crumb>span:eq(0)").text(currentDom.parent().parent().prev().parent().parent().prev().text()+'-');
 		$("#navigation-crumb>span:eq(1)").text(currentDom.parent().parent().prev().text()+'-');
 		$("#navigation-crumb>span:eq(2)").text(currentDom.text());
-		$(".navigation-multi-level-ul a:eq(0),.navigation-multi-level-ul a:eq(1),.navigation-multi-level-ul a:eq(2),.navigation-multi-level-ul a:eq(3),.navigation-multi-level-ul a:eq(4),.navigation-multi-level-ul a:eq(16),.navigation-multi-level-ul a:eq(11),.navigation-multi-level-ul a:eq(12)").click(function(){
+		$(".navigation-multi-level-ul a:eq(16)").click(function(){
 			alert('功能未开放');
 			return false;
 		});

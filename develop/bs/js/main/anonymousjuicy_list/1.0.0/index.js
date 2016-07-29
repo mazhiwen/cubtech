@@ -1,12 +1,14 @@
 
 define(function(require) {
+	$=require('jquery');
+	var	ajaxMy=require('ajaxMy'),
+		getGet=require('getGet'),
+		commonMain=require('commonMain'),
+		uploadFile=require('uploadFile'),
+		paging = require('paging');
 
-	var commonNavigation=require('commonNavigation');
-	new commonNavigation();
 	
-	var paging = require('paging');
-	var myPaging=new paging("#paging",13,10,11,function(){ console.log(this);  });
-	myPaging._init();
+
 	
 });
 

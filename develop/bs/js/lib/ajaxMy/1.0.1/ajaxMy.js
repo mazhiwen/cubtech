@@ -19,8 +19,8 @@ define(function(require, exports, module) {
 					successFunction.call(this,d['data']);
 				}
 				else{
-					//alert('操作失败：'+d['desc']);
-					successFunction.call(this,false);
+					alert('操作失败：'+d['desc']);
+					//successFunction.call(this,false);
 				}
 			}else{
 				alert('操作失败：Nancy今天不开心，拒绝操作');

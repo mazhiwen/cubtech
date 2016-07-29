@@ -55,9 +55,9 @@ seajs.config({
 });
 //分页相关
 //最大显示几个分页数
-MAXPAGING=5;
+MAXPAGING=11;
 //每页最大显示几条记录
-PERPAGINGCOUNT=10;
+PERPAGINGCOUNT=20;
 seajs.use("../js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
 
 /*******************************

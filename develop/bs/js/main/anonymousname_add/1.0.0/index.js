@@ -1,10 +1,12 @@
 
 define(function(require) {
-	var $=require('jquery');
+	$=require('jquery');
 
 
-	var commonNavigation=require('commonNavigation');
-	new commonNavigation();
+	var ajaxMy=require('ajaxMy'),
+		commonMain=require('commonMain'),
+		paging = require('paging'),
+		transformTime=new(require('transformTime'));
 	
 	$("#confirm-button").click(function(){
 		

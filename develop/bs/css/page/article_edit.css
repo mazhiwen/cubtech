@@ -8,4 +8,4 @@
 .upload_preview>div{float: left;}
 .upload_preview>img{float: left;margin: 20px;width: 300px;}
 
-#commit-button{}
+#commit-button{display: block;margin:100px auto;}
