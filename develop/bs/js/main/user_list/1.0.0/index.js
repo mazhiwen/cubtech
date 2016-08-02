@@ -10,16 +10,17 @@ define(function(require) {
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
-				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>';
+				//s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>';
+				var type;
 				switch(v['authV']){
 					case 0:
-					s+='普通用户';break;
+					type='普通用户';break;
 					case 1:
-					s+='大V';break;
+					type='大V';break;
 					default:
-					s+='';break;
+					type='';break;
 				}
-				s+='</td><td>'+v['vita']+'</td><td>'+v['vita']+'</td><td>'+v['vita']+'</td><td>'+v['vita']+'</td><td>'+v['vita']+'</td><td>'+v['vita']+'</td><td>'+transformTime.MSTo(v['registerTime'])+'</td><td><a href="user_edit.html?id='+v['id']+'"><button class="s">编辑</button></a> <button class="s" data-id="'+v['id']+'">删除</button></td></tr>'; 
+				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>'+type+'</td><td>'+v['vita']+'</td><td>'+v['articleNum']+'</td><td>'+v['followNum']+'</td><td>'+v['fansNum']+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+transformTime.MSTo(v['registerTime'])+'</td><td><a href="user_edit.html?id='+v['id']+'"><button class="s">编辑</button></a> <button class="s" data-id="'+v['id']+'">删除</button></td></tr>'; 
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);

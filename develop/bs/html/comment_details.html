@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="comment_details">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/comment_details.css">
@@ -18,19 +19,43 @@
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
 		</div>
-		<div>
-			<p><span>李子奇</span>于<span>20-04-5  09：33：33</span>对<span>xxxx</span>发表评论</p>
-			<p>大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒</p>
-			<button id="no-show">禁止显示</button>
-
+		<div id="comment_outer">
+			<span id="nickname">李子奇</span>于<span id="creat_time">20-04-5  09：33：33</span>对<span id="">xxxx</span>发表评论
+			<p id="comment">大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒大撒旦撒旦撒</p>
+			<button id="status_button">显示</button>
 		</div>
+		<table class="table">
+		    <caption></caption>
+		    <thead>
+		      <tr>
+		      	<th>id</th>
+		        <th>content</th>
+		        <th>createTime</th>
+		        <th>nickName</th>
+		        <th>repliedNickName</th>
+		        <th>status</th>
+		      </tr>
+		    </thead>
+		    <tbody id="table_body">
+		      <tr>
+		        <td>一级分类</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>2</td>
+		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
+		        <td><a href="#"><button>查看</button></a> <button>显示</button></td>
+		      </tr>
+		    </tbody>
+  		</table>
+  		<div id="paging_outer">
+			<ul class="paging" id="paging"></ul>
+  		</div>
 
 
   		
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

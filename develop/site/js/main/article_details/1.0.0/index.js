@@ -1,7 +1,7 @@
-
 define(function(require) {
 	var $=require('jquery');
-	var commonNavigation=require('commonNavigation');
-	commonNavigation();
+	$=jQuery;
+	var	commonMain=new(require('commonMain'));
+
 });
 

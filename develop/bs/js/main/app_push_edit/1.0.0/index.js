@@ -1,13 +1,14 @@
 
 define(function(require) {
-	var $ = require('jquery');
 	var dateTimePicker=require('dateTimePicker');
 	var my_dateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){});
 	my_dateTimePicker._init();
 
-	var commonNavigation=require('commonNavigation');
-	new commonNavigation();
-	
+	$=require('jquery');
+	var commonMain=require('commonMain'),
+		paging = require('paging'),
+		ajaxMy=require('ajaxMy');
+
 	$("#button-push-now").click(function(){
 
 		confirm("确认立即推送以上内容及链接？");

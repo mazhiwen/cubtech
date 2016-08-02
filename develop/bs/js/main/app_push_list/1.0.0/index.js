@@ -1,11 +1,10 @@
 
 define(function(require) {
 
-	var commonNavigation=require('commonNavigation');
-	new commonNavigation();
-	var paging = require('paging');
-	var myPaging=new paging("#paging",13,10,11,function(){ console.log(this);  });
-	myPaging._init();
+	$=require('jquery');
+	var commonMain=require('commonMain'),
+		paging = require('paging'),
+		ajaxMy=require('ajaxMy');
 	
 });
 

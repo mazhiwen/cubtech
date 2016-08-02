@@ -1,1 +1,5 @@
-#no-show{display: block;margin: auto;}
+#comment_outer{width: 100%;margin:10px auto;
+}
+#comment{border: 1px solid #eeeeee;padding:10px 10px;}
+#status_button{display: block;margin:10px auto;}
+#paging_outer{text-align: center;margin: 20px 0;}

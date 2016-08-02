@@ -1,14 +1,10 @@
 define(function(require, exports, module) {
-
   var $ = require('jquery');
   module.exports=ajaxMy;
-
   function ajaxMy(urlTail,sendData,successFunction){
-	
-  	var urlHead='//123.56.237.44:8091/admin';
-  	//var urlHead='//123.56.237.44:8091';
+  	var urlHead='//admin.e-quanta.com/admin';
+  	//var urlHead='//123.56.237.44:8091/admin';
     $.ajax({
-
 		type:"POST",
 		url:urlHead+urlTail,
 		data:sendData,
@@ -20,19 +16,13 @@ define(function(require, exports, module) {
 				}
 				else{
 					alert('操作失败：'+d['desc']);
-					//successFunction.call(this,false);
+					successFunction.call(this,false);
 				}
 			}else{
 				alert('操作失败：Nancy今天不开心，拒绝操作');
-
 			}
-
 		}
-	});
-
-
-		
+	});	
   }
-  
 });
 

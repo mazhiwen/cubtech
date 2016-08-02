@@ -2,8 +2,8 @@
 @import url('../common/main_style.css');
 
 body{background-color: rgb(242,242,242);}
-#center{width: 70%; margin: auto; background-color: white;padding: 100px;text-align: center;}
-#center>div{position: relative;margin: 40px 0;text-align: left;}
+#center{width: 70%; margin:110px auto; background-color: white;padding: 30px 100px;text-align: center;}
+#center>div{position: relative;margin: 40px 0;text-align: left; z-index: 1;}
 #center>div>span{position: absolute; left: -60px;line-height: 30px;display:inline-block;width: 50px;}
 #center>div>div>p{line-height: 30px;}
 #title{width: 100%; height: 30px;}
@@ -13,6 +13,6 @@ filter:alpha(opacity=0);
 opacity: 0;
 }
 #summary_text{width: 100%;}
-#center>div:nth-child(5)>select{height: 30px;padding-right: 20px;background-position: 180px center;width: 200px;}
+#center>div:nth-child(5)>div>select{height: 30px;padding-right: 20px;background-position: 180px center;width: 200px;}
 #send_button{margin: 50px 0;height: 40px;}
 

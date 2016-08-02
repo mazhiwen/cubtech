@@ -1,6 +1,6 @@
 define(function(require) {
-	var $=require('jquery');
-	var commonNavigation=require('commonNavigation');
-	commonNavigation();
+	var $=require('jquery'),
+		commonMain=new(require('commonMain')),
+		commonCopy=(require('commonCopy'))();
 });
 

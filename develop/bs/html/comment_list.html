@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
 <meta id="page_main" data-main="comment_list">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/common/main_layout.css">
 <link rel="stylesheet" href="../css/common/main_style.css">
 <link rel="stylesheet" href="../css/page/comment_list.css">
@@ -26,37 +27,20 @@
 		        <th>序号</th>
 		        <th>用户</th>
 		        <th>文章/话题/匿名</th>
-		        <th>评论内容</th>
-		        <th>评论时间</th>
+		        <th>评论/回复内容</th>
+		        <th>评论/回复时间</th>
 		        <th>操作</th>
 		      </tr>
 		    </thead>
-		    <tbody>
+		    <tbody id="table_body">
 		      <tr>
 		        <td>一级分类</td>
 		        <td>2</td>
 		        <td>3</td>
 		        <td>2</td>
 		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
-		        <td><button>查看</button><button>禁止显示</button></td>
+		        <td><a href="#"><button>查看</button></a> <button>显示</button></td>
 		      </tr>
-		      <tr>
-		        <td>一级分类</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td>2</td>
-		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
-		        <td><a href="#">查看</a> <a href="#">禁止显示</a></td>
-		      </tr>
-		      <tr>
-		        <td>一级分类</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td>2</td>
-		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
-		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
-		      </tr>
-		      
 		    </tbody>
   		</table>
   		<div id="paging-outer">
@@ -66,7 +50,6 @@
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

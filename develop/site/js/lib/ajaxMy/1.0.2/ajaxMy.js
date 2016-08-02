@@ -2,6 +2,7 @@ define(function(require, exports, module) {
   module.exports=ajaxMy;
 
   function ajaxMy(urlTail,sendData,successFunction){
+
   	var urlHead='//123.56.237.44:8091';
     $.ajax({
 
@@ -15,12 +16,11 @@ define(function(require, exports, module) {
 					successFunction.call(this,d['data']);
 				}
 				else{
-					//alert('操作失败：'+d['desc']);
-					successFunction.call(this,false);
+					//successFunction.call(this,false);
+					popUpWindow.alert('操作失败：'+d['desc'],function(){});
 				}
 			}else{
-				alert('操作失败：Nancy今天不开心，拒绝操作');
-
+				popUpWindow.alert('操作失败：网络原因',function(){});
 			}
 
 		}

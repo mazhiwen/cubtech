@@ -8,9 +8,13 @@ define(function(require) {
 		cover_img=$("#cover_img"),
 		sn=$("#sn"),
 		url=$("#url"),
-		summary=$("#summary"),
+		target_id=$("#target_id"),
+		type=$("#type"),
 		commit_button=$("#commit_button"),
-		id=getGet('id');
+		targetid_outer=$("#targetid_outer"),
+		url_outer=$("#url_outer"),
+		id=getGet('id'),
+		ImageId=null;
 	if(id){
 		ajaxMy('/banner/get_banner',{banner_id:id},function(d){
 			var d=d['result'];
@@ -19,6 +23,7 @@ define(function(require) {
 			sn.val(d['priority']);
 			summary.val(d['description']);
 			cover_img.attr('src',d['bgPic']);
+			action.val(d['action']);
 		});
 		commit_button.click(function(){
 			$(this).prop('disabled',true);
@@ -29,14 +34,14 @@ define(function(require) {
 					id:id,
 					title:name.val(),
 					desc:summary.val(),
-					bg_pic:cover_img.attr("src"),
+					bg_pic:cover_img.attr('src'),
 					priority:sn.val(),
-					action:'',
-					action_url:url.val()
+					action:action.val(),
+					action_url:url.val(),
+					sys_image_id:ImageId
 				},
 				function(d){
 					if(d['result']) alert('编辑成功');
-					else alert('编辑失败');
 					that.prop('disabled',false);
 				}
 			);
@@ -48,17 +53,16 @@ define(function(require) {
 			ajaxMy(
 				'/banner/insert',
 				{
-					id:id,
 					title:name.val(),
 					desc:summary.val(),
 					bg_pic:cover_img.attr("src"),
 					priority:sn.val(),
-					action:'',
-					action_url:url.val()
+					action:action.val(),
+					action_url:url.val(),
+					sys_image_id:ImageId
 				},
 				function(d){
 					if(d['result']) alert('添加成功');
-					else alert('添加失败');
 					that.prop('disabled',false);
 				}
 			);
@@ -67,6 +71,14 @@ define(function(require) {
 	uploadFile('cover_image_input',1,function(responseUrl,sysImageId){
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
+	});
+	url_outer.hide();
+	type.change(function(){
+		if (type.val()==1){
+			url_outer.show();targetid_outer.hide();
+		}else{
+			targetid_outer.show();url_outer.hide();
+		}
 	});
 
 });

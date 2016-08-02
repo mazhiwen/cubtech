@@ -3,10 +3,7 @@ define(function(require,exports,module) {
 	function commonMain(){
 		popUpWindow=new(require('popUpWindow'));
 		docCookies=new(require('docCookies'));
-		var commonNavigation=new(require('commonNavigation')),
-			ifCookie=new(require('ifCookie'));
-		
-		
+		var commonNavigation=(require('commonNavigation'))();
 	}
 	
 

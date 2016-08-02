@@ -37,8 +37,18 @@ var pageVersionObj = {
 
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
+var domain='https://admin.e-quanta.com/';
+//var domain='http://localhost/e-quanta/develop/bs/login.html';
+var localDomiain=null;
+if(window.location.href==domain){
+    localDomiain='.';
+}
+else{
+localDomiain='..';
+}
+
 seajs.config({
-    base: "../js/lib/",
+    base: localDomiain+"/js/lib/",
     alias: {
       "jquery": "jquery/jquery/1.10.1/jquery-debug.js",
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.3/navigationMultiLevelUl.js",
@@ -58,7 +68,7 @@ seajs.config({
 MAXPAGING=11;
 //每页最大显示几条记录
 PERPAGINGCOUNT=20;
-seajs.use("../js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
+seajs.use(localDomiain+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
 
 /*******************************
 var debug = true;

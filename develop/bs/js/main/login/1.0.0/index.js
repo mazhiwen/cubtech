@@ -31,23 +31,21 @@ new ajaxMy('/web/login/login',{mobile:'13011111111',pwd:'lkjhgfdsa'},function(d)
 		//docCookies.setItem('loginPassword',login_password_v,false,'/');
 		$.ajax({
 			type:"POST",
+			//url:'//admin.e-quanta.com/web/login/login',
 			url:'//123.56.237.44:8091/web/login/login',
-			//url:'../js/main/login/1.0.0/test.php',
 			data:{mobile:login_name_v,pwd:login_password_v},
 			dataType:"json",
 			success:function(d){
-				//if成功
 				if(d['data']['result']){
 					var od=false;
 					if($("#check_save_login").prop("checked")){od=new Date(new Date().getTime()+1*24*60*60*1000);}
 					docCookies.setItem('loginName',login_name_v,od,'/');
 					docCookies.setItem('loginPassword',login_password_v,od,'/');
-					window.location.href='class_article.html';	
+					window.location.href='./html/class_article.html';	
 				}
 				else{
 					alert('请求失败');
 				}
-				//验证失败
 			}
 
 		});

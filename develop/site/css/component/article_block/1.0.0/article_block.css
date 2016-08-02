@@ -1,0 +1,24 @@
+/***********************article_block*/
+/*文章外层块*/
+.article_block{width: 60%;background-color:white;margin: 20px auto;padding:35px 40px;  }
+.article_block>div{display: table;}
+.article_block>div>div{vertical-align: middle;display:table-cell;}
+.article_block>div>div:nth-child(1){width: 80%; }
+.article_block>div>div:nth-child(1)>h2{font-size: 18px;}
+.article_block>div>div:nth-child(1)>p{line-height: 23px;color: #666666;font-size: 14px;}
+.article_block>div>div:nth-child(2){text-align: right;}
+/*封面图*/
+.article_block>div>div:nth-child(2)>img{vertical-align: middle; width: 90%;
+	outline: 4px solid rgb(242,242,242);}
+/*article_block***************************/	
+
+/***********************author_like*/
+/*作者+点赞  外部*/
+.author_like{margin-top: 10px;}
+.author_like span{vertical-align: middle;color: #666666;font-size: 14px;}
+.author_like>span{}
+/*点赞*/
+.author_like>div{display: inline-block;float: right;}
+/*点赞图标*/
+.author_like>div>img{vertical-align: middle;height: 14px;margin: 0 5px 0 20px;}
+/*author_like***************************/
