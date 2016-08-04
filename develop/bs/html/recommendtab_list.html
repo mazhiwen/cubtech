@@ -1,13 +1,12 @@
 <!doctype html>
 <html>
-<script type="text/javascript" src="../js/permission.js"></script>
 <head lang="zh-cn">
 <meta charset="utf-8">
-<meta id="page_main" data-main="article_list">
-<link rel="stylesheet" href="../css/common/main_layout.css">
-<link rel="stylesheet" href="../css/common/main_style.css">
-<link rel="stylesheet" href="../css/page/article_list.css">
-<title>title</title>
+<meta id="page_main" data-main="recommendtab_list">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<link rel="stylesheet" href="../css/page/recommendtab_list.css">
+<title>推荐页管理</title>
 </head>
 
 <body>
@@ -17,7 +16,6 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<button>添加文章</button>
 		</div>
 		<table class="table">
 		    <caption></caption>
@@ -32,7 +30,7 @@
 		        <th>从该列表中移除（此操作不对文章产生其他影响）</th>
 		      </tr>
 		    </thead>
-		    <tbody>
+		    <tbody id="table_body">
 		      <tr>
 		        <td>一级分类</td>
 		        <td>2</td>
@@ -42,16 +40,6 @@
 		        <td>1</td>
 		        <td><button>移除</button></td>
 		      </tr>
-		      <tr>
-		        <td>一级分类</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td contenteditable="true">2</td>
-		        <td><input type="checkbox"></td>
-		        <td>1</td>
-		        <td><button>移除</button></td>
-		      </tr>
-		      
 		    </tbody>
   		</table>
   		<div id="paging-outer">
@@ -61,7 +49,6 @@
 	</div>
 </div>
 
-<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
-<script type="text/javascript" src="../js/config.js"></script>
+
 </body>
 </html>

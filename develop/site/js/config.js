@@ -10,6 +10,10 @@ var pageVersionObj = {
     select:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
+//最大显示几个分页数
+MAXPAGING=11;
+//每页最大显示几条记录
+PERPAGINGCOUNT=20;
 seajs.config({
     base: "./js/lib/",
     alias: {
@@ -17,6 +21,7 @@ seajs.config({
       "getGet": "getGet/1.0.0/getGet.js",
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
       "getHtml":'gethtml/1.0.0/getHtml.js',
+      "paging": "paging/1.0.0/paging.js",
       "docCookies":"doccookies/1.0.0/docCookies.js",
       "uploadFile":'uploadfile/1.0.0/uploadFile.js',
       "popUpWindow":'popupwindow/1.0.0/popUpWindow.js',

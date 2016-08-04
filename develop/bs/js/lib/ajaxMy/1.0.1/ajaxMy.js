@@ -2,13 +2,12 @@ define(function(require, exports, module) {
   var $ = require('jquery');
   module.exports=ajaxMy;
   function ajaxMy(urlTail,sendData,successFunction){
-  	var urlHead='//admin.e-quanta.com/admin';
-  	//var urlHead='//123.56.237.44:8091/admin';
     $.ajax({
 		type:"POST",
-		url:urlHead+urlTail,
+		url:REQUESTDOMAIN+'/admin'+urlTail,
 		data:sendData,
 		dataType:"json",
+		traditional:true,
 		success:function(d){
 			if(d['sys']==200){
 				if(d['code']==0){

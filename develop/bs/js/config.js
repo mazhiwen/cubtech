@@ -33,24 +33,29 @@ var pageVersionObj = {
     role_edit:"1.0.0",
     administrator_list:"1.0.0",
     administrator_edit:"1.0.0",
-    top_tab:'1.0.0'
+    top_tab:'1.0.0',
+    recommendtab_list:'1.0.0',
+    user_role:'1.0.0',
+    role_permission:'1.0.0'
 
 },
+/*
+切换正式环境  调整
+domain 
+REQUESTDOMAIN   
+ueditor-config-serverurl
+*/
 pageName=document.getElementById('page_main').getAttribute('data-main');
-var domain='https://admin.e-quanta.com/';
-//var domain='http://localhost/e-quanta/develop/bs/login.html';
-var localDomiain=null;
-if(window.location.href==domain){
-    localDomiain='.';
-}
-else{
-localDomiain='..';
-}
-
+//var domain='https://admin.e-quanta.com';
+var domain='http://localhost/e-quanta/develop/bs';
+//var domain='//123.56.237.44:8091/bs';
+//REQUESTDOMAIN='//admin.e-quanta.com';
+REQUESTDOMAIN='//123.56.237.44:8091';
 seajs.config({
-    base: localDomiain+"/js/lib/",
+    base: domain+"/js/lib/",
     alias: {
-      "jquery": "jquery/jquery/1.10.1/jquery-debug.js",
+      "jquery": "jquery/jquery/1.10.1/jquery.js",
+      "jqueryHostA": "hostA/js/lib/jquery/jquery/1.10.1/jquery.js",
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.3/navigationMultiLevelUl.js",
       "getGet": "getGet/1.0.0/getGet.js",
       "paging": "paging/1.0.0/paging.js",
@@ -61,33 +66,29 @@ seajs.config({
       "uploadFile":'../../../modules/uploadfile/1.0.0/uploadFile.js',
       "docCookies":"doccookies/1.0.0/docCookies.js",
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js'
+    },
+    paths:{
+       'hostA':'https://admin.e-quanta.com' 
     }
 });
-//分页相关
 //最大显示几个分页数
 MAXPAGING=11;
 //每页最大显示几条记录
 PERPAGINGCOUNT=20;
-seajs.use(localDomiain+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
+seajs.use(domain+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
 
 /*******************************
 var debug = true;
-
-
-
 var siteHost = {
     home: debug ? "../js/lib/" : "gulpTag/js"
 }
-
 //入口文件版本控制
 var mainVision = {
     welcome: "1.0.0", //欢迎界面
 }
-
 //var comboExSet = debug ? /.*//******************************* : "";
 var comboExSet = /.*//*******************************
 var distPath = debug ? "modules" : "dist";
-
 seajs.config({
     charset: "utf-8",
     base: siteHost.home,
@@ -105,9 +106,6 @@ seajs.config({
     comboExcludes: comboExSet,
     comboMaxLength: 1000
 })
-
-
-
 $(function () {
     var $pageType = $("#page_main");
     var main_enter = $pageType.attr("data-main");  //对应页面程序入口
@@ -121,7 +119,5 @@ $(function () {
         });  //进入入口
     }
 })
-
-
 ******************************/
 

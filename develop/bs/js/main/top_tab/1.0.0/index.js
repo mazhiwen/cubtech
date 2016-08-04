@@ -53,7 +53,7 @@ define(function(require) {
 				if(d['result']){
 					alert('修改成功');
 				}else{
-					alert('修改失败');
+					
 				}
 				that.toggleClass('disabled',false);
 				that.attr('contenteditable',true);
@@ -70,7 +70,7 @@ define(function(require) {
 				$(this).parent().parent().remove();
 				alert('移除成功');
 			}else{
-				alert('移除失败');
+				
 			}
 			that.prop('disabled',false);
 		});

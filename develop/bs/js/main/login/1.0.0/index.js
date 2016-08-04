@@ -1,56 +1,46 @@
 define(function(require) {
-	
 	var $=require('jquery'),
 		docCookies=new(require('docCookies')),
 		ajaxMy=require('ajaxMy'),
 		login_name=$('#login_name'),
 		login_password=$('#login_password');
-
-
-/*
-new ajaxMy('/web/login/login',{mobile:'13011111111',pwd:'lkjhgfdsa'},function(d){
-				console.log(d);
-				if(d){
-					//返回正确 存cookie
-					var od=new Date(new Date().getTime()+1*24*60*60*1000);
-					docCookies.setItem('loginName','13011111111',od);
-					docCookies.setItem('loginPassword','lkjhgfdsa',od);
-					//window.location.href="home.html";
-				}else{
-					alert('登陆失败');
-					//返回错误 alert 密码错误等
-					//popUpWindow.confirm('确倒萨倒萨','倒萨大',function(){alert(1);},function(){});
-				}	
-			});*/
-	//docCookies.removeItem('loginName');
+	docCookies.removeItem('loginName');	
+	docCookies.removeItem('loginPassword');	
+	docCookies.removeItem('loginName','/');	
+	docCookies.removeItem('loginPassword','/');
+	if(docCookies.hasItem('loginName')){
+		login_name.val(docCookies.getItem('loginName'));
+		login_password.val(docCookies.getItem('loginPassword'));
+	}
+	//docCookies.setItem('loginName',login_name_v,false,'/');
 	$("#login-button").click(function(){
-		var login_name_v=login_name.val(),login_password_v=login_password.val();
-		login_name_v='13011111111';
-		login_password_v='lkjhgfdsa';		  
-		//docCookies.setItem('loginName',login_name_v,false,'/');
-		//docCookies.setItem('loginPassword',login_password_v,false,'/');
+		//var login_name_v=login_name.val(),login_password_v=login_password.val();
+		//login_name_v='18600576402';
+		//login_password_v='asdfghjkl';
+		//login_name_v='13011111111';
+		//login_password_v='lkjhgfdsa';		  
 		$.ajax({
 			type:"POST",
-			//url:'//admin.e-quanta.com/web/login/login',
-			url:'//123.56.237.44:8091/web/login/login',
-			data:{mobile:login_name_v,pwd:login_password_v},
+			url:REQUESTDOMAIN+'/admin/login/login',
+			data:{mobile:login_name.val(),pwd:login_password.val()},
 			dataType:"json",
 			success:function(d){
-				if(d['data']['result']){
-					var od=false;
-					if($("#check_save_login").prop("checked")){od=new Date(new Date().getTime()+1*24*60*60*1000);}
-					docCookies.setItem('loginName',login_name_v,od,'/');
-					docCookies.setItem('loginPassword',login_password_v,od,'/');
-					window.location.href='./html/class_article.html';	
-				}
-				else{
-					alert('请求失败');
+				if(d['data']){
+					if(d['data']['result']){
+						var od=false;
+						if($("#check_save_login").prop("checked")){od=new Date(new Date().getTime()+1*24*60*60*1000);}
+						docCookies.setItem('loginName',login_name.val(),od,'/');
+						docCookies.setItem('loginPassword',login_password.val(),od,'/');
+						window.location.href='./html/class_article.html';	
+					}
+					else{
+						alert('请求失败');
+					}
+				}else{
+					alert('登录失败: '+d['desc']);
 				}
 			}
-
 		});
-
-		
 	});
 });
 

@@ -1,7 +1,7 @@
 /***********************article_block*/
 /*文章外层块*/
-.article_block{width: 60%;background-color:white;margin: 20px auto;padding:35px 40px;  }
-.article_block>div{display: table;}
+.article_block{width: 100%;background-color:white;margin: 20px auto;padding:35px 40px;  }
+.article_block>div{display: table;width: 100%;}
 .article_block>div>div{vertical-align: middle;display:table-cell;}
 .article_block>div>div:nth-child(1){width: 80%; }
 .article_block>div>div:nth-child(1)>h2{font-size: 18px;}

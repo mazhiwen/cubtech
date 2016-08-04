@@ -12,7 +12,7 @@ define(function(require) {
 		type=$("#type"),
 		commit_button=$("#commit_button"),
 		targetid_outer=$("#targetid_outer"),
-		url_outer=$("#url_outer"),
+		url_span=$("#url_span"),
 		id=getGet('id'),
 		ImageId=null;
 	if(id){
@@ -21,9 +21,14 @@ define(function(require) {
 			name.val(d['title']);
 			url.val(d['actionUrl']);
 			sn.val(d['priority']);
-			summary.val(d['description']);
 			cover_img.attr('src',d['bgPic']);
-			action.val(d['action']);
+			type.val(d['action']);
+			ImageId=d['sysImageId'];
+			if (type.val()==2){
+				url_span.text('链接:');
+			}else{
+				url_span.text('目标ID:');
+			}
 		});
 		commit_button.click(function(){
 			$(this).prop('disabled',true);
@@ -33,12 +38,12 @@ define(function(require) {
 				{
 					id:id,
 					title:name.val(),
-					desc:summary.val(),
+					desc:'两两说不要描述',
 					bg_pic:cover_img.attr('src'),
+					sys_image_id:ImageId,
 					priority:sn.val(),
-					action:action.val(),
-					action_url:url.val(),
-					sys_image_id:ImageId
+					action:type.val(),
+					action_url:url.val()	
 				},
 				function(d){
 					if(d['result']) alert('编辑成功');
@@ -54,12 +59,12 @@ define(function(require) {
 				'/banner/insert',
 				{
 					title:name.val(),
-					desc:summary.val(),
+					desc:'两两说不要描述',
 					bg_pic:cover_img.attr("src"),
+					sys_image_id:ImageId,
 					priority:sn.val(),
-					action:action.val(),
-					action_url:url.val(),
-					sys_image_id:ImageId
+					action:type.val(),
+					action_url:url.val()
 				},
 				function(d){
 					if(d['result']) alert('添加成功');
@@ -72,12 +77,11 @@ define(function(require) {
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
 	});
-	url_outer.hide();
 	type.change(function(){
-		if (type.val()==1){
-			url_outer.show();targetid_outer.hide();
+		if (type.val()==2){
+			url_span.text('链接:');
 		}else{
-			targetid_outer.show();url_outer.hide();
+			url_span.text('目标ID:');
 		}
 	});
 

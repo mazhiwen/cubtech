@@ -3,7 +3,8 @@ define(function(require, exports, module) {
 
   function ajaxMy(urlTail,sendData,successFunction){
 
-  	var urlHead='//123.56.237.44:8091';
+  	var urlHead='//123.56.237.44:8091/web';
+    //var urlHead='https://www.e-quanta.com/web';
     $.ajax({
 
 		type:"POST",

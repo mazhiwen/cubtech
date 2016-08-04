@@ -36,7 +36,7 @@ define(function(require,exports,module) {
 		    },
 		    '排序管理':{
 		            '顶栏tab管理':['top_tab'],
-		            '推荐页管理':[],
+		            '推荐页管理':['recommendtab_list'],
 		            'banner列表':['banner_list'],
 		            '添加/编辑banner':['banner_edit']
 		    },
@@ -59,8 +59,8 @@ define(function(require,exports,module) {
 		    '权限管理':{
 		        '角色管理':['role_list',5],
 		        '添加/编辑角色':['role_edit',5],
-		        '管理员列表':['administrator_list',5],
-		        '添加/编辑管理员':['administrator_edit',5]
+		        '角色权限':['role_permission',5],
+		        '用户角色管理':['user_role',5]
 		    }
 		};
 		var NavigationMultiLevelUlMy=new navigationMultiLevelUl('#left',permissionObj);

@@ -10,7 +10,6 @@ define(function(require) {
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
-				//s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>';
 				var type;
 				switch(v['authV']){
 					case 0:
@@ -20,7 +19,7 @@ define(function(require) {
 					default:
 					type='';break;
 				}
-				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>'+type+'</td><td>'+v['vita']+'</td><td>'+v['articleNum']+'</td><td>'+v['followNum']+'</td><td>'+v['fansNum']+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+transformTime.MSTo(v['registerTime'])+'</td><td><a href="user_edit.html?id='+v['id']+'"><button class="s">编辑</button></a> <button class="s" data-id="'+v['id']+'">删除</button></td></tr>'; 
+				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>'+type+'</td><td></td><td>'+v['vita']+'</td><td>'+v['articleNum']+'</td><td>'+v['followNum']+'</td><td>'+v['fansNum']+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+transformTime.MSTo(v['registerTime'])+'</td><td><a href="user_edit.html?id='+v['id']+'"><button class="s">编辑</button></a> <button class="s" data-id="'+v['id']+'">删除</button> <a href="user_role.html?id='+v['id']+'"><button class="s">角色</button></a></td></tr>'; 
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
@@ -29,7 +28,7 @@ define(function(require) {
 		});
 	}
 	request(1);
-	table_body.on('click','tr>td:nth-child(12)>button:nth-child(2)',function(event){
+	table_body.on('click','tr>td:nth-child(13)>button:nth-child(2)',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
 		new ajaxMy('/user/delete',{id:$(this).attr("data-id")},function(data){

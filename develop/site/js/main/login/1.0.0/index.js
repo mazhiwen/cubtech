@@ -14,13 +14,13 @@ define(function(require) {
 	//login_name_v='13011111111';
 	//login_password_v='lkjhgfdsa';
 	$("#login_button").click(function(e){
-		new ajaxMy('/web/login/login',{mobile:phone_input.val(),pwd:password_input.val()},function(d){
+		new ajaxMy('/login/login',{mobile:phone_input.val(),pwd:password_input.val()},function(d){
 			if(d){
 				//返回正确 存cookie
 				var od=new Date(new Date().getTime()+1*24*60*60*1000);
 				docCookies.setItem('loginName',phone_input.val(),od);
 				docCookies.setItem('loginPassword',password_input.val(),od);
-				docCookies.setItem('userHead','../images/comment_icon.png',od);//d['result']['headPic']
+				docCookies.setItem('userHead',d['result']['headPic'],od);//'../images/comment_icon.png'
 				window.location.href="home.html";
 			}else{
 				popUpWindow.alert('登陆失败',function(){});

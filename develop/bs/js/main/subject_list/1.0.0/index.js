@@ -38,7 +38,7 @@ define(function(require) {
 				alert('删除成功');
 				that.parent().parent().remove();
 			}else{
-				alert('删除失败');	
+				
 			}
 			that.prop('disabled',false);
 		});
@@ -50,35 +50,34 @@ define(function(require) {
 			if(d['result']){
 				alert('修改成功');
 			}else{
-				alert('修改失败');
+				
 				that.prop('checked')?that.prop('checked',false):that.prop('checked',true);
 			}
 			that.prop('disabled',false);
 		});
 	});
 
+	//***********************contenteditable 改动请求**************//
 	subject_list_tbody.on('input','tr>td:nth-child(6)',function(event){
 		ifFinishEdit=true;
-		console.log(ifFinishEdit);
 	});
 	subject_list_tbody.on('mouseout','tr>td:nth-child(6)',function(event){
 		if(ifFinishEdit){
-			console.log($(this).text());
 			var s=$(this).text();
 			$(this).attr('contenteditable',false);
-			$(this).prop('disabled',true);
+			$(this).toggleClass('disabled');
 			that=$(this);
-			new ajaxMy('/ /update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
-				that.prop('disabled',false);
-				that.attr('contenteditable',true);
+			ajaxMy('/subject/update_priority',{subject_id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
 				if(d['result']){
 					alert('修改成功');
 				}else{
-					alert('修改失败');
 				}
+				that.toggleClass('disabled',false);
+				that.attr('contenteditable',true);
 			});
 			ifFinishEdit=false;
 		}
 	});
+	//***********************contenteditable 改动请求**************//
 });
 
