@@ -61,6 +61,14 @@ news-detail（新闻详情）
   color: #aaa;
   line-height: 30px; }
 
+.focus-btn {
+  background-color: #ff422f;
+  color: #fff;
+  font-size: 14px;
+  right: 15px;
+  padding: 0 10px;
+  border-radius: 5px; }
+
 .news-cont-area {
   font-size: 14px;
   background-color: #fff;
