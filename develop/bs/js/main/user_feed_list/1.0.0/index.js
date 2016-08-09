@@ -18,6 +18,19 @@ define(function(require) {
 			myPaging._init();
 		});
 	}
-	request(1);	
+	request(1);
+	table_body.on('click','tr>td:nth-child(5)>button:nth-child(2)',function(event){
+		$(this).prop('disabled',true);
+		that=$(this);
+		new ajaxMy('/feedback/delete',{id:$(this).attr("data-id")},function(d){
+			if(d['result']){
+				alert('删除成功');
+				that.parent().parent().remove();
+			}else{
+				
+			}
+			that.prop('disabled',false);
+		});
+	});	
 });
 

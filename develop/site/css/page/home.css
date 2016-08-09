@@ -51,6 +51,8 @@ width: 75%;margin:5% auto;text-align: center;display: table;
 	min-width: 330px;}
 #content_c>div>div{display:table-cell;
  padding: 6% 0;}
+#content_c>div>div:nth-child(1){width: 33%;}
+#content_c>div>div:nth-child(2){width: 33%;}
 #content_c>div>div:not(:nth-child(1)){
 border-left:1px solid rgb(242,242,242); 
 }

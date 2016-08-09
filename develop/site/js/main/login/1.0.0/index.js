@@ -9,8 +9,8 @@ define(function(require) {
 		phone_input.val(docCookies.getItem('loginName'));
 		password_input.val(docCookies.getItem('loginPassword'));
 	}
-	//docCookies.removeItem('loginName','/');
-	//docCookies.removeItem('loginPassword','/');
+	docCookies.removeItem('loginName');
+	docCookies.removeItem('loginPassword');
 	//login_name_v='13011111111';
 	//login_password_v='lkjhgfdsa';
 	$("#login_button").click(function(e){
@@ -18,8 +18,8 @@ define(function(require) {
 			if(d){
 				//返回正确 存cookie
 				var od=new Date(new Date().getTime()+1*24*60*60*1000);
-				docCookies.setItem('loginName',phone_input.val(),od);
-				docCookies.setItem('loginPassword',password_input.val(),od);
+				docCookies.setItem('loginName',phone_input.val(),od,'/');
+				docCookies.setItem('loginPassword',password_input.val(),od,'/');
 				docCookies.setItem('userHead',d['result']['headPic'],od);//'../images/comment_icon.png'
 				window.location.href="home.html";
 			}else{

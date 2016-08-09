@@ -1,4 +1,4 @@
-
+@import url('../common/main.css');
 #right{text-align: center;}
 #right-center{ margin: auto;display: inline-block;text-align: left;}
 #confirm-outer{text-align: center;margin: 100px auto;}
@@ -16,9 +16,9 @@
 #subject_article{width: 100%; background-color: red;overflow: hidden;text-align: left;}
 #subject_article>div:nth-child(1){float: left;width: 50%;
 	background-color: green;
-	height: 100px;
+	min-height: 100px;
 }
 #subject_article>div:nth-child(2){float: left;width: 50%;
 	background-color: yellow;
-	height: 100px;
+	min-height: 100px;
 }

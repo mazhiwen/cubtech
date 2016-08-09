@@ -4,10 +4,10 @@ define(function(require) {
 		ajaxMy=require('ajaxMy'),
 		login_name=$('#login_name'),
 		login_password=$('#login_password');
-	docCookies.removeItem('loginName');	
-	docCookies.removeItem('loginPassword');	
-	docCookies.removeItem('loginName','/');	
-	docCookies.removeItem('loginPassword','/');
+	//docCookies.removeItem('loginName');	
+	//docCookies.removeItem('loginPassword');	
+	//docCookies.removeItem('loginName','/');	
+	//docCookies.removeItem('loginPassword','/');
 	if(docCookies.hasItem('loginName')){
 		login_name.val(docCookies.getItem('loginName'));
 		login_password.val(docCookies.getItem('loginPassword'));
@@ -16,9 +16,7 @@ define(function(require) {
 	$("#login-button").click(function(){
 		//var login_name_v=login_name.val(),login_password_v=login_password.val();
 		//login_name_v='18600576402';
-		//login_password_v='asdfghjkl';
-		//login_name_v='13011111111';
-		//login_password_v='lkjhgfdsa';		  
+		//login_password_v='asdfghjkl';	  
 		$.ajax({
 			type:"POST",
 			url:REQUESTDOMAIN+'/admin/login/login',
@@ -28,7 +26,7 @@ define(function(require) {
 				if(d['data']){
 					if(d['data']['result']){
 						var od=false;
-						if($("#check_save_login").prop("checked")){od=new Date(new Date().getTime()+1*24*60*60*1000);}
+						if($("#check_save_login").prop("checked")){od=new Date(new Date().getTime()+3*24*60*60*1000);}
 						docCookies.setItem('loginName',login_name.val(),od,'/');
 						docCookies.setItem('loginPassword',login_password.val(),od,'/');
 						window.location.href='./html/class_article.html';	

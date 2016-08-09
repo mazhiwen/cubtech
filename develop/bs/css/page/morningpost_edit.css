@@ -1,3 +1,4 @@
+@import url('../common/main.css');
 #right-center>div{width: 70%;margin:10px auto;}
 .date-time-picker-outer{}
 #commit-button{display: block;margin:40px auto 200px;}

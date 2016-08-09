@@ -47,10 +47,10 @@ ueditor-config-serverurl
 */
 pageName=document.getElementById('page_main').getAttribute('data-main');
 //var domain='https://admin.e-quanta.com';
-var domain='http://localhost/e-quanta/develop/bs';
+var domain='//localhost:8080/bs';
 //var domain='//123.56.237.44:8091/bs';
 //REQUESTDOMAIN='//admin.e-quanta.com';
-REQUESTDOMAIN='//123.56.237.44:8091';
+REQUESTDOMAIN='//localhost:8080';
 seajs.config({
     base: domain+"/js/lib/",
     alias: {

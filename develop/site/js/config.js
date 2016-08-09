@@ -12,19 +12,19 @@ var pageVersionObj = {
 pageName=document.getElementById('page_main').getAttribute('data-main');
 //最大显示几个分页数
 MAXPAGING=11;
-//每页最大显示几条记录
+//文章每次刷新几条
 PERPAGINGCOUNT=20;
 seajs.config({
     base: "./js/lib/",
     alias: {
       "jquery": "jquery/jquery/3.1.0/jquery-3.1.0.min.js",
-      "getGet": "getGet/1.0.0/getGet.js",
+      "getGet": "getget/1.0.0/getGet.js",
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
       "getHtml":'gethtml/1.0.0/getHtml.js',
-      "paging": "paging/1.0.0/paging.js",
       "docCookies":"doccookies/1.0.0/docCookies.js",
       "uploadFile":'uploadfile/1.0.0/uploadFile.js',
       "popUpWindow":'popupwindow/1.0.0/popUpWindow.js',
+      "transformTime":'transformtime/1.0.1/transformTime.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js',
       "commonCopy":'../../../modules/commoncopy/1.0.0/commonCopy.js',

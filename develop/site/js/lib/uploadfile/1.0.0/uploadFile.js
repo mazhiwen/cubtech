@@ -18,7 +18,7 @@ define(function(require,exports,module) {
 				var sysImageId=JSON.parse(this.responseText)['data']['sysImageId'];
 				responseFunction.call(this,responseUrl,sysImageId);
 			});
-			xhr.open("POST", "//123.56.237.44:8091/upload_image", true);
+			xhr.open("POST", "https://www.e-quanta.com/upload_image", true);
 			xhr.send(myFormData);
 		},false);
 	}

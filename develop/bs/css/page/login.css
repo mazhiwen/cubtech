@@ -1,3 +1,4 @@
+@import url('../common/main.css');
 #container{text-align: center;}
 #login_outer{display: inline-block;margin-top:200px;}
 #login_outer>label:nth-child(3){text-align: left;}

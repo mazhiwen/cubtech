@@ -12,8 +12,8 @@ define(function(require) {
 			var s;
 			$.each(d['result'],function(key,value){	
 				s+='<tr data-id="'+value['id']+'"><td>'+value['id']+'</td><td>'+value['name']+'</td><td>'+value['articleNum']+'</td><td>'+transformTime.MSTo(value['createTime'])+'</td><td>/</td><td contenteditable="true">'+value['priority']+'</td>';
-				if(value['name']){
-					s+='<td><input type="checkbox"></td>';
+				if(value['indexStatus']){
+					s+='<td><input type="checkbox" checked></td>';
 				}else{
 					s+='<td><input type="checkbox"></td>';
 				}

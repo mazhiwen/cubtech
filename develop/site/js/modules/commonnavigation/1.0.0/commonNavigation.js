@@ -10,7 +10,7 @@ define(function(require,exports,module) {
 			'myarticle':2,
 		};
 		var noLoginHtml='<a href="login.html" id="top_login_button_outer"><button>登录</button></a>',
-			initHtml='<a href="home.html"><img src="./images/logo.png"></a><ul class="navigation-hori" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li></ul><div><span><a href="edit.html">写文章</a></span>'+noLoginHtml+'</div>';
+			initHtml='<a href="home.html"><img src="./images/logo.png"></a><ul class="navigation-hori" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li></ul><div><span><a href="edit.html" id="write_btn_top">写文章</a></span>'+noLoginHtml+'</div>';
 		$("#top").append(initHtml);
 		$("#top").on('mouseenter',"#user_head_outer",function(){
 			$("#quit_button").show();
@@ -19,8 +19,8 @@ define(function(require,exports,module) {
 			$("#quit_button").hide();
 		});
 		$("#top").on('click',"#quit_button",function(){
-			docCookies.removeItem('loginName');
-			docCookies.removeItem('loginPassword');
+			docCookies.removeItem('loginName','/');
+			docCookies.removeItem('loginPassword','/');
 			$("#user_head_outer").replaceWith(noLoginHtml);
 			window.location.reload();
 		});
@@ -29,10 +29,17 @@ define(function(require,exports,module) {
 			$("#quit_button").hide();
 		}else{
 			$("#user_head_outer").replaceWith(noLoginHtml);
+			$("#top").on('click',"#write_btn_top,#navigation_ul>li:eq(2)>a",function(){
+				popUpWindow.alert('您还没有登录',function(){window.location.href="login.html";});
+				return false;
+			});
 		}
 		var location=window.location.href;
 		if(getHtml(location)=='article_details'){
-			$('#navigation_ul>li:eq('+navigationHover[getHtml(document.referrer)]+')>a').addClass('navigation_hover');
+			var h=getHtml(document.referrer);
+			$('#navigation_ul>li:eq('+navigationHover[h]+')>a').addClass('navigation_hover');
+			if(h=='select') $("#edit").remove();
+			
 		}
 		$('#navigation_ul>li:eq('+navigationHover[getHtml(location)]+')>a').addClass('navigation_hover');
 	}

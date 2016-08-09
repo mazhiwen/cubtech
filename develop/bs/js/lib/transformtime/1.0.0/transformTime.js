@@ -10,7 +10,8 @@ define(function(require, exports, module) {
   transformTime.prototype.MSTo=function(millisecond){
   		var o=new Date(millisecond);
   		var y=o.getFullYear();
-  		var m=o.getMonth()>9?o.getMonth():'0'+o.getMonth();
+  		var m=o.getMonth()+1;
+      m=m>9?m:'0'+m;
   		var d=o.getDate()>9?o.getDate():'0'+o.getDate();
   		var h=o.getHours()>9?o.getHours():'0'+o.getHours();
   		var min=o.getMinutes()>9?o.getMinutes():'0'+o.getMinutes();

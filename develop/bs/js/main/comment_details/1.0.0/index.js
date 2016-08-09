@@ -6,9 +6,10 @@ define(function(require) {
 		getGet=require('getGet'),
 		transformTime=new(require('transformTime')),
 		id=getGet('id'),
-		table_body=$("#table_body"),
 		nickname=$("#nickname"),
+		author_name=$("#author_name"),
 		comment=$("#comment"),
+		table_body=$("#table_body"),
 		creat_time=$("#creat_time");
 
 	function request(getPaging){
@@ -28,14 +29,12 @@ define(function(require) {
 	}
 
 	if(id){
-		ajaxMy('/ /评论详情',{comment_id:id},function(d){
+		ajaxMy('/article/comment/detail',{id:id},function(d){
 			var d=d['result'];
-			name.val(d['title']);
-			url.val(d['actionUrl']);
-			sn.val(d['priority']);
-			summary.val(d['description']);
-			cover_img.attr('src',d['bgPic']);
-			action.val(d['action']);
+			nickname.text(d['nickName']);
+			creat_time.text(transformTime.MSTo(v['createTime']));
+			author_name.text(d['authorNickName']);
+			comment.text(d['content']);
 		});
 		request(1);
 	}else{
