@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <title>股票Bridge-Demo</title>
+    <link rel="icon" href="http://www.jd.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://static.360buyimg.com/finance/mobile/base/cm/1.0.0/reset.css"/>
+    <link rel="stylesheet" href="../css/common/demo.css"/>
+</head>
+<body>
+<div class="main-wrap">
+    <h1 class="ta-c">JSBridge-Demo</h1>
+    <div class="mt10"><a href="bridge-lv2.html">跳转到第二层级页面</a></div>
+    <div class="buttons-box clearfix">
+        <h3>唤起登陆</h3>
+        <button class="btn" id="loginBtn">JSLogin</button>
+        <h3>设置分享</h3>
+        <button class="btn" id="shareBtn">JSShareSet</button>
+        <h3>直接唤起分享</h3>
+        <button class="btn" id="callShare">JSShare</button>
+        <h3>设置webview高度</h3>
+        <button class="btn" id="setHeight">JSSetViewHeight</button>
+        <h3>跳转原生模块</h3>
+        <div class="clearfix">
+            <button class="btn jumpBtn">跳转到模块A</button>
+            <button class="btn jumpBtn">跳转到模块B</button>
+        </div>
+    </div>
+    <div id='log'></div>
+</div>
+
+
+<script src="http://static.360buyimg.com/finance/mobile/base/1.0.0/js/lib/??zepto-1.1.4.js,fastclick.js"></script>
+<script type="text/javascript" src="../js/bridge/bridge.js"></script>
+<script type="text/javascript" src="../js/demo.js"></script>
+</body>
+</html>

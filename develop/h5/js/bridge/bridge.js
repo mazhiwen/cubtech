@@ -55,16 +55,19 @@
             }
         },
         login: function (callback) {
-            this.callHandler("JRLoginView", {}, callback)
+            this.callHandler("JSLogin", {}, callback)
         },
         callShare: function (params) {
-            this.callHandler("JSShareViewWithDic", params)
+            this.callHandler("JSShare", params)
         },
         setShare: function (params) {
-            this.callHandler("JSShareInfo", params)
+            this.callHandler("JSShareSet", params)
         },
         jumpTo: function (params) {
-            this.callHandler("JSCallUpNatureViewWithDic", params)
+            this.callHandler("JSCallUpNativeView", params)
+        },
+        setViewHeight:function(params){
+            this.callHandler("JSSetViewHeight", params)
         }
     };
     win.eqBridge.init();
