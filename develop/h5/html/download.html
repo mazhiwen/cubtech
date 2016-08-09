@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <title>一匡</title>
+    <link rel="stylesheet" href="../css/common/reset.css"/>
+    <link rel="stylesheet" href="../css/common/common.css"/>
+</head>
+<body>
+<div>
+    <div class="main-wrap bg-gray">
+        123
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../js/lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="../js/eq/eq.js"></script>
+<script type="text/javascript" src="../js/downloader/downloader.js"></script>
+<script type="text/javascript" src="../js/main/proHub.js"></script>
+<script type="text/javascript">
+    proHub.article.getArticle('579619a5bffc3f756318777c',function(data){
+        console.info(JSON.stringify(data))
+    })
+
+    proHub.article.getArticleDetail('579619a5bffc3f756318777c',function(data){
+        console.info(JSON.stringify(data))
+    })
+</script>
+
+</body>
+</html>
