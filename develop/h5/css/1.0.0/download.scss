@@ -1,0 +1,9 @@
+@charset "utf-8";
+@import "../common/_css3lib.scss";
+body { background-color: #ebf0f3; }
+.banner { padding-bottom: 50px; box-shadow: 0 2px 5px 0 #ccc; background-color: #fff; position: relative; z-index: 2 }
+.download-btn { width: 60%; margin: auto; padding: 10px 0; background-color: #009ee8; text-align: center; color: #fff; border-radius: 3px; }
+.pic-wrap { background-color: #ebf0f3; padding: 15px 5px 0 5px; }
+.pic-box { background-color: #fff; padding-top: 30px; padding-bottom: 10px; }
+.pic-left { margin-left: 5%; margin-right: 6%; width: 42%; }
+.pic-right { width: 42% }

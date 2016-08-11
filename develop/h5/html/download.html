@@ -9,11 +9,30 @@
     <title>一匡</title>
     <link rel="stylesheet" href="../css/common/reset.css"/>
     <link rel="stylesheet" href="../css/common/common.css"/>
+    <link rel="stylesheet" href="../css/1.0.0/download.css"/>
 </head>
 <body>
 <div>
-    <div class="main-wrap bg-gray">
-        123
+    <div class="main-wrap">
+        <div class="banner">
+            <img class="pct100" src="../images/bkg.png"/>
+
+            <div class="download-btn size16">
+                去APP Store下载
+            </div>
+        </div>
+
+        <div class="pic-wrap ">
+            <div class="pic-box clearfix">
+                <div class="pic-left fl">
+                    <img class="pct100" src="../images/pic-left.png"/>
+                </div>
+                <div class="pic-right fl">
+                    <img class="pct100" src="../images/pic-right.png"/>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </div>
@@ -23,11 +42,11 @@
 <script type="text/javascript" src="../js/downloader/downloader.js"></script>
 <script type="text/javascript" src="../js/main/proHub.js"></script>
 <script type="text/javascript">
-    proHub.article.getArticle('579619a5bffc3f756318777c',function(data){
+    proHub.article.getArticle('579619a5bffc3f756318777c', function (data) {
         console.info(JSON.stringify(data))
     })
 
-    proHub.article.getArticleDetail('579619a5bffc3f756318777c',function(data){
+    proHub.article.getArticleDetail('579619a5bffc3f756318777c', function (data) {
         console.info(JSON.stringify(data))
     })
 </script>
