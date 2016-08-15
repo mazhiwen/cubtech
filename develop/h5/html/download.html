@@ -42,14 +42,15 @@
 <script type="text/javascript" src="../js/downloader/downloader.js"></script>
 <script type="text/javascript" src="../js/main/proHub.js"></script>
 <script type="text/javascript">
-    proHub.article.getArticle('579619a5bffc3f756318777c', function (data) {
-        console.info(JSON.stringify(data))
-    })
-
-    proHub.article.getArticleDetail('579619a5bffc3f756318777c', function (data) {
-        console.info(JSON.stringify(data))
+    FastClick && FastClick.attach(document.body);
+    $(".download-btn").on("click", function () {
+        downloader.openApp({
+            packageName: "com.jd.stock",
+            scheme: 'openapp.jdstock://' + params,
+            downloadAndroid: "http://storage.jd.com/gupiaoopenaccount/jdstock.apk?Expires=3028962423&AccessKey=aNpY0dq2SB7d3dFT&Signature=USfO2wY39iOBFSI2w62O5JeWIGw%3D",
+            downloadIOS: "https://itunes.apple.com/us/app/jing-dong-gu-piao-kan-gu-piao/id1039748856?mt=8"
+        });
     })
 </script>
-
 </body>
 </html>

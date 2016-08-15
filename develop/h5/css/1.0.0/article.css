@@ -82,3 +82,21 @@ news-detail（新闻详情）
     width: 100% !important;
     height: auto !important;
     margin: 5px 0; }
+
+.origin-link {
+  color: #0d97df;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  display: none; }
+
+br {
+  display: none; }
+
+blockquote {
+  background-color: #f4f4f4;
+  border-left: 4px solid #999999;
+  padding: 10px;
+  margin-bottom: 15px; }
+  blockquote p:nth-last-child(1) {
+    margin-bottom: 0 !important; }
