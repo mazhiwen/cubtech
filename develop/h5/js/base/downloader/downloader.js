@@ -25,7 +25,11 @@
                         location.href = arg.downloadUrl;//有统一的下载页面，直接跳统一下载页面
                         return;
                     }
-                    location.href = isAndroid ? arg.downloadAndroid : arg.downloadIOS;
+                    if (isAndroid) {
+                        if (arg.downloadAndroid)location.href = arg.downloadAndroid;
+                    } else {
+                        location.href = arg.downloadIOS;
+                    }
                 },
                 wxopenapp = function (arg) {
                     if (!window.WeixinJSBridge) {

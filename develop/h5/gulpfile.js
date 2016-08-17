@@ -20,7 +20,7 @@ var projectConfig = {
     // 发布路径
     releasePath: '',
     // CDN路径
-    cdnPath: '//app.asset3.com/e-quanta/',
+    cdnPath: '//api.e-quanta.com',
     //测试服务器路径
     testPath: "//api.e-quanta.com"
 };

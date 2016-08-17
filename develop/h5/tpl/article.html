@@ -1,0 +1,39 @@
+<div class="news-wrap">
+    <div class="news-title-area ">
+        <h6 class="news-title">{{article.title}}</h6>
+
+        <div class="news-subtitle mt10 pr">
+            <span class="news-icon abs-lm"></span>
+            <span class="news-time ml15">{{article.createTime | dataFormat:"yyyy-MM-dd HH:mm"}}</span>
+        </div>
+    </div>
+    <div class="news-author-area box">
+        <div class="author-head ">
+            <img class="pct100" src="{{user.headPic}}" alt="">
+        </div>
+        <div class="author-info boxItem">
+            <div class="author-name pr">
+                <span>{{user.nickName}}</span><span class="author-icon ml5"></span>
+                <!--<span class="focus-btn abs-rm">关注</span>-->
+            </div>
+
+            <h6 class="author-des">
+                {{if user.vita}}
+                <span class="mr5">{{user.vita}}</span>
+                {{/if}}
+                <span>文章总数<span class="red"> {{user.articleNum}} </span>篇</span>
+            </h6>
+        </div>
+    </div>
+    <article class="news-cont-area mt10">
+        {{#article.content}}
+
+        {{if article.originalUrl}}
+        <div class="ta-r pr15">
+            <a class="origin-link" href="{{article.originalUrl}}" id="originLink" style="display: block;">原文链接 <span
+                    class="gray">>></span></a>
+        </div>
+        {{/if}}
+    </article>
+
+</div>
