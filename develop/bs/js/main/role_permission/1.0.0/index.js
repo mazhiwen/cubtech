@@ -1,7 +1,7 @@
 define(function(require) {
-	$=require('jquery');
+	
 	var commonMain=require('commonMain'),
-		ajaxMy=require('ajaxMy'),
+		
 		getGet=require('getGet'),
 		id=getGet('id'),
 		role_name=$('#role_name'),
@@ -11,12 +11,12 @@ define(function(require) {
 		/*2 web 0admin  1app*/
 
 	if(id){
-		new ajaxMy('/role/edit',{id:id},function(d){
+		AJAXMY.send('/role/edit',{id:id},function(d){
 			var d=d['result'];
 			role_name.val(d['name']);
 			role_description.val('功能未开放');
 		});
-		new ajaxMy('/role/list_action_by_role_id',{role_id:id},function(d){
+		AJAXMY.send('/role/list_action_by_role_id',{role_id:id},function(d){
 			var d=d['result'];
 			//role_name.val(d['name']);
 			permission.empty();
@@ -33,7 +33,7 @@ define(function(require) {
 				permission.find('input').each(function(index,element){
 					if($(this).prop('checked')) action_ids+=$(this).val()+',';	
 				});
-				new ajaxMy('/role/update_role_actions',{
+				AJAXMY.send('/role/update_role_actions',{
 					role_id:id,
 					action_ids:action_ids
 				},function(d){
@@ -46,7 +46,7 @@ define(function(require) {
 		});
 	}else{
 		alert('需要由角色页面进入');
-		window.location.href="user_list.html";
+		window.location.href="role_list.html";
 	}	
 });
 

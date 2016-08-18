@@ -82,3 +82,4 @@ news-detail（新闻详情）
     width: 100% !important;
     height: auto !important;
     margin: 5px 0; }
+    #detail{min-height: 3000px;}

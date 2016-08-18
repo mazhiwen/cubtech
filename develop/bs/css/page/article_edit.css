@@ -1,13 +1,12 @@
-
 @import url('../common/main.css');
-#sub-content{border:1px solid rgb(229,229,229);text-align: center;}
+#sub_content{padding: 20px;}
 
-#edit_article_outer{width: 80%;margin:10px auto;text-align: left; }
-#title,#summary{width: 100%;}
-
+#title,#summary{width: 80%;}
+/*
 #other_outer{display: inline-block;text-align: left;}
+*/
 .form-input>span{width:150px;}
-.upload_preview>div{float: left;}
-.upload_preview>img{float: left;margin: 20px;width: 300px;}
-
 #commit-button{display: block;margin:100px auto;}
+#con_span{line-height: 40px;
+	display: inline-block;
+margin-top: 20px;}

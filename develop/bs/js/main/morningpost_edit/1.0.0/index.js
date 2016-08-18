@@ -1,8 +1,7 @@
 seajs.use("../js/modules/commonedit/1.0.0/commonEdit");
 define(function(require) {
-	$ = require('jquery');
 	var commonMain=require('commonMain'),
-		ajaxMy=require('ajaxMy'),
+		
 		getGet=require('getGet'),
 		transformTime=new(require('transformTime')),
 		dateTimePicker=require('dateTimePicker'),
@@ -14,15 +13,15 @@ define(function(require) {
 	my_dateTimePicker._init();
 	ue.ready(function(){
 		if(id){
-			ajaxMy('/info/edit',{id:id},function(d){
+			AJAXMY.send('/info/edit',{id:id},function(d){
 				var d=d['result'];
-				filldate.val(transformTime.MSTo(d['postTime']));
+				filldate.val(transformTime.MSToYMDHMS(d['postTime']));
 				ue.setContent(d['content']);
 			});
 			commit_button.click(function(){
 				$(this).prop('disabled',true);
 				var that=$(this);
-				ajaxMy(
+				AJAXMY.send(
 					'/info/update_report',
 					{
 						id:id,
@@ -40,7 +39,7 @@ define(function(require) {
 			commit_button.click(function(){
 				$(this).prop('disabled',true);
 				var that=$(this);
-				ajaxMy(
+				AJAXMY.send(
 					'/info/save_report',
 					{
 						content:ue.getContent(),

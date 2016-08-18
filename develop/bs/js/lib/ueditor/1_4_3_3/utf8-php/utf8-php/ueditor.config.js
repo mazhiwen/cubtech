@@ -32,8 +32,8 @@
 
         // 服务器统一请求接口路径
         , 
-        //serverUrl: "//123.56.237.44:8091/admin/ueditor"
         serverUrl: "//admin.e-quanta.com/admin/ueditor"
+        //serverUrl: "//admin/ueditor"
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
         , toolbars: [[
             'fullscreen', 'source', '|', 'undo', 'redo', '|',
@@ -296,7 +296,7 @@
         //,toolbarTopOffset:400
 
         //设置远程图片是否抓取到本地保存
-        //,catchRemoteImageEnable: true //设置是否抓取远程图片
+        ,catchRemoteImageEnable: false //设置是否抓取远程图片
 
         //pageBreakTag
         //分页标识符,默认是_ueditor_page_break_tag_

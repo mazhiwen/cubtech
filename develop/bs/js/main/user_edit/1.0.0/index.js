@@ -1,9 +1,8 @@
 define(function(require) {
-	$=require('jquery');
+	
 	var commonMain=require('commonMain'),
-		ajaxMy=require('ajaxMy'),
+		
 		getGet=require('getGet'),
-		uploadFile=require('uploadFile'),
 		id=getGet('id'),
 		user_type=$('#user_type'),
 		nick_name=$('#nick_name'),
@@ -17,7 +16,7 @@ define(function(require) {
 		gender=$('#gender'),
 		ImageId=null;
 	if(id){
-		new ajaxMy('/user/edit',{id:id},function(d){
+		AJAXMY.send('/user/edit',{id:id},function(d){
 			var d=d['result'];
 			user_type.val(d['authV']);
 			nick_name.val(d['nickName']);
@@ -29,7 +28,7 @@ define(function(require) {
 			phone.val(d['mobile']);
 			cover_img.attr('src',d['headPic']);
 			confirm_button.click(function(){
-				new ajaxMy('/user/update',{
+				AJAXMY.send('/user/update',{
 					user_id:id,
 					nick_name:nick_name.val(),
 					auth_v:user_type.val(),
@@ -55,7 +54,7 @@ define(function(require) {
 		});
 	}else{
 		confirm_button.click(function(){
-			new ajaxMy('/user/save',{
+			AJAXMY.send('/user/save',{
 				nick_name:nick_name.val(),
 				auth_v:user_type.val(),
 				area_code:area_code.val(),
@@ -74,9 +73,9 @@ define(function(require) {
 			});
 		});
 	}
-	uploadFile('cover_image_input',1,function(responseUrl,sysImageId){
+	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
-	});
+	},1);
 });
 

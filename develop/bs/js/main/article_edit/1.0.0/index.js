@@ -1,6 +1,6 @@
 define(function(require) {
 	
-	//$=require('jquery');
+	//
 
 
 	document.getElementById('edit-area').contentDocument.designMode = "on"; 

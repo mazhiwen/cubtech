@@ -1,10 +1,9 @@
 define(function(require) {
 
-	$=require('jquery');
-	var	ajaxMy=require('ajaxMy'),
+	
+	var	
 		getGet=require('getGet'),
-		commonMain=require('commonMain'),
-		uploadFile=require('uploadFile');
+		commonMain=require('commonMain');
 
 
 

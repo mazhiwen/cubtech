@@ -1,13 +1,12 @@
 define(function(require) {
- 	$ = require('jquery');
 	var	commonMain=require('commonMain'),
 		paging = require('paging'),
-		ajaxMy=require('ajaxMy'),
+		
 		table_body=$("#table_body"),
 		ifFinishEdit=false;
 
 	function request(getPaging){
-		ajaxMy('/directory/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+		AJAXMY.send('/directory/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
@@ -17,7 +16,7 @@ define(function(require) {
 				}else{
 					s+='<td><input type="checkbox"></td>';
 				}
-				s+='<td contenteditable="true">'+v['priority']+'</td><td><button class="s">移除</button></td></tr>';
+				s+='<td contenteditable="true">'+v['priority']+'</td><td><button class="glyphicon-trash glyphicon"></button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
@@ -29,7 +28,7 @@ define(function(require) {
 	table_body.on('click','tr>td:nth-child(3)>input',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
-		ajaxMy('/directory/update',{id:$(this).parent().parent().attr("data-id"),status:$(this).prop('checked')?1:0},function(d){
+		AJAXMY.send('/directory/update',{id:$(this).parent().parent().attr("data-id"),status:$(this).prop('checked')?1:0},function(d){
 			if(d['result']){
 				alert('修改成功');
 			}else{
@@ -49,7 +48,7 @@ define(function(require) {
 			$(this).attr('contenteditable',false);
 			$(this).toggleClass('disabled');
 			that=$(this);
-			ajaxMy('/directory/update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
+			AJAXMY.send('/directory/update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
 				if(d['result']){
 					alert('修改成功');
 				}else{
@@ -65,7 +64,7 @@ define(function(require) {
 	table_body.on('click','tr>td:nth-child(5)>button',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
-		ajaxMy('/directory/delete',{id1:$(this).parent().parent().attr("data-id")},function(d){
+		AJAXMY.send('/directory/delete',{id1:$(this).parent().parent().attr("data-id")},function(d){
 			if(d['result']){
 				$(this).parent().parent().remove();
 				alert('移除成功');

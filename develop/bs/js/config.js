@@ -1,3 +1,42 @@
+/*
+最大显示几个分页数
+*/
+MAXPAGING=11;
+/*
+每页最大显示几条记录
+*/
+PERPAGINGCOUNT=20;
+/*
+ueditor z-index
+*/
+UEDITORTOPOFFSET=51;
+/*
+切换正式环境需要调整的值
+URLHEAD 
+REQUESTHEAD   
+ueditor-config-serverurl
+*/
+
+/*
+本地
+*/
+URLHEAD='//localhost:8080/bs';
+REQUESTHEAD='//localhost:8080';
+
+/*
+测试
+
+URLHEAD='//123.56.237.44:8091/bs';
+REQUESTHEAD='//123.56.237.44:8091';
+*/
+
+
+/*
+线上
+
+URLHEAD='https://admin.e-quanta.com';
+REQUESTHEAD='//admin.e-quanta.com';
+*/
 var pageVersionObj = {
     login:"1.0.0",
     information_list : "1.0.0",
@@ -37,87 +76,35 @@ var pageVersionObj = {
     recommendtab_list:'1.0.0',
     user_role:'1.0.0',
     role_permission:'1.0.0'
-
 },
-/*
-切换正式环境  调整
-domain 
-REQUESTDOMAIN   
-ueditor-config-serverurl
-*/
 pageName=document.getElementById('page_main').getAttribute('data-main');
-//var domain='https://admin.e-quanta.com';
-var domain='//localhost:8080/bs';
-//var domain='//123.56.237.44:8091/bs';
-//REQUESTDOMAIN='//admin.e-quanta.com';
-REQUESTDOMAIN='//localhost:8080';
 seajs.config({
-    base: domain+"/js/lib/",
+    base: URLHEAD+"/js/lib/",
     alias: {
-      "jquery": "jquery/jquery/1.10.1/jquery.js",
-      "jqueryHostA": "hostA/js/lib/jquery/jquery/1.10.1/jquery.js",
+      /*
+      共用库
+      */
+      "commonEdit": "admin/js/modules/commonedit/1.0.0/commonEdit",
+      "popUpWindow":'admin/js/lib/popupwindow/1.0.0/popUpWindow.js',
+      "jquery": "admin/js/lib/jquery/jquery/3.1.0/jquery-3.1.0.min.js",
+      "getGet": "admin/js/lib/getget/1.0.0/getGet.js",
+      "docCookies":"admin/js/lib/doccookies/1.0.0/docCookies.js",
+      "transformTime":'admin/js/lib/transformtime/1.0.0/transformTime.js',
+      /*
+      私有
+      */
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.3/navigationMultiLevelUl.js",
-      "getGet": "getGet/1.0.0/getGet.js",
       "paging": "paging/1.0.0/paging.js",
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
-      "ajaxMy":'ajaxMy/1.0.1/ajaxMy.js',
-      "transformTime":'transformtime/1.0.0/transformTime.js',
+      "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
-      "uploadFile":'../../../modules/uploadfile/1.0.0/uploadFile.js',
-      "docCookies":"doccookies/1.0.0/docCookies.js",
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js'
     },
     paths:{
-       'hostA':'https://admin.e-quanta.com' 
+       'admin':'https://admin.e-quanta.com' 
     }
 });
-//最大显示几个分页数
-MAXPAGING=11;
-//每页最大显示几条记录
-PERPAGINGCOUNT=20;
-seajs.use(domain+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
+seajs.use(URLHEAD+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
 
-/*******************************
-var debug = true;
-var siteHost = {
-    home: debug ? "../js/lib/" : "gulpTag/js"
-}
-//入口文件版本控制
-var mainVision = {
-    welcome: "1.0.0", //欢迎界面
-}
-//var comboExSet = debug ? /.*//******************************* : "";
-var comboExSet = /.*//*******************************
-var distPath = debug ? "modules" : "dist";
-seajs.config({
-    charset: "utf-8",
-    base: siteHost.home,
-    alias: {
-        "jquery": "jquery/jquery/1.10.1/jquery.js",
-        "iScroll": "lib/iscroll/iscroll",
-        "template": "view/template.js",
-        "common": distPath + "/common/1.0.0/common",
-        "proHub": distPath + "/proHub/1.0.0/proHub",
-        "proTools": distPath + "/proTools/1.0.0/proTools"
-    },
-    paths: {
-        "mod": distPath
-    },
-    comboExcludes: comboExSet,
-    comboMaxLength: 1000
-})
-$(function () {
-    var $pageType = $("#page_main");
-    var main_enter = $pageType.attr("data-main");  //对应页面程序入口
-    FastClick && FastClick.attach(document.body);
 
-    if (main_enter) {
-        seajs.use(["main/" + main_enter + "/" + mainVision[main_enter] + "/" + main_enter, "common"], function (e, common) {
-            if (e != null) {
-                window.pageMod = e;
-            }
-        });  //进入入口
-    }
-})
-******************************/
 

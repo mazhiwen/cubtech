@@ -1,7 +1,7 @@
 define(function(require) {
-	$=require('jquery');
+	
 	var commonMain=require('commonMain'),
-		ajaxMy=require('ajaxMy'),
+		
 		getGet=require('getGet'),
 		id=getGet('id'),
 		role_name=$('#role_name'),
@@ -9,12 +9,12 @@ define(function(require) {
 		confirm_button=$("#confirm_button"),
 		permission=$("#permission");
 	if(id){
-		new ajaxMy('/user/edit',{id:id},function(d){
+		AJAXMY.send('/user/edit',{id:id},function(d){
 			var d=d['result'];
 			role_id.val(d['id']);
 			role_name.val(d['nickName']);
 		});
-		new ajaxMy('/user/list_role_by_user_id',{user_id:id},function(d){
+		AJAXMY.send('/user/list_role_by_user_id',{user_id:id},function(d){
 			var d=d['result'];
 			//role_name.val(d['name']);
 			permission.empty();
@@ -30,7 +30,7 @@ define(function(require) {
 				permission.find('input').each(function(index,element){
 					if($(this).prop('checked')) role_ids+=$(this).val()+',';	
 				});
-				new ajaxMy('/user/update_user_role',{
+				AJAXMY.send('/user/update_user_role',{
 					user_id:id,
 					role_ids:role_ids
 				},function(d){

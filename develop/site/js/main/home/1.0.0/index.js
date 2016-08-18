@@ -5,6 +5,5 @@ define(function(require) {
 		commonCopy=(require('commonCopy'))();
 
 	//$("#navigation_ul>li:eq(0)>a").addClass('navigation_hover');
-	
 });
 

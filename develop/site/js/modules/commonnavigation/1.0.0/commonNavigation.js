@@ -38,8 +38,7 @@ define(function(require,exports,module) {
 		if(getHtml(location)=='article_details'){
 			var h=getHtml(document.referrer);
 			$('#navigation_ul>li:eq('+navigationHover[h]+')>a').addClass('navigation_hover');
-			if(h=='select') $("#edit").remove();
-			
+			//if(h=='select') $("#operate_outer").remove();
 		}
 		$('#navigation_ul>li:eq('+navigationHover[getHtml(location)]+')>a').addClass('navigation_hover');
 	}

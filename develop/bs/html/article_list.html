@@ -11,7 +11,8 @@
 
 <body>
 <div id="container">
-	<div id="top"></div>
+	<div id="top">
+	</div>
 	<div id="left">
 	</div>
 	<div id="right">
@@ -19,6 +20,7 @@
 			<span></span><span></span><span></span>
 			<a href="article_edit.html"><button>添加文章</button></a>
 		</div>
+		<div id="search_outer"><span class="form_input_txt">标题</span><input type="text" id="title_input"><button id="title_btn">搜索</button><span class="form_input_txt">作者</span><input type="text" id="author_input"><button id="author_btn">搜索</button><span class="form_input_txt">上传者</span><input id="uploader_input" type="text"><button id="uploader_btn">搜索</button></div>
 		<table class="table">
 		    <caption></caption>
 		    <thead>
@@ -33,26 +35,25 @@
 		        <th>赞数</th>
 		        <th>收藏数</th>
 		        <th>分享数</th>
-		        <th>是否在首页推荐tab显</th>
+		        <th>是否在首页推荐tab显示</th>
 		        <th>操作</th>
 		      </tr>
 		    </thead>
 		    <tbody id="table_body">
-		      <tr>
-		        <td>一级分类</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td>2</td>
-		        <td>3</td>
-		        <td><span class="glyphicon glyphicon-user">ds</span></td>
-		        <td>1</td>
-		        <td>1</td>
-		        <td><input type="checkbox"></td>
-		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
-		      </tr>
-		      
+	    		<tr>
+			        <td>序号</td>
+			        <td>文章标题</td>
+			        <th>所属分类</td>
+			        <td>作者</td>
+			        <td>序号</td>
+			        <td>文章标题</td>
+			        <th>所属分类</td>
+			        <td>作者</td>
+		      	 	<td>序号</td>
+			        <td>文章标题</td>
+			        <th>所属分类</td>
+			        <td><a href="#" class="glyphicon glyphicon-edit"></a><button class="glyphicon glyphicon-edit" disabled></button><button class="glyphicon glyphicon-edit"></button></td>
+		      	</tr>
 		    </tbody>
   		</table>
   		<div id="paging-outer">

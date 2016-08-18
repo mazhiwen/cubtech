@@ -1,7 +1,7 @@
 define(function(require) {
-	$=require('jquery');
+	
 	var commonMain=require('commonMain'),
-		ajaxMy=require('ajaxMy'),
+		
 		getGet=require('getGet'),
 		transformTime=new(require('transformTime')),
 		feed_back_content=$("#feed_back_content"),
@@ -10,14 +10,14 @@ define(function(require) {
 		delete_btn=$("#delete_btn"),
 		id=getGet('id');
 	if(id){
-		ajaxMy('/feedback/detail',{id:id},function(d){
+		AJAXMY.send('/feedback/detail',{id:id},function(d){
 			var d=d['result'];
 			name.val(d['nickName']);
 			feed_back_content.val(d['content']);
 			time.text(d['createTime']);
 		});
 		delete_btn.click(function(){
-			new ajaxMy('/feedback/delete',{id:id},function(d){
+			AJAXMY.send('/feedback/delete',{id:id},function(d){
 			if(d['result']){
 				alert('删除成功');
 				window.location.href="user_feed_list.html";

@@ -1,6 +1,6 @@
 define(function(require) {
-	$=require('jquery');
-	var ajaxMy=require('ajaxMy'),
+	
+	var 
 		commonMain=require('commonMain'),
 		paging = require('paging'),
 		transformTime=new(require('transformTime'));

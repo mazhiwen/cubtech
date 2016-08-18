@@ -2,12 +2,12 @@ define(function(require) {
 	var $=require('jquery');
 	$=jQuery;
 	var commonMain=new(require('commonMain')),
-		ajaxMy=require('ajaxMy'),
+		ajaxMy=new(require('ajaxMy')),
 		transformTime=new(require('transformTime')),
 		center=$("#center"),
 		getPaging=1;
 	function request(){
-		new ajaxMy('/article/rec',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+		ajaxMy.send('/article/rec',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			var s='';
 			$.each(d['result'],function(k,v){
 				var imgHtml;
@@ -24,6 +24,8 @@ define(function(require) {
 		
 	}
 	request();
+
+	
 	$(window).scroll(function(){
 		if($(window).scrollTop() + $(window).height() == $(document).height()) {
        		request();

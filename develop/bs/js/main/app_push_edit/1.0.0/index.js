@@ -4,10 +4,8 @@ define(function(require) {
 	var my_dateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){});
 	my_dateTimePicker._init();
 
-	$=require('jquery');
 	var commonMain=require('commonMain'),
-		paging = require('paging'),
-		ajaxMy=require('ajaxMy');
+		paging = require('paging');
 
 	$("#button-push-now").click(function(){
 

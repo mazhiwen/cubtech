@@ -1,7 +1,5 @@
 define(function(require) {
-	var $=require('jquery'),
-		ajaxMy=require('ajaxMy'),
-		getGet=require('getGet'),
+	var getGet=require('getGet'),
 		commonNavigation=require('commonNavigation'),
 		coverImageInput=document.getElementById('cover_image_input'),
 		subjectNameDom=$("#subject_name"),
@@ -12,7 +10,7 @@ define(function(require) {
 		myFormData=new FormData();
 	new commonNavigation();
 	subjectId=getGet('id');
-	new ajaxMy('/subject/edit',{subject_id:subjectId},function(data){
+	AJAXMY.send('/subject/edit',{subject_id:subjectId},function(data){
 		var o=data['data']['result'];
 		subjectNameDom.val(o['name']);
 		subjectDescriptionDom.val(o['description']);
@@ -28,7 +26,7 @@ define(function(require) {
 		myFormData.append('desc', subjectDescriptionDom.val());
 		myFormData.append('file', coverImageInput.files[0]);
 		myFormData.append('priority', subjectListSn.val());
-		new ajaxMy('http://123.56.237.44:8090/app/user/head_pic',myFormData,function(data){
+		AJAXMY.send('http://123.56.237.44:8090/app/user/head_pic',myFormData,function(data){
 
 			console.log(data);
 		});

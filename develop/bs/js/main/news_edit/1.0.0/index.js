@@ -1,9 +1,8 @@
 seajs.use("../js/modules/commonedit/1.0.0/commonEdit");
 define(function(require) {
-	$ = require('jquery');
 	var commonMain=require('commonMain'),
 		paging = require('paging'),
-		ajaxMy=require('ajaxMy'),
+		
 		getGet=require('getGet'),
 		transformTime=new(require('transformTime')),
 		commit_button=$("#commit-button"),
@@ -14,7 +13,7 @@ define(function(require) {
 		id=getGet('id');
 	ue.ready(function(){
 		if(id){
-			ajaxMy('/info/edit',{id:id},function(d){
+			AJAXMY.send('/info/edit',{id:id},function(d){
 				var d=d['result'];
 				title.val(d['title']);
 				summary.val(d['summary']);
@@ -24,7 +23,7 @@ define(function(require) {
 			commit_button.click(function(){
 				$(this).prop('disabled',true);
 				var that=$(this);
-				ajaxMy(
+				AJAXMY.send(
 					'/info/update_news',
 					{
 						id:id,
@@ -44,7 +43,7 @@ define(function(require) {
 			commit_button.click(function(){
 				$(this).prop('disabled',true);
 				var that=$(this);
-				ajaxMy(
+				AJAXMY.send(
 					'/info/save_news',
 					{
 						title:title.val(),

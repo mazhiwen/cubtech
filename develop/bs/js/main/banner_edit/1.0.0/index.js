@@ -1,9 +1,6 @@
 define(function(require) {
-	$=require('jquery');
-	var	ajaxMy=require('ajaxMy'),
-		commonMain=require('commonMain'),
+	var	commonMain=require('commonMain'),
 		getGet=require('getGet'),
-		uploadFile=require('uploadFile'),
 		name=$("#name"),
 		cover_img=$("#cover_img"),
 		sn=$("#sn"),
@@ -16,7 +13,7 @@ define(function(require) {
 		id=getGet('id'),
 		ImageId=null;
 	if(id){
-		ajaxMy('/banner/get_banner',{banner_id:id},function(d){
+		AJAXMY.send('/banner/get_banner',{banner_id:id},function(d){
 			var d=d['result'];
 			name.val(d['title']);
 			url.val(d['actionUrl']);
@@ -24,7 +21,7 @@ define(function(require) {
 			cover_img.attr('src',d['bgPic']);
 			type.val(d['action']);
 			ImageId=d['sysImageId'];
-			if (type.val()==2){
+			if (type.val()==3){
 				url_span.text('链接:');
 			}else{
 				url_span.text('目标ID:');
@@ -33,7 +30,7 @@ define(function(require) {
 		commit_button.click(function(){
 			$(this).prop('disabled',true);
 			var that=$(this);
-			ajaxMy(
+			AJAXMY.send(
 				'/banner/update',
 				{
 					id:id,
@@ -55,7 +52,7 @@ define(function(require) {
 		commit_button.click(function(){
 			$(this).prop('disabled',true);
 			var that=$(this);
-			ajaxMy(
+			AJAXMY.send(
 				'/banner/insert',
 				{
 					title:name.val(),
@@ -73,12 +70,12 @@ define(function(require) {
 			);
 		});	
 	}
-	uploadFile('cover_image_input',1,function(responseUrl,sysImageId){
+	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
-	});
+	},3);
 	type.change(function(){
-		if (type.val()==2){
+		if (type.val()==3){
 			url_span.text('链接:');
 		}else{
 			url_span.text('目标ID:');

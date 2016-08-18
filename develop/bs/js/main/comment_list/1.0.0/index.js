@@ -1,12 +1,11 @@
 define(function(require) {
-	$ = require('jquery');
 	var	commonMain=require('commonMain'),
 		paging = require('paging'),
-		ajaxMy=require('ajaxMy'),
+		
 		transformTime=new(require('transformTime')),
 		table_body=$("#table_body");
 	function request(getPaging){
-		ajaxMy('/article/comment/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+		AJAXMY.send('/article/comment/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){
@@ -20,7 +19,7 @@ define(function(require) {
 					break;
 				}
 				status=v['status']?'隐藏':'显示';
-				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+type+'</td><td>'+v['content']+'</td><td>'+transformTime.MSTo(v['createTime'])+'</td><td data-id="'+v['id']+'"><a href="comment_details.html?id='+v['id']+'"><button>查看</button></a> <button>'+status+'</button></td></tr>';
+				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+type+'</td><td>'+v['content']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td data-id="'+v['id']+'"><a href="comment_details.html?id='+v['id']+'"><button>查看</button></a> <button>'+status+'</button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
@@ -33,7 +32,7 @@ define(function(require) {
 		$(this).prop('disabled',true);
 		that=$(this);
 		var status=$(this).text()=="显示"?1:0;
-		new ajaxMy('/article/comment/status',{id:$(this).parent().attr("data-id"),status:status},function(d){
+		AJAXMY.send('/article/comment/status',{id:$(this).parent().attr("data-id"),status:status},function(d){
 			if(d['result']){
 				alert('修改成功');
 				status?that.text('隐藏'):that.text('显示');

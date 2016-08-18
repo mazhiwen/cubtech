@@ -5,7 +5,6 @@
 <meta id="page_main" data-main="login">
 <script type="text/javascript" src="./js/lib/seajs/seajs/2.2.0/sea.js"></script>
 <script type="text/javascript" src="./js/config.js"></script>
-<link rel="stylesheet" href="./css/common/main_style.css">
 <link rel="stylesheet" href="./css/page/login.css">
 <title>一匡后台系统-登陆</title>
 </head>
@@ -15,8 +14,8 @@
 
 	<div id="login_outer">
 		<label class="form-input"><span>管理员邮箱:</span><input type="text" placeholder="管理员邮箱" id="login_name"></label>
-		<label class="form-input"><span>管理员密码:</span><input type="text" placeholder="管理员密码" id="login_password"></label>
-		<label class="form-input"><input type="checkbox" id="check_save_login"><span>保存我的登录信息</span></label>
+		<label class="form-input"><span>管理员密码:</span><input type="password" placeholder="管理员密码" id="login_password"></label>
+		<label id="save_outer"><input type="checkbox" id="check_save_login" checked><span>保存我的登录信息</span></label>
 
 		<button id="login-button">登陆</button>
 	</div>

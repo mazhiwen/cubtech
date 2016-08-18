@@ -1,6 +1,4 @@
 define(function(require, exports, module) {
-
-  var $ = require('jquery');
   
   function paging(pagingDom,pagingCount,maxPaging,getPaging,clickFunction){
 	this.pagingDom=$(pagingDom);
@@ -20,6 +18,7 @@ define(function(require, exports, module) {
   
   module.exports=paging;
   paging.prototype._init=function(){
+  	
 	this.pagingDom.empty();
 	var fillHtmlText="";
 	if(this.pagingCount<=this.maxPaging){
@@ -52,12 +51,12 @@ define(function(require, exports, module) {
 				this.fillPaging(fillHtmlText,this.maxPaging+1);
 			}	
 		}
-	}	
+	}
+	this.nowPagingCss();	
   }
   
   
   paging.prototype.fillPaging=function(fillHtmlText,count){
-  	
   	var mythis=this;
 	this.pagingDom.append("<li><a>&laquo;</a></li>");  	  
 	this.pagingDom.children("li:first").after(fillHtmlText);
@@ -72,21 +71,14 @@ define(function(require, exports, module) {
 		});	
 		
 	});
-
-
 	this.pagingDom.children("li:first").click(function(){
 		mythis.clickPaging=mythis.getPaging-1;
 		mythis.clickFunction();
-
 	});
-
-
 	this.pagingDom.children("li:last").click(function(){
 		mythis.clickPaging=mythis.getPaging+1;
 		mythis.clickFunction();
-
-	});
-	
+	});	
   }
   
   
@@ -97,6 +89,12 @@ define(function(require, exports, module) {
 		fillHtmlText+="<li><a>"+(i+1)+"</a></li>";
 	}
 	return fillHtmlText;
+  }
+
+
+  paging.prototype.nowPagingCss=function(){
+  	this.pagingDom.children('li:eq('+this.getPaging+')').css("background-color","#eeeeee");
+	
   }
 
 

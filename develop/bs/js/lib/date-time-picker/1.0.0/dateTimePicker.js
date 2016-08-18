@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
 
-	var $ = require('jquery');
+	//var $ = require('jquery');
 	var myDate=new Date();
 	var nowYear=myDate.getFullYear().toString();
 	var nowMonth=(myDate.getMonth()+1).toString();

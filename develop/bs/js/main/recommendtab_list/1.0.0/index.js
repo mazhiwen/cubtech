@@ -1,13 +1,12 @@
 define(function(require) {
-	$ = require('jquery');
 	var commonMain=require('commonMain'),
 		paging = require('paging'),
-		ajaxMy=require('ajaxMy'),
+		
 		transformTime=new(require('transformTime')),
 		table_body=$("#table_body"),
 		ifFinishEdit=false;
 	function request(getPaging){
-		ajaxMy('/index/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+		AJAXMY.send('/index/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){
@@ -44,7 +43,7 @@ define(function(require) {
 			$(this).attr('contenteditable',false);
 			$(this).toggleClass('disabled');
 			that=$(this);
-			ajaxMy('/index/update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
+			AJAXMY.send('/index/update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
 				if(d['result']){
 					alert('修改成功');
 				}
@@ -57,7 +56,7 @@ define(function(require) {
 	//***********************contenteditable 改动请求**************//
 	table_body.on('click','tr>td:nth-child(5)>input',function(event){
 		$(this).prop('disabled',true);that=$(this);
-		new ajaxMy('/index/update',{id:$(this).parent().parent().attr("data-id"),status:$(this).prop('checked')?1:0},function(d){
+		AJAXMY.send('/index/update',{id:$(this).parent().parent().attr("data-id"),status:$(this).prop('checked')?1:0},function(d){
 			if(d['result']){
 				alert('修改成功');
 			}else{
@@ -69,7 +68,7 @@ define(function(require) {
 	table_body.on('click','tr>td:nth-child(7)>button',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
-		new ajaxMy('/index/delete',{id:$(this).parent().parent().attr("data-id")},function(d){
+		AJAXMY.send('/index/delete',{id:$(this).parent().parent().attr("data-id")},function(d){
 			if(d['result']){
 				alert('删除成功');
 				that.parent().parent().remove();

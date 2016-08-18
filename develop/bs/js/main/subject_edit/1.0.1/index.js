@@ -1,9 +1,8 @@
 define(function(require) {
-	$=require('jquery');
-	var	ajaxMy=require('ajaxMy'),
+	
+	var	
 		getGet=require('getGet'),
 		commonMain=require('commonMain'),
-		uploadFile=require('uploadFile'),
 		paging = require('paging'),
 		subjectNameDom=$("#subject_name"),
 		subjectDescriptionDom=$("#subject_description"),
@@ -17,7 +16,7 @@ define(function(require) {
 		subjectId=getGet('id'),
 		ImageId=null;	
 	if(subjectId){
-		ajaxMy('/subject/edit',{subject_id:subjectId},function(d){
+		AJAXMY.send('/subject/edit',{subject_id:subjectId},function(d){
 			var o=d['result'];
 			subjectNameDom.val(o['name']);
 			subjectDescriptionDom.val(o['description']);
@@ -27,7 +26,7 @@ define(function(require) {
 		$("#confirm-button").click(function(){
 			$(this).prop("disabled",true);
 			var that=$(this);
-			ajaxMy(
+			AJAXMY.send(
 				'/subject/update',
 				{
 					subject_id:subjectId,
@@ -48,7 +47,7 @@ define(function(require) {
 			);
 		});
 		function requestIs(getPaging){
-			new ajaxMy('/subject/subject_article_list',
+			AJAXMY.send('/subject/subject_article_list',
 				{subject_id:subjectId,page:getPaging,size:PERPAGINGCOUNT
 				},function(d){
 					dr=d['result'];
@@ -68,7 +67,7 @@ define(function(require) {
 		is_article_list_outer.on('click','div>button:nth-child(2)',function(event){
 			$(this).prop('disabled',true);
 			that=$(this);
-			new ajaxMy('/subject/delete_subject_article',{article_id:$(this).attr("data-id"),subject_id:subjectId},function(d){
+			AJAXMY.send('/subject/delete_subject_article',{article_id:$(this).attr("data-id"),subject_id:subjectId},function(d){
 					if(d['result']){
 						alert('删除成功');
 						that.parent().remove();
@@ -78,7 +77,7 @@ define(function(require) {
 				});
 		});
 		function requestAll(getPaging){
-			new ajaxMy('/article/search_list',{title:search_input.val(),page:getPaging,size:PERPAGINGCOUNT},function(d){
+			AJAXMY.send('/article/search_list',{title:search_input.val(),page:getPaging,size:PERPAGINGCOUNT},function(d){
 				no_article_list_outer.empty();
 				var s='';
 				$.each(d['result'],function(key,v){	
@@ -96,7 +95,7 @@ define(function(require) {
 		no_article_list_outer.on('click','div>button:nth-child(2)',function(event){
 			$(this).prop('disabled',true);
 			that=$(this);
-			new ajaxMy('/subject/save_subject_article',{article_id:$(this).attr("data-id"),subject_id:subjectId},function(d){
+			AJAXMY.send('/subject/save_subject_article',{article_id:$(this).attr("data-id"),subject_id:subjectId},function(d){
 				if(d['result']){
 					alert('添加成功');
 					that.text('删除');
@@ -111,7 +110,7 @@ define(function(require) {
 		$("#confirm-button").click(function(){
 			$(this).prop("disabled",true);
 			var that=$(this);
-			ajaxMy(
+			AJAXMY.send(
 				'/subject/save',
 				{
 				name:subjectNameDom.val(),
@@ -132,10 +131,10 @@ define(function(require) {
 			);
 		});
 	}
-	uploadFile('cover_image_input',1,function(responseUrl,sysImageId){
+	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
 		coverImgDom.attr("src",responseUrl);
 		ImageId=sysImageId;
-	});
+	},2);
 	
 });
 

@@ -1,12 +1,12 @@
-seajs.use("./js/modules/commonedit/1.0.0/commonEdit");
+//seajs.use("./js/modules/commonedit/1.0.0/commonEdit");
 define(function(require) {
+	new require('commonEdit');
 	var $=require('jquery');
 	$=jQuery;
 	var	commonMain=new(require('commonMain')),
 		mustLogin=(require('mustLogin'))(),
-		ajaxMy=require('ajaxMy'),
+		ajaxMy=new(require('ajaxMy')),
 		getGet=require('getGet'),
-		uploadFile=require('uploadFile'),
 		transformTime=new(require('transformTime')),
 		id=getGet('id'),
 		title=$("#title"),
@@ -21,7 +21,7 @@ define(function(require) {
 	add_img_outer.hide();	
 	ue.ready(function(){
 		if(id){
-			new ajaxMy('/article/edit',{id:id},function(d){
+			ajaxMy.send('/article/edit',{id:id},function(d){
 				var dr=d['result'];
 				title.val(dr['title']);
 				ue.setContent(dr['content']);
@@ -44,7 +44,7 @@ define(function(require) {
 			});
 			send_button.click(function(){
 				$(this).prop('disabled',true);var that=$(this);
-				new ajaxMy('/article/update',{
+				ajaxMy.send('/article/update',{
 					id:id,
 					title:title.val(),
 					summary:summary_text.val(),
@@ -59,7 +59,7 @@ define(function(require) {
 				});
 			});
 		}else{
-			new ajaxMy('/category/select_list',{},function(d){
+			ajaxMy.send('/category/select_list',{},function(d){
 				d=d['result'];
 				var s='';
 				$.each(d,function(k,v){
@@ -69,7 +69,7 @@ define(function(require) {
 			});
 			send_button.click(function(){
 				$(this).prop('disabled',true);var that=$(this);
-				new ajaxMy('/article/save',{
+				ajaxMy.send('/article/save',{
 					title:title.val(),
 					summary:summary_text.val(),
 					sys_image_id:imageId,
@@ -85,11 +85,12 @@ define(function(require) {
 		}
 	});
 
-	uploadFile('input_file',1,function(responseUrl,sysImageId){
+
+	ajaxMy.upLoad('input_file',function(responseUrl,sysImageId){
 		add_img_outer.show();
 		cover_img.attr("src",responseUrl);
 		imageId=sysImageId;
-	});
+	},1);
 	delete_img.click(function(){
 		cover_img.attr("src",'');
 		add_img_outer.hide();
