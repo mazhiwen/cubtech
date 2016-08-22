@@ -15,12 +15,11 @@ color-class
 .blue { color: #089fe6; }
 .light-gray { color: $lightGray; }
 .gray { color: $darkGray; }
-
-.bg-gray{background-color: #f0f0f0;}
+.bg-gray { background-color: #f0f0f0; }
 /**============================
 容器
 ==============================*/
-.bg-layer { position: absolute; left: 0; top: 0; right: 0; bottom: 0;  z-index: -1; }
+.bg-layer { position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: -1; }
 .main-wrap { max-width: 700px; margin-left: auto; margin-right: auto; }
 /**============================
 提示层
@@ -33,6 +32,11 @@ media-query
 @media screen and (min-width: 600px) {
     html { font-size: 20px; }
     }
+/**============================
+下载提示
+==============================*/
+.download-tips { width: 100%; height: 100px; @include transform(translateY(-110px)); background-color: rgba(0, 0, 0, .6); z-index: 20; overflow: hidden; @include transition(all 0.3s ease-out) }
+.tips-show { @include transform(none); }
 
 
 

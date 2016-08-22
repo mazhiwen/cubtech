@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="../css/1.0.0/article.css"/>
 </head>
 <body class="bg-gray">
+<div class="download-tips fix-lt" id="tipsShow">
+    <div class="tips abs-mm white size12">
+        <h6>点击右上角菜单</h6>
+        <h6 class="ellipsis">在默认浏览器中打开并安装应用</h6>
+    </div>
+</div>
 <div class="main-wrap">
     <!--<div class="news-wrap">
         <div class="news-title-area ">
@@ -60,5 +66,15 @@
 <script type="text/javascript" src="../js/main/proHub.js"></script>
 <script type="text/javascript" src="../js/view/template.js"></script>
 <script type="text/javascript" src="../js/main/article.js"></script>
+<script type="text/javascript">
+    $(document).on("click", ".download-block", function () {
+        downloader.openApp({
+            packageName: "com.eq.stock",
+            scheme: 'equanta://',
+            downloadAndroid: "",
+            downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
+        });
+    })
+</script>
 </body>
 </html>

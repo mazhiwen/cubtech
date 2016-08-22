@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-itunes-app" content="app-id=1137638296">
     <meta http-equiv="pragma" content="no-cache">
     <meta charset="utf-8">
     <title>一匡</title>
@@ -13,6 +14,12 @@
 </head>
 <body>
 <div>
+    <div class="download-tips fix-lt" id="tipsShow">
+        <div class="tips abs-mm white size12">
+            <h6>点击右上角菜单</h6>
+            <h6 class="ellipsis">在默认浏览器中打开并安装应用</h6>
+        </div>
+    </div>
     <div class="main-wrap">
         <div class="banner">
             <img class="pct100" src="../images/bkg.png"/>
@@ -43,12 +50,12 @@
 <script type="text/javascript" src="../js/main/proHub.js"></script>
 <script type="text/javascript">
     FastClick && FastClick.attach(document.body);
-    $(".download-btn").on("click", function () {
+    $(document).on("click", ".download-btn", function () {
         downloader.openApp({
             packageName: "com.eq.stock",
-            scheme: 'equanta://openApp',
+            scheme: 'equanta://',
             downloadAndroid: "",
-            downloadIOS: ""
+            downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
         });
     })
 </script>

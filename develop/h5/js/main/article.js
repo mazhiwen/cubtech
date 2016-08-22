@@ -41,7 +41,6 @@ var pageController = {
 
         var $ele = downloader.createBar("https://api.e-quanta.com/images/banner.jpg", "top");
         $("body").prepend($ele);
-
     }
 }
 
