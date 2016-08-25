@@ -1,7 +1,7 @@
 /**============================
  private
  ==============================*/
-var defaultUrl = "//123.56.237.44:8090"
+var defaultUrl = "//api.e-quanta.com"
 // var defaultUrl = "//app.asset3.com/Asset3/"
 
 function getAjax(settings) {
@@ -29,18 +29,18 @@ var proHub = {
             getAjax({
                 url: "/app/article/web_detail",
                 data: {"article_id": id},
-                type:"post",
+                type: "post",
                 dataType: "json",
                 success: function (data) {
                     successFn && successFn(data);
                 }
             })
         },
-        getArticleDetail:function (id, successFn) {
+        getArticleDetail: function (id, successFn) {
             getAjax({
                 url: "/app/article/detail/content ",
                 data: {"article_id": id},
-                type:"post",
+                type: "post",
                 dataType: "json",
                 success: function (data) {
                     successFn && successFn(data);

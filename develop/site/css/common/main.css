@@ -2,9 +2,6 @@
 /******************************************************
 弹出窗口*/
 @import url('https://admin.e-quanta.com/css/component/popupwindow/1.0.0/popupwindow.css');
-@import url('../component/button/1.0.1/button.css');
-@import url('../component/form-input/1.0.1/form-input.css');
-@import url('../component/paging/1.0.0/paging.css');
 body{}
 #container{width: 100%;margin: auto;/*min-height: 1000px;*/}
 #top{width: 100%;font-size: 0; height: 70px;

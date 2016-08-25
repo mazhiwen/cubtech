@@ -51,9 +51,11 @@
             var ua = navigator.userAgent.toLowerCase();
             var isIos = ua.indexOf('ipad') > -1 || ua.indexOf('iphone') > -1 || false;
             var inWx = ua.indexOf('micromessenger') > -1 || false;
+            var isEquanta = ua.indexOf('equanta') > -1 || false;
             var resultObj = {
                 isIos: isIos,
-                inWx: inWx
+                inWx: inWx,
+                isEq: isEquanta
             }
             return resultObj
         },

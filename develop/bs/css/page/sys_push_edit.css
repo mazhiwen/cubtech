@@ -1,9 +1,9 @@
 @import url('../common/main.css');
-#edit-area{width: 50%; margin: auto;}
+#edit-area{width: auto; margin: auto;}
 
 
-.form-input>span{display: block;}
-.form-input>input,.form-input>textarea{width: 100%;}
-#choose-push-time{margin: 50px 0;}
+.form-input>span{}
+.form-input>textarea{width: 100%;}
+#cho_push_time{margin: 15px 0;  }
 #confirm-button{display: block;margin: auto;}
 

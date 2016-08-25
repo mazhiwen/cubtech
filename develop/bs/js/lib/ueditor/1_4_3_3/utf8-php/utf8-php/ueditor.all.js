@@ -8050,7 +8050,7 @@ UE.Editor.defaultOptions = function(editor){
         initialContent: '',
         initialStyle:'',
         autoClearinitialContent: false,
-        iframeCssUrl: _url + 'themes/iframe.css',
+        iframeCssUrl: _url + 'themes/iframe.css?t=20160825.css',
         textarea: 'editorValue',
         focus: false,
         focusInEnd: true,
@@ -8463,7 +8463,7 @@ var filterWord = UE.filterWord = function () {
                         }
                         var width = str.match(/width:([ \d.]*p[tx])/i)[1],
                             height = str.match(/height:([ \d.]*p[tx])/i)[1],
-                            src =  str.match(/src=\s*"([^"]*)"/i)[1];    
+                            src =  str.match(/src=\s*"([^"]*)"/i)[1];
                         return '<img width="'+ transUnit(width) +'" height="'+transUnit(height) +'" src="' + src + '" />';
                     } catch(e){
                         return '';

@@ -20,10 +20,23 @@
 		</div>
 		<div id="edit-area">
 			<label class="form-input"><span>推送内容</span><textarea></textarea></label>
-			<label class="form-input"><span>内容所对应链接:</span><input type="text" placeholder="内容所对应链接"></label>
-			<div id="choose-push-time">
-				<span>推送时间</span><div class="date-time-picker-outer"><button id="activedate">选择时间</button><input type="text" id="filldate" disabled></div>或<button id="button-push-now">立即推送</button>
+			<div class="form-input"><span>跳转目标类型:</span><select id="type"><option value="1">文章</option><option value="2">早报/要闻</option><option value="3">站内外某指定H5页面</option><option value="4">专题详情</option><option value="5">话题详情</option><option value="6">匿名吐槽详情</option></select></div>
+			<div class="form-input"><span id="url_span">目标ID:</span><input type="text" id="url"></div>
+			<div>
+				<label class="form-input for_inp_hor" ><input type="radio" value="1" name="way_cho_user" id="select_user"><span>推送给以下用户:</span></label>
+				<select><option value=" "> </option><option vallue="全部用户">全部用户</option><option vallue="全部大V">全部大V</option><option vallue="全部普通用户">全部普通用户</option></select>
 			</div>
+			<div>
+				<label class="form-input for_inp_hor"><input type="radio" value="2" name="way_cho_user" id="upload_user"><span>上传用户:</span></label>
+				<input type="file">
+			</div>
+			<div id="cho_push_time">
+				<input type="radio" value="1" name="way_push_time"> 
+				<div class="date-time-picker-outer"><button id="activedate">选择时间</button><input type="text" id="filldate" disabled></div>
+				<input type="radio" value="2" name="way_push_time">
+				<button id="button_push_now">立即推送</button>
+			</div>
+
 			<button id="confirm-button">确认</button>
 		</div>
   		

@@ -1,6 +1,6 @@
 /******************************************************
 init-style*/
-*{padding: 0;margin: 0;border: none; font-size: 13px;}
+*{padding: 0;margin: 0;border: none; font-size: 16px;}
 a{text-decoration: none;color: black;}
 li{list-style: none;}
 h4{line-height: 30px;font-size: 16px;}
@@ -21,7 +21,10 @@ form-style*/
 <div><span></span><input></div>
 */
 .form-input{
-	display:block;margin-top: 20px;
+	display:block;margin-top:20px;
+}
+.for_inp_hor{
+	display:inline-block ;
 }
 .form-input>span,.form_input_txt{ 
 	font-size: 14px;line-height: 30px;
@@ -36,6 +39,9 @@ form-style*/
 	display: block;
 */
 }
+.for_inp_ver>span{
+
+}
 input{
 	text-indent:0em;
 }
@@ -49,6 +55,12 @@ input,select,textarea{
 	line-height: 20px;
 	border-radius: 3px;
 	border: 1px solid rgb(192,192,192); 
+}
+input[type="file"]{
+border: none;	
+width: auto;
+height: auto;
+padding: 0;
 }
 input[type="radio"],input[type="checkbox"]{
 vertical-align: middle;
@@ -79,7 +91,9 @@ button-style*/
 button{ 
 	border-radius: 6px;background-color:#00c0ef;
 	color: white;cursor: pointer;
+	/*
 	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	*/
 	border: 1px solid #00acd6; 
 	height: 30px;
 	font-family:Arial;

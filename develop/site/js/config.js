@@ -23,18 +23,20 @@ PERPAGINGCOUNT=20;
 */
 UEDITORTOPOFFSET=71;
 /*
-切换正式环境 更改REQUESTHEAD  ajaxmy 的请求头部
+切换环境 
+1.更改REQUESTHEAD  ajaxmy 的请求头部
+2.ueditor请求
 */
 /*
 正式环境
-*/
-REQUESTHEAD='https://www.e-quanta.com';
 
+REQUESTHEAD='https://www.e-quanta.com';
+*/
 /*
 测试环境
-
-REQUESTHEAD='//123.56.237.44:8091';
 */
+REQUESTHEAD='https://test.e-quanta.com';
+
 /*
 本地环境
 

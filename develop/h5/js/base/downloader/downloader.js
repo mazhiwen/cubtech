@@ -7,6 +7,7 @@
         head.appendChild(styleSheet);
     }
 
+
     var downloader = {
         createBar: function (imgSrc, pos) {   //创建底部下载条
             appendBarCss(pos);
@@ -25,38 +26,50 @@
                         location.href = arg.downloadUrl;//有统一的下载页面，直接跳统一下载页面
                         return;
                     }
-                    location.href = isAndroid ? arg.downloadAndroid : arg.downloadIOS;
+                    if (isAndroid) {
+                        if (arg.downloadAndroid)location.href = arg.downloadAndroid;
+                    } else {
+                        location.href = arg.downloadIOS;
+                    }
                 },
                 wxopenapp = function (arg) {
-                    if (!window.WeixinJSBridge) {
-                        webopenapp(arg);//没有WeixinJSBridge当做是普通web页面
-                        return;
-                    }
+                    eq.pageLock();
+                    var $tipsShow = $("#tipsShow")
+                    $tipsShow.addClass("tips-show");
+                    $tipsShow.off().on("click", function () {
+                        eq.pageUnlock();
+                        $tipsShow.removeClass("tips-show")
+                    })
 
-                    WeixinJSBridge.invoke("getInstallState", {//其实不准，只能获用户有没有安装过，如果用户删除了。。。这里会没反应
-                        packageName: arg.packageName,
-                        packageUrl: arg.scheme
-                    }, function (a) {
-                        var c = a.err_msg;
-                        if (c.indexOf("get_install_state:no") > -1) {
-                            //未安装 - 打开下载页面
-                            download(arg);
-                        } else {
-                            //安装过
-                            location.href = arg.scheme;
-                            if (!isAndroid) {
-                                var ts = new Date().getTime();
 
-                                setTimeout(function () {
-                                    if (new Date().getTime() - ts > 1500) {
-                                        return;
-                                    } else {
-                                        download(arg);
-                                    }
-                                }, 1000);
-                            }
-                        }
-                    });
+                    /*if (!window.WeixinJSBridge) {
+                     webopenapp(arg);//没有WeixinJSBridge当做是普通web页面
+                     return;
+                     }
+                     WeixinJSBridge.invoke("getInstallState", {//其实不准，只能获用户有没有安装过，如果用户删除了。。。这里会没反应
+                     packageName: arg.packageName,
+                     packageUrl: arg.scheme
+                     }, function (a) {
+                     var c = a.err_msg;
+                     if (c.indexOf("get_install_state:no") > -1) {
+                     //未安装 - 打开下载页面
+                     download(arg);
+                     } else {
+                     //安装过
+                     location.href = arg.scheme;
+                     if (!isAndroid) {
+                     var ts = new Date().getTime();
+
+                     setTimeout(function () {
+                     if (new Date().getTime() - ts > 1500) {
+                     return;
+                     } else {
+                     download(arg);
+                     }
+                     }, 1000);
+                     }
+                     }
+                     });*/
                 },
                 webopenapp = function (arg) {
                     if (isAndroid) {

@@ -42,3 +42,4 @@ build/
 dist/
 
 npm-debug.log
+/develop/h5/js/view/.cache/

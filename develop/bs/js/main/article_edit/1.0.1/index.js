@@ -1,4 +1,3 @@
-
 define(function(require) {
 	new require('commonEdit');
 	var commonMain=require('commonMain'),
@@ -36,6 +35,8 @@ define(function(require) {
 			$("#commit-button").click(function(){
 				$(this).prop('disabled',true);
 				var that=$(this);
+				////////////////
+				console.log(ue.getContent());
 				AJAXMY.send(
 					'/article/update',
 					{
@@ -50,7 +51,8 @@ define(function(require) {
 					function(d){
 						if(d['result']) {
 							alert('编辑成功');
-							window.location.href='article_list.html';
+							/////////////////
+							//window.location.href='article_list.html';
 						}
 						else alert('编辑失败');
 						that.prop('disabled',false);
@@ -94,11 +96,9 @@ define(function(require) {
 						);
 					}else{
 						POPUPWINDOW.alert('需要选择分类',function(){});
-					}				
-					
+					}					
 				});	
 			});
-			
 			author.on('input',function(){
 				if($(this).val().length!=0&&$.trim($(this).val())){
 					AJAXMY.send('/user/select_list',{nick_name:$(this).val()},function(d){

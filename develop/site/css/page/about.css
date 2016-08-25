@@ -3,8 +3,10 @@
 #contact_outer{position: relative;font-size: 0;}
 #main_back{  width: 100%; }
 
-#main_text{position: absolute; top: 25%; left: 20%; }
-#main_text>p:nth-child(2){margin-top: 30px;width: 60%;color: #333333;}
+#main_text{position: absolute; top: 18%; left: 20%; }
+#main_text>p:last-child,#main_text>p:nth-child(2){
+	margin-top: 30px;width: 60%;color: #333333;
+}
 
 
 

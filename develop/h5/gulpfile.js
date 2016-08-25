@@ -18,11 +18,11 @@ var projectConfig = {
     // 项目开发者
     author: 'zlf',
     // 发布路径
-    releasePath: 'h5',
+    releasePath: '',
     // CDN路径
-    cdnPath: '//app.asset3.com/equanta/',
+    cdnPath: '//api.e-quanta.com',
     //测试服务器路径
-    testPath: "//123.56.237.44/equanta/"
+    testPath: "//api.e-quanta.com"
 };
 
 /**

@@ -32,8 +32,9 @@
 
         // 服务器统一请求接口路径
         , 
-        serverUrl: "//admin.e-quanta.com/admin/ueditor"
-        //serverUrl: "//admin/ueditor"
+        serverUrl: "//localhost:8080/admin/ueditor"
+        //serverUrl: "//testadmin.e-quanta.com/admin/ueditor"
+        //serverUrl: "https://admin.e-quanta.com/admin/ueditor"
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
         , toolbars: [[
             'fullscreen', 'source', '|', 'undo', 'redo', '|',

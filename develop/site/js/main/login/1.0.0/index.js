@@ -3,22 +3,38 @@ define(function(require) {
 	$=jQuery;
 	var ajaxMy=new(require('ajaxMy')),
 		phone_input=$('#phone_input'),
-		password_input=$("#password_input");
+		password_input=$("#password_input"),
+		if_invi=$("#if_invi"),
+		inv_code=$("#inv_code");
 	new (require('commonMain'));	
 	if(docCookies.hasItem('loginName')){
 		phone_input.val(docCookies.getItem('loginName'));
 		password_input.val(docCookies.getItem('loginPassword'));
 	}
+	//login_name_v='18600576402';
+	//login_password_v='asdfghjkl';
+
+	if_invi.change(function(){
+		$(this).is(':checked')?inv_code.prop("disabled",false):(
+			inv_code.prop("disabled",true),
+			inv_code.val('')
+			);
+	});
+
 	$("#login_button").click(function(e){
 		//b 已经有cookie  并且输入账号密码与cookie不相符
 		if((phone_input.val()!=docCookies.getItem('loginName')||password_input.val()!=docCookies.getItem('loginPassword'))&&docCookies.hasItem('loginName')){
 			docCookies.removeItem('loginName','/');
 			docCookies.removeItem('loginPassword','/');
 		}
-		ajaxMy.send('/login/login',{
+		var sd={
 			mobile:phone_input.val(),
 			pwd:password_input.val()
-			},function(d){
+		};
+		if($.trim(inv_code.val()).length!=0){
+			Object.assign(sd,{code:inv_code.val()});
+		}
+		ajaxMy.send('/login/login',sd,function(d){
 				//登录成功
 				if(d){
 					if(docCookies.hasItem('loginName')){

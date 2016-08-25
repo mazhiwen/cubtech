@@ -1,21 +1,27 @@
 @charset "utf-8";
-/*的撒打算的i de css
+/*
+
 */
-
-
+*{font-size: 16px;}
 ul>li{color: red;}
 ul>li *{color: black;}
 
-
-blockquote{border-left: 10px solid rgb(153,153,153); 
-	padding:15px; background-color: rgb(244,244,244);
+blockquote{
+	border-left: 10px solid #9b9b9b; 
+	padding:12px; background-color: #f3f3f3;
 	margin: 30px auto;
 }
-blockquote p{margin:0;}
+blockquote p{margin:0;color: #9b9b9b;}
 
 img{display: block;margin: 15px auto;}
 ul>li{color: red;list-style-type: square;}
 ul>li *{color: black;}
 ol>li{list-style-type: decimal;}
 li{margin-left: 2em;}
-p{margin: 20px auto;}
+p{
+	color:#6f6f6f;
+	margin: 13px auto;
+	line-height: 33px;
+}
+br{}
+strong{color:#4a4a4a;line-height:36px; }
