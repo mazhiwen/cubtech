@@ -29,14 +29,14 @@ UEDITORTOPOFFSET=71;
 */
 /*
 正式环境
-
-REQUESTHEAD='https://www.e-quanta.com';
 */
+REQUESTHEAD='https://www.e-quanta.com';
+
 /*
 测试环境
-*/
-REQUESTHEAD='https://test.e-quanta.com';
 
+REQUESTHEAD='https://test.e-quanta.com';
+*/
 /*
 本地环境
 
