@@ -35,8 +35,13 @@ media-query
 /**============================
 下载提示
 ==============================*/
-.download-tips { width: 100%; height: 100px; @include transform(translateY(-110px)); background-color: rgba(0, 0, 0, .6); z-index: 20; overflow: hidden; @include transition(all 0.3s ease-out) }
-.tips-show { @include transform(none); }
+.download-tips { width: 100%; height: 100%; background-color: rgba(0, 0, 0, .6); z-index: 20; overflow: hidden; display: none; }
+.tips-show { display: block; @include animation(show 1 0.3s ease-out both) }
+.share-icon { width: 35px; height: 45px; }
+@include keyframes(show, webkit spec) {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+    }
 
 
 

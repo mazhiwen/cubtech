@@ -26,8 +26,10 @@ var pageController = {
                 }
             } catch (e) {
             }
-            var webViewHeight = $mainWrap.height();
-            location.href = 'equanta://setHeight=' + webViewHeight;
+           // if (eq.getBrowserInfo().isIos) {
+                var webViewHeight = $mainWrap.height();
+                location.href = 'equanta://setHeight=' + webViewHeight;
+            //}
         });
     },
     otherInit: function (articleId, articleType) {
@@ -37,7 +39,6 @@ var pageController = {
                 $mainWrap.html(template('article', data.data));
             }
         });
-
 
         var $ele = downloader.createBar("https://api.e-quanta.com/images/banner.jpg", "top");
         $("body").prepend($ele);

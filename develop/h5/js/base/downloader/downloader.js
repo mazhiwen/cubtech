@@ -33,9 +33,11 @@
                     }
                 },
                 wxopenapp = function (arg) {
+                    eq.pageLock();
                     var $tipsShow = $("#tipsShow")
-                    $tipsShow.addClass("tips-show")
+                    $tipsShow.addClass("tips-show");
                     $tipsShow.off().on("click", function () {
+                        eq.pageUnlock();
                         $tipsShow.removeClass("tips-show")
                     })
 
