@@ -1,0 +1,10 @@
+*{padding: 0;border: none;margin: 0;text-align: center;}
+body{background-color: #f0f0f0;}
+body>div:nth-child(1){margin-top: 15px;}
+.img_outer{width: 100%; font-size: 0;}
+.img_outer>img{width: 100%;font-size: 0;}
+.img_outer>p,#click_more_outer{font-size:15px;}
+#click_more_outer{margin: 20px auto;}
+#click_more_outer>img{display: block;margin: auto;}
+#img_outer_2{position: relative;top: -2px;}
+#img_outer_2>p:nth-child(2){margin:15px;font-size: 15px; }

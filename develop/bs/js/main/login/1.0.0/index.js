@@ -9,6 +9,7 @@ define(function(require) {
 	if(docCookies.hasItem('loginName')){
 		login_name.val(docCookies.getItem('loginName'));
 		login_password.val(docCookies.getItem('loginPassword'));
+		window.location.href="./html/article_list.html";
 	}
 	//login_name_v='18600576402';
 	//login_password_v='asdfghjkl';

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <title>一匡</title>
+    <link rel="stylesheet" href="//api.e-quanta.com/css/common/reset.css"/>
+    <link rel="stylesheet" href="//api.e-quanta.com/css/common/common.css"/>
+    <link rel="stylesheet" href="//api.e-quanta.com/css/1.0.0/download.css"/>
+</head>
+<body>
+<div>
+    <div class="main-wrap">
+        <div class="banner">
+            <img class="pct100" src="//api.e-quanta.com/images/bkg.png"/>
+
+            <div class="download-btn size16">
+                去APP Store下载
+            </div>
+        </div>
+
+        <div class="pic-wrap ">
+            <div class="pic-box clearfix">
+                <div class="pic-left fl">
+                    <img class="pct100" src="//api.e-quanta.com/images/pic-left.png"/>
+                </div>
+                <div class="pic-right fl">
+                    <img class="pct100" src="//api.e-quanta.com/images/pic-right.png"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="//api.e-quanta.com/js/lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="//api.e-quanta.com/js/base/eq/eq.js"></script>
+<script type="text/javascript" src="//api.e-quanta.com/js/base/downloader/downloader.js"></script>
+<script type="text/javascript" src="//api.e-quanta.com/js/main/proHub.js"></script>
+<script type="text/javascript">
+    FastClick && FastClick.attach(document.body);
+    $(".download-btn").on("click", function () {
+        downloader.openApp({
+            packageName: "com.eq.stock",
+            scheme: 'openapp.eq://',
+            downloadAndroid: "",
+            downloadIOS: ""
+        });
+    })
+</script>
+</body>
+</html>

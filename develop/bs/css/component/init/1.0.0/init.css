@@ -1,7 +1,9 @@
 /******************************************************
 init-style*/
 *{padding: 0;margin: 0;border: none; font-size: 16px;}
-a{text-decoration: none;color: black;}
+a{
+	text-decoration: none;
+}
 li{list-style: none;}
 h4{line-height: 30px;font-size: 16px;}
 a.disable {
@@ -124,6 +126,13 @@ button.glyphicon:enabled:hover,a.glyphicon:hover{
 	color: #000;
 }
 /******************************************************
+全局样式*/
+.active{
+	background-color: #888 !important;
+	color:#eee !important;
+	
+}
+/******************************************************
 bootstrap 字体图标*/
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -181,10 +190,16 @@ caption{}
 th{
 	white-space:nowrap;
 	border:1px solid #cccccc;
-	padding:10px 3px;font-size:1em;
+	padding:10px 3px;font-size:0.9em;
 	background-color: rgb(249, 250, 252);
 	 }
-.table td{border:1px solid #cccccc;word-break:break-all;text-align: center;padding: 5px;}
+.table td{
+	border:1px solid #cccccc;
+	word-break:break-all;
+	text-align: center;
+	padding: 5px;
+	font-size: 0.9em;
+}
 
 
 /******************************************************
@@ -234,7 +249,7 @@ display: inline-block;
 .navigation-multi-level-ul>li>div{
 color: #555555;
 box-sizing:border-box;
-font-size: 1.2em;
+font-size: 1em;
 padding: 10px 0 10px 10px;
 
 }
@@ -272,7 +287,7 @@ content:"\e090";
 }
 .navigation-multi-level-ul>li>ul>li>div{
 	
-font-size: 1.1em;
+font-size: 0.9em;
 padding: 10 0 10 20px; 
 }
 /*所有2级导航*/
@@ -292,7 +307,7 @@ padding: 10 0 10 20px;
 /*块状导航  margin     非块状可用pading*/
 .navigation-multi-level-ul a,.navigation-multi-level-ul div{
 	padding: 1px; display: inline-block;
-	 width: 100%;font-size: 1.0em; }
+	 width: 100%;font-size: 0.8em; }
 /*所有导航前的  伪元素"\e135"*/
 .navigation-multi-level-ul a::before,.navigation-multi-level-ul div::before{
 	

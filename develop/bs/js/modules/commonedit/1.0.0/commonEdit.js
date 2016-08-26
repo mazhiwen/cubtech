@@ -32,9 +32,51 @@ define(function(require) {
 			clearFontFamily: true, //去掉所有的内嵌字体，使用编辑器默认的字体
 			removeEmptyNode: true,// 去掉空节点
 			removeTagNames:{
-				p:1
 			}
-		}
+		},
+		filterTxtRules :
+			//默认值：
+			function() {
+			    function transP(node) {
+			        node.tagName = 'p';
+			        node.setStyle();
+			    }
+			    return {
+			        //直接删除及其字节点内容
+			        '-': 'script style object iframe embed input select',
+			        'p': {
+			            $: {}
+			        },
+			        'br': {
+			            $: {}
+			        },
+			        'div': {
+			            '$': {}
+			        },
+			        'li': {
+			            '$': {}
+			        },
+			        'caption': transP,
+			        'th': transP,
+			        'tr': transP,
+			        'h1': transP,
+			        'h2': transP,
+			        'h3': transP,
+			        'h4': transP,
+			        'h5': transP,
+			        'h6': transP,
+			        'section':transP,
+			        'td': function(node) {
+			            //没有内容的td直接删掉
+			            var txt = !! node.innerText();
+			            if (txt) {
+			                node.parentNode.insertAfter(UE.uNode.createText('    '), node);
+			            }
+			            node.parentNode.removeChild(node, node.innerText())
+			        }
+			    }
+			}()
+		
 
 	});
 

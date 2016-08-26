@@ -36,7 +36,7 @@ define(function(require) {
 				$(this).prop('disabled',true);
 				var that=$(this);
 				////////////////
-				console.log(ue.getContent());
+				//console.log(ue.getContent());
 				AJAXMY.send(
 					'/article/update',
 					{
@@ -52,7 +52,7 @@ define(function(require) {
 						if(d['result']) {
 							alert('编辑成功');
 							/////////////////
-							//window.location.href='article_list.html';
+							window.location.href='article_list.html';
 						}
 						else alert('编辑失败');
 						that.prop('disabled',false);

@@ -19,10 +19,10 @@ ueditor-config-serverurl
 
 /*
 本地
-
+*/
 URLHEAD='//192.168.1.199:8080/bs';
 REQUESTHEAD='//192.168.1.199:8080';
-*/
+
 /*
 测试
 
@@ -30,9 +30,9 @@ URLHEAD=REQUESTHEAD='//testadmin.e-quanta.com';
 */
 /*
 线上
-*/
-URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
 
+URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
+*/
 var pageVersionObj = {
     login:"1.0.0",
     information_list : "1.0.0",
@@ -97,7 +97,8 @@ seajs.config({
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js'
     },
     paths:{
-       'admin':'https:'+URLHEAD
+       'admin'://'https:'+
+       URLHEAD
     }
 });
 seajs.use(URLHEAD+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");

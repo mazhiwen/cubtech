@@ -13,6 +13,7 @@ define(function(require, exports, module) {
 	pagingCount 总页数
 	maxPaging   最大显示几个可点击页  需要是奇数 即2x+1
 	getPaging 当前页
+	this.getPagingLiIndex  当前页的li索引
 	*/		
   }
   
@@ -52,7 +53,7 @@ define(function(require, exports, module) {
 			}	
 		}
 	}
-	this.nowPagingCss();	
+	//this.nowPagingCss();	
   }
   
   
@@ -93,7 +94,7 @@ define(function(require, exports, module) {
 
 
   paging.prototype.nowPagingCss=function(){
-  	this.pagingDom.children('li:eq('+this.getPaging+')').css("background-color","#eeeeee");
+  	//this.pagingDom.children('li:eq('+this.getPaging+')').css("background-color","#eeeeee");
 	
   }
 

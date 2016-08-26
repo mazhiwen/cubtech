@@ -1,0 +1,130 @@
+/* @update: 2016-8-17 15:8:8 */ 
+@charset "UTF-8";
+/**============================
+color
+==============================*/
+/**============================
+news-detail（新闻详情）
+==============================*/
+.news-wrap {
+  color: #323232;
+  overflow: hidden; }
+
+.news-title-area {
+  padding: 28px 15px 15px 15px; }
+
+.news-title {
+  font-size: 22px;
+  word-break: break-all; }
+
+.news-icon {
+  width: 12px;
+  height: 12px;
+  background: url(img/news-icon.png) no-repeat center center;
+  background-size: 100% 100%; }
+
+.news-subtitle {
+  color: #666; }
+
+.news-author-area {
+  background-color: #fff;
+  border-left: 5px solid #ff422f;
+  padding: 10px 0; }
+
+.author-head {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  overflow: hidden;
+  margin-left: 15px;
+  display: table-cell; }
+
+.author-info {
+  margin-left: 15px;
+  display: table-cell; }
+
+.author-name {
+  color: #666;
+  font-size: 20px;
+  line-height: 30px; }
+
+.author-icon {
+  width: 18px;
+  height: 18px;
+  background: url(img/author-icon.png) no-repeat center center;
+  background-size: 100% 100%;
+  display: inline-block;
+  position: relative;
+  top: 2px; }
+
+.author-des {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 30px; }
+
+.focus-btn {
+  background-color: #ff422f;
+  color: #fff;
+  font-size: 14px;
+  right: 15px;
+  padding: 0 10px;
+  border-radius: 5px; }
+
+
+/*************************************************
+文章详情
+*/
+.news-cont-area {
+  font-size: 16px;
+  background-color: #fff;
+  padding: 15px; }
+.news-cont-area ul>li{
+  color: red;list-style-type: square;
+}  
+.news-cont-area ul>li *{
+  color: black;
+}
+.news-cont-area ol>li{
+  list-style-type: decimal;
+}
+.news-cont-area li{
+  margin-left: 2em;
+} 
+.news-cont-area strong{
+ color:#4a4a4a;
+ line-height:1.8em; 
+ font-size: 1em !important;
+}   
+.news-cont-area p {
+  /*margin-bottom: 15px;*/
+  margin: 1.35em auto;
+  line-height: 1.7em;
+  text-align: justify; 
+  color:#6f6f6f;
+}
+.news-cont-area img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0.9em auto;
+}
+
+.origin-link {
+color: #0d97df;
+display: inline-block;
+height: 30px;
+line-height: 30px;
+display: none; }
+
+br {
+}
+
+blockquote {
+background-color: #f3f3f3;
+border-left: 0.4em solid #9b9b9b;
+padding: 0.9em;
+margin: 1.6em auto;
+}
+blockquote p {
+  margin:0 !important;color: #9b9b9b;
+}

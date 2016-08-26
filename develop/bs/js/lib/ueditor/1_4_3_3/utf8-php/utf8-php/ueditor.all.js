@@ -8050,7 +8050,7 @@ UE.Editor.defaultOptions = function(editor){
         initialContent: '',
         initialStyle:'',
         autoClearinitialContent: false,
-        iframeCssUrl: _url + 'themes/iframe.css?t=20160825.css',
+        iframeCssUrl: _url + 'themes/iframe.css?t=20160829.css',
         textarea: 'editorValue',
         focus: false,
         focusInEnd: true,

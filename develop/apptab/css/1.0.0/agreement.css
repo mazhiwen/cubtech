@@ -1,0 +1,20 @@
+/* @update: 2016-8-17 15:8:8 */ 
+/**============================
+color
+==============================*/
+.agreement-box {
+  background-color: #f8f8f8;
+  border-top: 3px solid #52d7bb;
+  padding: 10px;
+  text-align: justify;
+  word-break: break-all;
+  line-height: 1.5;
+  color: #4A4A4A; }
+  .agreement-box p {
+    margin-bottom: 10px; }
+  .agreement-box h6 {
+    font-weight: bold;
+    margin: 25px 0 10px 0;
+    font-size: 16px; }
+  .agreement-box ul {
+    margin-left: 5px; }
