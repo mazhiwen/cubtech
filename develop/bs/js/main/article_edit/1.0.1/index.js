@@ -2,6 +2,9 @@ define(function(require) {
 	new require('commonEdit');
 	var commonMain=require('commonMain'),
 		getGet=require('getGet'),
+		t=new(require('transformTime')),
+		a=require('dateTimePicker'),
+		d=new a('#activedate','#filldate',function(d){}),
 		id=getGet('id'),
 		title=$("#title"),
 		author=$("#author"),
@@ -10,7 +13,16 @@ define(function(require) {
 		article_class=$("#article_class"),
 		summary=$("#summary"),
 		author_dl=$("#author_dl"),
+		kw_out=$("#kw_out"),
+		add_kw_btn=$("#add_kw_btn"),
+		add_kw_input=$("#add_kw_input"),
+		add_kw_outer=$("#add_kw_outer"),
+		keyword_label=$("#keyword_label"),
+		check_time=$("#check_time"),
+		activedate=$("#activedate"),
+		f=$("#filldate"),
 		ImageId='';	
+	d._init();	
 	ue.ready(function(){
 		if(id){
 			AJAXMY.send('/article/edit',{id:id},function(data){
@@ -22,6 +34,12 @@ define(function(require) {
 				author.val(d['nickName']);
 				ImageId=d['sysImageId'];
 				cover_img.attr('src',d['coverPic']);
+				f.val(t.MSToYMDHMS(d['createTime']));
+				var keyWordHtml='';
+				$.each(d['keywords'],function(k,v){
+					keyWordHtml+='<span class="keyword">'+v+'<span class="glyphicon"></span></span>';
+				});
+				add_kw_outer.before(keyWordHtml);
 				var s='';
 				$.each(data['categoryList'],function(k,v){
 					if(k==d['categoryCode'])	
@@ -37,17 +55,26 @@ define(function(require) {
 				var that=$(this);
 				////////////////
 				//console.log(ue.getContent());
-				AJAXMY.send(
-					'/article/update',
-					{
+				var keyWordArr=[];
+				$(".keyword").each(function(){
+					keyWordArr.push($(this).text());
+				});
+				var d={
 						id:id,
 						title:title.val(),
 						summary:summary.val(),
 						sys_image_id:ImageId,
 						cover_pic:cover_img.attr("src"),
 						content:ue.getContent(),
-						category_code:article_class.val()
-					},
+						category_code:article_class.val(),
+						keyword:keyWordArr
+					};
+				if(check_time.is(':checked')){
+					Object.assign(d,{create_time:f.val()});
+				}
+				AJAXMY.send(
+					'/article/update',
+					d,
 					function(d){
 						if(d['result']) {
 							alert('编辑成功');
@@ -74,17 +101,26 @@ define(function(require) {
 						if(author.val().length!=0&&$.trim(author.val())&&author_dl.children('[value='+author.val()+']').attr('data-id')!=undefined){
 							user_id=author_dl.children('[value='+author.val()+']').attr('data-id');
 						}
-						AJAXMY.send(
-							'/article/save',
-							{
+						var keyWordArr=[];
+						$(".keyword").each(function(){
+							keyWordArr.push($(this).text());
+						});
+						var d={
 								title:title.val(),
 								summary:summary.val(),
 								sys_image_id:ImageId,
 								cover_pic:cover_img.attr("src"),
 								user_id:user_id,
 								content:ue.getContent(),
-								category_code:article_class.val()
-							},
+								category_code:article_class.val(),
+								keyword:keyWordArr
+							};
+						if(check_time.is(':checked')){
+							Object.assign(d,{create_time:f.val()});
+						}	
+						AJAXMY.send(
+							'/article/save',
+							d,
 							function(d){
 								if(d['result']) {
 									alert('添加成功');
@@ -118,7 +154,21 @@ define(function(require) {
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
 	},1);
-	
-
+	/*
+	关键字删除事件
+	*/
+	kw_out.on('click','.keyword>.glyphicon',function(){
+		$(this).parent().remove();
+	});
+	/*
+	关键字添加
+	*/
+	add_kw_btn.click(function(){
+		add_kw_outer.before('<span class="keyword">'+add_kw_input.val()+'<span class="glyphicon"></span></span>');
+	});
+	/*选择时间*/
+	check_time.click(function(){
+		$(this).is(':checked')?activedate.prop("disabled",false):activedate.prop("disabled",true);
+	});
 });
 

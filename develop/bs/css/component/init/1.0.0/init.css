@@ -1,11 +1,17 @@
 /******************************************************
 init-style*/
-*{padding: 0;margin: 0;border: none; font-size: 16px;}
+*{padding: 0;margin: 0;border: none; font-size: 16px;
+font-family:"Microsoft YaHei","SimSun";
+letter-spacing: 0.5px;
+color: #333333;
+}
+img{font-size: 0;}
 a{
 	text-decoration: none;
 }
 li{list-style: none;}
-h4{line-height: 30px;font-size: 16px;}
+h2{line-height: 2em;font-size: 1.2em;}
+h4{line-height: 1.8em;font-size: 1em;}
 a.disable {
    pointer-events: none;
    cursor: default;
@@ -25,11 +31,16 @@ form-style*/
 .form-input{
 	display:block;margin-top:20px;
 }
+.form-input *{
+vertical-align: baseline;
+}
 .for_inp_hor{
 	display:inline-block ;
+	margin-top: 0;
 }
 .form-input>span,.form_input_txt{ 
-	font-size: 14px;line-height: 30px;
+	font-size: 14px;
+	line-height: 30px;
 	letter-spacing: 1px;
 /*label宽度*/
 	width: 110px;
@@ -88,43 +99,92 @@ input:enabled:hover,input:enabled:focus,select:hover,textarea:hover{
 .upload_preview{overflow: hidden;}
 .upload_preview>div{float: left;}
 .upload_preview>img{float: left;margin: 20px;width: 170px;}
+/*带图标的输入框*/
+.input_icon{
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+.input_icon>span{
+	
+	cursor: pointer;
+	padding-right:0.5em; 
+	line-height: 22px;
+	height: 26px;
+	border: 2px solid transparent;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+}
+.input_icon>span>span{
+	padding-left: 0.5em;
+	height: 100%;
+	display: inline-block;
+	border-left: 1px solid #ccc;
+}
+.input_icon>span>span::before{
+	vertical-align: top;
+	color: white;
+}
+
 /******************************************************
 button-style*/
+.input_icon>span,button{
+	background-color:#00c0ef;
+	color: white;
+	text-shadow:1px 1px 1px #666;
+	box-sizing:border-box;
+}
 button{ 
-	border-radius: 6px;background-color:#00c0ef;
-	color: white;cursor: pointer;
-	/*
-	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-	*/
+	border-radius: 6px;
+	cursor: pointer;
+	box-shadow:2px 2px 2px #ccc;
 	border: 1px solid #00acd6; 
 	height: 30px;
 	font-family:Arial;
 	vertical-align: top;
-	padding: 0 15px;
-	box-sizing:border-box;
+	padding: 0 1em;
+	
 }
-button.s{height: 20px;padding:0 0px;font-size: 0.9em;}
-button:hover{background-color:rgb(0,172,214);
+button.s{
+	height: 25px;
+	padding:0 1em;
+	font-size: 0.9em;
+}
+button:hover,.input_icon>span:hover{
+	background-color:rgb(0,172,214);
 }
 button:enabled:active{
 	background-color:rgb(0,172,214);
 	position: relative;
 }
-button:disabled{background-color: rgb(229,229,229);color: gray;
-	border-color: rgb(180,180,180);}
-button.glyphicon,button.glyphicon:disabled,button.glyphicon:hover{
+button:disabled{
+	background-color: rgb(229,229,229);color: gray;
+	border-color: rgb(180,180,180);
+}
+button.onlyicon,button.onlyicon:disabled,button.onlyicon:hover{
 	padding:0; 
 	border: none;
 	background-color: transparent;
 	height: auto;
 	box-shadow:none;
 }
+button.onlyicon::before{
+	
+}
 .glyphicon:disabled:before{
 	color: #ccc;
 }
-button.glyphicon:enabled:hover,a.glyphicon:hover{
+button.normal::before{
+	vertical-align: baseline;
+	color: white;
+}
+button.onlyicon:enabled:hover::before,a.glyphicon:hover::before{
+	color: rgb(0,172,214);
 	color: #000;
 }
+
 /******************************************************
 全局样式*/
 .active{
@@ -140,17 +200,21 @@ bootstrap 字体图标*/
   src: url('../../bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../bootstrap/3.3.5/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../bootstrap/3.3.5/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
+	
+}
+.glyphicon::before{
+	font-size: 0.9em;
 	color: #999;
-	cursor: pointer;	
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -moz-osx-font-smoothing: grayscale;
+	cursor: pointer;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-search::before {
+  content: "\e003";
 }
 .glyphicon-user:before {
   content: "\e008";
@@ -163,6 +227,9 @@ bootstrap 字体图标*/
 }
 .glyphicon-trash:before {
   content: "\e020";
+}
+.glyphicon-trash:enabled:hover::before{
+	color: Gold;
 }
 .glyphicon-eye-open:before {
   content: "\e105";
@@ -180,6 +247,12 @@ bootstrap 字体图标*/
 }
 .glyphicon-lock:before {
   content: "\e033";
+}
+.glyphicon-plus::before {
+  content:"\2b";
+}
+.glyphicon-minus::before {
+  content:"\2212";
 }
 
 

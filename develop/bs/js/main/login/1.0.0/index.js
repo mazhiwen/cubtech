@@ -2,13 +2,13 @@ define(function(require) {
 	require('jquery');
 	$=jQuery;
 	POPUPWINDOW=new(require('popUpWindow'));
-	docCookies=new(require('docCookies'));
+	DOCCOOKIES=new(require('docCookies'));
 	var	ajaxMy=new(require('ajaxMy')),
 		login_name=$('#login_name'),
 		login_password=$('#login_password');
-	if(docCookies.hasItem('loginName')){
-		login_name.val(docCookies.getItem('loginName'));
-		login_password.val(docCookies.getItem('loginPassword'));
+	if(DOCCOOKIES.hasItem('loginName')){
+		login_name.val(DOCCOOKIES.getItem('loginName'));
+		login_password.val(DOCCOOKIES.getItem('loginPassword'));
 		window.location.href="./html/article_list.html";
 	}
 	//login_name_v='18600576402';
@@ -28,9 +28,9 @@ define(function(require) {
 	}*/
 	$("#login-button").click(function(){
 		//b 已经有cookie  并且输入账号密码与cookie不相符
-		if((login_name.val()!=docCookies.getItem('loginName')||login_password.val()!=docCookies.getItem('loginPassword'))&&docCookies.hasItem('loginName')){
-			docCookies.removeItem('loginName','/');
-			docCookies.removeItem('loginPassword','/');
+		if((login_name.val()!=DOCCOOKIES.getItem('loginName')||login_password.val()!=DOCCOOKIES.getItem('loginPassword'))&&DOCCOOKIES.hasItem('loginName')){
+			DOCCOOKIES.removeItem('loginName','/');
+			DOCCOOKIES.removeItem('loginPassword','/');
 		}
 		ajaxMy.send('/login/login',{
 			mobile:login_name.val(),
@@ -39,20 +39,20 @@ define(function(require) {
 				//登录成功
 				if(d){
 					var dr=d['result'];
-					if(docCookies.hasItem('loginName')){
+					if(DOCCOOKIES.hasItem('loginName')){
 						//如果已有cookie
 					}else{
 						//没有cookie
 						var od=false;
 						if($("#check_save_login").prop("checked")){od=new Date(new Date().getTime()+7*24*60*60*1000);}
-						docCookies.setItem('loginName',login_name.val(),od,'/');
-						docCookies.setItem('loginPassword',login_password.val(),od,'/');
-						docCookies.setItem('userNickName',dr['nickName'],od,'/');
-						docCookies.setItem('userHead',dr['headPic'],od,'/');
-						docCookies.setItem('userGender',dr['gender'],od,'/');
-						docCookies.setItem('userVita',dr['vita'],od,'/');
-						docCookies.setItem('userMobile',dr['mobile'],od,'/');
-						docCookies.setItem('userId',dr['id'],od,'/');
+						DOCCOOKIES.setItem('loginName',login_name.val(),od,'/');
+						DOCCOOKIES.setItem('loginPassword',login_password.val(),od,'/');
+						DOCCOOKIES.setItem('userNickName',dr['nickName'],od,'/');
+						DOCCOOKIES.setItem('userHead',dr['headPic'],od,'/');
+						DOCCOOKIES.setItem('userGender',dr['gender'],od,'/');
+						DOCCOOKIES.setItem('userVita',dr['vita'],od,'/');
+						DOCCOOKIES.setItem('userMobile',dr['mobile'],od,'/');
+						DOCCOOKIES.setItem('userId',dr['id'],od,'/');
 					}
 					window.location.href='./html/article_list.html';
 				}else{

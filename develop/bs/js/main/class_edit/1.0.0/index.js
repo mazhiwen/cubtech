@@ -1,7 +1,5 @@
 define(function(require) {
-	 
-	var	
-		commonMain=require('commonMain'),
+	var	commonMain=require('commonMain'),
 		edit_area=$("#edit_area"),
 		getGet=require('getGet'),
 		class_code=$("#class_code"),

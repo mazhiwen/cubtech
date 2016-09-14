@@ -1,0 +1,9 @@
+/***********************author_like.css*/
+/*作者+点赞  外部*/
+.author_like{margin-top: 10px;}
+.author_like span{vertical-align: middle;}
+/*点赞*/
+.author_like>div{display: inline-block;float: right;}
+/*点赞图标*/
+.author_like>div>img{vertical-align: middle;height: 16px;margin: 0 5px 0 20px;}
+/*author_like.css***************************/

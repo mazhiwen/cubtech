@@ -16,7 +16,7 @@ define(function(require) {
 				}else{
 					s+='<td><input type="checkbox"></td>';
 				}
-				s+='<td contenteditable="true">'+v['priority']+'</td><td><button class="glyphicon-trash glyphicon"></button></td></tr>';
+				s+='<td contenteditable="true">'+v['priority']+'</td><td><button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);

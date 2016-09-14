@@ -16,11 +16,11 @@ define(function(require) {
 					s+='<td><input type="checkbox" data-code="'+v['code']+'"></td>';
 				}
 				if(v['status']){
-					s+='<td data-id="'+v['id']+'"><button class="glyphicon-on glyphicon"></button> ';
+					s+='<td data-id="'+v['id']+'"><button class="glyphicon-on glyphicon onlyicon"></button> ';
 				}else{
-					s+='<td data-id="'+v['id']+'"><button class="glyphicon-off glyphicon"></button> ';
+					s+='<td data-id="'+v['id']+'"><button class="glyphicon-off glyphicon onlyicon"></button> ';
 				}
-				s+='<a href="class_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon"></button></td></tr>'; 
+				s+='<a href="class_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>'; 
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);

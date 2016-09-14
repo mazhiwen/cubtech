@@ -1,4 +1,7 @@
 *{padding: 0;border: none;margin: 0;}
 a{ font-size: 25px !important; }
-#js-wscn-sidebar-wrapper{}
-#js-wscn-sidebar-wrapper>iframe{ }
+#js-wscn-sidebar-wrapper{
+	width: 100%; overflow: hidden;
+}
+#js-wscn-sidebar-wrapper>iframe{ 
+}

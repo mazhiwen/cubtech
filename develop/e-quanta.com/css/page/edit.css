@@ -1,0 +1,31 @@
+@import url('../common/main.css');
+
+body{background-color: rgb(242,242,242);}
+#center{width: 70%; margin:110px auto; background-color: white;padding: 30px 100px;text-align: center;}
+#center>div{position: relative;margin: 40px 0;text-align: left; z-index: 1;}
+#center>div>span{position: absolute; left: -60px;line-height: 30px;display:inline-block;width: 50px;}
+#center>div>div>p{line-height: 30px;}
+#title{width: 100%; height: 30px;}
+#img_operate{position: relative;}
+#input_file_outer{width: 170px; height: 170px; border: 1px solid rgb(204,204,204);
+ /*无图*/
+ background: url('../../images/input_file.jpg') 50% 50% /90% 90% no-repeat ;
+ /*有图
+ background: url('../../images/favicon.png') 0 0 /100% 100% no-repeat ;*/
+}
+#input_file{width: 80%; height: 80%;
+filter:alpha(opacity=0);
+opacity: 0;
+}
+#add_img_outer{position: absolute;left: 1px;top: 1px;width: 170px; height: 170px;}
+#cover_img{width: 100%; height: 100%;}
+#delete_outer{position: absolute;cursor: pointer;height: 50px;
+ background-color: rgba(0,0,0,0.6);bottom: 0;width: 100%;
+text-align: center;}
+#delete{vertical-align:middle;margin-top: 15px;width: 22px;
+
+}
+#summary_text{width: 100%;}
+#center>div:nth-child(5)>div>select{height: 30px;padding-right: 20px;background-position: 180px center;width: 200px;}
+#send_button{margin: 50px auto;height: 40px;display: block;}
+

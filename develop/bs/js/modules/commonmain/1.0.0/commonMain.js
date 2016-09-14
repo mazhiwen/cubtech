@@ -1,6 +1,7 @@
 define(function(require) {
 	require('jquery');
 	$=jQuery;
+	new(require('compatible'));
 	AJAXMY=new(require('ajaxMy'));
 	POPUPWINDOW=new(require('popUpWindow'));
 	DOCCOOKIES=new(require('docCookies'));

@@ -6,7 +6,7 @@
 <script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
 <script type="text/javascript" src="../js/config.js"></script>
 <link rel="stylesheet" href="../css/page/user_list.css">
-<title>title</title>
+<title>用户列表</title>
 </head>
 
 <body>
@@ -17,7 +17,12 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<select><option>全部</option><option>大V</option><option>普通用户</option></select>
+			<!--<select><option>全部</option><option>大V</option><option>普通用户</option></select>-->
+			<div class="input_icon">
+				<input type="text" id="search_input">
+				<span id="search_phone"><span class="glyphicon glyphicon-search" ></span>手机</span>
+				<span id="search_name"><span class="glyphicon glyphicon-search" ></span>昵称</span>
+			</div>	
 			<a href="user_edit.html"><button>添加</button></a>
 		</div>
 		<table class="table">

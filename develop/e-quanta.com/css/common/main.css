@@ -1,0 +1,111 @@
+@import url('../component/init/1.0.1/init.css');
+/******************************************************
+弹出窗口*/
+@import url('https://admin.e-quanta.com/css/component/popupwindow/1.0.0/popupwindow.css');
+body{}
+#container{
+	width: 100%;
+	margin: auto;
+}
+#top{
+	width: 100%;
+	font-size: 0;
+	height: 90px;
+	
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	min-width: 800px;
+}
+#center{margin-top: 70px;}
+/*顶部logo*/
+#top>div:nth-child(1){
+	width: 18%;
+
+}
+#top>div:nth-child(1)>a{
+	display: inline-block;
+	width: 185px;
+	min-width: 185px;
+	height: 50px;
+	background: url("../../images/home/logo.png") 0 0 no-repeat;
+}
+/*导航部分*/
+#navigation_ul{
+	width: 50%;
+	float: left;margin-left: 5%;
+	height: 100%; 
+	overflow: hidden;
+	text-align: left;
+}
+#navigation_ul>li{ 
+	height: 100%;
+	padding: 0 1em;
+}
+#navigation_ul>li:nth-child(1){
+	width: 20%;
+}
+#navigation_ul>li:nth-child(2){
+	width: 20%;
+}
+#navigation_ul>li:nth-child(3){
+	width: 30%;
+}
+#navigation_ul>li:nth-child(4){
+	width: 30%;
+}
+#navigation_ul>li>a{
+	color: white;
+}
+#navigation_ul>li>a:hover{
+	color:#BD9560; 
+	font-size: 1.2em; 
+}
+.navigation_hover{
+ color:#48bc7a; font-weight: normal;
+}
+/*顶部右边*/	
+#top>div:nth-child(3){
+	min-width: 15em;
+	height: 100%; 
+	vertical-align: middle;
+	width: 20%;
+	text-align: center;
+}
+/*
+#top>div:nth-child(3)>span:nth-child(1){vertical-align: middle;display: inline-block;height: 100%;}
+*/
+#write_btn_top{
+	line-height: 70px;
+	padding: 5px 0 5px 40px;
+	background:  url("../../images/home/write_btn.png") 0px 7px no-repeat;
+}
+#top>div:nth-child(3)>a{
+	color: rgba(200,200,200,0.8);
+	font-size: 0.95em;
+	white-space: nowrap;
+}
+#top>div:nth-child(3)>a:not(:nth-child(1)){
+	margin-left: 10%;
+}
+#user_head{width: 40px;height: 40px;vertical-align: middle; border-radius: 20px;
+	margin-left: 10px;}
+#top>div:nth-child(3)>div:nth-child(2){display: inline-block;position: relative;
+padding: 10px 0;}
+#quit_button{font-size: 15px; line-height: 30px;
+	background-color: rgb(100,100,100);color: white;
+	cursor: pointer;
+	position: absolute;right: 0;top: 60px;display: inline-block;
+	width: 50px;text-align: center;
+	z-index: 2;
+}
+#top>div:nth-child(3)>a:nth-child(2)>button{ border: 1px solid #48bc7a; background-color: white; color: #48bc7a; 
+	margin-left:20px;font-size: 15px;vertical-align: middle;}
+.color_font{color: #48bc7a;}
+
+
+
+
+
+
+

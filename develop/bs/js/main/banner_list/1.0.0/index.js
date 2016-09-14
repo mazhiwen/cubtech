@@ -10,7 +10,7 @@ define(function(require) {
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
-				s+='<tr data-id="'+v['id']+'"><td>'+v['title']+'</td><td contenteditable="true">'+v['priority']+'</td><td><a href="banner_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon"></button></td></tr>';
+				s+='<tr data-id="'+v['id']+'"><td>'+v['title']+'</td><td contenteditable="true">'+v['priority']+'</td><td><a href="banner_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);

@@ -8,7 +8,8 @@ news-detail（新闻详情）
 ==============================*/
 .news-wrap {
   color: #323232;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .news-title-area {
   padding: 28px 15px 15px 15px; }
@@ -77,7 +78,11 @@ news-detail（新闻详情）
 .news-cont-area {
   font-size: 16px;
   background-color: #fff;
-  padding: 15px; }
+  padding:0 15px 0 15px; 
+}
+.news-cont-area>p:first-child{
+  margin-top: 0;
+}
 .news-cont-area ul>li{
   color: red;list-style-type: square;
 }  
@@ -112,9 +117,11 @@ news-detail（新闻详情）
 .origin-link {
 color: #0d97df;
 display: inline-block;
-height: 30px;
-line-height: 30px;
-display: none; }
+height: 20px;
+line-height: 20px;
+display: none; 
+padding-bottom: 40px;
+}
 
 br {
 }

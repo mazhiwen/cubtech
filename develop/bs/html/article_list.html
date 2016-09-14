@@ -20,7 +20,13 @@
 			<span></span><span></span><span></span>
 			<a href="article_edit.html"><button>添加文章</button></a>
 		</div>
-		<div id="search_outer"><span class="form_input_txt">标题</span><input type="text" id="title_input"><button id="title_btn">搜索</button><span class="form_input_txt">作者</span><input type="text" id="author_input"><button id="author_btn">搜索</button><span class="form_input_txt">上传者</span><input id="uploader_input" type="text"><button id="uploader_btn">搜索</button></div>
+		<div id="search_outer">
+			<label class="form-input for_inp_hor"><span>标题</span><input type="text" id="title_input"></label><!--<button id="title_btn">搜索</button>-->
+			<label class="form-input for_inp_hor"><span>作者</span><input type="text" id="author_input"></label><!--<button id="author_btn">搜索</button>-->
+			<label class="form-input for_inp_hor"><span>上传者</span><input id="uploader_input" type="text"></label>
+			<label class="form-input for_inp_hor"><span>文章分类</span><select id="article_type"></select></label>
+			<button id="search_btn">搜索</button>
+		</div>
 		<table class="table">
 		    <caption></caption>
 		    <thead>
@@ -28,6 +34,7 @@
 		        <th>序号</th>
 		        <th>文章标题</th>
 		        <th>所属分类</th>
+		        <th>关键词</th>
 		        <th>作者</th>
 		        <th>上传者</th>
 		        <th>上传时间</th>
@@ -40,10 +47,11 @@
 		      </tr>
 		    </thead>
 		    <tbody id="table_body">
-	    		<tr>
+	    		<!--<tr>
 			        <td>序号</td>
 			        <td>文章标题</td>
 			        <th>所属分类</td>
+			        <td>关键词</td>
 			        <td>作者</td>
 			        <td>序号</td>
 			        <td>文章标题</td>
@@ -53,7 +61,7 @@
 			        <td>文章标题</td>
 			        <th>所属分类</td>
 			        <td><a href="#" class="glyphicon glyphicon-edit"></a><button class="glyphicon glyphicon-edit" disabled></button><button class="glyphicon glyphicon-edit"></button></td>
-		      	</tr>
+		      	</tr>-->
 		    </tbody>
   		</table>
   		<div id="paging-outer">

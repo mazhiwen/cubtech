@@ -1,0 +1,23 @@
+
+.stop_scroll{
+position: fixed; 
+overflow-y: scroll;
+width: 100%;
+
+
+}
+#popupwindow{position: absolute;width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);left: 0;top: 0;z-index: 999;}
+#popupwindow_confirm{width: 400px;  background-color: white;position: absolute; left: 40%; top: 30%;}
+#popupwindow_confirm>div:nth-child(1){height: 40px; background-color:  #48bc7a;color: white;
+	line-height: 40px;
+text-indent: 1em;}
+#popupwindow_confirm>div:nth-child(1)>span{float: right;
+background: url("../../../../images/popup_x.png") center center /20px 20px no-repeat;
+display: inline-block;
+width: 40px; height: 100%; 
+cursor: pointer;
+}
+#popupwindow_confirm>div:nth-child(2){padding: 20px;}
+#popupwindow_confirm>div:nth-child(3){text-align: right;padding: 15px;}
+#popupwindow_confirm>div:nth-child(3)>button{margin:15px;}
+

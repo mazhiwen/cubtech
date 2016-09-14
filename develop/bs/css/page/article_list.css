@@ -1,7 +1,15 @@
 @import url('../common/main.css');
 #paging-outer{text-align: center;margin-top: 50px;}
-#table_body>tr>td:nth-child(12){min-width: 70px;}
+#table_body>tr>td:nth-child(13){min-width: 50px;}
 #search_outer>button{margin-right: 20px;}
 #title_input{width: 200px;}
-.form_input_txt{width: auto;}
-#author_input,#uploader_input{width: 100px;}
+#author_input,#uploader_input,#article_type{
+	width: 100px;
+}
+#search_outer>.form-input{
+	
+}
+#search_outer>.form-input>span{
+	width: auto;
+	margin:0 1em;
+}

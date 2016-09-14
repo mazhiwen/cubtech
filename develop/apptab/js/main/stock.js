@@ -1,4 +1,8 @@
-//alert(window.screen.width);
+/*
+console.log(window.innerWidth);
+console.log(window.screen.width);
+console.log(document.body.clientWidth);
+*/
 (function(){
 
 	// 插入的 iFrame 父节点 
@@ -10,13 +14,13 @@
         "chart": {
                 "interval": "5"
         },
-        "theme": "dark",
-        "height": window.screen.height,
-        "width": window.screen.width,
+        "theme": "light",
+        "height": window.innerHeight,
+        "width": window.innerWidth,
         "active": 0,
         "utmSource": "unknown",
         "tabs": [
-                {
+                /*{
                         "name": "综合",
                         "symbols": [
                                 "XAUUSD",
@@ -27,7 +31,7 @@
                                 "USDJPY",
                                 "US10Year"
                         ]
-                },
+                },*/
                 {
                         "name": "外汇",
                         "symbols": [

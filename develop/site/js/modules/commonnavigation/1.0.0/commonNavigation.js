@@ -10,7 +10,7 @@ define(function(require,exports,module) {
 			'myarticle':2,
 		};
 		var noLoginHtml='<a href="login.html" id="top_login_button_outer"><button>登录</button></a>',
-			initHtml='<a href="home.html"><img src="./images/logo.png"></a><ul class="navigation-hori" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li></ul><div><span><a href="edit.html" id="write_btn_top">写文章</a></span>'+noLoginHtml+'</div>';
+			initHtml='<a href="home.html"><img src="./images/logo.png"></a><ul class="navigation-hori" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li><li><a href="article_details.html?id=57c67d477b041a152ad0d1ca">产品介绍</a></li></ul><div><span><a href="edit.html" id="write_btn_top">写文章</a></span>'+noLoginHtml+'</div>';
 		$("#top").append(initHtml);
 		$("#top").on('mouseenter',"#user_head_outer",function(){
 			$("#quit_button").show();

@@ -1,0 +1,8 @@
+@import url('../common/main.css');
+@import url('../component/article_block/1.0.0/article_block.css');
+
+#center{padding: 20px 0;text-align: center;}
+#center>a{}
+body{background-color: rgb(242,242,242);}
+
+

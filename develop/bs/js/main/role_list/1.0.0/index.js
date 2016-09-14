@@ -2,14 +2,13 @@ define(function(require) {
 	
 	var commonMain=require('commonMain'),
 		paging = require('paging'),
-		
 		table_body=$("#table_body");
 	function request(getPaging){
 		AJAXMY.send('/role/list',{page:getPaging,size:PERPAGINGCOUNT,status:1},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
-				s+='<tr><td>'+v['name']+'</td><td>/</td><td><a href="role_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon" data-id="'+v['id']+'"></button> <a href="role_permission.html?id='+v['id']+'" class="glyphicon glyphicon-lock">权限</a></td></tr>';
+				s+='<tr><td>'+v['name']+'</td><td>/</td><td><a href="role_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon" data-id="'+v['id']+'"></button> <a href="role_permission.html?id='+v['id']+'" class="glyphicon glyphicon-lock">权限</a></td></tr>';
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);

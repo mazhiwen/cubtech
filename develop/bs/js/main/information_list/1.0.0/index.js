@@ -13,7 +13,7 @@ define(function(require) {
 			$.each(d['result'],function(k,v){	
 				var s1,s2;
 				v['type']==2?(s1='',s2='news_edit'):(s1=transformTime.MSToYMDHMS(v['postTime']),s2='morningpost_edit');	
-				s+='<tr><td>'+v['id']+'</td><td>'+v['title']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+s1+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td><a href="'+s2+'.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon" data-id="'+v['id']+'"></button></td></tr>';
+				s+='<tr><td>'+v['id']+'</td><td>'+v['title']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+s1+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td><a href="'+s2+'.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon" data-id="'+v['id']+'"></button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);

@@ -1,0 +1,54 @@
+@import url('../common/main.css');
+
+body{background-color: rgb(246,246,246);}
+#center{text-align: center;}
+#main_outer{
+	overflow: hidden;display: inline-block;
+	margin-top: 100px;
+}
+
+
+#login_outer{
+	background-color: white;float: left;
+	padding:0 60px 60px 60px;
+}
+#login_outer>.form-input>span{
+	text-align: left;
+}
+#login_outer>p{
+	text-align: center;margin: 50px 0;font-size: 1.3em;
+	letter-spacing: 0.1em;
+}
+/*#login_outer>div:nth-child(2){position: relative;}*/
+#phone_select{width: 300px;}
+#phone_select>option span{display: inline-block;width: 20px;height: 10px;}
+/*#phone_input{width: 240px;position: absolute;right: 0;}*/
+#if_invi{
+	vertical-align: middle;
+}
+#inv_code{
+	width: 280px;
+}
+#login_button{
+	display: block;
+	width: 300px;
+	margin: auto;
+	margin-top: 40px;
+	 height: 40px;
+}
+#login_right_outer{
+	float: left;
+width: 350px; height: 409px; 
+background: url("../../images/login_right.png") no-repeat center 40%;
+
+}
+
+
+
+
+
+
+
+
+
+

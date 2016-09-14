@@ -16,10 +16,11 @@ pageController = {
             $detail.html(t.data.result.content);
             try {
                 var e = t.data.result.originalUrl;
-                3 == a && e && $originLink.attr("href", e).show()
+                3 == a && e && $originLink.attr("href", e).css("display","inline-block");
+                if(a==1)$(".news-cont-area").css("padding-top","15px");
             } catch(i) {}
             var r = $mainWrap.height();
-            //location.href = "equanta://setHeight=" + r
+            location.href = "equanta://setHeight=" + r
         })
     },
     otherInit: function(t, a) {

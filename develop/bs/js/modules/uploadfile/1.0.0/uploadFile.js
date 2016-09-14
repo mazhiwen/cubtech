@@ -11,6 +11,7 @@ define(function(require,exports,module) {
 				xhr = new XMLHttpRequest();
 			for(var i=0,file;file=files[i];i++){
 				myFormData.append('file', file);
+				
 			}
 			myFormData.append('type',articleType);
 			xhr.addEventListener('load',function(event){

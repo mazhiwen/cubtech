@@ -1,7 +1,6 @@
 seajs.use("../js/modules/commonedit/1.0.0/commonEdit");
 define(function(require) {
 	var commonMain=require('commonMain'),
-		
 		getGet=require('getGet'),
 		transformTime=new(require('transformTime')),
 		dateTimePicker=require('dateTimePicker'),

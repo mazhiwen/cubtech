@@ -11,7 +11,6 @@
 @import url('../component/date-time-picker/1.0.0/date-time-picker.css');
 html,body,#container{height: 100%;}
 #top{
-	color: white;
 	background-color: #3c8dbc;height: 50px;
 	border-bottom: 1px solid #cccccc;
 	position: fixed; width: 100%;z-index: 9999;
@@ -22,6 +21,7 @@ html,body,#container{height: 100%;}
 	line-height: 50px;margin-left: 30px;
 font-weight:900;
 }
+#top span{color: white;}
 
 /*
 右上角
@@ -74,7 +74,8 @@ color: rgb(0, 115, 183);
 */
 #left{
 	width: 200px;float: left;overflow-x:hidden;
-	border-right: 1px solid #cccccc; height:100%; 
+	border-right: 1px solid #cccccc; 
+	min-height: 800px; 
 	overflow-y:auto; position: fixed;  top: 51px;
 	background-color: rgb(244, 244, 244);
 }

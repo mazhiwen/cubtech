@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 /*bootstrap 字体图标*/
-@font-face {
+/*@font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../../../component/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot');
   src: url('../../../component/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../component/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../component/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../component/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
@@ -15,7 +15,7 @@
   font-weight: normal;
   line-height: 1;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
 .glyphicon-chevron-left:before {
   content: "\e079";
 }

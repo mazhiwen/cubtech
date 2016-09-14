@@ -19,15 +19,16 @@ ueditor-config-serverurl
 
 /*
 本地
-*/
-URLHEAD='//192.168.1.199:8080/bs';
-REQUESTHEAD='//192.168.1.199:8080';
 
+URLHEAD='//192.168.1.199/e-quanta/develop/bs';
+REQUESTHEAD='//192.168.1.199:8080';
+*/
 /*
 测试
-
-URLHEAD=REQUESTHEAD='//testadmin.e-quanta.com';
 */
+REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
+
+
 /*
 线上
 
@@ -82,13 +83,15 @@ seajs.config({
       */
       "commonEdit": "admin/js/modules/commonedit/1.0.0/commonEdit",
       "popUpWindow":'admin/js/lib/popupwindow/1.0.0/popUpWindow.js',
-      "jquery": "admin/js/lib/jquery/jquery/3.1.0/jquery-3.1.0.min.js",
+      "jquery": "admin/js/lib/jquery/jquery/1.10.1/jquery.js",
       "getGet": "admin/js/lib/getget/1.0.0/getGet.js",
       "docCookies":"admin/js/lib/doccookies/1.0.0/docCookies.js",
       "transformTime":'admin/js/lib/transformtime/1.0.0/transformTime.js',
       /*
       私有
       */
+      "compatible":"compatible/1.0.0/compatible.js",
+      "parseString": "parsestring/1.0.0/parseString.js",
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.3/navigationMultiLevelUl.js",
       "paging": "paging/1.0.0/paging.js",
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",

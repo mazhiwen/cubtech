@@ -1,0 +1,181 @@
+@import url('../common/main.css');
+@import url('../common/bottom_copy.css');
+html,body,#container{
+	width: 100%;
+	height: 100%;
+}
+/*左边分页*/
+#page_outer{
+	position: fixed;
+	left: 50px;
+	z-index:2;
+	top: 37%;
+}
+#page_outer>li:nth-child(2n+1){
+	cursor: pointer;
+	border: 1px solid #BD9560;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+}
+#page_outer>li:nth-child(1){
+	background-color: #BD9560;
+}
+#page_outer>li:nth-child(2n){
+	width: 0;
+	border-left: 2px solid rgba(50,50,50,0.2);
+	height: 25px;
+	margin: auto;
+}
+/*内容展示层*/
+#content_view{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+/*全部内容外层*/
+#content_outer{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0;
+	transition:top 1s;
+}
+
+/*s1 第一部分*/
+#section_1{
+	width: 100%;
+	height: 100%;
+	background: #212020;
+	overflow: hidden;
+	position: relative;	
+	
+}
+#section_1>div{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url("../../images/home/s1_text.png") center center no-repeat;
+}
+/*s2 第二部分*/
+#section_2{
+	
+	width: 100%;
+	height: 100%;
+	background: url("../../images/home/s2_back.png") 0 0 / cover no-repeat;
+}
+#section_2>div{
+	height: 100%;
+}
+#section_2>div>div{
+	display: inline-block;
+	position: relative;
+}
+#section_2>div>div>div{
+	/*
+	height 配置  js
+	*/
+	height: 100px;
+}
+.s2_text_box{
+	padding: 0 4em;
+	margin: 50px auto;
+	cursor: pointer;
+}
+.s2_text_box>h2{
+	font-weight: 100;
+	font-size: 2em;
+	color:#BD9560;
+	letter-spacing: 1px;
+	line-height: 60px;
+}
+.s2_text_box>p{
+	font-size: 1.0em;
+	color: white;
+}
+#s2_border{
+	cursor: pointer;
+	width: 100%;
+	/*
+	30值
+	padding  top   js设置
+	*/
+	padding: 20px 0;
+	position: absolute;
+	outline: 1px solid #BD9560;
+	left: 0;
+	top: 30px;
+	transition:top 0.2s;
+	/*
+	top: -11.2em;*/
+}
+/*s2 文字hover类*/
+.s2_text_hover{
+	
+}
+
+/*s3 第三部分*/
+#section_3{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+#section_3>div:nth-child(1){
+	
+}
+#section_3>div:nth-child(1)>div>div{
+	text-align: left;
+	display: inline-block;
+	width: 20%;
+	word-break: break-all ;
+	white-space: pre-wrap;
+}
+#section_3>div:nth-child(1)>div>div:not(:nth-child(1)){
+		margin-left:10%;
+}
+#section_3>div:nth-child(1)>div>div>h3{
+	color: #BD9560;
+	font-size: 2em;
+	font-weight: 100;
+	padding-bottom: 0.3em;
+	border-left: 2px solid #BD9560;
+}
+#section_3>div:nth-child(1)>div>div>p{
+	border-left: 2px solid black;
+	color: #999;
+}
+#section_3>div:nth-child(1)>div>div>*{
+	padding-left: 15px;
+}
+#section_3>div:nth-child(2){
+	height: 40%;
+}
+#section_3>div:nth-child(2)>div{
+	width: 100%;
+	vertical-align: bottom;
+	font-size: 0;
+}
+#section_3>div:nth-child(2)>div>div{
+	font-size: 0;
+	width: 25%;
+	display: inline-block;
+}
+#section_3>div:nth-child(2)>div>div>img{
+	width: 100%;
+}
+
+
+
+
+
+@media(max-width:1300px) {
+
+
+}
+
+
+
+

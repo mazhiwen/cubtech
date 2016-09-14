@@ -22,11 +22,15 @@ define(function(require, exports, module) {
 						successFn.call(this,d['data']);
 					}
 					else{
-						POPUPWINDOW.alert('操作失败：'+d['desc'],function(){});
+						
 						if(code==102){
-							docCookies.removeItem('loginName','/');
-							docCookies.removeItem('loginPassword','/');
-							window.location.href=URLHEAD+'/login.html';
+							DOCCOOKIES.removeItem('loginName','/');
+							DOCCOOKIES.removeItem('loginPassword','/');
+							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){
+								window.location.href=URLHEAD+'/login.html';
+							});	
+						}else{
+							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){});
 						}
 					} 
 				}else{
@@ -50,7 +54,16 @@ define(function(require, exports, module) {
 			var files=e.files,
 				xhr = new XMLHttpRequest();
 			for(var i=0,file;file=files[i];i++){
-				fd.append('file', file);
+				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(e.value)){
+					alert("非图片格式，重新来");
+					return false;
+
+				}else{
+					fd.append('file', file);	
+				}
+				
+				console.log(e.value);
+
 			}
 			fd.append('type',parameterA);
 			xhr.addEventListener('load',function(event){

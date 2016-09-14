@@ -17,7 +17,7 @@ define(function(require) {
 				}else{
 					s+='<td><input type="checkbox"></td>';
 				}
-				s+='<td><a href="subject_edit.html?id='+value['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon"></button></td></tr>'; 
+				s+='<td><a href="subject_edit.html?id='+value['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>'; 
 			});
 			subject_list_tbody.append(s);
 			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
