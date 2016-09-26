@@ -46,8 +46,6 @@ define(function(require) {
 				},function(d){
 					if(d['result']){
 						alert('修改成功');
-					}else{
-						
 					}
 				});
 			});
@@ -68,7 +66,6 @@ define(function(require) {
 				gender:gender.val()
 			},function(d){
 				if(d['result']) alert('添加成功');
-				else alert('添加失败');
 				//window.location.reload();
 			});
 		});

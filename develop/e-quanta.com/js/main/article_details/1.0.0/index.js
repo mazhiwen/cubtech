@@ -41,5 +41,8 @@ define(function(require) {
 		});
 	}else{
 	}
+	
+	$(".center").css("margin-top",$(".top").height());
+
 });
 

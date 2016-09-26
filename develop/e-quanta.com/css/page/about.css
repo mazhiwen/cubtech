@@ -1,16 +1,42 @@
 @import url('../common/main.css');
-@import url('../common/bottom_copy.css');
-#contact_outer{position: relative;font-size: 0;}
-#main_back{  width: 100%; }
-
-#main_text{position: absolute; top: 18%; left: 20%; }
-#main_text>p:last-child,#main_text>p:nth-child(2){
-	margin-top: 30px;width: 60%;color: #333333;
+.center{
+	font-size: 0;
+	position: relative;
 }
-
-
-
-
-
-
-
+.content_wrap{
+	box-sizing:border-box;
+	position: absolute;
+	width: 60%;
+	left: 20%;
+	top: 20%;
+	background-color: white;
+	padding: 3% 2% 2% 3%;
+}
+.content_wrap>*{
+	display: inline-block;
+}
+.content_wrap>h1{
+	vertical-align: top;
+	width: 20%;
+	color: gold;
+}
+.content_wrap>div{
+	width: 80%;
+}
+.text_wrap>h2{
+	line-height: 1em;
+	font-weight: 400;
+	font-style: oblique;
+	color: black;
+}
+.text_wrap_p1{
+	margin: 2em 0 1em 0;
+}
+.text_wrap_p2{
+	font-size: 1.2em;
+	line-height: 1.6em;
+	color: gold;
+}
+.text_wrap_p3{
+	margin-top: 2em;
+}

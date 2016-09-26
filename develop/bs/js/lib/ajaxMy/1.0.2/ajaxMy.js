@@ -20,9 +20,9 @@ define(function(require, exports, module) {
 					var code=d['code'];
 					if(code==0){
 						successFn.call(this,d['data']);
+						return;
 					}
 					else{
-						
 						if(code==102){
 							DOCCOOKIES.removeItem('loginName','/');
 							DOCCOOKIES.removeItem('loginPassword','/');
@@ -36,15 +36,14 @@ define(function(require, exports, module) {
 				}else{
 					POPUPWINDOW.alert('操作失败：网络原因',function(){});
 				}
+				successFn.call(this,false);
 			}
 		});		
 	}
-
-
 	/*
+	上传图片
 	绑定元素 上传 发送
-	parameterA: 1 文章  2专题  3话题
-
+	parameterA: 自定义参数 1 文章  2专题  3话题
   	*/
 	ajaxMy.prototype.upLoad=function(inputId,responseFn,parameterA){
 		var e=document.getElementById(inputId),
@@ -57,13 +56,10 @@ define(function(require, exports, module) {
 				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(e.value)){
 					alert("非图片格式，重新来");
 					return false;
-
 				}else{
 					fd.append('file', file);	
 				}
-				
 				console.log(e.value);
-
 			}
 			fd.append('type',parameterA);
 			xhr.addEventListener('load',function(event){
@@ -75,5 +71,35 @@ define(function(require, exports, module) {
 			xhr.send(fd);
 		},false);
 	}
+	/*
+	上传excel
+  	*/
+	ajaxMy.prototype.upLoadExcel=function(inputId,responseFn){
+		var e=document.getElementById(inputId),
+			fd=new FormData(),
+			tthis=this;
+		e.addEventListener("change",function(event){
+			var files=e.files,
+				xhr = new XMLHttpRequest();
+			for(var i=0,file;file=files[i];i++){
+				if(!/\.(xlsx|XLS|xls|XLSX)$/.test(e.value)){
+					alert("不是excel，重新来");
+					return false;
+				}else{
+					fd.append('file', file);	
+				}
+				console.log(e.value);
+			}
+			xhr.addEventListener('load',function(event){
+				POPUPWINDOW.alert('上传成功');
+				var responseData=JSON.parse(this.responseText)['data']['result'];
+				responseFn.call(this,responseData);
+			});
+			xhr.open("POST", tthis.requestHead+"/upload_excel", true);
+			xhr.send(fd);
+		},false);
+	}
+
+
 });
 

@@ -51,7 +51,7 @@ REQUESTHEAD='https://test.e-quanta.com';
 /*
 本地环境
 */
-REQUESTHEAD='//localhost/e-quanta/develop/';
+REQUESTHEAD='//localhost:8080';
 
 
 

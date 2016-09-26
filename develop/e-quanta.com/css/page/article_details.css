@@ -1,12 +1,129 @@
 @import url('../common/main.css');
-@import url('../component/author_like/1.0.0/author_like.css');
-
-
-#center{width: 680px;min-width: 680px; margin:150px auto;}
-#author_like{margin: 25px 0 20px 0;}
+.top{
+	background: url('../../images/article_details/top_back.png') 0 0 / 100% 100% no-repeat;
+}
+/*中间区域*/
+.center{
+	margin-top: 10%;
+	padding: 3% 0 3% 0;
+	text-align: center;
+	background-color: #ededed;
+}
+/*文章最外层*/
+.article_wrap{
+	width: 70%;
+	display: inline-block;
+	height: 500px;
+}
+/*文章盒子*/
+.article_box{
+	position: relative;
+	text-align: left;
+	background-color: white;
+	display: table;
+	padding: 15px 9% 30px 30px;
+}
+/*右侧编辑区域*/
+.edit_wrap{
+	position: absolute;
+	width: 35px;
+	right: 0;
+	top: 40%;
+}
+.edit_wrap>button{
+	background-color: rgb(53,53,53);
+	color: gold;
+	border: none;
+	padding: 0;
+	width: 100%;
+	height: 75px;
+}
+.edit_wrap>button:nth-child(1){
+	margin-bottom: 3px;
+}
+/*文章顶部*/
+.article_box_h{
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 10px;
+	display: table;
+	width: 100%;
+}
+.article_box_h>div{
+	display: table-cell;
+	vertical-align: middle;
+}
+.article_box_h>div>*{
+	vertical-align: middle;
+}
+.article_box_h>div:nth-child(2){
+	text-align: right;
+}
+.article_box>p,
+.article_box_h>div:nth-child(1)>span:nth-child(3),
+.article_box_t{
+	color: #8e8e8e;
+}
+/*名字*/
+.article_box_n{
+	background:url("../../images/select/big_v.png") no-repeat right center/16px auto;
+	padding-right:18px;
+	margin: 0 10px;
+}
+/*日期*/
+.article_box_t{
+	margin-right: 0;
+}
+/*标题*/
+.article_box>h2{
+	font-size: 1.6em;
+	font-weight: 200;
+	line-height: 1.5em;	
+	margin: 8px auto;
+	color: black;
+}
+/*右侧广告*/
+.advertisement{
+	width: 22%;
+	margin-left: 1.5%;
+	display: inline-block;
+	vertical-align: top;
+}
+.advertisement>img{
+	width: 100%;
+}
+/*底线*/
+.bottom_line{
+	width: 100%;
+	height: 1px; 
+	background-color: gold;
+	position: relative;
+	margin-top: 5%;
+}
+.bottom_line>span{
+	position: absolute;
+	display: inline-block;
+	top: -8px;
+}
+.bottom_line>span:first-child{
+	left: 0;
+	border-top: 8px solid transparent;
+    border-left: 16px solid gold;
+    border-bottom: 8px solid transparent;
+}
+.bottom_line>span:nth-child(2){
+	left: 45%;
+	width: 10%;
+	background-color: #ededed;
+}
+.bottom_line>span:last-child{
+	right: 0;
+	border-top: 8px solid transparent;
+    border-right: 16px solid gold;
+    border-bottom: 8px solid transparent;
+}
 /**************************************
 文章样式
-*/
+#author_like{margin: 25px 0 20px 0;}
 #article_text_outer{margin: 20px 0;
 	border-bottom: 1px solid rgb(242,242,242);
 	border-top: 1px solid rgb(242,242,242);padding: 20px 0;
@@ -34,7 +151,7 @@
 	line-height: 33px;
 }
 strong{color:#4a4a4a;line-height:36px; }
-/********************************/
 #edit>img{vertical-align: middle;}
 #edit>span{padding-left: 5px;}
 #delete_span{float: right;cursor: pointer;}
+*/

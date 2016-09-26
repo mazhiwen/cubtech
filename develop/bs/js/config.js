@@ -19,15 +19,15 @@ ueditor-config-serverurl
 
 /*
 本地
-
+*/
 URLHEAD='//192.168.1.199/e-quanta/develop/bs';
 REQUESTHEAD='//192.168.1.199:8080';
-*/
+
 /*
 测试
-*/
-REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
 
+REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
+*/
 
 /*
 线上
@@ -90,6 +90,7 @@ seajs.config({
       /*
       私有
       */
+      "json2":"json2/1.0.0/json2.js",
       "compatible":"compatible/1.0.0/compatible.js",
       "parseString": "parsestring/1.0.0/parseString.js",
       "navigationMultiLevelUl": "navigation-multi-level-ul/1.0.3/navigationMultiLevelUl.js",

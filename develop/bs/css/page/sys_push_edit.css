@@ -2,8 +2,18 @@
 #edit-area{width: auto; margin: auto;}
 
 
-.form-input>span{}
+.form-input>span{
+	width: 150px;
+
+}
 .form-input>textarea{width: 100%;}
 #cho_push_time{margin: 15px 0;  }
-#confirm-button{display: block;margin: auto;}
+#confirm_button{display: block;margin: auto;}
+#edit_area{
+	width: 70%;
+	margin: auto;
+}
 
+#upload_user{
+	
+}

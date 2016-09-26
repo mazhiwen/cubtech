@@ -29,7 +29,8 @@ form-style*/
 <div><span></span><input></div>
 */
 .form-input{
-	display:block;margin-top:20px;
+	display:block;
+	margin:20px auto;
 }
 .form-input *{
 vertical-align: baseline;

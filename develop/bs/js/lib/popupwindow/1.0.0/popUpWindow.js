@@ -10,18 +10,18 @@ define(function(require,exports,module) {
 			$("#popupwin_bac").hide();
 		});
 	}
-
 	popUpWindow.prototype.initPUW=function(){
 		$('body').addClass('stop_scroll');
 		this.puwb.find("*").remove();
 		this.puwb.show();
 	}
-
 	popUpWindow.prototype.confirm=function(title,content,yesFunction,noFunction){
 		var tthis=this;
 		this.initPUW();
 		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div>'+content+'</div><div><button>取消</button><button>确认</button></div></div>');
 		$('#popupwin>div:nth-child(3)>button:nth-child(2)').click(function(e){
+			tthis.puwb.hide();
+			$('body').removeClass('stop_scroll');
 			yesFunction.call(this);
 		});
 		$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(e){
@@ -41,7 +41,7 @@ define(function(require,exports,module) {
 			$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(){
 				tthis.puwb.hide();
 				$('body').removeClass('stop_scroll');
-				yesFunction.call(this);
+				yesFunction&&yesFunction.call(this);
 			});
 		}
 		/*
@@ -54,12 +54,11 @@ define(function(require,exports,module) {
 				$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(){
 					tthis.puwb.hide();
 					$('body').removeClass('stop_scroll');
-					yesFunction.call(this);
+					yesFunction&&yesFunction.call(this);
 				});
 			});
 		}
 	}
 });
-
 
 

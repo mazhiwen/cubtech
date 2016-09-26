@@ -100,3 +100,9 @@ margin-top: 20px;}
 	margin-top: 1em;
 	display: block;
 }
+/*删除封面*/
+#dele_cov_img{
+	position: relative;
+	left: -20px;
+	top: 20px;
+}

@@ -9,16 +9,17 @@ define(function(require,exports,module) {
 			'select':1,
 			'myarticle':2,
 		};
-		var noLoginHtml='<a href="login.html" id="top_login_button_outer"><button>登录</button></a>',
-			initHtml='<a href="home.html"><img src="./images/logo.png"></a><ul class="navigation-hori" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li><li><a href="article_details.html?id=57c67d477b041a152ad0d1ca">产品介绍</a></li></ul><div><span><a href="edit.html" id="write_btn_top">写文章</a></span>'+noLoginHtml+'</div>';
-		//$("#top").append(initHtml);
-		$("#top").on('mouseenter',"#user_head_outer",function(){
+		
+		var noLoginHtml='<a href="login.html" id="top_login_button_outer">登录</a>',
+			initHtml='<div class="dp_tc"><a href="home.html"><img src="./images/home/logo.png"></a></div><ul class="navigation-hori dp_tbtc" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li><li><a href="about.html">关于我们</a></li></ul><div class="dp_tc"><a href="edit.html" id="write_btn_top">写文章</a>'+noLoginHtml+'<a href="login.html">注册</a></div>';
+		$(".top").append(initHtml);
+		$(".top").on('mouseenter',"#user_head_outer",function(){
 			$("#quit_button").show();
 		});
-		$("#top").on('mouseleave',"#user_head_outer",function(){
+		$(".top").on('mouseleave',"#user_head_outer",function(){
 			$("#quit_button").hide();
 		});
-		$("#top").on('click',"#quit_button",function(){
+		$(".top").on('click',"#quit_button",function(){
 			docCookies.removeItem('loginName','/');
 			docCookies.removeItem('loginPassword','/');
 			$("#user_head_outer").replaceWith(noLoginHtml);
@@ -29,7 +30,7 @@ define(function(require,exports,module) {
 			$("#quit_button").hide();
 		}else{
 			$("#user_head_outer").replaceWith(noLoginHtml);
-			$("#top").on('click',"#write_btn_top,#navigation_ul>li:eq(2)>a",function(){
+			$(".top").on('click',"#write_btn_top,#navigation_ul>li:eq(2)>a",function(){
 				popUpWindow.alert('您还没有登录',function(){window.location.href="login.html";});
 				return false;
 			});

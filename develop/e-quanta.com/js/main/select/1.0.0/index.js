@@ -2,6 +2,7 @@ define(function(require) {
 	var $=require('jquery');
 	$=jQuery;
 	var commonMain=new(require('commonMain')),
+		commonCopy=(require('commonCopy'))(),
 		ajaxMy=new(require('ajaxMy')),
 		transformTime=new(require('transformTime')),
 		center=$("#center"),
@@ -21,15 +22,18 @@ define(function(require) {
 			center.append(s);
 			getPaging++;
 		});
-		
 	}
 	request();
 
-	
 	$(window).scroll(function(){
 		if($(window).scrollTop() + $(window).height() == $(document).height()) {
        		request();
  		}
+	});
+
+	/*右侧箭头事件*/
+    $(".right_arrow>img:nth-child(2)").click(function(){
+			
 	});
 
 });
