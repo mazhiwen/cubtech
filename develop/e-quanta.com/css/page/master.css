@@ -1,0 +1,63 @@
+@import url('../common/main.css');
+body{
+	background-color: rgb(242,242,242);
+}
+.top{
+	background: url('../../images/article_details/top_back.png') 0 0 / 100% 100% no-repeat;
+}
+/*中间区域*/
+.center{
+	padding: 3% 0 3% 0;
+	text-align: center;
+	background-color: #ededed;
+}
+/*大v盒子*/
+.master_box{
+	background-color: white;
+	display: table;
+	padding: 10px 20px 20px 0;
+	margin-bottom: 30px;
+}
+.master_box>div{
+	display: table-cell;
+	vertical-align: middle;
+}
+.master_box>div:nth-child(1){
+	text-align: center;
+	font-size: 0;
+}
+.master_box>div:nth-child(1)>img{
+	width: 55%;
+}
+.master_box>div:nth-child(2){
+	width: 83%;
+	text-align: left;
+}
+.master_box>div:nth-child(2)>p{
+	margin-top: 10px;
+}
+/*标题*/
+.master_box_h{
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 10px;
+	width: 100%;
+}
+.master_box_h>*{
+	vertical-align: middle;
+}
+/*名字*/
+.master_box_h>span:nth-child(1){
+	background:url("../../images/select/big_v.png") no-repeat right center/16px auto;
+	padding-right:18px;
+	margin-right:10px;
+	font-size: 1.3em;
+	font-weight: 600;
+	color: black;
+}
+.master_box_h>span:nth-child(2){
+	font-weight: 100;
+	font-size: 1.3em;
+}
+.master_box>div:nth-child(2)>p,.master_box_h>span:nth-child(2){
+	color: rgb(125,125,125);
+}

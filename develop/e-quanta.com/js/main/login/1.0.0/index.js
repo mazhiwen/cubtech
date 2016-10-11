@@ -2,8 +2,9 @@ define(function(require) {
 	var $=require('jquery');
 	$=jQuery;
 	var ajaxMy=new(require('ajaxMy')),
+        ball=(require('ball'))('canvas',180,4),
 		phone_input=$('#phone_input'),
-		password_input=$("#password_input"),
+		password_input=$("#pwd_input"),
 		if_invi=$("#if_invi"),
 		inv_code=$("#inv_code");
 	new (require('commonMain'));	
@@ -19,7 +20,7 @@ define(function(require) {
 			inv_code.val('')
 			);
 	});
-	$("#login_button").click(function(e){
+	$("#login_btn").click(function(e){
 		//b 已经有cookie  并且输入账号密码与cookie不相符
 		if((phone_input.val()!=docCookies.getItem('loginName')||password_input.val()!=docCookies.getItem('loginPassword'))&&docCookies.hasItem('loginName')){
 			docCookies.removeItem('loginName','/');
@@ -52,13 +53,7 @@ define(function(require) {
 		);	
 	});
 
-
-
-
-
-
-
-	/*s1 部分 canvas 效果*/
+	/*s1 部分 canvas 效果
 	function Vector(x, y, z) {
         this.x = x || 0;
         this.y = y || 0;
@@ -379,6 +374,7 @@ define(function(require) {
             requestAnimationFrame(loop);
         }
         loop();
+        */
 	
 });
 

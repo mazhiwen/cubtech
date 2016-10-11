@@ -4,11 +4,15 @@ define(function(require) {
 	var	commonMain=new(require('commonMain')),
 		ajaxMy=new(require('ajaxMy')),
 		getGet=require('getGet'),
+		toTop=(require('toTop'))(),
 		transformTime=new(require('transformTime')),
 		id=getGet('id'),
 		author=$('#author'),
 		comment=$('#comment'),
+		vita=$('#vita'),
 		praise=$('#praise'),
+		headPic=$('#headPic'),
+		article_time=$('#article_time'),
 		edit=$('#edit'),
 		article_text_outer=$('#article_text_outer'),
 		title=$("#title");
@@ -16,14 +20,17 @@ define(function(require) {
 	if(id){
 		ajaxMy.send('/article/detail',{id:id},function(d){
 			var dr=d['result'];
+			headPic.attr("src",dr['headPic']);
+			author.text(dr['nickName']);
+			vita.text(dr['vita']);
+			article_time.text(transformTime.MSToNow(dr['createTime']));
+			//comment.text(dr['commentNum']);
+			//praise.text(dr['praiseNum']);
 			title.text(dr['title']);
-			author.text(dr['nickName']+'/'+transformTime.MSToNow(dr['createTime']));
-			comment.text(dr['commentNum']);
-			praise.text(dr['praiseNum']);
 			article_text_outer.append(dr['content']);
 			edit.attr("href",'edit.html?id='+dr['id']);
 			if(d['articleOwner']){
-				$("#delete_span").click(function(){
+				$("#article_delete").click(function(){
 					popUpWindow.confirm('确认删除该文章','该操作将导致内容被永远删除,请慎重',function(){
 						ajaxMy.send('/article/delete',{id:id},function(d){
 							if(d['result']){

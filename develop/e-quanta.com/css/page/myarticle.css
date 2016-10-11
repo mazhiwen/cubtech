@@ -1,6 +1,16 @@
 @import url('../common/main.css');
-@import url('../component/article_block/1.0.0/article_block.css');
+body{
+	background-color: rgb(242,242,242);
+}
+.top{
+	background: url('../../images/article_details/top_back.png') 0 0 / 100% 100% no-repeat;
+}
+/*中间区域*/
+.center{
+	padding: 3% 0 3% 0;
+	text-align: center;
+	background-color: #ededed;
+}
 
-#center{padding: 20px 0;text-align: center;}
-body{background-color: rgb(242,242,242);}
-#empty_img{display: block;margin:150px auto;}
+
+

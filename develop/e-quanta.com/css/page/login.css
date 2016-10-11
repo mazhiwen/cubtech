@@ -2,36 +2,80 @@
 html,body,.container{
 	width: 100%;
 	height: 100%;
-	background-color: red;
 }
 .center{
-	background-color: black;
 	height: 100%;
 	font-size: 0;
+	position: relative;
+	background:black url("../../images/login/left_bac.png") 19% center/20% no-repeat;
 }
 #canvas{
 	
 }
+/*登录模块*/
+.login_wrap{
+	width: 20%;
+	position: absolute;
+	right: 20%;
+	top:50%;
+	margin-top: -78px;
+}
+.login_wrap>div:nth-child(2){
+	margin: 15px 0;
+}
+.login_wrap input{
+	background-color: transparent;
+	width: 100%;
+	padding: 5px 0;
+	padding-left: 60px;
+	color: rgb(125,125,125);
+}
+.login_wrap input,#login_btn{
+	border-radius: 4px;
+}
+.input_box{
+	position: relative;
+	
+}
+#phone_select,.pwd_line{
+	color: rgb(125,125,125);
+	position: absolute;
+	width: 70px;
+	height: 30px;
+	margin-top: 5px;
+	border:none;
+	border-right:1px solid rgb(125,125,125); 
+}
+#pwd_input{
+	background: url("../../images/login/pwd.png") 25px center / 20px 20px no-repeat;
+}
+#login_btn{
+	background-color: rgb(199,171,146);
+	width: 100%;
+	color: black;
+}
+/*
 #main_outer{
 	overflow: hidden;
 	display: inline-block;
 	margin-top: 100px;
 }
 #login_outer{
-	background-color: white;float: left;
+	background-color: white;
+	float: left;
 	padding:0 60px 60px 60px;
 }
 #login_outer>.form-input>span{
 	text-align: left;
 }
 #login_outer>p{
-	text-align: center;margin: 50px 0;font-size: 1.3em;
+	text-align: center;
+	margin: 50px 0;
+	font-size: 1.3em;
 	letter-spacing: 0.1em;
 }
-/*#login_outer>div:nth-child(2){position: relative;}*/
 #phone_select{width: 300px;}
 #phone_select>option span{display: inline-block;width: 20px;height: 10px;}
-/*#phone_input{width: 240px;position: absolute;right: 0;}*/
 #if_invi{
 	vertical-align: middle;
 }
@@ -43,16 +87,16 @@ html,body,.container{
 	width: 300px;
 	margin: auto;
 	margin-top: 40px;
-	 height: 40px;
+	height: 40px;
 }
 #login_right_outer{
 	float: left;
-width: 350px; height: 409px; 
-background: url("../../images/login_right.png") no-repeat center 40%;
-
+	width: 350px; 
+	height: 409px; 
+	background: url("../../images/login_right.png") no-repeat center 40%;
 }
 
-
+*/
 
 
 

@@ -1,23 +1,27 @@
 /******************************************************
 init-style*/
 *{
-	padding: 0;margin: 0;border: none;
- font-family:"Microsoft YaHei","SimSun";
- font-size: 16px;letter-spacing: 0.5px;
- color: #333333;
-
+	padding: 0;
+	margin: 0;
+	border: none;
+	font-family:"Microsoft YaHei","SimSun";
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	color: #333333;
 }
-
-img{font-size: 0;}
 a{text-decoration: none;}
-li{list-style: none;}
-h2{line-height: 1.7em;font-size: 20px;}
-h4{line-height: 1.7em;font-size: 16px;letter-spacing: 1px;}
-p{line-height: 1.7em;}
-.gray_small{font-size: 14px;
-font-weight: 100;
-color:rgb(100,100,100);
-line-height: 22px;
+li{
+	list-style: none;
+}
+h2{
+	line-height: 1.7em;font-size: 20px;
+}
+h4{
+	line-height: 1.7em;font-size: 16px;
+	letter-spacing: 1px;
+}
+p{
+	line-height: 1.6em;
 }
 /******************************************************
 样式类*/
@@ -43,16 +47,26 @@ line-height: 22px;
 /******************************************************
 button 按钮*/
 button{ 
-	border-radius: 2px;background-color:  #48bc7a;color:  white;cursor: pointer;
-	border: 1px solid  #48bc7a; 
+	cursor: pointer;
 	height: 30px;
 	padding: 0 15px;
-
+	background-color: transparent;
 }
-button.s{height: 25px;padding:0 7px;font-size: 0.9em;}
-button:hover{background-color: #33b5d4;border-color: orange;}
-button:enabled:active{background-color: #33b5d4;border-color: orange;position: relative;left: 1px;top: 1px;}
-button:disabled{background-color: rgb(229,229,229);color: gray;border-color: rgb(180,180,180);}
+button.s{
+	height: 25px;
+	padding:0 7px;
+	font-size: 0.9em;
+}
+button:hover{
+	
+}
+button:enabled:active{
+	position: relative;left: 1px;top: 1px;
+}
+button:disabled{
+	background-color: rgb(229,229,229);
+	color: gray;border-color: rgb(180,180,180);
+}
 
 
 /******************************************************
@@ -79,32 +93,30 @@ form input*/
 垂直布局
 	display: block;
 */
-	 }
+ }
 input[type="text"],input[type="password"]{
-
 	text-indent:1em;
 }
 select{
 text-indent:3px;
-
 }
-input,select{
+input,select,button{
 	box-sizing:border-box;
-	border: 1px solid rgb(192,192,192); 
+	border: 1px solid rgb(125,125,125);
 /*高度*/
-	height: 40px;
+	height: 42px;
 /*input宽度*/
 	width: 300px;
 }
 textarea{
-	width: 200px;border: 1px solid rgb(192,192,192);
+	width: 200px;
+	border: 1px solid rgb(192,192,192);
 }
-
 input[type="radio"],input[type="checkbox"]{
-/*input宽度*/
-width: 1em;
-height: 1em;
-cursor: pointer;
+	/*input宽度*/
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
 }
 input:disabled{
 	background-color: rgb(242,242,242);
@@ -117,38 +129,93 @@ input:disabled{
 	cursor: pointer;
 }
 input:enabled:hover,select:hover,textarea:hover{
-	border-color:  #48bc7a;
 }
-select::-ms-expand { display: none; }
+select::-ms-expand { 
+	display: none; 
+}
 select{
-appearance:none;
--moz-appearance:none;
--webkit-appearance:none;
-background: url("../../../../images/select_arrow.png") no-repeat scroll 45px center transparent;
-background-size: 9px ;
-padding-right: 260px;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background: url("../../../../images/select_arrow.png") no-repeat scroll 50px center transparent;
+	background-size: 9px ;
 }
-option{text-indent: 7px;}
+option{
+	text-indent: 7px;
+}
 
 /******************************************************
 弹出窗口*/
 .stop_scroll{
-position: fixed; 
-overflow-y: scroll;
-width: 100%;
+	position: fixed; 
+	overflow-y: scroll;
+	width: 100%;
 }
-#popupwin_bac{position: absolute;width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);left: 0;top: 0;z-index: 999;}
-#popupwin{width: 400px;  background-color: white;position: absolute; left: 40%; top: 30%;}
-#popupwin>div:nth-child(1){height: 40px; background-color:  #48bc7a;color: white;
+/*透明层*/
+#popupwin_bac{
+	position: absolute;
+	width: 100%; 
+	height: 100%; 
+	background-color: rgba(0,0,0,0.5);
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+#popupwin{
+	width: 30%;
+	background-color: white;
+	position: absolute;
+	left: 35%; 
+	top: 30%;
+}
+/*顶部*/
+#popupwin>div:nth-child(1){
+	height: 40px; 
+	color: rgb(199,171,146);
 	line-height: 40px;
-text-indent: 1em;}
-#popupwin>div:nth-child(1)>span{float: right;
-background: url("../../../../images/popup_x.png") center center /20px 20px no-repeat;
-display: inline-block;
-width: 40px; height: 100%; 
-cursor: pointer;
+	text-indent: 1em;
 }
-#popupwin>div:nth-child(2){padding: 20px;}
-#popupwin>div:nth-child(3){text-align: right;padding: 15px;}
-#popupwin>div:nth-child(3)>button{margin:15px;}
-
+#popupwin>div:nth-child(1)>span{
+	float: right;
+	background: url("../../../../images/popup_x.png") center center /20px 20px no-repeat;
+	display: inline-block;
+	width: 40px;
+	height: 100%; 
+	cursor: pointer;
+}
+#popupwin>div:nth-child(2){
+	box-sizing:border-box;
+	height:90px;
+	padding: 20px; 
+	border-top: 1px solid rgb(199,171,146);
+}
+#popupwin>div:nth-child(3){
+	border-top: 1px solid black;
+	text-align: center;
+	height: 40px;
+}
+#popupwin>div:nth-child(3)>button{
+	height: 100%;
+	background-color: transparent;
+	color: rgb(199,171,146);
+	border-radius: 0;
+}
+.popupwin_confirm>div:nth-child(3)>button{
+	border:none;
+	width: 50%;
+}
+.popupwin_confirm>div:nth-child(3)>button:nth-child(1){
+	border-right:1px solid black;
+}
+#popupwin>div:nth-child(3)>button:hover{
+	border-radius: 0 ;
+	border: none ;
+	background-color: rgb(219,219,219);
+}
+.popupwin_confirm>div:nth-child(3)>button:nth-child(1):hover{
+	border-right: 1px solid black !important;
+}
+.popupwin_alert>div:nth-child(3)>button{
+	width: 100%;
+	border:none !important;
+}

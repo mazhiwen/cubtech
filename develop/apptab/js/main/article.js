@@ -20,7 +20,7 @@ pageController = {
                 if(a==1)$(".news-cont-area").css("padding-top","15px");
             } catch(i) {}
             var r = $mainWrap.height();
-            location.href = "equanta://setHeight=" + r
+            //location.href = "equanta://setHeight=" + r
         })
     },
     otherInit: function(t, a) {
@@ -34,5 +34,5 @@ pageController = {
 };
 $(function() {
     FastClick && FastClick.attach(document.body),
-    pageController.init()
+    pageController.init();  
 });

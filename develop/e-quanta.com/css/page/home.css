@@ -12,7 +12,7 @@ html,body,.container{
 }
 .page_index_round{
 	cursor: pointer;
-	border: 1px solid #BD9560;
+	border: 1px solid rgb(199,171,146);
 	border-radius: 50%;
 	width: 8px;
 	height: 8px;
@@ -20,10 +20,10 @@ html,body,.container{
 }
 .page_index{
 	position: absolute;
-	color: #BD9560;
+	color: rgb(199,171,146);
 	left: 25px;
 	top: -0.5em;
-	font-size: 1.4em;
+	font-size: 1.3em;
 }
 #page_outer>li:nth-child(1){
 	
@@ -51,32 +51,207 @@ html,body,.container{
 	height: 100%;
 	position: relative;
 	top: 0;
-	transition:top 2s;
+	transition:top 1s;
 }
 .content_outer>section{
 
 }
 /*s1 第一部分*/
-#section_1{
+.section_ball{
 	width: 100%;
 	height: 100%;
 	background: #212020;
 	overflow: hidden;
 	position: relative;	
-	/*
-	display: none;
-	*/
 }
-#section_1>div{
+/*s1 背景图*/
+.section_ball>div{
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: url("../../images/home/s1_text.png") center center/25% no-repeat;
+	background: none;
+}
+#section_1>div{
+	background: url("../../images/home/s1_text.png") center center/25% no-repeat;	
+}
+/*相册块*/
+.album_view_box{
+	position: absolute;
+	top: 24.5%;
+	left: 11.75%;
+	height: 51%;
+	width: 76.5%;	
+	overflow: hidden;
+}
+.album_box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition:all 2s;
+}
+.album_box>div{
+	position: absolute;
+	/*最短*/
+	width: 15%;
+	background-color: rgba(80,80,80,0.3);
+	margin: 0 1%;
+	z-index: 2;
+	height: 60%;
+	top:20%;
+	text-align: center;
+	box-sizing:border-box;
+	cursor: pointer;
+}
+.album_box>div,.album_box>div>h2,.album_box>div>p{
+	transition:all 1s;
+}
+/*各个相框的对应类*/
+/*1 5 共用*/
+.album_box>.album1,.album_box>.album5{
+	width: 15%;
+	background-color: rgba(46,46,46,0.45);
+	z-index: 2;
+	height: 60%;
+	top:20%;
+	border-bottom: 0 solid rgb(199,171,146);
+	opacity:0.3;
+	filter:Alpha(opacity=30);
+}
+.album_box>.album1>h2,.album_box>.album5>h2{
+	font-size: 0.8em;
+}
+.album_box>.album1>p,.album_box>.album5>p{
+	font-size: 0.6em;
+}
+/*1*/
+.album_box>.album1{
+	left: 0;
+}
+/*2 4 共用*/
+.album_box>.album2,.album_box>.album4{
+	width: 18%;
+	height: 80%;
+	top:10%;
+	z-index: 2;
+	background-color: rgba(46,46,46,0.65);
+	border-bottom: 0px solid rgb(199,171,146);
+	opacity:0.6;
+	filter:Alpha(opacity=60);
+}
+.album_box>.album2>h2,.album_box>.album4>h2{
+	font-size: 0.95em;
+}
+.album_box>.album2>p,.album_box>.album4>p{
+	font-size: 0.7em;
+}
+/*2*/
+.album_box>.album2{
+	left: 17%;
+}
+/*3*/
+.album_box>.album3{
+	/*最长*/
+	width: 24%;
+	left: 37%;
+	height: 100%;
+	z-index: 2;
+	top:0;
+	background-color: rgba(46,46,46,0.5);
+	border-bottom: 5px solid rgb(199,171,146);
+	opacity:1;
+	filter:Alpha(opacity=100);
+}
+.album_box>.album3>h2{
+	font-size: 1.2em;
+}
+.album_box>.album3>p{
+	font-size: 0.9em;
+}
+/*4*/
+.album_box>.album4{
+	left: 63%;	
+}
+/*5*/
+.album_box>.album5{
+	left: 83%;
+}
+/*6*/
+.album_box>.album6{
+	left: 61%;
+	z-index: 1;
+	width: 15%;
+	background-color: rgba(80,80,80,0.3);
+	height: 60%;
+	top:20%;
+	border-bottom: 0 solid rgb(199,171,146);
+	opacity:0.3;
+	filter:Alpha(opacity=30);
+}
+.album_box>.album6>h2{
+	font-size: 0.8em;
+}
+.album_box>.album6>p{
+	font-size: 0.6em;
+}
+.album_box>.album7{
+	left: 22%;
+	z-index: 1;
+	width: 15%;
+	background-color: rgba(80,80,80,0.3);
+	height: 60%;
+	top:20%;
+	border-bottom: 0 solid rgb(199,171,146);
+	opacity:0.3;
+	filter:Alpha(opacity=30);
+}
+.album_box>.album7>h2{
+	font-size: 0.8em;
+}
+.album_box>.album7>p{
+	font-size: 0.6em;
+}
+/*头像*/
+.album_box>div>img{
+	width: 51%;
+	margin: 10% auto 12.5%;
+}
+/*标题*/
+.album_box>div>h2{
+	line-height: 1em;
+	margin-bottom: 16px;
+	color: white;
+	font-weight: 400;
+}
+/*描述*/
+.album_box>div>p{
+	color: #999999;
+}
+/*加入按钮*/
+a.join_link{
+	position: absolute;
+	width: 176px;
+	height: 40px;
+	left: 50%;
+	bottom: 10%;
+	margin-left: -88px;
+	background-color: transparent;
+}
+a.join_link>button{
+	width: 100%;
+	height: 100%;
+	color: rgb(199,171,146);
+	border-color: transparent;
+	border-radius: 40px;
+	background-color: rgba(199,171,146,0.2);
+}
+a.join_link>button:hover{
+	background-color: rgba(199,171,146,0.5);
+	border-color: transparent;
 }
 /*s2 第二部分*/
-#section_2{
+#section_3{
 	/*
 	display: none;
 	*/
@@ -84,14 +259,14 @@ html,body,.container{
 	height: 100%;
 	background: url("../../images/home/s2_back.png") 0 0 / cover no-repeat;
 }
-#section_2>div{
+#section_3>div{
 	height: 100%;
 }
-#section_2>div>div{
+#section_3>div>div{
 	display: inline-block;
 	position: relative;
 }
-#section_2>div>div>div{
+#section_3>div>div>div{
 	/*
 	height 配置  js
 	*/
@@ -105,7 +280,7 @@ html,body,.container{
 .s2_text_box>h2{
 	font-weight: 100;
 	font-size: 2em;
-	color:#BD9560;
+	color:rgb(199,171,146);
 	letter-spacing: 1px;
 	line-height: 60px;
 }
@@ -122,7 +297,7 @@ html,body,.container{
 	*/
 	padding: 20px 0;
 	position: absolute;
-	outline: 1px solid #BD9560;
+	outline: 1px solid rgb(199,171,146);
 	left: 0;
 	top: 30px;
 	transition:top 0.2s;
@@ -135,74 +310,6 @@ html,body,.container{
 }
 
 /*s3 第三部分*/
-#section_3{
-	width: 100%;
-	height: 100%;
-	background-color: white;
-}
-#section_3>div:nth-child(1){
-	
-}
-#section_3>div:nth-child(1)>div>div{
-	text-align: left;
-	display: inline-block;
-	width: 20%;
-	word-break: break-all ;
-	white-space: pre-wrap;
-}
-#section_3>div:nth-child(1)>div>div:not(:nth-child(1)){
-	margin-left:10%;
-}
-#section_3>div:nth-child(1)>div>div>h3{
-	color: #BD9560;
-	font-size: 2em;
-	font-weight: 100;
-	padding-bottom: 0.3em;
-	border-left: 2px solid #BD9560;
-}
-#section_3>div:nth-child(1)>div>div>p{
-	border-left: 2px solid black;
-	color: #999;
-}
-#section_3>div:nth-child(1)>div>div>*{
-	padding-left: 15px;
-}
-#section_3>div:nth-child(2){
-	height: 40%;
-}
-#section_3>div:nth-child(2)>div{
-	width: 100%;
-	vertical-align: bottom;
-	font-size: 0;
-}
-#section_3>div:nth-child(2)>div>div{
-	font-size: 0;
-	width: 25%;
-	display: inline-block;
-	position: relative;
-}
-#section_3>div:nth-child(2)>div>div>div{
-	position: absolute;
-	background-color: rgba(0,0,0,0.8);
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
-#section_3>div:nth-child(2)>div>div>div>span{
-	color: #BD9560;
-	font-size: 2em;
-	font-weight: 900;
-}
-#section_3>div:nth-child(2)>div>div>div>span:nth-child(2){
-	font-weight: 100;
-}
-
-#section_3>div:nth-child(2)>div>div>img{
-	width: 100%;
-}
-
-/*s4 第四部分*/
 #section_4{
 	width: 100%;
 	height: 100%;
@@ -211,34 +318,109 @@ html,body,.container{
 #section_4>div:nth-child(1){
 	
 }
-#section_4>div:nth-child(1)>div{
-	vertical-align: bottom;
+#section_4>div:nth-child(1)>div>div{
+	text-align: left;
+	display: inline-block;
+	width: 20%;
+	word-break: break-all ;
+	white-space: pre-wrap;
 }
-#section_4>div:nth-child(1)>div>h2{
+#section_4>div:nth-child(1)>div>div:not(:nth-child(1)){
+	margin-left:10%;
+}
+#section_4>div:nth-child(1)>div>div>h3{
+	color: rgb(199,171,146);
 	font-size: 2em;
 	font-weight: 100;
-	color: #BD9560;
+	padding-bottom: 0.3em;
+	border-left: 2px solid rgb(199,171,146);
 }
-#section_4>div:nth-child(1)>div>p{
-	color: #ccc;
-	width: 50%;
-	margin: auto;
+#section_4>div:nth-child(1)>div>div>p{
+	border-left: 2px solid black;
+	color: rgb(125,125,125);
+}
+#section_4>div:nth-child(1)>div>div>*{
+	padding-left: 15px;
+}
+#section_4>div:nth-child(2){
+	height: 40%;
 }
 #section_4>div:nth-child(2)>div{
-	
+	width: 100%;
+	vertical-align: bottom;
+	font-size: 0;
 }
 #section_4>div:nth-child(2)>div>div{
-	width: 30%; 
+	font-size: 0;
+	width: 25%;
+	display: inline-block;
+	position: relative;
 }
-#section_4>div:nth-child(2)>div>div>h3{
-	font-size: 1.4em;
-	margin: 20px auto;
+#section_4>div:nth-child(2)>div>div>div{
+	position: absolute;
+	background-color: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
 }
-#section_4>div:nth-child(2)>div>div>p{
-	margin: 10px auto;
-	color: #999;
+#section_4>div:nth-child(2)>div>div>div>span{
+	color: rgb(199,171,146);
+	font-size: 3em;
+	font-weight: 900;
+}
+#section_4>div:nth-child(2)>div>div>div>span:nth-child(2){
+	font-weight: 100;
 }
 
+#section_4>div:nth-child(2)>div>div>img{
+	width: 100%;
+}
+#section_4>div:nth-child(2)>div>div>div:hover{
+	background-color: rgba(255,255,255,0.8); 
+}
+/*s4 第四部分*/
+#section_5{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+#section_5>div:nth-child(1){
+	height: 30%;
+}
+#section_5>div:nth-child(1)>div{
+	vertical-align: bottom;
+}
+#section_5>div:nth-child(1)>div>h2{
+	font-size: 2em;
+	font-weight: 100;
+	color: rgb(199,171,146);
+}
+#section_5>div:nth-child(1)>div>p{
+	color: rgb(125,125,125);
+	width: 30%;
+	margin: auto;
+}
+#section_5>div:nth-child(2)>div{
+	
+}
+#section_5>div:nth-child(2)>div>div{
+	width: 30%; 
+}
+#section_5>div:nth-child(2)>div>div>h3{
+	font-size: 1.4em;
+	margin: 20px auto;
+	color: black;
+}
+#section_5>div:nth-child(2)>div>div>p{
+	margin: 10px auto;
+	color: rgb(125,125,125);
+}
+#section_5>div:nth-child(2)>div>div>p>span{
+	padding-left: 22px;
+	background: url('../../images/home/check.png') 0 center/17px auto no-repeat;
+}
 
 .oacity_0{
 	transition:opacity 2s;
@@ -254,6 +436,7 @@ html,body,.container{
 .transition_none{
 	transition:initial;
 }
+
 @media(max-width:1300px) {
 
 

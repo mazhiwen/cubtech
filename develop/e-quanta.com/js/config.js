@@ -18,7 +18,8 @@ var pageVersionObj = {
     about:'1.0.0',
     login:'1.0.0',
     edit:'1.0.0',
-    select:'1.0.0'
+    select:'1.0.0',
+    master:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 /*
@@ -40,9 +41,9 @@ UEDITORTOPOFFSET=71;
 */
 /*
 正式环境
-
-REQUESTHEAD='https://www.e-quanta.com';
 */
+REQUESTHEAD='https://www.e-quanta.com';
+
 /*
 测试环境
 
@@ -50,9 +51,9 @@ REQUESTHEAD='https://test.e-quanta.com';
 */
 /*
 本地环境
-*/
-REQUESTHEAD='//localhost:8080';
 
+REQUESTHEAD='//localhost:8080';
+*/
 
 
 seajs.config({
@@ -61,8 +62,7 @@ seajs.config({
       /*
       共用 admin 域的文件
       */
-      "commonEdit": "admin/js/modules/commonedit/1.0.0/commonEdit",
-      "popUpWindow":'admin/js/lib/popupwindow/1.0.0/popUpWindow.js',
+      "commonEdit": "admin/js/modules/commonedit/1.0.0/commonEdit",    
       "jquery": "admin/js/lib/jquery/jquery/3.1.0/jquery-3.1.0.min.js",
       "getGet": "admin/js/lib/getget/1.0.0/getGet.js",
       "docCookies":"admin/js/lib/doccookies/1.0.0/docCookies.js",
@@ -70,11 +70,13 @@ seajs.config({
       /*
       私有
       */
+      "popUpWindow":'../../../lib/popupwindow/1.0.0/popUpWindow.js',
       "getHtml":'gethtml/1.0.0/getHtml.js',
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
+      "ball":'ball/1.0.0/ball.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js',
-      "commonCopy":'../../../modules/commoncopy/1.0.0/commonCopy.js',
+      "toTop":'../../../modules/totop/1.0.0/toTop.js',
       "mustLogin":'../../../modules/mustlogin/1.0.0/mustLogin.js'
     },
     paths:{

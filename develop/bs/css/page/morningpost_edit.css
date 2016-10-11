@@ -2,6 +2,8 @@
 #right-center>div{width: 70%;margin:10px auto;}
 #activedate{}
 #commit-button{display: block;margin:40px auto 200px;}
-
+#summary{
+	width: 100%;
+}
 
 
