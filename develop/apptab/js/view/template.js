@@ -108,12 +108,14 @@ function() {
         i = e.$string,
         c = "";
         var myTitle=t(a.title);
-        //console.log(myTitle);
+        var mySummary=myTitle;
+        if(t(a.summary))
+            mySummary=t(a.summary);
+        
 		/***********************************************
 		微信分享
         */
         var url=location.href;
-        alert(url);
         $.ajax({
         	url:'../app/weixin/ticket',
         	type:'POST',
@@ -126,11 +128,11 @@ function() {
                 var noncestr='sss';
                 var timestamp=new Date().getTime();
                 var s='jsapi_ticket='+jsapi_ticket+'&noncestr='+noncestr+'&timestamp='+timestamp+'&url='+url;
-                alert(s);
+                
                 var signature=CryptoJS.SHA1(s, { asString: true }).toString();
-                console.log(111);
-                console.log(signature);
-                console.log(222);
+                
+                //console.log(signature);
+                
                 /*
                 var res=d['data']['result'];
                 var noncestr=res['noncestr'];
@@ -153,25 +155,38 @@ function() {
 		            wx.onMenuShareTimeline({
 		                title: myTitle, // 分享标题
 		                link: url, // 分享链接
-		                imgUrl: 'https://api.e-quanta.com/images/agreement-header.png', // 分享图标
+		                imgUrl: 'https://api.e-quanta.com/images/favicon.png', // 分享图标
 		                desc:'dsadsadsadsadsa',
 		                success: function () {
-                            alert(url);   
+                              
 		                    //console.log('// 用户确认分享后执行的回调函数');
 		                },
 		                cancel: function () { 
 		                    //console.log('// 用户取消分享后执行的回调函数');
 		                }
 		            });
+                    wx.onMenuShareAppMessage({
+                        title: myTitle, // 分享标题
+                        desc: mySummary, // 分享描述
+                        link: url, // 分享链接
+                        imgUrl: 'https://api.e-quanta.com/images/favicon.png', // 分享图标
+                        type: 'link', // 分享类型,music、video或link，不填默认为link
+                        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                        success: function () { 
+                            // 用户确认分享后执行的回调函数
+                        },
+                        cancel: function () { 
+                            // 用户取消分享后执行的回调函数
+                        }
+                    });
 		        });
 		        wx.error(function(res){
-                    alert(url);
-		            console.log(res);
+                    
+		           // console.log(res);
 		        });
         	}
         });
         
-
         return c += '<div class="news-wrap"> <div class="news-title-area "> <h6 class="news-title">',
         c += t(a.title),
         c += '</h6> <div class="news-subtitle mt10 pr"> <span class="news-icon abs-lm"></span> <span class="news-time ml15">',

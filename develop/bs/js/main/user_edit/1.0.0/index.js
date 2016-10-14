@@ -13,8 +13,8 @@ define(function(require) {
 		area_code=$('#area_code'),
 		organization=$('#organization'),
 		position=$('#position'),
-		gender=$('#gender'),
-		ImageId=null;
+		gender=$('#gender');
+		//ImageId=null;
 	if(id){
 		AJAXMY.send('/user/edit',{id:id},function(d){
 			var d=d['result'];
@@ -35,7 +35,7 @@ define(function(require) {
 					area_code:area_code.val(),
 					mobile:phone.val(),
 					head_pic:cover_img.attr('src'),
-					sys_image_id:ImageId,
+					//sys_image_id:ImageId,
 					organization:organization.val(),
 					position:position.val(),
 					email:'',
@@ -50,6 +50,16 @@ define(function(require) {
 				});
 			});
 		});
+		AJAXMY.upLoadUserPic('cover_image_input',function(responseUrl){
+			if(responseUrl){
+				cover_img.attr("src",responseUrl);	
+			}else{
+				alert('失败');
+			}
+			
+
+			//ImageId=sysImageId;
+		},id);
 	}else{
 		confirm_button.click(function(){
 			AJAXMY.send('/user/save',{
@@ -58,7 +68,7 @@ define(function(require) {
 				area_code:area_code.val(),
 				mobile:phone.val(),
 				head_pic:cover_img.attr('src'),
-				sys_image_id:ImageId,
+				//sys_image_id:ImageId,
 				organization:organization.val(),
 				position:position.val(),
 				email:'',
@@ -70,9 +80,6 @@ define(function(require) {
 			});
 		});
 	}
-	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
-		cover_img.attr("src",responseUrl);
-		ImageId=sysImageId;
-	},1);
+	
 });
 

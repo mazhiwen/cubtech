@@ -83,23 +83,18 @@ define(function(require) {
 		        tag: 'h1', //tag 使用的标签名字
 		        name: '', //
 		        label: '早报一级标题', //label 显示的名字也是用来标识不同类型的标识符，注意这个值每个要不同
-		        style: 'padding: 50px 0 0 40px;font-size: 25px;background:url("../images/morning_title.png") 0 0/100% 100px no-repeat;width:100%;height:100px;' //style 添加的样式
+		        style: 'box-sizing:border-box;padding: 22px 0 0 3.5%;font-size: 15px;background:url("//testadmin.e-quanta.com/images/morning_title.png") 0 0/100% 100% no-repeat;width:100%;height:48px;' //style 添加的样式
 		    }, //每一个对象就是一个自定义的样式
 		    {
-		        tag: 'h1',
-		        name: 'tl',
-		        label: '',
-		        style: 'border-bottom:#ccc 2px solid;padding:0 4px 0 0;margin:0 0 10px 0;'
+		        tag: 'p',
+		        name: '',
+		        label: '早报段落',
+		        style: 'background:url("//testadmin.e-quanta.com/images/morning_t2.png") 0 6px /15px 15px no-repeat;padding-left:20px;'
 		    }, {
-		        tag: 'span',
-		        name: 'im',
-		        label: '',
-		        style: 'font-style:italic;font-weight:bold'
-		    }, {
-		        tag: 'span',
-		        name: 'hi',
-		        label: '',
-		        style: 'font-style:italic;font-weight:bold;color:rgb(51, 153, 204)'
+		        tag: 'p',
+		        name: '',
+		        label: '正文段落',
+		        style: ''
 		    }
 		]	
 		

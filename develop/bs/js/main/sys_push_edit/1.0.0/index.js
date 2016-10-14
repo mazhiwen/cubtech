@@ -46,7 +46,7 @@ define(function(require) {
 	});
 	/*目标id 链接*/
 	type.change(function(){
-		if (type.val()==3){
+		if (type.val()==4){
 			url_span.text('链接:');
 		}else{
 			url_span.text('目标ID:');
@@ -71,7 +71,10 @@ define(function(require) {
 			POPUPWINDOW.confirm("立即推送","确认立即推送以上内容及链接？",function(){
 				AJAXMY.send(requestUrl,Object.assign({push_time:''},getFormDate(),appendData),function(data){
 					if(data['result']){
-						POPUPWINDOW.alert('立即推送成功');
+						POPUPWINDOW.hide();
+						POPUPWINDOW.alert('立即推送成功',function(){
+							location.reload(true);
+						});
 					};
 				});
 			},function(){});
@@ -83,7 +86,10 @@ define(function(require) {
 			POPUPWINDOW.confirm("定时推送","确认在"+filldate.val()+"推送以上内容及链接？",function(){
 				AJAXMY.send(requestUrl,Object.assign({push_time:filldate.val()},getFormDate(),appendData),function(data){
 					if(data['result']){
-						POPUPWINDOW.alert('编辑成功');
+						POPUPWINDOW.hide();
+						POPUPWINDOW.alert('编辑成功',function(){
+							location.reload(true);
+						});
 					};
 				});
 			},function(){});

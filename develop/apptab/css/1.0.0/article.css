@@ -9,6 +9,8 @@ news-detail（新闻详情）
 .news-wrap {
   color: #323232;
   overflow: hidden;
+  margin-bottom: 100px;
+  background-color: white;
 }
 
 .news-title-area {
@@ -78,7 +80,9 @@ news-detail（新闻详情）
 .news-cont-area {
   font-size: 16px;
   background-color: #fff;
-  padding:0 15px 0 15px; 
+  /*
+  padding:0 15px 0 15px; */
+  padding: 0;
 }
 .news-cont-area>p:first-child{
   margin-top: 0;
@@ -106,7 +110,11 @@ news-detail（新闻详情）
   line-height: 1.7em;
   text-align: justify; 
   color:#6f6f6f;
+  
+  margin: 0 15px 0 15px;
+
 }
+
 .news-cont-area img {
   width: 100% !important;
   height: auto !important;
@@ -130,7 +138,7 @@ blockquote {
 background-color: #f3f3f3;
 border-left: 0.4em solid #9b9b9b;
 padding: 0.9em;
-margin: 1.6em auto;
+margin: 1.6em 15px;
 }
 blockquote p {
   margin:0 !important;color: #9b9b9b;

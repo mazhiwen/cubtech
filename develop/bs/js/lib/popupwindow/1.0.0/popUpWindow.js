@@ -20,8 +20,11 @@ define(function(require,exports,module) {
 		this.initPUW();
 		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div>'+content+'</div><div><button>取消</button><button>确认</button></div></div>');
 		$('#popupwin>div:nth-child(3)>button:nth-child(2)').click(function(e){
-			tthis.puwb.hide();
-			$('body').removeClass('stop_scroll');
+			console.log('确认');
+			//var thisWindow=tthis.puwb; 
+			//tthis.puwb.hide();
+			//$('body').removeClass('stop_scroll');
+			//hideWindow();
 			yesFunction.call(this);
 		});
 		$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(e){
@@ -30,6 +33,12 @@ define(function(require,exports,module) {
 			noFunction.call(this);
 		});
 	}
+
+	popUpWindow.prototype.hide=function(){
+		this.puwb.hide();
+		$('body').removeClass('stop_scroll');
+	}
+
 	popUpWindow.prototype.alert=function(content,yesFunction){
 		var tthis=this;
 		/*

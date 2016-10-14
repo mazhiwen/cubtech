@@ -99,6 +99,39 @@ define(function(require, exports, module) {
 			xhr.send(fd);
 		},false);
 	}
+	/*
+	上传用户头像
+  	*/
+	ajaxMy.prototype.upLoadUserPic=function(inputId,responseFn,parameterA){
+		var e=document.getElementById(inputId),
+			fd=new FormData(),
+			tthis=this;
+		e.addEventListener("change",function(event){
+			var files=e.files,
+				xhr = new XMLHttpRequest();
+			for(var i=0,file;file=files[i];i++){
+				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(e.value)){
+					alert("非图片格式，重新来");
+					return false;
+				}else{
+					fd.append('file', file);	
+				}
+				console.log(e.value);
+			}
+			fd.append('user_id',parameterA);
+			xhr.addEventListener('load',function(event){
+
+				
+				//var result=JSON.parse(this.responseText)['data']['result'];
+				//if(result){
+					var responseUrl=JSON.parse(this.responseText)['data']['head_pic'];	
+					responseFn.call(this,responseUrl);
+				//}
+			});
+			xhr.open("POST", tthis.requestHead+"/admin/user/head_pic", true);
+			xhr.send(fd);
+		},false);
+	}
 
 
 });

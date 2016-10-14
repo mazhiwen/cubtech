@@ -9,7 +9,14 @@ define(function(require, exports, module) {
 		return false;
   		*/
   	}
-  	/*转换毫秒- 不为空的字符串*/
+
+  	/*判断 是否为空*/
+  	parseString.prototype.isEmpty=function(str){
+  		var s=$.trim(str);
+  		if(s.length>0)return true;else return false; 
+  	}
+
+  	/*获得 不为空的字符串*/
   	parseString.prototype.getNoEmpty=function(str){
   		var s=$.trim(str);
   		if(s.length>0)return s;else return false; 

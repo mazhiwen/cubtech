@@ -2,11 +2,12 @@ define(function(require) {
 	new require('commonEdit');
 	require('json2');
 	var commonMain=require('commonMain'),
-		getGet=require('getGet'),
 		t=new(require('transformTime')),
+		parseString=new(require('parseString')),
 		a=require('dateTimePicker'),
 		d=new a('#activedate','#filldate',function(d){}),
-		id=getGet('id'),
+		c=new a('#activedate_c','#filldate_c',function(d){}),
+		id=parseString.getGet('id'),
 		title=$("#title"),
 		author=$("#author"),
 		cover_img=$('#cover_img'),
@@ -21,13 +22,75 @@ define(function(require) {
 		keyword_label=$("#keyword_label"),
 		check_time=$("#check_time"),
 		activedate=$("#activedate"),
+		comment_user_s=$("#comment_user_s"),
+		comment_user_o=$("#comment_user_o"),
+		comment_user_b=$("#comment_user_b"),
 		f=$("#filldate"),
 		dele_cov_img=$("#dele_cov_img"),
 		add_file_btn=$("#add_file_btn"),
+		add_comment_b=$("#add_comment_b"),
+		add_comment_wrap=$(".add_comment_wrap"),
+		commit_button=$("#commit-button"),
+		comment_c=$("#comment_c"),
 		ImageId='';	
-	d._init();	
+	d._init();
+	c._init();
+
+	function commitFunction(id){
+		var keyWordArr=[],
+			attas=[],
+			isId=parseString.isEmpty(id);
+		commit_button.prop('disabled',true);
+		$(".keyword").each(function(){
+			keyWordArr.push($(this).text());
+		});
+		if(isId){
+			$(".add_file_box").each(function(){
+				var url=$(this).find(".add_file_box_link").val(),
+					name=$(this).find(".add_file_box_file").val();
+				if(parseString.isEmpty(url)&&parseString.isEmpty(name)){
+					attas.push({id:$(this).attr("data-id"),url:url,name:name});
+				}else{
+					//alert('错误');
+					//return;
+				}
+			});
+		}else{
+			$(".add_file_box").each(function(){
+				var url=$(this).find(".add_file_box_link").val(),
+					name=$(this).find(".add_file_box_file").val();
+				if(parseString.isEmpty(url)&&parseString.isEmpty(name)){
+					attas.push({url:url,name:name});
+				}else{
+				}
+			});
+		}
+		attas=JSON.stringify(attas);
+		var data={
+			title:title.val(),
+			summary:summary.val(),
+			sys_image_id:ImageId,
+			cover_pic:cover_img.attr("src"),
+			content:ue.getContent(),
+			category_code:article_class.val(),
+			keyword:keyWordArr,
+			attas:attas
+		};
+		if(isId){
+			Object.assign(data,{id:id});
+		}else{
+			var user_id='';
+			if(author.val().length!=0&&$.trim(author.val())&&author_dl.children('[value='+author.val()+']').attr('data-id')!=undefined){
+				user_id=author_dl.children('[value='+author.val()+']').attr('data-id');
+			}
+			Object.assign(data,{user_id:user_id});
+		}
+		return data;
+	}
+	
 	ue.ready(function(){
 		if(id){
+			add_comment_wrap.show();
 			AJAXMY.send('/article/edit',{id:id},function(data){
 				var d=data['result'];
 				title.val(d['title']);
@@ -58,29 +121,8 @@ define(function(require) {
 				});
 			});
 			$("#commit-button").click(function(){
-				$(this).prop('disabled',true);
+				var d=commitFunction(id);
 				var that=$(this);
-				var keyWordArr=[];
-				var attas=[];
-				$(".keyword").each(function(){
-					keyWordArr.push($(this).text());
-				});
-				$(".add_file_box").each(function(){
-					attas.push({id:$(this).attr("data-id"),url:$(this).find(".add_file_box_link").val(),name:$(this).find(".add_file_box_file").val()});
-				});
-				attas=JSON.stringify(attas);
-				var d={
-						id:id,
-						title:title.val(),
-						summary:summary.val(),
-						sys_image_id:ImageId,
-						cover_pic:cover_img.attr("src"),
-						content:ue.getContent(),
-						//.replace(/\s/g,''),
-						category_code:article_class.val(),
-						keyword:keyWordArr,
-						attas:attas
-					};
 				if(check_time.is(':checked')){
 					Object.assign(d,{create_time:f.val()});
 				}
@@ -96,6 +138,16 @@ define(function(require) {
 					}
 				);
 			});
+			/*提交评论*/
+			add_comment_b.click(function(){
+				$(this).prop("disabled",true);
+				AJAXMY.send('/article/comment/save',{article_id:id,content:comment_c.val()},function(d){
+					add_comment_b.prop("disabled",false);
+					if(d['result']){
+						POPUPWINDOW.alert('添加成功');
+					}
+				});
+			});
 		}else{
 			AJAXMY.send('/category/select_list',null,function(d){
 				var s='<option value=" "></option>';
@@ -105,32 +157,9 @@ define(function(require) {
 				article_class.append(s);
 				$("#commit-button").click(function(){
 					if(article_class.val()!=' '){
-						$(this).prop('disabled',true);
+						//$(this).prop('disabled',true);
+						var d=commitFunction(false);
 						var that=$(this);
-						var user_id='';
-						if(author.val().length!=0&&$.trim(author.val())&&author_dl.children('[value='+author.val()+']').attr('data-id')!=undefined){
-							user_id=author_dl.children('[value='+author.val()+']').attr('data-id');
-						}
-						var keyWordArr=[];
-						$(".keyword").each(function(){
-							keyWordArr.push($(this).text());
-						});
-						var attas=[];
-						$(".add_file_box").each(function(){
-							attas.push({url:$(this).find(".add_file_box_link").val(),name:$(this).find(".add_file_box_file").val()});
-						});
-						attas=JSON.stringify(attas);
-						var d={
-								title:title.val(),
-								summary:summary.val(),
-								sys_image_id:ImageId,
-								cover_pic:cover_img.attr("src"),
-								user_id:user_id,
-								content:ue.getContent(),//.replace(/\s/g,''),
-								category_code:article_class.val(),
-								keyword:keyWordArr,
-								attas:attas
-							};
 						if(check_time.is(':checked')){
 							Object.assign(d,{create_time:f.val()});
 						}	
@@ -210,5 +239,17 @@ define(function(require) {
 		$(this).parent().parent().remove();
 	});
 
+	/*选择用户方式*/
+	$('input[name="way_comment"]').change(function(){
+		if($(this).val()==1){
+			comment_user_o.prop("disabled",false);
+			comment_user_s.prop("disabled",true);
+			comment_user_b.prop("disabled",true);
+		}else{
+			comment_user_o.prop("disabled",true);
+			comment_user_s.prop("disabled",false);
+			comment_user_b.prop("disabled",false);
+		}
+	});
 });
 
