@@ -1,0 +1,24 @@
+@import url('../common/main.css');
+#right{text-align: center;}
+#right-center{ margin: auto;display: inline-block;text-align: left;}
+#confirm-outer{text-align: center;margin: 100px auto;}
+
+#navigation-crumb{text-align: left;}
+/*
+#search-article-outer{position: relative;width:600px;}
+#search-result{display: inline-block;background-color: rgb(242,242,242);position: absolute;border:1px solid rgb(0,162,202);}
+#search-result>span{display:block;}
+*/
+
+
+.form-input>span{width: 180px;}
+
+#subject_article{width: 100%; background-color: red;overflow: hidden;text-align: left;}
+#subject_article>div:nth-child(1){float: left;width: 50%;
+	background-color: green;
+	min-height: 100px;
+}
+#subject_article>div:nth-child(2){float: left;width: 50%;
+	background-color: yellow;
+	min-height: 100px;
+}

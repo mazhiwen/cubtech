@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="utf-8">
+    <title>Title</title>
+<style type="text/css">
+#aa{
+	width: 50px; height: 50px;
+	background-color: red;
+}
+
+</style>    
+</head>
+<body>
+<div class="main-wrap">
+    <a class="origin-link" href="https//www.baidu.com" id="originLink">http://www.baidu.com</a>
+
+    <button id="aa"></button>
+</div>
+</body>
+<script type="text/javascript">
+var aa=document.getElementById('aa');
+var originLink=document.getElementById('originLink');
+aa.addEventListener('click',function(){
+
+	alert(2);
+});
+originLink.addEventListener('click',function(){
+
+	alert(3);
+});
+</script>
+</html>

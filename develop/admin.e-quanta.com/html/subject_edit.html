@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta id="page_main" data-main="subject_edit">
+<script type="text/javascript" src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<link rel="stylesheet" href="../css/page/subject_edit.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<a href="subject_list.html"><button>专题列表</button></a>
+		</div>
+		<div id="right-center">
+			<div class="form-input"><span>专题名称:</span><input id="subject_name" type="text" placeholder="专题名称"></div>
+			<div class="form-input"><span>专题描述:</span><input id="subject_description" type="text" placeholder="专题描述"></div>
+			<div class="upload_preview">
+				<div class="form-input">
+					<span>专题封面:</span><input type="file" id="cover_image_input">
+				</div>
+				<img id="cover_img" src="">
+			</div>
+			<div class="form-input"><span>在专题列表页的排序</span><input id="subject_list_sn" type="text" placeholder="在专题列表页的排序（数值大的靠前）"></div>
+			<!--<div class="form-input"><span>是否在推荐tab显示</span><input type="checkbox"></div>-->
+			
+			<!--<div class="form-input" id="search-article-outer">
+				<span>专题所包含文章:</span>
+				<div id="search-result">
+					<span>苹果ds</span>
+					<span>苹果</span>
+					<span>苹果</span>
+				</div>
+			</div>-->
+			<div id="confirm-outer"><button id="confirm-button">确认</button></div>
+		</div>
+		<div id="subject_article">
+			<div>
+				<div>专题包含文章列表</div>
+				<div id="is_article_list_outer">
+					<!--<div data-id="1"><span>dsds</span><button class="s">删除</button></div>
+					<div data-id="2"><span>dsd1545454s</span><button class="s">删除</button></div>-->
+				</div>
+				<ul class="paging" id="is_paging"></ul>
+			</div>
+			<div>
+				<div>搜索文章 <input type="text" id="search_input"> <button id="search_button">搜</button></div>
+				<div id="no_article_list_outer"><!--
+					<div data-id="1"><span>dsds</span><button class="s">添加</button></div>
+					<div data-id="2"><span>dsd1545454s</span><button class="s">添加</button></div>-->
+				</div>
+				<ul class="paging" id="search_paging"></ul>
+			</div>
+		</div>
+  		
+  		
+	</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta id="page_main" data-main="sys_push_edit">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<link rel="stylesheet" href="../css/page/sys_push_edit.css">
+<title>一匡-新增/编辑系统推送</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+		</div>
+		<div id="edit_area">
+			<label class="form-input"><span>推送内容</span><textarea id="content"></textarea></label>
+			<div class="form-input"><span>跳转目标类型:</span><select id="type"><option value=" "> </option><option value="0">无跳转</option><option value="1">文章</option><option value="2">要闻</option><option value="3">早报</option><option value="4">指定url</option><option value="5">专题</option></select></div>
+			<div class="form-input"><span id="url_span">目标ID:</span><input type="text" id="url"></div>
+			<div class="form-input"><span>用户:</span><select id="push_to_type"><option value=" "> </option><option value="0">全部</option><option value="1">大V</option><option value="2">普通用户</option><option value="3">自定义</option></select></div>
+			<div class="form-input" style="display:none;" id="upload_user"><span>上传:</span><input type="file" id="upload_user_input"></div>
+			<div class="form-input" style="display:none;" id="to_users"><span>用户列表</span></div>
+			<div class="form-input"><span>推送设备类型</span><select id="device_type"><option value=" "> </option><option value="0">全部</option><option value="1">IOS</option><option value="2">Android</option></select></div>
+			<div id="cho_push_time">
+				<input type="radio" value="1" name="way_push_time" checked> 
+				<div class="date-time-picker-outer"><button id="activedate">选择时间</button><input type="text" id="filldate" disabled></div>
+				<input type="radio" value="2" name="way_push_time">
+				<button id="button_push_now" disabled>立即推送</button>
+			</div>
+
+			<button id="confirm_button">确认</button>
+		</div>
+  		
+  		
+	</div>
+</div>
+
+
+</body>
+</html>

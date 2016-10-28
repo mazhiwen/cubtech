@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta id="page_main" data-main="banner_edit">
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<link rel="stylesheet" href="../css/page/banner_edit.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+		</div>
+		<div id="edit-area">
+			<label class="form-input"><span>名称:</span><input type="text" placeholder="名称" id="name"></label>
+			<div class="upload_preview">
+				<div class="form-input">
+					<span>专题封面:</span><input type="file" id="cover_image_input">
+				</div>
+				<img id="cover_img" src="">
+			</div>
+			<div class="form-input"><span>跳转目标类型:</span><select id="type"><option value="1">文章</option><option value="2">早报/要闻</option><option value="3">站内外某指定H5页面</option><option value="4">专题详情</option><option value="5">话题详情</option><option value="6">匿名吐槽详情</option></select></div>
+			<div class="form-input"><span id="url_span">目标ID:</span><input type="text" id="url"></div>
+			<div class="form-input"><span>排序:</span><input type="text" id="sn"></div>	
+			<div id="confirm-outer"><button id="commit_button">确认</button></div>
+		</div>
+  		
+  		
+	</div>
+</div>
+
+
+</body>
+</html>

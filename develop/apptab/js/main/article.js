@@ -17,8 +17,9 @@ pageController = {
             $detail.html(t.data.result.content);
             try {
                 var e = t.data.result.originalUrl;
-                /*3 早报  2要闻  1文章 */
+                /*3 要闻  2早报  1文章 */
                 3 == a && e && $originLink.attr("href", e).css("display","inline-block") ;
+                //e?$originLink.text(e):$originLink.text(1);
                 if(a==1)$(".news-cont-area").css("padding-top","15px");
             } catch(i) {}
             var r = $mainWrap.height();
@@ -30,10 +31,12 @@ pageController = {
         proHub.article.getArticle(t,
         function(t) {
             200 == t.sys && (template.helper("dataFormat", eq.formatTime), $mainWrap.html(template("article", t.data)))
-            if(a==2){
+            if(a!=1){
                 $(".news-author-area").hide();
                 $(".news-subtitle").hide();
             }
+            if(a==2)
+            $(".morning_top_pic").show();
         });
         
         var e = downloader.createBar("//testapi.e-quanta.com/images/banner.png", "");

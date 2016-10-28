@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta id="page_main" data-main="subject_list">
+<script type="text/javascript" src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<link rel="stylesheet" href="../css/page/subject_list.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<a href="subject_edit.html"><button>添加专题</button></a>
+		</div>
+		<table class="table">
+		    <caption></caption>
+		    <thead>
+		      <tr>
+		        <th>序号</th>
+		        <th>专题名称</th>
+		        <th>文章数量</th>
+		        <th>创建时间</th>
+		        <th>最后一次编辑时间</th>
+		        <th>是否置顶（专题列表页）</th>
+		        <th>是否在推荐tab显示</th>
+		        <th>操作</th>
+		      </tr>
+		    </thead>
+		    <tbody id="subject_list_tbody">
+		      <tr>
+		        <td>0</td>
+		        <td>1</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>4</td>
+		        <td><span class="glyphicon glyphicon-user">ds</span></td>
+		        <td><input type="checkbox"></td>
+		        <td><a href=""><button class="s">编辑</button></a> <span><button class="s">删除</button></span></td>
+		      </tr>
+		    </tbody>
+  		</table>
+  		<div id="paging-outer">
+			<ul class="paging" id="paging"></ul>
+  		</div>
+  		<!--<div id="">
+			<label>专题栏是否在首页导航栏显示示<input type="checkbox" name="if-show-home"></label>
+			<label>在导航栏的排序<input id="sn_on_navigation"></label>
+			<button id="confirm_bottom">确定</button>
+		</div>-->
+  		
+	</div>
+</div>
+</body>
+</html>

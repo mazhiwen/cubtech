@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-itunes-app" content="app-id=1137638296">
     <meta http-equiv="pragma" content="no-cache">
     <meta charset="utf-8">
     <title>一匡</title>
@@ -13,6 +14,9 @@
 </head>
 <body>
 <div>
+    <div class="download-tips fix-lt" id="tipsShow">
+        <img class="pct100 mt20" src="//api.e-quanta.com/images/share.png" alt="">
+    </div>
     <div class="main-wrap">
         <div class="banner">
             <img class="pct100" src="//api.e-quanta.com/images/bkg.png"/>
@@ -42,6 +46,16 @@
 <script type="text/javascript" src="//api.e-quanta.com/js/base/downloader/downloader.js"></script>
 <script type="text/javascript" src="//api.e-quanta.com/js/main/proHub.js"></script>
 <script type="text/javascript">
+ /*   FastClick && FastClick.attach(document.body);
+    $(document).on("click", ".download-btn", function () {
+        downloader.openApp({
+            packageName: "com.eq.stock",
+            scheme: 'equanta://',
+            downloadAndroid: "",
+            downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
+        });
+    })
+*/
     FastClick && FastClick.attach(document.body);
     $(".download-btn").on("click", function () {
         downloader.openApp({

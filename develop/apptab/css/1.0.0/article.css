@@ -110,9 +110,7 @@ news-detail（新闻详情）
   line-height: 1.7em;
   text-align: justify; 
   color:#6f6f6f;
-  
-  margin: 0 15px 0 15px;
-
+  margin: 0 15px 15px 15px;
 }
 
 .news-cont-area img {
@@ -120,6 +118,8 @@ news-detail（新闻详情）
   height: auto !important;
   display: block;
   margin: 0.9em auto;
+  box-sizing: border-box;
+  padding: 0 15px;
 }
 
 .origin-link {
@@ -142,4 +142,11 @@ margin: 1.6em 15px;
 }
 blockquote p {
   margin:0 !important;color: #9b9b9b;
+}
+.morning_top_pic{
+  width: 100%;  
+}
+.news-cont-area a{
+  text-decoration: underline;
+  color: #6f6f6f;
 }

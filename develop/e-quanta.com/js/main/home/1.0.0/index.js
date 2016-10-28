@@ -9,7 +9,7 @@ define(function(require) {
 	//$("#navigation_ul>li:eq(0)>a").addClass('navigation_hover');
 
 /*s1 部分 canvas 效果*/
-	
+
 /*滚动切换part 事件*/
     var scrollIndex=1;
     var controlScroll=true;

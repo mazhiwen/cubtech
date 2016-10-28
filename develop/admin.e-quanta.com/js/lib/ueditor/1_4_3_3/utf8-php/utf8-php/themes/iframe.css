@@ -1,0 +1,30 @@
+@charset "utf-8";
+/*
+
+*/
+*{font-size: 16px;}
+blockquote{
+	border-left: 0.4em solid #9b9b9b; 
+	padding:0.9em; background-color: #f3f3f3;
+	margin: 1.6em auto;
+}
+blockquote p{margin:0;color: #9b9b9b;}
+img{
+	display: block;
+	margin: 0.9em auto;
+	max-width: 100%;
+}
+ul>li{color: red;list-style-type: square;}
+ul>li *{color: black;}
+ol>li{list-style-type: decimal;}
+li{margin-left: 2em;}
+p{
+	color:#6f6f6f;
+	margin: 1.35em auto;
+	line-height: 1.7em;
+}
+br{}
+strong{
+	color:#4a4a4a;line-height:1.8em;
+	font-size: 1em !important;  }
+

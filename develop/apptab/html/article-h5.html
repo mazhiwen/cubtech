@@ -7,11 +7,14 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta charset="utf-8">
     <title>一匡资讯</title>
-    <link rel="stylesheet" href="//api.e-quanta.com/css/common/reset.css"/>
-    <link rel="stylesheet" href="//api.e-quanta.com/css/common/common.css"/>
-    <link rel="stylesheet" href="//api.e-quanta.com/css/1.0.0/article.css"/>
+    <link rel="stylesheet" href="//testapi.e-quanta.com/css/common/reset.css"/>
+    <link rel="stylesheet" href="//testapi.e-quanta.com/css/common/common.css"/>
+    <link rel="stylesheet" href="//testapi.e-quanta.com/css/1.0.0/article.css"/>
 </head>
 <body class="bg-gray">
+<div>
+    <img src="//api.e-quanta.com/images/article_h5/mor_top.png" class="morning_top_pic" style="display:none;">
+</div>    
 <div class="main-wrap">
     <!--<div class="news-wrap">
         <div class="news-title-area ">
@@ -53,15 +56,34 @@
             </p>&ndash;&gt;
         </article>
     </div>-->
+    
 </div>
-<script type="text/javascript" src="//api.e-quanta.com/js/lib/zepto/zepto.js"></script>
-<script type="text/javascript" src="//api.e-quanta.com/js/base/eq/eq.js"></script>
+<div class="download-tips fix-lt" id="tipsShow">
+    <img class="pct100 mt20" src="//api.e-quanta.com/images/share.png" alt="">
+</div>
+<script type="text/javascript" src="//testapi.e-quanta.com/js/lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="//testapi.e-quanta.com/js/base/eq/eq.js"></script>
 <script type="text/javascript" src="//testapi.e-quanta.com/js/base/downloader/downloader.js"></script>
 <script type="text/javascript" src="//testapi.e-quanta.com/js/main/proHub.js"></script>
 <script type="text/javascript" src="//testapi.e-quanta.com/js/view/template.js"></script>
 <script type="text/javascript" src="//testapi.e-quanta.com/js/main/article.js"></script>
 <script type="text/javascript" src="//testapi.e-quanta.com/js/lib/sha1/1.0.0/sha1.js"></script>
 <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+<script type="text/javascript">
+    $(document).on("click", ".download-block", function () {
+        downloader.openApp({
+            packageName: "com.eq.stock",
+            scheme: 'equanta://',
+            downloadAndroid: "",
+            downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
+        });
+    })
+
+    $(".main-wrap").on("click", "img", function () {
+        var _scheme = 'hyb-image-preview:' + $(this).attr("src")
+        window.location.href = _scheme;
+    })
+</script>
 
 </body>
 </html>

@@ -19,6 +19,7 @@
                 return e.downloadUrl ? void(location.href = e.downloadUrl) : void(location.href = n ? e.downloadAndroid: e.downloadIOS)
             },
             i = function(e) {
+                /*
                 return window.WeixinJSBridge ? void WeixinJSBridge.invoke("getInstallState", {
                     packageName: e.packageName,
                     packageUrl: e.scheme
@@ -33,6 +34,14 @@
                         1e3)
                     }
                 }) : void t(e)
+                eq.pageLock();*/
+                eq.pageLock();
+                var $tipsShow = $("#tipsShow")
+                    $tipsShow.addClass("tips-show");
+                $tipsShow.off().on("click", function () {
+                    eq.pageUnlock();
+                    $tipsShow.removeClass("tips-show")
+                });
             },
             t = function(e) {
                 n ? a(e) : d(e)
@@ -64,3 +73,5 @@
         o.exports = n
     }) : window.downloader = n
 }).call(window);
+
+
