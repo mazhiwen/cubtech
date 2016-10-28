@@ -128,3 +128,31 @@ margin-top: 20px;}
 	display: block;
 	margin: auto;
 }
+.author_result{
+	width: 300px;
+	position: relative;
+	background-color: white;
+	
+	z-index: 1;
+	border: 1px solid gray;
+	box-sizing: border-box;
+	display: none;
+}
+.author_result>li{
+	cursor: pointer;
+}
+.author_result_v{
+	display: inline-block;
+	width: 50px;
+	color: #0064b4;
+	text-align: center;
+}
+.author_wrap{
+	height: 30px;
+}
+.select_author_wrap{
+	display: inline-block;
+}
+.author_wrap > span {
+    vertical-align: top !important;
+}

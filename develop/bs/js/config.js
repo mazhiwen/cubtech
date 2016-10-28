@@ -19,15 +19,14 @@ ueditor-config-serverurl
 
 /*
 本地
-*/
-URLHEAD='//192.168.1.199/e-quanta/develop/bs';
-REQUESTHEAD='//192.168.1.199:8080';
 
+URLHEAD='//localhost/e-quanta/develop/bs';
+REQUESTHEAD='//localhost:8080';
+*/
 /*
 测试
-
-REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
 */
+REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
 
 /*
 线上
@@ -35,7 +34,9 @@ REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
 URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
 */
 var pageVersionObj = {
+    ad_edit:"1.0.0",
     login:"1.0.0",
+    ad_list:"1.0.0",
     information_list : "1.0.0",
     fetched_news_list: "1.0.0",
     add_fetch_source:"1.0.0",
@@ -44,7 +45,7 @@ var pageVersionObj = {
     class_article:"1.0.0",
     class_edit : "1.0.0",
     article_list: "1.0.0",
-    article_edit:"1.0.1",
+    article_edit:"1.0.3",
     subject_list : "1.0.0",
     subject_edit: "1.0.1",
     topic_list:"1.0.0",
@@ -83,7 +84,7 @@ seajs.config({
       */
       "commonEdit": "admin/js/modules/commonedit/1.0.0/commonEdit",
       "popUpWindow":'admin/js/lib/popupwindow/1.0.0/popUpWindow.js',
-      "jquery": "admin/js/lib/jquery/jquery/1.10.1/jquery.js",
+      "jquery": "admin/js/lib/jquery/jquery/3.1.0/jquery-3.1.0.min.js",
       "getGet": "admin/js/lib/getget/1.0.0/getGet.js",
       "docCookies":"admin/js/lib/doccookies/1.0.0/docCookies.js",
       "transformTime":'admin/js/lib/transformtime/1.0.0/transformTime.js',

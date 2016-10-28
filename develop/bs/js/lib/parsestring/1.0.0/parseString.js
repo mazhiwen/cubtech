@@ -1,19 +1,18 @@
 define(function(require, exports, module) {
 	module.exports=parseString;
   	function parseString(){
-		/*var b=new RegExp("\\S+\\/(\\S*?)\\.html","g");
-		var c=b.exec(string);
-		if(c)
-		return c[1];
-		else
-		return false;
-  		*/
   	}
 
   	/*判断 是否为空*/
   	parseString.prototype.isEmpty=function(str){
   		var s=$.trim(str);
   		if(s.length>0)return true;else return false; 
+  	}
+  	/*判断 是否为  0或者大于0的  可以是0开头的  数字   */
+  	parseString.prototype.isNumber=function(str){
+  		if(this.isEmpty(str)){
+  			return /^[0-9]*$/.test(str); 
+  		}else return false;
   	}
 
   	/*获得 不为空的字符串*/

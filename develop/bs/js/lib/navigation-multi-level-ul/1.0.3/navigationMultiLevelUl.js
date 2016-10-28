@@ -5,7 +5,7 @@ define(function(require,exports,module) {
 		this.curInd=0;
 		var that=this;		
 		var directoryObj={
-		    '内容管理':{
+		    '内容':{
 		        '资讯管理':{
 		            '资讯列表':['information_list',1],
 		            '新闻抓取列表':['fetched_news_list',1],
@@ -35,7 +35,7 @@ define(function(require,exports,module) {
 		        'Q&A管理（尚未收到，待定）':['',1]*/
 		            
 		    },
-		    '排序/广告管理':{
+		    '排序/广告':{
 		            '顶栏tab管理':['top_tab'],
 		            '推荐页管理':['recommendtab_list'],
 		            'banner':{
@@ -45,15 +45,15 @@ define(function(require,exports,module) {
 		            	'添加/编辑分类首图':['banner_list']
 		            },
 		            '广告位':{
-		            	'广告位列表':['banner_list'],
-		            	'添加/编辑广告位':['banner_list']
+		            	'广告位列表':['ad_list'],
+		            	'添加/编辑广告位':['ad_edit']
 		            }  
 		    },
-		    '评论管理':{
+		    '评论':{
 		        '评论列表':['comment_list',1],
 		        '评论详情':['comment_details',1]
 		    },
-		    '推送管理':{
+		    '推送':{
 		        '系统消息推送列表':['sys_push_list',1],
 		        '新增/编辑系统推送':['sys_push_edit',1],
 		        'APP内消息推送':['app_push_list',1],
@@ -65,7 +65,7 @@ define(function(require,exports,module) {
 		        '用户反馈列表':['user_feed_list',1],
 		        '反馈详情':['user_feed_details',1]
 		    },
-		    '权限管理':{
+		    '权限':{
 		        '角色管理':['role_list',5],
 		        '添加/编辑角色':['role_edit',5],
 		        '角色权限':['role_permission',5],

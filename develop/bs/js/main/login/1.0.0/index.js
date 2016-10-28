@@ -6,6 +6,7 @@ define(function(require) {
 	var	ajaxMy=new(require('ajaxMy')),
 		login_name=$('#login_name'),
 		login_password=$('#login_password');
+
 	if(DOCCOOKIES.hasItem('loginName')){
 		login_name.val(DOCCOOKIES.getItem('loginName'));
 		login_password.val(DOCCOOKIES.getItem('loginPassword'));
@@ -25,8 +26,9 @@ define(function(require) {
 	"mobile":"18600576402",
 	"id":21,
 	"headPic":"http://cdn.e-quanta.com/headpic/default.png"
-	}*/
-	$("#login-button").click(function(){
+	}*/	
+	$("#login_button").click(function(){
+
 		//b 已经有cookie  并且输入账号密码与cookie不相符
 		if((login_name.val()!=DOCCOOKIES.getItem('loginName')||login_password.val()!=DOCCOOKIES.getItem('loginPassword'))&&DOCCOOKIES.hasItem('loginName')){
 			DOCCOOKIES.removeItem('loginName','/');

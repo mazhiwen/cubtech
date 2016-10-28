@@ -16,15 +16,13 @@ define(function(require) {
 					case 1:
 					type='文章';break;
 					case 2:
-					type='早报/要闻';break;
+					type='要闻';break;
 					case 3:
-					type='指定url';break;
+					type='早报';break;
 					case 4:
-					type='专题';break;
+					type='指定url';break;
 					case 5:
-					type='话题';break;
-					case 6:
-					type='吐槽';break;
+					type='专题';break;
 				};
 				var pushTo='';
 				switch (value['pushTo']){

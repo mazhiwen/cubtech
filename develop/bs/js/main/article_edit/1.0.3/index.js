@@ -28,11 +28,14 @@ define(function(require) {
 		f=$("#filldate"),
 		dele_cov_img=$("#dele_cov_img"),
 		add_file_btn=$("#add_file_btn"),
+		add_comment_b=$("#add_comment_b"),
+		add_comment_wrap=$(".add_comment_wrap"),
 		commit_button=$("#commit-button"),
+		comment_c=$("#comment_c"),
 		ImageId='';	
 	d._init();
 	c._init();
-
+	var author_id='';
 	function commitFunction(id){
 		var keyWordArr=[],
 			attas=[],
@@ -76,17 +79,18 @@ define(function(require) {
 		if(isId){
 			Object.assign(data,{id:id});
 		}else{
-			var user_id='';
-			if(author.val().length!=0&&$.trim(author.val())&&author_dl.children('[value='+author.val()+']').attr('data-id')!=undefined){
-				user_id=author_dl.children('[value='+author.val()+']').attr('data-id');
-			}
-			Object.assign(data,{user_id:user_id});
+			
+			//if(author.val().length!=0&&$.trim(author.val())&&author_dl.children('[value='+author.val()+']').attr('data-id')!=undefined){
+				//user_id=author_dl.children('[value='+author.val()+']').attr('data-id');
+			//}
+			Object.assign(data,{user_id:author_id});
 		}
 		return data;
 	}
 	
 	ue.ready(function(){
 		if(id){
+			add_comment_wrap.show();
 			AJAXMY.send('/article/edit',{id:id},function(data){
 				var d=data['result'];
 				title.val(d['title']);
@@ -134,6 +138,16 @@ define(function(require) {
 					}
 				);
 			});
+			/*提交评论*/
+			add_comment_b.click(function(){
+				$(this).prop("disabled",true);
+				AJAXMY.send('/article/comment/save',{article_id:id,content:comment_c.val()},function(d){
+					add_comment_b.prop("disabled",false);
+					if(d['result']){
+						POPUPWINDOW.alert('添加成功');
+					}
+				});
+			});
 		}else{
 			AJAXMY.send('/category/select_list',null,function(d){
 				var s='<option value=" "></option>';
@@ -144,7 +158,7 @@ define(function(require) {
 				$("#commit-button").click(function(){
 					if(article_class.val()!=' '){
 						//$(this).prop('disabled',true);
-						var d=commitFunction(false);
+						var d=commitFunction('');
 						var that=$(this);
 						if(check_time.is(':checked')){
 							Object.assign(d,{create_time:f.val()});
@@ -165,18 +179,42 @@ define(function(require) {
 					}					
 				});	
 			});
+			var authorIsInput=false;
 			author.on('input',function(){
 				if($(this).val().length!=0&&$.trim($(this).val())){
+					authorIsInput=true;
 					AJAXMY.send('/user/select_list',{nick_name:$(this).val()},function(d){
 						author_dl.empty();
 						d=d['result'];
 						var s='';
 						$.each(d,function(k,v){
-							s+='<option value="'+v['nickName']+'" data-id="'+v['id']+'">';
+							var isV=v['authV']?'[V]':'';
+							//console.log(isV);
+							//s+='<option value="'+v['nickName']+'" data-id="'+v['id']+'">';
+							s+='<li data-authorid="'+v['id']+'"><span class="author_result_v">'+isV+'</span><span class="author_result_n">'+v['nickName']+'</span></li>';
 						});
 						author_dl.append(s);
+						author_dl.show();
 					});
 				}					
+			});
+			$(".select_author_wrap").on('mouseleave',function(){
+				if(authorIsInput)
+				{	
+					author_dl.hide();
+					author.val('');
+					author_id='';
+				}
+			});
+			//$("#author_select_wrap").on('mouseout','*',function(e){
+				//e.stopPropagation();
+			//});
+			author_dl.on('click','li',function(){
+				authorIsInput=false;
+				author_id=$(this).attr('data-authorid');
+				author.val($(this).find(".author_result_n").text());
+				console.log(author_id);
+				author_dl.hide();	
 			});
 		}
 	});
