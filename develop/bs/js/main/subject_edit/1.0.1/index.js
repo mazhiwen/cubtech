@@ -22,6 +22,7 @@ define(function(require) {
 			subjectDescriptionDom.val(o['description']);
 			coverImgDom.attr("src",o['bgPic']);
 			subjectListSn.val(o['priority']);
+			ImageId=o['sysImageId'];
 		});
 		$("#confirm-button").click(function(){
 			$(this).prop("disabled",true);
@@ -46,9 +47,10 @@ define(function(require) {
 				}
 			);
 		});
-		function requestIs(getPaging){
+
+		var isPaging=new paging("#is_paging",MAXPAGING,function(currentPage){
 			AJAXMY.send('/subject/subject_article_list',
-				{subject_id:subjectId,page:getPaging,size:PERPAGINGCOUNT
+				{subject_id:subjectId,page:currentPage,size:PERPAGINGCOUNT
 				},function(d){
 					dr=d['result'];
 					var s='';
@@ -56,14 +58,11 @@ define(function(require) {
 						s+='<div><span>'+v['title']+'</span><button class="s"  data-id="'+v['id']+'">删除</button></div>';
 					});
 					is_article_list_outer.append(s);
-					var myPaging=new paging("#is_paging",d['pages'],MAXPAGING,getPaging,function(){
-						requestIs(this.clickPaging);}
-					);
-					myPaging._init();
-					}
-				);
-		}
-		requestIs(1);
+					isPaging.refreshDom(d['pages']);
+			});
+		});	
+
+
 		is_article_list_outer.on('click','div>button:nth-child(2)',function(event){
 			$(this).prop('disabled',true);
 			that=$(this);
@@ -76,22 +75,22 @@ define(function(require) {
 					that.prop('disabled',false);
 				});
 		});
-		function requestAll(getPaging){
-			AJAXMY.send('/article/search_list',{title:search_input.val(),page:getPaging,size:PERPAGINGCOUNT},function(d){
+
+		var myPaging=new paging("#search_paging",MAXPAGING,function(currentPage){
+			AJAXMY.send('/article/search_list',{title:search_input.val(),page:currentPage,size:PERPAGINGCOUNT},function(d){
 				no_article_list_outer.empty();
 				var s='';
 				$.each(d['result'],function(key,v){	
 					s+='<div><span>'+v['title']+'</span><button class="s" data-id="'+v['id']+'">添加</button></div>';
 				});
 				no_article_list_outer.append(s);
-				var myPaging=new paging("#search_paging",d['pages'],MAXPAGING,getPaging,function(){requestAll(this.clickPaging);
-				});
-				myPaging._init();
+				myPaging.refreshDom(d['pages']);
 			});
-		}
-		search_button.click(function(){
-			requestAll(1);
 		});
+		search_button.click(function(){
+			myPaging.executePageFn(1);
+		});
+		
 		no_article_list_outer.on('click','div>button:nth-child(2)',function(event){
 			$(this).prop('disabled',true);
 			that=$(this);
@@ -132,6 +131,8 @@ define(function(require) {
 		});
 	}
 	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
+		console.log(responseUrl);
+		console.log(sysImageId);
 		coverImgDom.attr("src",responseUrl);
 		ImageId=sysImageId;
 	},2);

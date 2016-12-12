@@ -13,10 +13,10 @@ body {
   z-index: 2; }
 
 .download-btn {
-  width: 60%;
+  width: 50%;
   margin: auto;
   padding: 10px 0;
-  background-color: #009ee8;
+  background-color: #bc7945;
   text-align: center;
   color: #fff;
   border-radius: 3px; }

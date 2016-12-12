@@ -5,7 +5,7 @@ define(function(require) {
 		table_body=$("#table_body"),
 		ifFinishEdit=false;
 
-	function request(getPaging){
+	/*function request(getPaging){
 		AJAXMY.send('/banner/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
@@ -18,19 +18,33 @@ define(function(require) {
 			myPaging._init();
 		});
 	}
-	request(1);	
-	
+	request(1);	*/
+	var myPaging=new paging("#paging",MAXPAGING,function(currentPage){
+		AJAXMY.send('/banner/list',{page:currentPage,size:PERPAGINGCOUNT},function(d){
+			table_body.empty();
+			var s;
+			$.each(d['result'],function(k,v){	
+				s+='<tr data-id="'+v['id']+'"><td>'+v['title']+'</td><td contenteditable="true">'+v['priority']+'</td><td><a href="banner_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
+			});
+			table_body.append(s);
+			myPaging.refreshDom(d['pages']);
+		});
+	});	
 	table_body.on('click','tr>td:nth-child(3)>button:nth-child(2)',function(event){
-		$(this).prop('disabled',true);
-		that=$(this);
-		AJAXMY.send('/banner/delete',{banner_id:$(this).parent().parent().attr("data-id")},function(d){
-			if(d['result']){
-				alert('删除成功');
-				that.parent().parent().remove();
-			}else{
-				alert('删除失败');	
-			}
-			that.prop('disabled',false);
+		var tthis=$(this);
+		tthis.prop('disabled',true);
+		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
+			AJAXMY.send('/banner/delete',{banner_id:tthis.parent().parent().attr("data-id")},function(d){
+				if(d['result']){
+					alert('删除成功');
+					tthis.parent().parent().remove();
+				}else{
+					alert('删除失败');	
+				}
+				tthis.prop('disabled',false);
+			});
+		},function(){
+			tthis.prop('disabled',false);
 		});
 	});
 

@@ -1,0 +1,12 @@
+@import url('../common/main.css');
+.paging-outer{
+	margin-bottom: 30px;
+}
+
+.paging{
+	width: auto;
+	display: inline-block;
+}
+.paging_wrap_btn{
+	
+}

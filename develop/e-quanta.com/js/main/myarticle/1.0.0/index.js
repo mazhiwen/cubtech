@@ -11,7 +11,7 @@ define(function(require) {
 		getPaging=1;
 	function request(){
 		ajaxMy.send('/article/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
-			var s='';
+			var s='',userHead=docCookies.getItem('userHead'),vita=docCookies.getItem('vita')||' ';
 			$.each(d['result'],function(k,v){
 				var imgHtml;
 				if(v['coverPic']){
@@ -20,7 +20,7 @@ define(function(require) {
 					imgHtml='';
 				}	
 				//s+='<a href="article_details.html?id='+v['modelId']+'" class="article_block"><div><div><div><h2>'+v['title']+'</h2><p>'+v['summary']+'</p><div class="author_like"><span>'+v['nickName']+'/'+transformTime.MSToNow(v['createTime'])+'</span><div><img src="./images/comment_icon.png"><span>'+v['praiseNum']+'</span><img src="./images/praise_icon.png"><span>'+v['praiseNum']+'</span></div></div></div>'+imgHtml+'</div></div></a>';
-				s+='<div class="article_box"><a href="article_details.html?id='+v['id']+'"><div><div class="article_box_h"><div><img src="'+v['headPic']+'"><span class="article_box_n">'+v['nickName']+'</span><span>'+v['vita']+'</span></div><div><span class="article_box_t">'+transformTime.MSToYMDHMS(v['createTime'])+'</span></div></div><h2>'+v['title']+'</h2><p>'+v['summary']+'</p></div>'+imgHtml+'</a></div>';
+				s+='<div class="article_box"><a href="article_details.html?id='+v['id']+'"><div><div class="article_box_h"><div><img src="'+userHead+'"><span class="article_box_n">'+v['nickName']+'</span><span>'+vita+'</span></div><div><span class="article_box_t">'+transformTime.MSToYMDHMS(v['createTime'])+'</span></div></div><h2>'+v['title']+'</h2><p>'+v['summary']+'</p></div>'+imgHtml+'</a></div>';
 			});
 			bottom_line.before(s);
 			getPaging++;
@@ -34,10 +34,10 @@ define(function(require) {
  		}
 	});
 
-	/*右侧箭头事件*/
+	/*右侧箭头事件
     $(".right_arrow>img:nth-child(2)").click(function(){
 			
-	});
+	});*/
 
 });
 

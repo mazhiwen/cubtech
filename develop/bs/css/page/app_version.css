@@ -1,0 +1,26 @@
+@import url('../common/main.css');
+.paging-outer{
+	margin-bottom: 30px;
+}
+.paging-outer>*{
+	
+
+}
+.paging{
+	width: auto;
+	display: inline-block;
+}
+.paging_wrap_btn{
+	
+}
+.td_version_desc > textarea {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: none;
+    resize:none;
+    background-color: transparent;
+}
+td.td_version_desc{
+	padding: 0;
+}

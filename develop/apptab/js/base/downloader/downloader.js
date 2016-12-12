@@ -4,7 +4,8 @@
         var n = document.querySelector("head"),
         o = document.createElement("style"),
         i = e || "bottom";
-        o.innerHTML = ".download-wrap {position: fixed; width: 100%; padding-top: 16%; max-width: 750px;margin: 0 auto; }.download-block { width: 100%; max-width: 750px; position: fixed; " + i + ": 0; left: 0; right: 0; margin: 0 auto; z-index: 15;display:block; }",
+        //o.innerHTML = ".download-wrap {position: fixed; width: 100%; padding-top: 16%; max-width: 750px;margin: 0 auto; }.download-block { width: 100%; max-width: 750px; position: fixed; " + i + ": 0; left: 0; right: 0; margin: 0 auto; z-index: 15;display:block; }",
+        o.innerHTML = ".download-wrap {width: 100%; max-width: 700px;margin: 0 auto; }.download-block { width: 100%; max-width: 700px; position: fixed; " + i + ": 0; left: 0; right: 0; margin: 0 auto; z-index: 15;display:block; }",
         n.appendChild(o)
     },
     n = {

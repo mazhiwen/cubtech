@@ -44,21 +44,19 @@ define(function(require,exports,module) {
 		if(getHtml(location)=='article_details'){
 			var h=getHtml(document.referrer);
 			$('#navigation_ul>li:eq('+navigationHover[h]+')>a').addClass('navigation_hover');
-			//if(h=='select') $("#operate_outer").remove();
 		}
 		$('#navigation_ul>li:eq('+navigationHover[getHtml(location)]+')>a').addClass('navigation_hover');
 
 		/***********************************************
 		右侧箭头+ 二维码*/
-		$(".right_arrow").append('<img src="./images/right_qrcode.png"><img src="./images/right_arrow.png"><div class="r_qr_code" style="display:none;"><div>扫描二维码下载一匡App</div><div><div><p>iOS</p><img src="./images/qrcode_ios.png"></div><div><p>Android</p><img src="./images/qrcode_android.png"></div></div></div>');
-		$(".right_arrow>img:nth-child(1)").hover(function(){
-			//$(".r_qr_code").is(":visible")?$(".r_qr_code").hide():$(".r_qr_code").show();
+		$(".right_arrow").append('<div class="right_arrow_qrwrap"><img class="right_arrow_qrimg" src="./images/right_qrcode.png"><div class="r_qr_code" style="display:none;"><div>下载一匡App</div><div><div><img src="./images/qrcode_combine.png"></div></div></div></div><img src="./images/right_arrow.png">');
+		$(".right_arrow .right_arrow_qrwrap").hover(function(){
 			$(".r_qr_code").show();
 		},function(){
 			$(".r_qr_code").hide();
 		});
 
-		$("footer").append('<div><img src="./images/home/logo.png"></div><div><div><h3>北京资立方信息科技有限公司</h3><p><span>商务合作: 400 875 9002</span><span>邮箱: info@asset3.com</span></p><p>微信公众号: e-quanta</p><p>地址: 北京市朝阳区曙光西里甲5号院凤凰置地广场A座写字楼26层2602室</p></div></div><div><img src="./images/home/qr_code.png"></div>');
+		$("footer").append('<div><img src="./images/home/logo.png"></div><div><div><h3>北京资立方信息科技有限公司</h3><p><span>商务合作: 400 875 9002</span><span>邮箱: info@asset3.com</span></p><p>微信公众号: yk_news</p><p>地址: 北京市朝阳区曙光西里甲5号院凤凰置地广场A座写字楼26层2602室</p></div></div><div><img src="./images/home/qr_code.png"></div>');
 	}
 
 });

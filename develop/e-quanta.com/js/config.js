@@ -46,14 +46,14 @@ REQUESTHEAD='https://www.e-quanta.com';
 */
 /*
 测试环境
-*/
-REQUESTHEAD='https://test.e-quanta.com';
 
+REQUESTHEAD='https://test.e-quanta.com';
+*/
 /*
 本地环境
-
-REQUESTHEAD='//localhost:8080';
 */
+REQUESTHEAD='//localhost:8080';
+
 seajs.config({
     base: "./js/lib/",
     alias: {
@@ -71,6 +71,7 @@ seajs.config({
       "popUpWindow":'../../../lib/popupwindow/1.0.0/popUpWindow.js',
       "getHtml":'gethtml/1.0.0/getHtml.js',
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
+      "parseString":'../../../lib/parsestring/1.0.0/parseString.js',
       "ball":'ball/1.0.0/ball.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js',

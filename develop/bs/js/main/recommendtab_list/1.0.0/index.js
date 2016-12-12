@@ -5,7 +5,7 @@ define(function(require) {
 		transformTime=new(require('transformTime')),
 		table_body=$("#table_body"),
 		ifFinishEdit=false;
-	function request(getPaging){
+	/*function request(getPaging){
 		AJAXMY.send('/index/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
@@ -32,7 +32,34 @@ define(function(require) {
 			myPaging._init();
 		});
 	}
-	request(1);
+	request(1);*/
+
+	var myPaging=new paging("#paging",MAXPAGING,function(currentPage){
+		AJAXMY.send('/index/list',{page:currentPage,size:PERPAGINGCOUNT},function(d){
+			table_body.empty();
+			var s;
+			$.each(d['result'],function(k,v){
+				var type,status;
+				switch(v['type']){
+					case 1:
+					type='文章';break;
+					case 2:
+					type='话题';break;
+					case 3:
+					type='专题';break;
+				}
+				if(v['status']){
+					status='checked';
+				}else{
+					status='';
+				}
+				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td>'+type+'</td><td>'+v['title']+'</td><td contenteditable="true">'+v['priority']+'</td><td><input type="checkbox" '+status+'></td><td></td><td><button class="s">移除</button></td></tr>';
+			});
+			table_body.append(s);
+			myPaging.refreshDom(d['pages']);
+		});
+	});
+
 	//***********************contenteditable 改动请求**************//
 	table_body.on('input','tr>td:nth-child(4)',function(event){
 		ifFinishEdit=true;
@@ -66,15 +93,22 @@ define(function(require) {
 		});
 	});
 	table_body.on('click','tr>td:nth-child(7)>button',function(event){
-		$(this).prop('disabled',true);
-		that=$(this);
-		AJAXMY.send('/index/delete',{id:$(this).parent().parent().attr("data-id")},function(d){
-			if(d['result']){
-				alert('删除成功');
-				that.parent().parent().remove();
-			}
-			that.prop('disabled',false);
+		var tthis=$(this);
+		tthis.prop('disabled',true);
+		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
+			AJAXMY.send('/index/delete',{id:tthis.parent().parent().attr("data-id")},function(d){
+				if(d['result']){
+					alert('删除成功');
+					tthis.parent().parent().remove();
+				}else{
+					alert('删除失败');	
+				}
+				tthis.prop('disabled',false);
+			});
+		},function(){
+			tthis.prop('disabled',false);
 		});
+
 	});
 
 	

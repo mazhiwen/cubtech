@@ -1,0 +1,17 @@
+/* @update: 2016-8-17 15:8:8 */ 
+@charset "UTF-8";
+
+
+.author_icon_person {
+  background-image: url(img/person.png) !important;
+
+}
+.author_icon_org {
+
+background-image: url(img/org.png) !important;
+}
+.author_icon_media {
+
+background-image: url(img/media.png) !important;
+}
+

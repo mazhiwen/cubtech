@@ -6,8 +6,8 @@ define(function(require) {
 		search_phone=$("#search_phone"),
 		search_name=$("#search_name"),
 		search_input=$("#search_input");
-	function request(getPaging,otherData){
-		var data={page:getPaging,size:PERPAGINGCOUNT};
+	function request(currentPage,otherData){
+		var data={page:currentPage,size:PERPAGINGCOUNT};
 		if(otherData.length!=0){
 			Object.assign(data,otherData);
 		}
@@ -29,34 +29,40 @@ define(function(require) {
 				} 
 			});
 			table_body.append(s);
-			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,
-				function(){
-					request(this.clickPaging,otherData);
-				}
-			);
-			myPaging._init();
+			myPaging.refreshDom(d['pages']);
 		});
 	}
-	request(1,{});
-
+	var myPaging=new paging("#paging",MAXPAGING,function(currentPage){
+		request(currentPage,{});
+	});
 	search_phone.click(function(){
-		request(1,{mobile:search_input.val()});
+		myPaging.pageFn=function(currentPage){
+			request(currentPage,{mobile:search_input.val()});
+		};
+		myPaging.executePageFn(1);
 	});
 	search_name.click(function(){
-		request(1,{nick_name:search_input.val()});
+		myPaging.pageFn=function(currentPage){
+			request(currentPage,{nick_name:search_input.val()});
+		};
+		myPaging.executePageFn(1);
 	});
 
 	table_body.on('click','tr>td:nth-child(13)>button:nth-child(2)',function(event){
-		$(this).prop('disabled',true);
-		that=$(this);
-		AJAXMY.send('/user/delete',{id:$(this).attr("data-id")},function(data){
-			if(data['result']){
-				alert('删除成功');
-				that.parent().parent().remove();
-			}else{
-				alert('删除失败');	
-			}
-			that.prop('disabled',false);
+		var tthis=$(this);
+		tthis.prop('disabled',true);
+		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
+			AJAXMY.send('/user/delete',{id:tthis.attr("data-id")},function(d){
+				if(d['result']){
+					alert('删除成功');
+					tthis.parent().parent().remove();
+				}else{
+					alert('删除失败');	
+				}
+				tthis.prop('disabled',false);
+			});
+		},function(){
+			tthis.prop('disabled',false);
 		});
 	});
 	

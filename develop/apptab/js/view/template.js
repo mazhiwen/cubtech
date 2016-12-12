@@ -197,7 +197,7 @@ function() {
         c += t(s.nickName),
         c += '</span><span class="author-icon ml5"></span>  </div> <h6 class="author-des"> ',
         s.vita && (c += ' <span class="mr5">', c += t(s.vita), c += "</span> "),
-        c += ' <span>\u6587\u7ae0\u603b\u6570<span class="red"> ',
+        c += ' <span>\u6587\u7ae0\u603b\u6570<span class="main_gold"> ',
         c += t(s.articleNum),
         c += ' </span>\u7bc7</span> </h6> </div> </div> <article class="news-cont-area mt10"> ',
         c += i(a.content),

@@ -1,0 +1,4 @@
+@import url('../common/main.css');
+#paging-outer{text-align: center;margin-top: 50px;}
+#navigation-crumb>select:nth-child(4){margin-left: 10%;}
+#navigation-crumb>button:nth-child(5){margin-left: 40%; }

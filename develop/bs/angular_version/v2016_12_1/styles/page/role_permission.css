@@ -1,0 +1,7 @@
+@import url('../common/main.css');
+#right{text-align: center;}
+#navigation-crumb{text-align: left;}
+#edit_area{margin: auto;display: inline-block;text-align: left;}
+#confirm-outer{text-align: center;margin-top: 50px;}
+.form-input>textarea{width:500px;}
+.form-input>span{width: 320px;}

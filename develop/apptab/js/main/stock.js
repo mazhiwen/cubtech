@@ -84,13 +84,5 @@ console.log(document.body.clientWidth);
 }/*endOptions*/
 	var sidebar = new WallstreetCN.embed.Sidebar(parentId, options, iframeId);
 	sidebar.render();
-/*
-var aa=document.getElementById("js-wscn-sidebar-iframe");
-aa.onload=function(){
-        console.log($(aa.contentWindow.document.getElementsByTagName("a")));
-}
-*/
-
-
 
 })();

@@ -1,0 +1,28 @@
+<div id="navigation-crumb" class="navigation-crumb">
+	<span></span><span></span><span></span>
+	<a href="morningpost_edit.html"><button>添加早报</button></a><a href="news_edit.html"><button>添加要闻</button></a>
+</div>
+<table class="table">
+    <caption>资讯列表</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>类型</th>
+        <th>标题</th>
+        <th>上传者</th>
+        <th>上传日期</th>
+        <th>发布日期</th>
+        <th>收藏数</th>
+        <th>分享数</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody id="table_body" ng-controller="informationListController">
+    	<tr ng-repeat="oneObj in objList"><td>{{oneObj.id}}</td><td>{{oneObj.type}}</td><td>{{oneObj.title}}</td><td>{{oneObj.editorNickName}}</td><td>{{oneObj.createTime|date:'yy-M-d/ HH:mm:ss'}}</td><td>{{oneObj.postTime|date:'yy-M-d/ HH:mm:ss'}}</td><td>{{oneObj.collectNum}}</td><td>{{oneObj.shareNum}}</td><td><a href="'+s2+'.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon" data-id="'+v['id']+'"></button></td></tr>
+
+    <!--<td>'+v['id']+'</td><td>'+type+'</td><td>'+v['title']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+s1+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td><a href="'+s2+'.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon" data-id="'+v['id']+'"></button></td>-->
+    </tbody>
+</table>
+<div id="paging-outer">
+	<ul class="paging" id="paging"></ul>
+</div>

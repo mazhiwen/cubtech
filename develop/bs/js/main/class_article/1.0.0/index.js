@@ -2,10 +2,10 @@ define(function(require) {
 	
 	var	commonMain=require('commonMain'),
 		paging = require('paging'),
-		
 		table_body=$("#table_body");
-	function request(getPaging){
-		AJAXMY.send('/category/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+	
+	var myPaging=new paging("#paging",MAXPAGING,function(currentPage){
+		AJAXMY.send('/category/list',{page:currentPage,size:PERPAGINGCOUNT},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
@@ -23,12 +23,9 @@ define(function(require) {
 				s+='<a href="class_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>'; 
 			});
 			table_body.append(s);
-			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
-			});
-			myPaging._init();
+			myPaging.refreshDom(d['pages']);
 		});
-	}
-	request(1);
+	});	
 
 	table_body.on('click','tr>td:nth-child(4)>input',function(event){
 		$(this).prop('disabled',true);
@@ -58,17 +55,21 @@ define(function(require) {
 			}
 		});
 	});
-	table_body.on('click','tr>td:nth-child(5)>button:nth-child(3)',function(event){
-		$(this).prop('disabled',true);
-		var that=$(this);
-		AJAXMY.send('/category/delete',{id:$(this).parent().attr("data-id")},function(data){
-			that.prop('disabled',false);
-			if(data['result']){
-				alert('删除成功');
-				that.parent().parent().remove();
-			}else{
-				alert('删除失败');	
-			}
+	table_body.on('click','.glyphicon-trash',function(event){
+		var tthis=$(this);
+		tthis.prop('disabled',true);
+		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
+			AJAXMY.send('/category/delete',{id:tthis.parent().attr("data-id")},function(d){
+				if(d['result']){
+					alert('删除成功');
+					tthis.parent().parent().remove();
+				}else{
+					alert('删除失败');	
+				}
+				tthis.prop('disabled',false);
+			});
+		},function(){
+			tthis.prop('disabled',false);
 		});
 	});
 	

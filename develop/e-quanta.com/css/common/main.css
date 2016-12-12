@@ -19,7 +19,7 @@ header{
 	height: 10%;
 	position: fixed;
 	top: 0;
-	z-index: 2;
+	z-index: 51;
 	min-width: 800px;
 	display: table;
 }
@@ -182,23 +182,25 @@ footer>div:nth-child(2)>div>p:nth-child(2)>span:nth-child(2){
 	font-size: 0;
 	z-index: 3;
 }
-.right_arrow>img{
+.right_arrow>img,.right_arrow_qrimg{
 	cursor: pointer;
-	width: 100%;
 	display: block;
 	width: 38px;
+}
+.right_arrow_qrwrap{
+	position: relative;
 }
 .right_arrow>img:nth-child(2){
 	margin-top: 4px;
 }
+
 /*二维码图*/
 .r_qr_code{
 	position: absolute;
-	width: 330px;
+	width: 270px;
 	right: 100%;
 	top: 0;
 	background-color: rgba(0,0,0,0.5);
-	padding-bottom: 20px;
 }
 .r_qr_code>div:nth-child(1){
 	height: 40px;
@@ -209,6 +211,7 @@ footer>div:nth-child(2)>div>p:nth-child(2)>span:nth-child(2){
 }
 .r_qr_code>div:nth-child(2){
 	text-align: center;
+	padding: 50px 0;
 }
 .r_qr_code>div:nth-child(2)>div{
 	display: inline-block;

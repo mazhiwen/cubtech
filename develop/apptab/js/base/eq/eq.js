@@ -119,7 +119,8 @@ function(e) {
             }
         }
     };
-    "function" == typeof define && void 0 != window.seajs ? define(function(require, e, t) {
-        t.exports = n
+    console.log("function" == typeof define && void 0 != window.seajs);
+    "function" == typeof define && void 0 != window.seajs ? define(function(require, exports, module) {
+        module.exports = n
     }) : e.eq = n
 } (window);

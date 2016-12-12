@@ -10,10 +10,11 @@ function getAjax(t) {
         },
         error: function() {
             t.error && t.error()
-        }
+        },
+        headers:t.headers
     })
 }
-var defaultUrl = "//testapi.e-quanta.com",
+var defaultUrl = "//api.e-quanta.com",
 proHub = {
     article: {
         getArticle: function(t, a) {
@@ -26,6 +27,9 @@ proHub = {
                 dataType: "json",
                 success: function(t) {
                     a && a(t)
+                },
+                headers:{
+                	"api-version":"1.0"
                 }
             })
         },

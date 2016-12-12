@@ -8,6 +8,7 @@ define(function(require) {
 		ajaxMy=new(require('ajaxMy')),
 		getGet=require('getGet'),
 		transformTime=new(require('transformTime')),
+		parseString=new(require('parseString')),
 		id=getGet('id'),
 		title=$("#title"),
 		input_file_outer=$("#input_file_outer"),
@@ -61,26 +62,34 @@ define(function(require) {
 		}else{
 			ajaxMy.send('/category/select_list',{},function(d){
 				d=d['result'];
-				var s='';
+				var s='<option value=" "> </option>';
 				$.each(d,function(k,v){
 					s+='<option value="'+k+'">'+v+'</option>';
 				});
 				type.append(s);
 			});
 			send_button.click(function(){
-				$(this).prop('disabled',true);var that=$(this);
-				ajaxMy.send('/article/save',{
-					title:title.val(),
-					summary:summary_text.val(),
-					sys_image_id:imageId,
-					cover_pic:cover_img.attr("src"),
-					content:ue.getContent(),
-					category_code:type.val()
-				},function(d){
-					if(d['result']) popUpWindow.alert('添加成功',function(){});
-					else popUpWindow.alert('添加失败',function(){});
+				$(this).prop('disabled',true);
+				var that=$(this);
+				if(parseString.isEmpty(type.val())){
+		
+					ajaxMy.send('/article/save',{
+						title:title.val(),
+						summary:summary_text.val(),
+						sys_image_id:imageId,
+						cover_pic:cover_img.attr("src"),
+						content:ue.getContent(),
+						category_code:type.val()
+					},function(d){
+						if(d['result']) popUpWindow.alert('添加成功',function(){});
+						else popUpWindow.alert('添加失败',function(){});
+						that.prop('disabled',false);
+					});
+				}else{
 					that.prop('disabled',false);
-				});
+					popUpWindow.alert('未选择分类，请选择分类',function(){});
+				}
+				
 			});
 		}
 	});

@@ -7,31 +7,22 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta charset="utf-8">
     <title>Title</title>
-<style type="text/css">
-#aa{
-	width: 50px; height: 50px;
-	background-color: red;
-}
 
-</style>    
+    <link rel="stylesheet" href="//api.e-quanta.com/css/common/reset.css"/>
+    <link rel="stylesheet" href="//api.e-quanta.com/css/common/common.css"/>
 </head>
 <body>
-<div class="main-wrap">
-    <a class="origin-link" href="https//www.baidu.com" id="originLink">http://www.baidu.com</a>
+<h6>浏览器的ua为</h6>
+<h6 class="p20" id="ua"></h6>
 
-    <button id="aa"></button>
-</div>
-</body>
+<iframe width="100%" src="https://api.e-quanta.com/html/article.html?id=57bbe2307b041a68f3bb5f4c&type=1&appMode=true"
+        frameborder="0"></iframe>
+
+<script type="text/javascript" src="//api.e-quanta.com/js/lib/zepto/zepto.js"></script>
 <script type="text/javascript">
-var aa=document.getElementById('aa');
-var originLink=document.getElementById('originLink');
-aa.addEventListener('click',function(){
-
-	alert(2);
-});
-originLink.addEventListener('click',function(){
-
-	alert(3);
-});
+    var ua = navigator.userAgent;
+    $("#ua").html(ua)
+    alert("ua为" + ua)
 </script>
+</body>
 </html>

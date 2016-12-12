@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
 	module.exports=ajaxMy;
+	var parseString=new(require('parseString'));
+	
 	function ajaxMy(){
 		this.requestHead=REQUESTHEAD;
 	}
@@ -50,7 +52,10 @@ define(function(require, exports, module) {
 						if(code==102){
 							docCookies.removeItem('loginName','/');
 							docCookies.removeItem('loginPassword','/');
-							window.location.href='login.html';
+							if(parseString.getHtmlName(window.location.href)!='login'){
+								window.location.href='login.html';
+							}
+							
 						}
 					} 
 				}else{

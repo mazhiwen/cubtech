@@ -1,12 +1,12 @@
 define(function(require) {
 	var	commonMain=require('commonMain'),
 		paging = require('paging'),
-		
+		version_select=$("#version_select"),
 		table_body=$("#table_body"),
 		ifFinishEdit=false;
 
-	function request(getPaging){
-		AJAXMY.send('/directory/list',{page:getPaging,size:PERPAGINGCOUNT},function(d){
+	function request(version){
+		AJAXMY.send('/directory/list',{version:version},function(d){
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
@@ -19,12 +19,16 @@ define(function(require) {
 				s+='<td contenteditable="true">'+v['priority']+'</td><td><button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
 			});
 			table_body.append(s);
-			myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
-			});
-			myPaging._init();
+			//myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,function(){request(this.clickPaging);
+			//});
+			//myPaging._init();
 		});
 	}
-	request(1);
+	request(version_select.val());
+	version_select.change(function(){
+		request(version_select.val());
+	});
+
 	table_body.on('click','tr>td:nth-child(3)>input',function(event){
 		$(this).prop('disabled',true);
 		that=$(this);
@@ -62,16 +66,21 @@ define(function(require) {
 	});
 	//***********************contenteditable 改动请求**************//
 	table_body.on('click','tr>td:nth-child(5)>button',function(event){
-		$(this).prop('disabled',true);
-		that=$(this);
-		AJAXMY.send('/directory/delete',{id1:$(this).parent().parent().attr("data-id")},function(d){
-			if(d['result']){
-				$(this).parent().parent().remove();
-				alert('移除成功');
-			}else{
-				
-			}
-			that.prop('disabled',false);
+
+		var tthis=$(this);
+		tthis.prop('disabled',true);
+		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
+			AJAXMY.send('/directory/delete',{id1:tthis.parent().parent().attr("data-id")},function(d){
+				if(d['result']){
+					alert('删除成功');
+					tthis.parent().parent().remove();
+				}else{
+					alert('删除失败');	
+				}
+				tthis.prop('disabled',false);
+			});
+		},function(){
+			tthis.prop('disabled',false);
 		});
 	});
 

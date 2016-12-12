@@ -17,28 +17,28 @@ REQUESTHEAD
 ueditor-config-serverurl
 */
 
-/*
-本地
 
+//本地
 URLHEAD='//localhost/e-quanta/develop/bs';
 REQUESTHEAD='//localhost:8080';
-*/
+
 /*
 测试
-*/
+
 REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
-
-/*
-线上
-
-URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
 */
+//线上
+//URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
+
+
 var pageVersionObj = {
     ad_edit:"1.0.0",
     login:"1.0.0",
     ad_list:"1.0.0",
     information_list : "1.0.0",
     fetched_news_list: "1.0.0",
+    bs_version: "1.0.0",
+    bs_help:"1.0.0",
     add_fetch_source:"1.0.0",
     morningpost_edit : "1.0.0",
     news_edit: "1.0.0",
@@ -73,7 +73,14 @@ var pageVersionObj = {
     top_tab:'1.0.0',
     recommendtab_list:'1.0.0',
     user_role:'1.0.0',
-    role_permission:'1.0.0'
+    role_permission:'1.0.0',
+    verify_personal:'1.0.0',
+    verify_media:'1.0.0',
+    verify_org:'1.0.0',
+    verify_reply:'1.0.0',
+    verify:'1.0.0',
+    app_version:'1.0.0',
+    organization:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({

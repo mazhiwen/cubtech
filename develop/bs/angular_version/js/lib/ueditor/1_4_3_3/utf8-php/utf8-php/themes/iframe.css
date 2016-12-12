@@ -1,0 +1,93 @@
+@charset "utf-8";
+/*
+@font-face{
+  font-family: "bbb";
+  src:url('https://testadmin.e-quanta.com/css/font/bbb.ttf');
+}*/
+
+*{
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	border:none;
+	color:#6f6f6f;
+}
+html,body{
+	margin: 0 !important;
+}
+body>*{
+	margin:auto 15px;
+}
+h1{
+	font-size: 2.1em;
+}
+h2{
+	font-size: 1.9em;
+}
+h3{
+	font-size: 1.6em;
+}
+h4{
+	font-size: 1.3em;
+}
+h5{
+	font-size: 1em;
+}
+h6{
+	font-size: 0.7em;
+}
+h1,h2,h3,h4,h5,h6{
+	margin-top: 1.2em;
+	margin-bottom: 0.8em;
+	color: #4a4a4a;
+}
+ul>li{
+	color: red;list-style-type: square;
+}
+ul>li *{
+	color: black;
+}
+ol>li{
+	list-style-type: decimal;
+}
+li{
+	margin-left: 2em;
+}
+strong{
+	color:#4a4a4a;
+	line-height:1.8em;
+	font-size: 1em !important; 
+	/*margin-top: 1.2em;*/
+display: inline-block;
+}
+p{
+	line-height: 1.7em;
+	margin-bottom: 10px;
+}
+img{
+	font-size: 0;
+	display: block;
+	margin: 0.9em auto;
+	width: 100%;
+	box-sizing: border-box;
+}
+blockquote{
+	border-left: 0.4em solid #9b9b9b; 
+	padding:0.9em; 
+	background-color: #f3f3f3;
+	margin-top: 1.6em;
+ 	 margin-bottom: 1.6em;
+}
+blockquote p{
+	margin:0 !important;
+	color: #9b9b9b;
+}
+a{
+	text-decoration: underline;
+  	color: #6f6f6f;
+}
+br{
+
+}/**/
+
+

@@ -1,4 +1,4 @@
-/* @update: 2016-8-17 15:8:8 */ 
+/* @update: 2016-12-6 15:8:8 */ 
 @charset "UTF-8";
 /**============================
 color
@@ -9,7 +9,7 @@ news-detail（新闻详情）
 .news-wrap {
   color: #323232;
   overflow: hidden;
-  margin-bottom: 100px;
+  padding-bottom: 60px;
   background-color: white;
 }
 
@@ -30,8 +30,8 @@ news-detail（新闻详情）
   color: #666; }
 
 .news-author-area {
-  background-color: #fff;
-  border-left: 5px solid #ff422f;
+  background-color: rgb(51,51,51);
+  border-left: 5px solid rgb(199,171,146);
   padding: 10px 0; }
 
 .author-head {
@@ -45,9 +45,11 @@ news-detail（新闻详情）
 .author-info {
   margin-left: 15px;
   display: table-cell; }
-
+.main_gold{
+  color: rgb(199,171,146);
+}
 .author-name {
-  color: #666;
+  color: #aaa;
   font-size: 20px;
   line-height: 30px; }
 
@@ -63,7 +65,18 @@ news-detail（新闻详情）
 .author-des {
   font-size: 12px;
   color: #aaa;
-  line-height: 30px; }
+  display: table;
+  width: 100%;
+  margin-top: 5px;
+}
+.author-des > span {
+    display: table-cell;
+    width: 50%;
+}
+.author-des > span:nth-child(2) {
+    text-align: right;
+    padding-right: 15px;
+}
 
 .focus-btn {
   background-color: #ff422f;
@@ -77,12 +90,50 @@ news-detail（新闻详情）
 /*************************************************
 文章详情
 */
+/*
+@font-face{
+  font-family: "bbb";
+  src:url('https://testadmin.e-quanta.com/css/font/bbb.ttf');
+}*/
 .news-cont-area {
-  font-size: 16px;
   background-color: #fff;
-  /*
-  padding:0 15px 0 15px; */
   padding: 0;
+  font-size: 16px;
+}
+.news-cont-area *{
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border:none;
+  color:#333333;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+}
+.news-cont-area>*{
+  margin:auto 15px;
+}
+.news-cont-area h1{
+  font-size: 1.4em;
+}
+.news-cont-area h2{
+  font-size: 1.3em;
+}
+.news-cont-area h3{
+  font-size: 1.2em;
+}
+.news-cont-area h4{
+  font-size: 1.1em;
+}
+.news-cont-area h5{
+  font-size: 1em;
+}
+.news-cont-area h6{
+  font-size: 0.9em;
+}
+.news-cont-area h1,.news-cont-area h2,.news-cont-area h3,.news-cont-area h4,.news-cont-area h5,.news-cont-area h6{
+  color: #4a4a4a;
+  font-weight: bold;
 }
 .news-cont-area>p:first-child{
   margin-top: 0;
@@ -99,27 +150,22 @@ news-detail（新闻详情）
 .news-cont-area li{
   margin-left: 2em;
 } 
-.news-cont-area strong{
+.news-cont-area strong,.news-cont-area b{
  color:#4a4a4a;
  line-height:1.8em; 
  font-size: 1em !important;
+  font-weight: bold;
 }   
 .news-cont-area p {
-  /*margin-bottom: 15px;*/
-  margin: 1.35em auto;
   line-height: 1.7em;
-  text-align: justify; 
-  color:#6f6f6f;
-  margin: 0 15px 15px 15px;
+  margin-bottom: 25px;
 }
-
 .news-cont-area img {
   width: 100% !important;
   height: auto !important;
   display: block;
-  margin: 0.9em auto;
   box-sizing: border-box;
-  padding: 0 15px;
+  font-size: 0;
 }
 
 .origin-link {
@@ -134,14 +180,15 @@ padding-bottom: 40px;
 br {
 }
 
-blockquote {
-background-color: #f3f3f3;
-border-left: 0.4em solid #9b9b9b;
-padding: 0.9em;
-margin: 1.6em 15px;
+.news-cont-area blockquote {
+  background-color: #f3f3f3;
+  border-left: 0.4em solid #9b9b9b;
+  padding: 0.9em;
+
 }
-blockquote p {
-  margin:0 !important;color: #9b9b9b;
+.news-cont-area blockquote p {
+  margin:0 !important;
+  color: #9b9b9b;
 }
 .morning_top_pic{
   width: 100%;  
@@ -149,4 +196,15 @@ blockquote p {
 .news-cont-area a{
   text-decoration: underline;
   color: #6f6f6f;
+}
+.news-cont-area img,.news-cont-area blockquote,
+.news-cont-area h1,.news-cont-area h2,
+.news-cont-area h3,.news-cont-area h4,
+.news-cont-area h5,.news-cont-area h6{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.news-cont-area span > strong {
+    color: inherit;
 }

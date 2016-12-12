@@ -3,13 +3,13 @@
 color
 ==============================*/
 .agreement-box {
-  background-color: #f8f8f8;
-  border-top: 3px solid #52d7bb;
+  background-color: #666666;
+  border-top: 3px solid #C7AB92;
   padding: 10px;
   text-align: justify;
   word-break: break-all;
   line-height: 1.5;
-  color: #4A4A4A; }
+  color: #cccccc; }
   .agreement-box p {
     margin-bottom: 10px; }
   .agreement-box h6 {

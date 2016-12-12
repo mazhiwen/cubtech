@@ -19,7 +19,10 @@ pageController = {
                 var e = t.data.result.originalUrl;
                 /*3 要闻  2早报  1文章 */
                 3 == a && e && $originLink.attr("href", e).css("display","inline-block") ;
-                //e?$originLink.text(e):$originLink.text(1);
+                //$originLink.click(function(e){
+                  //  e.preventDefault();
+                   // alert($(this).attr("href"));
+                //});
                 if(a==1)$(".news-cont-area").css("padding-top","15px");
             } catch(i) {}
             var r = $mainWrap.height();
@@ -40,7 +43,7 @@ pageController = {
         });
         
         var e = downloader.createBar("//testapi.e-quanta.com/images/banner.png", "");
-        $("body").prepend(e)
+        $(".main-wrap").after(e)
     }
 };
 $(function() {
