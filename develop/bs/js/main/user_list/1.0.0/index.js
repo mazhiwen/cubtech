@@ -25,7 +25,7 @@ define(function(require) {
 					default:
 					type='';break;
 					}
-					s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>'+type+'</td><td></td><td>'+v['vita']+'</td><td>'+v['articleNum']+'</td><td>'+v['followNum']+'</td><td>'+v['fansNum']+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+transformTime.MSToYMDHMS(v['registerTime'])+'</td><td><a href="user_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon" data-id="'+v['id']+'"></button> <a href="user_role.html?id='+v['id']+'" class="glyphicon-user glyphicon"></a></td></tr>';	
+					s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['mobile']+'</td><td>'+type+'</td><td></td><td>'+v['vita']+'</td><td>'+v['articleNum']+'</td><td>'+v['followNum']+'</td><td>'+v['fansNum']+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+transformTime.MSToYMDHMS(v['registerTime'])+'</td><td><a href="user_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon" data-id="'+v['id']+'"></button> <a href="user_role.html?id='+v['id']+'" class="glyphicon-user glyphicon"></a> <a href="verify_commit.html?id='+v['id']+'&name='+v['nickName']+'" class="glyphicon-credit-card glyphicon"></a></td></tr>';	
 				} 
 			});
 			table_body.append(s);

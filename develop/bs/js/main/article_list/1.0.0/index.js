@@ -22,11 +22,26 @@ define(function(require) {
 		AJAXMY.send('/article/list',data,function(d){
 			table_body.empty();
 			var s;
-			$.each(d['result'],function(k,v){	
+			$.each(d['result'],function(k,v){
+				var sourceType='';
+				switch(v['source']){
+					case null:
+					sourceType='不选择';
+					break;
+					case 1:
+					sourceType='转载';
+					break;
+					case 2:
+					sourceType='一匡原创';
+					break;
+					case 3:
+					sourceType='大V原创';
+					break;
+				};	
 				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td>'+v['title']+'</td><td>'+v['categoryName']+'</td><td>'+v['keyword']+'</td><td>'+v['nickName']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+transformTime.MSToYMDHMS(v['updateTime'])+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td>'+v['viewNum']+'</td>';
 				if(v['indexStatus']) s+='<td><input type="checkbox" checked></td>';
 				else s+='<td><input type="checkbox"></td>';
-				s+='<td><a href="article_edit.html?id='+v['id']+'" class="glyphicon glyphicon-edit"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
+				s+='<td>'+sourceType+'</td><td><a href="article_edit.html?id='+v['id']+'" class="glyphicon glyphicon-edit"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
 			});
 			table_body.append(s);
 			articleListPaging.refreshDom(d['pages']);

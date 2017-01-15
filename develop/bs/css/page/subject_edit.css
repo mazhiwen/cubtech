@@ -1,7 +1,10 @@
 @import url('../common/main.css');
 #right{text-align: center;}
 #right-center{ margin: auto;display: inline-block;text-align: left;}
-#confirm-outer{text-align: center;margin: 100px auto;}
+#confirm-outer{
+	text-align: center;
+	margin: 30px auto;
+}
 
 #navigation-crumb{text-align: left;}
 /*
@@ -13,12 +16,32 @@
 
 .form-input>span{width: 180px;}
 
-#subject_article{width: 100%; background-color: red;overflow: hidden;text-align: left;}
-#subject_article>div:nth-child(1){float: left;width: 50%;
-	background-color: green;
+#subject_article{
+	box-sizing: border-box;
+	width: 100%;
+	overflow: hidden;
+	text-align: left;
+	border: 1px solid gray;
+	padding: 10px;
+}
+#subject_article>div:nth-child(1){
+	float: left;width: 50%;
+	padding-right: 5px;
+box-sizing: border-box;
 	min-height: 100px;
 }
 #subject_article>div:nth-child(2){float: left;width: 50%;
-	background-color: yellow;
+	padding-left: 5px;
+box-sizing: border-box;
 	min-height: 100px;
+}
+.include_list_title,.all_list_title{
+	height: 30px;
+	line-height: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid gray;
+}
+#search_input {
+    width: auto;
 }

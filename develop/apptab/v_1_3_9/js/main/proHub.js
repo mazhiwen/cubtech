@@ -14,7 +14,7 @@ function getAjax(t) {
         headers:t.headers
     })
 }
-var defaultUrl = "//testapi.e-quanta.com",
+var defaultUrl = "//api.e-quanta.com",
 proHub = {
     article: {
         getArticle: function(t, a) {

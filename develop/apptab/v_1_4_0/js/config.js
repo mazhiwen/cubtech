@@ -1,20 +1,18 @@
 
-/*
-本地
-*/
-URLHEAD='//localhost/e-quanta/develop/apptab';
-REQUESTHEAD='//localhost:8080';
 
-/*
-测试
+//本地
 
-REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
-*/
-/*
-线上
+//URLHEAD='//localhost/e-quanta/develop/apptab';
+//REQUESTHEAD='//localhost:8080';
 
-URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
-*/
+
+//测试
+//REQUESTHEAD=URLHEAD='//testapi.e-quanta.com';
+
+
+//线上
+URLHEAD=REQUESTHEAD='//api.e-quanta.com';
+
 
 var pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({
@@ -24,17 +22,27 @@ seajs.config({
       "ajaxMy":'lib/ajaxMy/1.0.0/ajaxMy.js',
       "components":'lib/components/components.js',
       "downloadapp":'modules/downloadapp/downloadApp.js',
-      "commonMain":'../../js/modules/commonmain/1.0.0/commonMain.js',
+      "popUpWindow":"lib/popupwindow/1.0.0/popUpWindow.js",
+      "template":"view/template.js",
       "zepto":"lib/zepto/zepto.js",
-      "eq":"base/eq/eq.js",
-      "downloader":"base/downloader/downloader.js",
       "proHub":"main/proHub.js",
-      "template":"view/template.js"
+      "eq":"base/eq/eq.js",
+      "weixinshare":"lib/weixinshare/1.0.0/weiXinShare.js",
+      "sha1":"lib/sha1/1.0.0/sha1.js",
+      //"downloader":"base/downloader/downloader.js",
+
+
+      "downloader":"../../js/base/downloader/downloader.js",
+      "commonMain":'../../js/modules/commonmain/1.0.0/commonMain.js',
+      
+    
+
+      "weixin":"weixindomain/open/js/jweixin-1.1.0.js"
 
     },
     paths:{
-       'admin'://'https:'+
-       URLHEAD
+       'admin':URLHEAD,
+       'weixindomain':'//res.wx.qq.com'
     }
 });
 //seajs.use(URLHEAD+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");

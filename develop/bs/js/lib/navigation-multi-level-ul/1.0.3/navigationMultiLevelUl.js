@@ -65,6 +65,7 @@ define(function(require,exports,module) {
 		        '添加/编辑用户':['user_edit',1],
 		        '用户反馈':['user_feed_list',1] ,
 		       	'认证审核':{
+		       		'提交审核':['verify_commit'],
 		        	'审核':['verify'],
 	            	'个人认证配置':['verify_personal'],
 	            	'机构认证配置':['verify_org'],
@@ -73,7 +74,11 @@ define(function(require,exports,module) {
 	            	'申请机构':['organization']
 	            }
 		    },
-		    'APP版本控制':['app_version'],
+		    //'APP版本控制':['app_version'],
+		    'APP控制':{
+		    	'版本':['app_version'],
+		    	'一键关注':['onekey_focus']
+		    },
 		    '权限':{
 		        '角色管理':['role_list',5],
 		        '添加/编辑角色':['role_edit',5],

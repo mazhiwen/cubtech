@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7;IE=8;IE=9;IE=edge,chrome=1" />
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta id="page_main" data-main="user_list">
+<link rel="stylesheet" href="../css/page/user_list.css">
+<title>用户列表-一匡后台</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<div class="input_icon">
+				<input type="text" id="search_input">
+				<span id="search_phone"><span class="glyphicon glyphicon-search" ></span>手机</span>
+				<span id="search_name"><span class="glyphicon glyphicon-search" ></span>昵称</span>
+			</div>	
+			<a href="user_edit.html"><button>添加</button></a>
+		</div>
+		<table class="table">
+		    <caption>用户列表</caption>
+		    <thead>
+		      <tr>
+		        <th>序号</th>
+		        <th>昵称</th>
+		        <th>手机</th>
+		        <th>类型</th>
+		        <th>角色</th>
+		        <th>简介</th>
+		        <th>文章</th>
+		        <th>关注</th>
+		        <th>粉丝</th>
+		        <th>被赞</th>
+		        <th>被收藏</th>
+		        <th>注册时间</th>
+		        <th>操作</th>
+		      </tr>
+		    </thead>
+		    <tbody id="table_body">
+		      <tr>
+		        <td>一级分类</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td>2</td>
+		        <td><span class="glyphicon glyphicon-user">ds</span></td> 
+		        <td><a href="#">编辑</a> <a href="#">删除</a></td>
+		      </tr>
+		    </tbody>
+  		</table>
+  		<div id="paging-outer">
+			<ul class="paging" id="paging"></ul>
+  		</div>
+	</div>
+</div>
+
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+</body>
+
+</html>

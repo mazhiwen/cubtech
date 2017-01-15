@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7;IE=8;IE=9;IE=edge,chrome=1" />
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta id="page_main" data-main="verify_commit">
+<link rel="stylesheet" href="../css/page/verify_commit.css">
+<title>提交认证-一匡后台</title>
+</head>
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+		</div>
+  		<div class="content">
+        <div class="form-input"><span>用户昵称</span><span class="user_nick_name"></span></div>
+  			<div class="form-input"><span>认证类型</span><select class="verify_type"><option value="1">个人</option><option value="2">机构</option><option value="3">媒体</option></select></div>
+  			<div class="form-input verify_name_box"><span class="name_txt">姓名</span><input type="text" class="verify_name"></div>
+  			<div class="form-input org_name_box"><span>所属机构/媒体</span><input type="text" class="org_name"></div>
+  			<div class="form-input org_type_box"><span>类别</span><select class="org_type"></select></div>
+  			<div class="form-input pos_box"><span>职位</span><input type="text" class="pos"></div>
+  			<div class="form-input goog_tag_box"><span class="good_tag_txt">擅长领域</span></div>
+  			<div class="form-input focus_tag_box"><span class="focus_tag_txt">关注领域</span></div>
+  			<div class="form-input prefer_tag_box"><span class="prefer_tag_txt">偏好领域</span></div>
+  			<div class="form-input introduce_box"><span>简介</span><textarea class="introduce"></textarea></div>
+			<input type="file" multiple="multiple" class="imgfile" id="imgfile">
+			<button class="commit">提交</button>			
+  		</div>
+
+
+	</div>
+</div>
+
+
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+</body>
+</html>

@@ -19,16 +19,15 @@ ueditor-config-serverurl
 
 
 //本地
-URLHEAD='//localhost/e-quanta/develop/bs';
-REQUESTHEAD='//localhost:8080';
+//URLHEAD='//localhost/e-quanta/develop/bs';
+//REQUESTHEAD='//localhost:8080';
 
-/*
-测试
+//测试
 
-REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
-*/
+//REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
+
 //线上
-//URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
+URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
 
 
 var pageVersionObj = {
@@ -80,7 +79,9 @@ var pageVersionObj = {
     verify_reply:'1.0.0',
     verify:'1.0.0',
     app_version:'1.0.0',
-    organization:'1.0.0'
+    organization:'1.0.0',
+    onekey_focus:'1.0.0',
+    verify_commit:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({
@@ -106,7 +107,8 @@ seajs.config({
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
-      "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js'
+      "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js',
+      "integratedcomponents":'../../../modules/integratedcomponents/integratedComponents.js'
     },
     paths:{
        'admin'://'https:'+

@@ -10,6 +10,7 @@ define(function(require) {
 		id=parseString.getGet('id'),
 		title=$("#title"),
 		author=$("#author"),
+		article_source=$('#article_source'),
 		cover_img=$('#cover_img'),
 		if_show=$("#if_show"),
 		article_class=$("#article_class"),
@@ -68,6 +69,7 @@ define(function(require) {
 		attas=JSON.stringify(attas);
 		var data={
 			title:title.val(),
+			source:article_source.val(),
 			summary:summary.val(),
 			sys_image_id:ImageId,
 			cover_pic:cover_img.attr("src"),
@@ -97,6 +99,7 @@ define(function(require) {
 				summary.val(d['summary']);
 				ue.setContent(d['content']);
 				author.prop("disabled",true);
+				article_source.val(d['source']);
 				author.val(d['nickName']);
 				ImageId=d['sysImageId'];
 				cover_img.attr('src',d['coverPic']);
@@ -221,17 +224,17 @@ define(function(require) {
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
 	},1);
-	/*
-	关键字删除事件
-	*/
+	//关键字删除事件
 	kw_out.on('click','.keyword>.glyphicon',function(){
 		$(this).parent().remove();
 	});
-	/*
-	关键字添加
-	*/
+	//关键字添加
+
 	add_kw_btn.click(function(){
-		add_kw_outer.before('<span class="keyword">'+add_kw_input.val()+'<span class="glyphicon"></span></span>');
+		if(parseString.isEmpty(add_kw_input.val())){
+			
+			add_kw_outer.before('<span class="keyword">'+parseString.trimSpaces(add_kw_input.val())+'<span class="glyphicon"></span></span>');
+		}		
 	});
 	/*选择时间*/
 	check_time.click(function(){

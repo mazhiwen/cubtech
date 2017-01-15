@@ -199,7 +199,7 @@ function() {
         s.vita && (c += ' <span class="mr5">', c += t(s.vita), c += "</span> "),
         c += ' <span>\u6587\u7ae0\u603b\u6570<span class="main_gold"> ',
         c += t(s.articleNum),
-        c += ' </span>\u7bc7</span> </h6> </div> </div> <article class="news-cont-area mt10"> ',
+        c += ' </span>\u7bc7</span> </h6> </div> </div> <article class="news-cont-area"> ',
         c += i(a.content),
         c += " ",
         a.originalUrl && (c += ' <div class="ta-r pr15"> <a class="origin-link" href="', c += t(a.originalUrl), c += '" id="originLink" style="display: block;">\u539f\u6587\u94fe\u63a5 <span class="gray">>></span></a> </div> '),

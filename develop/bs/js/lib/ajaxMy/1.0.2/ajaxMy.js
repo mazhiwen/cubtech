@@ -3,7 +3,41 @@ define(function(require, exports, module) {
 	function ajaxMy(urlTail,sendData,successFunction){
 		this.requestHead=REQUESTHEAD;	
 	}
-
+	ajaxMy.prototype.get=function(urlTail,sendData,successFn){
+		$.ajax({
+			type:"GET",
+			url:this.requestHead+'/admin'+urlTail,
+			data:sendData,
+			dataType:"json",
+			traditional:true,
+			success:function(d){
+				if(d['sys']==200){
+					var code=d['code'];
+					if(code==0){
+						if(d['data']['result']==='false'){
+							POPUPWINDOW.alert('操作失败：未知原因');
+						}else{
+							successFn.call(this,d['data']);
+							return;
+						}
+					}
+					else{
+						if(code==102){
+							DOCCOOKIES.removeItem('loginName','/');
+							DOCCOOKIES.removeItem('loginPassword','/');
+							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){
+								window.location.href=URLHEAD+'/login.html';
+							});	
+						}else{
+							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){});
+						}
+					} 
+				}else{
+					POPUPWINDOW.alert('操作失败：网络原因',function(){});
+				}
+			}
+		});		
+	}
 	/*
 	json 数据
 
@@ -71,6 +105,30 @@ define(function(require, exports, module) {
 				responseFn.call(this,responseUrl,sysImageId);
 			});
 			xhr.open("POST", tthis.requestHead+"/upload_image", true);
+			xhr.send(fd);
+		},false);
+	}
+	//认证上传
+	ajaxMy.prototype.upLoadVerify=function(inputId,responseFn){
+		var e=document.getElementById(inputId),
+			fd=new FormData(),
+			tthis=this;
+		e.addEventListener("change",function(event){
+			var files=e.files,
+				xhr = new XMLHttpRequest();
+			for(var i=0,file;file=files[i];i++){
+				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(e.value)){
+					alert("非图片格式，重新来");
+					return false;
+				}else{
+					fd.append('files', file);	
+				}
+			}
+			xhr.addEventListener('load',function(event){
+				var sysImage=JSON.parse(this.responseText)['data']['sysImage'];	
+				responseFn.call(this,sysImage);
+			});
+			xhr.open("POST", tthis.requestHead+"/admin/certification/upload_images", true);
 			xhr.send(fd);
 		},false);
 	}

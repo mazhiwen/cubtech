@@ -42,7 +42,6 @@ vertical-align: baseline;
 .form-input>span,.form_input_txt{ 
 	font-size: 14px;
 	line-height: 30px;
-	letter-spacing: 1px;
 /*label宽度*/
 	width: 110px;
 	text-align: left;
@@ -220,6 +219,9 @@ bootstrap 字体图标*/
 }
 .glyphicon-user:before {
   content: "\e008";
+}
+.glyphicon-credit-card:before {
+    content: "\e177";
 }
 .glyphicon-file:before {
   content: "\e022";
@@ -430,7 +432,7 @@ content:"\e171";
 .navigation-multi-level-ul>li:nth-child(5)>div::before{
 content:"\e008";
 }
-.navigation-multi-level-ul>li:nth-child(6)>a::before{
+.navigation-multi-level-ul>li:nth-child(6)>div::before{
 content:"\e145";
 }
 .navigation-multi-level-ul>li:nth-child(7)>div::before{

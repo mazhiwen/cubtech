@@ -1,0 +1,93 @@
+@import url('../common/main.css');
+@import url('../common/sub_common.css');
+.banner_img_box{
+	background-image: url('../../images/aboutus/banner.jpg');
+
+}
+
+
+
+.sub_nav_box{
+	margin-top: 70px;
+	border-bottom: 1px solid #fff;
+}
+
+.sub_nav_box>li{
+	line-height: 40px;
+	height: 40px;
+	padding: 10px 20px 8px;
+	display: inline-block;
+	font-size: 20px;
+	color: rgb(39, 39, 39);
+	cursor: pointer;
+}
+.sub_nav_active{
+	background: #ededed url(../../images/aboutus/sub_nav_bottom.jpg) no-repeat left bottom/100% auto;
+}
+.sub_content{
+	width: 100%;
+	box-sizing:border-box;
+	margin-bottom: 40px;
+	margin-top: 30px;
+}
+.sub_1{
+	font-size: 14px;
+	background-color: white;
+}
+.sub_1>div:nth-child(2)>div:nth-child(1),.sub_1>div:nth-child(4)>div:nth-child(1){
+	background-color: #2f363e;
+}
+.sub_1>div:nth-child(3)>div:nth-child(1){
+	background-color: #228ce2;
+}
+.sub_1_line{
+	border-bottom: 1px solid #eee;
+}
+.sub_1_line>div:nth-child(1){
+	color: white;
+	background: #48bc7b;
+	width: 20%;
+	text-align: center;
+	height: 180px;
+}
+.sub_1_line h2{
+	color: #62c5e2;
+	font-size: 24px;
+	line-height: 32px;
+	margin-top: 16px;
+	margin-bottom: 20px;
+}
+.sub_1_line>div:nth-child(2){
+	vertical-align: top;
+	padding: 10px 30px;
+}
+.sub_1_line>div:nth-child(2)>span{
+	display: inline-block;
+	margin-right: 100px;
+	line-height: 34px;
+
+}
+.sub_1_line>div:nth-child(2)>span>span:nth-child(2n+1){
+	color: rgb(114, 114, 114);
+}
+.sub_1_line>div:nth-child(2)>span>span:nth-child(2n){
+	color: rgb(175, 184, 194);
+	padding: 0 8px;
+}
+.sub_1_line{
+	width: 100%;
+	display: table;
+}
+.sub_1_line>div{
+	vertical-align: middle;
+	display: table-cell;
+}
+.sub_1_line>div:nth-child(3){
+	width: 20%;	
+}
+.bourgeoisie{
+	display: table;
+}
+.sub_2{
+	display: none;
+}

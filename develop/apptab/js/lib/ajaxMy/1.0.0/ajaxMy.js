@@ -1,13 +1,56 @@
 define(function(require, exports, module) {
+	
 	module.exports=ajaxMy;
-	function ajaxMy(urlTail,sendData,successFunction){
-		this.requestHead=REQUESTHEAD;	
+	
+	function ajaxMy(requestDomain,requestSecondDomain,requestHeaders){
+		this.requestDomain=requestDomain;
+		this.requestSecondDomain=requestSecondDomain;
+		this.requestHeaders=requestHeaders;	
 	}
 
-	/*
-	json 数据
+	ajaxMy.prototype.send=function(secondDirIndex,urlTail,sendData,headers,successFn){
+		$.ajax({
+			type:"POST",
+			url:this.requestDomain+this.requestSecondDomain[secondDirIndex]+urlTail,
+			data:sendData,
+			dataType:"json",
+			traditional:true,
+			headers:this.requestHeaders,
+			//Object.assign(this.requestHeaders,headers),
+			success:function(d){
+				if(d['sys']==200){
+					var code=d['code'];
+					if(code==0){
+						if(d['data']['result']==='false'){
+							POPUPWINDOW.alert('操作失败：未知原因');
+						}else{
+							successFn.call(this,d['data']);
+							return;
+						}
+					}
+					else{
+						if(code==102){
+							//DOCCOOKIES.removeItem('loginName','/');
+							//DOCCOOKIES.removeItem('loginPassword','/');
+							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){
+								window.location.href=URLHEAD+'/login.html';
+							});	
+						}else{
+							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){});
+						}
+					} 
+				}else{
+					POPUPWINDOW.alert('操作失败：网络原因',function(){});
+				}
+			}
+		});		
+	}
 
-  	*/
+
+
+	
+	//json 数据
+	/*
 	ajaxMy.prototype.send=function(urlTail,sendData,successFn){
 		$.ajax({
 			type:"POST",
@@ -43,11 +86,8 @@ define(function(require, exports, module) {
 			}
 		});		
 	}
-	/*
-	上传图片
-	绑定元素 上传 发送
-	parameterA: 自定义参数 1 文章  2专题  3话题
-  	*/
+	//	上传图片 绑定元素 上传 发送parameterA: 自定义参数 1 文章  2专题  3话题
+  	
 	ajaxMy.prototype.upLoad=function(inputId,responseFn,parameterA){
 		var e=document.getElementById(inputId),
 			fd=new FormData(),
@@ -74,9 +114,8 @@ define(function(require, exports, module) {
 			xhr.send(fd);
 		},false);
 	}
-	/*
-	上传excel
-  	*/
+	//	上传excel
+  	
 	ajaxMy.prototype.upLoadExcel=function(inputId,responseFn){
 		var e=document.getElementById(inputId),
 			fd=new FormData(),
@@ -102,9 +141,9 @@ define(function(require, exports, module) {
 			xhr.send(fd);
 		},false);
 	}
-	/*
-	上传用户头像
-  	*/
+	
+	//上传用户头像
+  	
 	ajaxMy.prototype.upLoadUserPic=function(inputId,responseFn,parameterA){
 		var e=document.getElementById(inputId),
 			fd=new FormData(),
@@ -136,9 +175,9 @@ define(function(require, exports, module) {
 		},false);
 	}
 
-	/*
-	上传广告位图片
-  	*/
+	
+	//上传广告位图片
+  	
 	ajaxMy.prototype.upLoadAdPic=function(inputId,responseFn){
 		var e=document.getElementById(inputId),
 			fd=new FormData(),
@@ -162,7 +201,7 @@ define(function(require, exports, module) {
 			xhr.open("POST", tthis.requestHead+"/upload_pic", true);
 			xhr.send(fd);
 		},false);
-	}
+	}*/
 
 
 });

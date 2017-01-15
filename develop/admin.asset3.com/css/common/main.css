@@ -1,0 +1,91 @@
+@import url('../component/init/1.0.0/init.css');
+/******************************************************
+共用*/
+/******************************************************
+弹出窗口*/
+@import url('https://admin.e-quanta.com/css/component/popupwindow/1.0.0/popupwindow.css');
+/******************************************************
+私有*/
+@import url('../component/navigation-crumb/1.0.0/navigation-crumb.css');
+@import url('../component/navigation-hori/1.0.0/navigation-hori.css');
+@import url('../component/date-time-picker/1.0.0/date-time-picker.css');
+html,body,#container{height: 100%;}
+#top{
+	background-color: #3c8dbc;height: 50px;
+	border-bottom: 1px solid #cccccc;
+	position: fixed; width: 100%;
+	z-index: 100;
+	display: table;
+}
+#top>span{
+	vertical-align: middle;font-size: 1.1em;
+	line-height: 50px;margin-left: 30px;
+font-weight:900;
+}
+#top span{color: white;}
+
+/*
+右上角
+*/
+#top_right{
+
+	padding: 0 30px;
+	text-align:center;
+	display:table-cell;height: 100%;
+	margin-right: 30px;
+	vertical-align: middle;
+	width: 100px;cursor: pointer;
+	
+}
+#top_right>img{
+	margin-right:10px;
+	vertical-align: middle;
+	width: 30px;
+}
+#login_user_nic_name{
+	vertical-align: middle;
+}
+/*
+用户信息层
+*/
+#user_info_outer{
+	border:1px solid rgba(0, 0, 0, 0.15);
+	position: absolute;width: 200px;height: 250px;
+	background-color: rgb(249,249,249);top: 51px;right: 0;
+	text-align: center;
+}
+#user_info_outer>div:nth-child(1){background-color: #3c8dbc;
+	padding: 10px 0;}
+#user_info_head{margin-bottom: 10px;}
+#user_info_intro{overflow: auto;font-size: 0.8em; }
+#user_info_outer>p{background-color: white;color: rgba(255, 255, 255, 0.8);
+}
+#user_info_outer>p>span{display: block;line-height: 20px;
+color: rgb(0, 115, 183);
+}
+#user_info_head{width: 70px;}
+#sign_out{
+	margin-top: 10px;
+	background-color: white;color: black;
+}
+
+
+/*
+导航
+*/
+#left{
+	width: 200px;float: left;overflow-x:hidden;
+	border-right: 1px solid #cccccc; 
+	min-height: 800px; 
+	overflow-y:auto; position: fixed;  top: 51px;
+	background-color: rgb(244, 244, 244);
+}
+#right{margin-left: 200px;padding:0 3px;padding-top: 51px; }
+.navigation-multi-level-ul{
+	font-size: 14px;border-right: 1px solid black;width: 100%;
+}
+#navigation-crumb{padding: 10px 10px;}
+#navigation-crumb>span:nth-child(1){line-height: 33px;}
+#navigation-crumb button{font-size: 0.9em;margin: 0 10px;}
+.table{
+}

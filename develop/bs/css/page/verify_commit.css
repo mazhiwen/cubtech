@@ -1,0 +1,18 @@
+@import url('../common/main.css');
+#paging-outer{ 
+	text-align: center; padding: 50px;
+}
+.paging{
+	width: auto;
+	display: inline-block;
+}
+.paging_wrap_btn{
+
+}
+.commit{
+	display: block;margin:20px auto;
+}
+.content{
+	width: 80%;
+	margin: auto;
+}

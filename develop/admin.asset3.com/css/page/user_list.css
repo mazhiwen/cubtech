@@ -1,0 +1,21 @@
+@import url('../common/main.css');
+#paging-outer{
+	text-align: center;
+	margin-top: 50px;
+}
+#navigation-crumb>select:nth-child(4){
+	margin-left: 10%;
+}
+#navigation-crumb>button:nth-child(5){
+	margin-left: 40%;
+	 }
+#table_body>tr>td:nth-child(13){
+	min-width:5em;
+}
+
+
+.input_icon>span:nth-child(2){
+border-radius: 0;
+right: 4em;
+border-left: none;
+}

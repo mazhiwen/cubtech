@@ -54,7 +54,9 @@ define(function(require) {
 					content:ue.getContent(),
 					category_code:type.val()
 				},function(d){
-					if(d['result']) popUpWindow.alert('编辑成功',function(){});
+					if(d['result']) popUpWindow.alert('编辑成功',function(){
+						window.location.href='myarticle.html';
+					});
 					else popUpWindow.alert('编辑失败',function(){});
 					that.prop('disabled',false);
 				});
@@ -72,7 +74,6 @@ define(function(require) {
 				$(this).prop('disabled',true);
 				var that=$(this);
 				if(parseString.isEmpty(type.val())){
-		
 					ajaxMy.send('/article/save',{
 						title:title.val(),
 						summary:summary_text.val(),
@@ -81,10 +82,12 @@ define(function(require) {
 						content:ue.getContent(),
 						category_code:type.val()
 					},function(d){
-						if(d['result']) popUpWindow.alert('添加成功',function(){});
+						if(d['result']) popUpWindow.alert('添加成功',function(){
+							window.location.href='myarticle.html';
+						});
 						else popUpWindow.alert('添加失败',function(){});
 						that.prop('disabled',false);
-					});
+					},function(){that.prop('disabled',false);});
 				}else{
 					that.prop('disabled',false);
 					popUpWindow.alert('未选择分类，请选择分类',function(){});

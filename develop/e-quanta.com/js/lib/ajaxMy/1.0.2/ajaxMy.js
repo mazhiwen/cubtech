@@ -35,7 +35,7 @@ define(function(require, exports, module) {
 	json 数据
 
   	*/
-	ajaxMy.prototype.send=function(urlTail,sendData,successFn){
+	ajaxMy.prototype.send=function(urlTail,sendData,successFn,failFn){
 		$.ajax({
 			type:"POST",
 			url:this.requestHead+'/web'+urlTail,
@@ -48,6 +48,8 @@ define(function(require, exports, module) {
 						successFn.call(this,d['data']);
 					}
 					else{
+						if(typeof(failFn)=='function')
+						failFn.call(this);
 						popUpWindow.alert('操作失败：'+d['desc'],function(){});
 						if(code==102){
 							docCookies.removeItem('loginName','/');
@@ -55,10 +57,11 @@ define(function(require, exports, module) {
 							if(parseString.getHtmlName(window.location.href)!='login'){
 								window.location.href='login.html';
 							}
-							
 						}
 					} 
 				}else{
+					if(typeof(failFn)=='function')
+						failFn.call(this);
 					popUpWindow.alert('操作失败：网络原因',function(){});
 				}
 			}
