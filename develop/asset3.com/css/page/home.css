@@ -23,7 +23,10 @@
 }
 
 .banner_1_animate>h2{
-	animation:banner_one_txt 2s forwards;
+
+	animation-name: banner_one_txt;
+	animation-duration: 2s;
+	animation-fill-mode:forwards;
 }
 @keyframes banner_button
 {
@@ -36,7 +39,6 @@ from {margin-top: 315px;}
 to {margin-top: 200px;}
 }
 
-
 .banner_img_box2{
 	
 	background-image: url('../../images/home/banner_2.jpg');
@@ -44,6 +46,7 @@ to {margin-top: 200px;}
 .banner_img_box2>img{
 	display: block;
 	margin: 200px auto 0;
+	max-width: 80%;
 }
 .banner_2_animate{
 	z-index: 1;
@@ -85,6 +88,7 @@ to {margin-top: 200px;}
 }
 .banner_4_animate>img:nth-child(1){
 	animation:banner_four_img 2s forwards;
+	max-width: 70%;
 }
 @keyframes banner_four_img
 {
@@ -94,6 +98,7 @@ to {margin-top: 200px;}
 /*s4 动画*/
 .section_4_animate_wrap{
 	text-align: center;
+	overflow: hidden;
 }
 .section_4_animate_box{
 	color: white;
@@ -492,22 +497,15 @@ to {margin-top: 200px;}
 	.scroll_p2 > img {
 		width: 50% !important;
 	}
-
 	.scroll_head_oo > div > img {
    		 width: 0px;
 	}
-
 	.section_3>.p1>img{
 		width: 95%;
 	}
-
-	
-
 	.navbox_width {
     	width: 100%;
 	}
-
-
 	.gradient_font{
 		font-size: 1em;
 	}
@@ -519,10 +517,21 @@ to {margin-top: 200px;}
 		from {margin-top: 105px;}
 		to {margin-top: 25px;}
 	}
+	
 	@keyframes banner_one_txt
 	{
-		from {margin-top: 140px;}
-		to {margin-top: 120px;}
+		from {margin-top: 120px;}
+		to {margin-top: 80px;}
+	}
+	@keyframes banner_two_img
+	{
+		from {margin-top: 120px;}
+		to {margin-top: 80px;}
+	}
+	@keyframes banner_four_img
+	{
+		from {margin-top: 120px;}
+		to {margin-top: 60px;}
 	}
 	.slogan_outer > p {
     	font-size: 0.6em;

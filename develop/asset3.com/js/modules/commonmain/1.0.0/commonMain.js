@@ -35,7 +35,22 @@ define(function(require,exports,module) {
 			}
 		});
 
+		var bannerLeft=84;
+		$(".banner").swipeLeft(function(){
+			if(bannerLeft!=(-420)){
+				bannerLeft-=84;
+				$(".nav>li:nth-child(n+2)").css("left",bannerLeft+'px');
+			}
+			
+		});
 
+		$(".banner").swipeRight(function(){
+			if(bannerLeft!=84){
+				bannerLeft+=84;
+				$(".nav>li:nth-child(n+2)").css("left",bannerLeft+'px');
+			}
+			
+		});
 
 	}
 	

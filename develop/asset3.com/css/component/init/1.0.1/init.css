@@ -5,6 +5,7 @@
 	margin: 0;
 	border: none;
 	font-family:"Microsoft YaHei","SimSun";
+	letter-spacing: 0.5px;
 	line-height: 1.7em;
 }
 img{
@@ -175,15 +176,6 @@ background-size: 9px ;
 padding-right: 260px;
 }
 option{text-indent: 7px;}
-
-
-
-
-
-
-
-
-
 
 
 

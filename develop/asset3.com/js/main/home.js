@@ -73,16 +73,7 @@ define(function(require) {
 	setInterval(sectionFourAnimateFn,2000);
 
 
-	var bannerLeft='84';
-	$(".banner").swipeLeft(function(){
-		bannerLeft-=84;
-		$(".nav>li:nth-child(n+2)").css("left",bannerLeft+'px');
-	});
-
-	$(".banner").swipeRight(function(){
-		bannerLeft+=84;
-		$(".nav>li:nth-child(n+2)").css("left",bannerLeft+'px');
-	});
+	
 	
 
 
