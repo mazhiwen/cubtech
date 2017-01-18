@@ -136,3 +136,33 @@
 .linked_time{
 	text-align: right;
 }
+
+
+@media(max-width:600px) {
+	.content_right,.bourgeoisie_right{
+		display: none;
+	}
+	.content{
+		width: 95%;
+	}
+	.spacing_word {
+	    letter-spacing: 1.5em;
+	    font-size: 13px;
+	    padding-left: 1.5em;
+	}
+	.banner_gray {
+	    font-size: 11px;
+	}
+	.article_box > img {
+	    display: none;
+	}
+	.article_text_box {
+	    width: 100%;
+	    padding-left: 0px;
+	}
+	.article_title {
+	    font-size: 19px;	
+	}
+
+
+}

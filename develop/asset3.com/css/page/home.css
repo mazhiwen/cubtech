@@ -86,7 +86,7 @@ to {margin-top: 200px;}
 .banner_4_animate{
 	z-index: 1;
 }
-.banner_4_animate>img:nth-child(1){
+.banner_img_box4>img:nth-child(1){
 	animation:banner_four_img 2s forwards;
 	max-width: 70%;
 }
@@ -109,7 +109,7 @@ to {margin-top: 200px;}
 	transition:top 1s,font-size 1s;
 	line-height: 1em;
 	width: 100%;
-	letter-spacing: 0.1em;
+	white-space: nowrap;
 }
 .sec_4_ani_1{
 	top: -190px;
@@ -426,34 +426,7 @@ to {margin-top: 200px;}
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/****************************************移动端****************************************/
 
 
 
@@ -471,19 +444,19 @@ to {margin-top: 200px;}
 	}
 	.scroll_head {
     	background-color: #ededed;
+    	padding-top: 20px;
 	}
 	.scroll_head_headtxt{
 		padding-left: 0;
 		text-align: center;
 		z-index: 1;
 		width: 100%;
-		height: 80px;
 		position: static;
 	}
 	.scroll_head_oo{
 		margin: auto 20px;
 		width: 60%;
-		height: 300px;
+		height: 280px;
 	}
 	.scroll_p2{
 		left: 0;
@@ -503,14 +476,12 @@ to {margin-top: 200px;}
 	.section_3>.p1>img{
 		width: 95%;
 	}
-	.navbox_width {
-    	width: 100%;
-	}
+
 	.gradient_font{
 		font-size: 1em;
 	}
 	.white_h_font{
-		font-size: 0.8em;
+		font-size: 14px;
 	}
 	@keyframes banner_button
 	{
@@ -534,16 +505,16 @@ to {margin-top: 200px;}
 		to {margin-top: 60px;}
 	}
 	.slogan_outer > p {
-    	font-size: 0.6em;
+    	font-size: 14px;
 	}
 	.slogan_outer {
-    	padding: 20px 0;
+    	padding: 40px 0;
 	}
 	.scroll_head_headtxt > h2 {
     	font-size: 1.2em;
 	}
 	.scroll_head_headtxt>p{
-		font-size: 0.8em;
+		font-size: 14px;
 	}
 	.section_style > .p2 {
     	padding: 0 10px;
@@ -555,46 +526,59 @@ to {margin-top: 200px;}
     	font-size: 1.5em;
 	}
 	.section_style > .p2 > p:nth-child(2) {
-    	font-size: 1.1em;
+    	font-size:14px;
 	}
 	.section_style > .p2 > p {
     	font-size: 0.7em;
 	}
 	.sec_4_ani_1{
-		top: -140px;
+		top: -83px;
+	}
+	.sec_4_ani_2{
+		top: -65px;
+	}
+	.sec_4_ani_3{
+		top: -65px;
 		animation:secfourlastDown 1s 1;
 		transition:none !important;
 	}
-	.sec_4_ani_2{
-		top: -120px;
-	}
-	.sec_4_ani_3{
-		top: -90px;
-	}
 	.sec_4_ani_4{
-		top: -60px;
+		top: -35px;
 	}
 	.sec_4_ani_5{
-		font-size: 40px;
-		top: -25px;
+		font-size: 20px;
+		top: -7px;
+	}
+	.sec_4_ani_4,.sec_4_ani_6{
+		font-size: 14px;
+	}
+	.sec_4_ani_3,.sec_4_ani_7{
+		font-size: 11px;
+	}
+	.sec_4_ani_2,.sec_4_ani_8{
+		display: none;
+	}
+	.sec_4_ani_1,.sec_4_ani_9{
+		display: none;
 	}
 	.sec_4_ani_6{
-		top: 25px;
+		top: 30px;
 	}
 	.sec_4_ani_7{
-		top: 65px;
+		top: 60px;
 	}
 	.sec_4_ani_8{
-		top: 100px;
+
+		top: 75px;
 	}
 	.sec_4_ani_9{
-		top: 130px;
+		top: 75px;
 	}
 	@keyframes secfourlastDown{
-		0% {top: 130px;color: white;}
-		45% {top: 150px;color: transparent;}
-		55% {top: -160px;color: transparent;}
-		100% {top: -140px;color: white;}
+		0% {top: 55px;color: white;}
+		45% {top: 75px;color: transparent;}
+		55% {top: -85px;color: transparent;}
+		100% {top: -65px;color: white;}
 	}
 	#section_6 > .p1 span {
 		float: left;
@@ -613,6 +597,21 @@ to {margin-top: 200px;}
 	}
 	#section7{
 		padding-bottom: 20px;
+	}
+	.banner_img_group button,.button_style{
+		padding: 0 5px;
+		line-height: 2em;
+		font-size: 0.8em;
+	}
+	.section_style .button_style{
+		width: auto;
+		padding: 2px 15px;
+	}
+	.scroll_p2 > h2 {
+	    font-size: 16px !important;
+	}
+	.scroll_p2 > p {
+	    font-size: 14px !important;
 	}
 
 }

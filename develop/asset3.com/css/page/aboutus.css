@@ -122,10 +122,6 @@
 .sub_3_text_right>p{	
 	padding-right: 100px;
 }
-
-
-
-
 .sub_4{
 		display: none;
 	font-size: 14px;
@@ -171,6 +167,55 @@
 	line-height: 28px;
 	margin-bottom: 40px;
 }
+
+
+
+
+
+
+@media(max-width:600px) {
+	.sub_content{
+		padding: 10px;
+	}
+	.sub_1 > div:nth-child(2){
+		display: none;
+	}
+	.sub_1 > div:nth-child(1) > p {
+	    margin-top: 10px;
+	}
+	.sub_3_text_left > p {
+    	padding-left: 0;
+	}
+	.sub_3_text_left > * {
+		padding-right: 20px;
+	}
+	.sub_3_text_right > p {
+	    padding-right: 0;
+	}
+	.sub_3_text_right > * {
+	    padding-left: 20px;
+	}
+	.sub_2_text_wrap > li {
+	    background: url(../../images/aboutus/sub_2_bac.jpg) no-repeat center/100% auto;
+	    width: 80px;
+	    height: auto;
+	    margin: 10px 5px;
+	    padding: 50px 0;
+	    vertical-align: middle;
+	    font-size: 0.9em;
+	    line-height: normal;
+	}
+	.sub_2_text_wrap > li {
+	    
+	}
+
+}
+
+
+
+
+
+
 
 
 

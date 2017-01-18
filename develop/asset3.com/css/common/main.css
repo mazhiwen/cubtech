@@ -173,10 +173,14 @@
 	width: 100%;
 	border-top: 1px solid #333;
 	padding: 20px 0;
-	display: table;
+	text-align: center;
 }
 .footer_box>div:nth-child(1)>div:nth-child(2)>span{
-	display: table-cell;
+	
+	white-space: nowrap;
+}
+.footer_box .to_beian,.footer_box>div:nth-child(1)>div:nth-child(2)>span{
+	margin: 0 15px;
 }
 .footer_box>div:nth-child(1)>div:nth-child(2)>span:nth-child(2){
 	text-align: right;
@@ -192,12 +196,11 @@
 }
 .footer_box p,.footer_box span{
 	font-size: 12px;
-	color: rgb(114, 114, 114);
+	color: rgb(114, 114, 114) !important;
 }
 .footer_box .to_beian{
 	font-size: 12px;
 	color: rgb(98, 197, 226);
-	padding: 0 15px;
 }
 
 
@@ -209,10 +212,11 @@
 
 @media(max-width:600px) {
 	.banner{
- 		height: 300px;
+ 		height: 250px;
  	}
 	.footer_box h3 {
-    	font-size: 0.8em;	
+    	font-size: 0.8em;
+    	margin-bottom: 5px;	
 	}
 	.footer_box > div:nth-child(2){
 		display: none;
@@ -226,6 +230,7 @@
 	.banner_img_group {
     	height: 250px;
 	}
+	/*
 	.banner_top{
 		position: static;
 		background-color: gray;
@@ -277,10 +282,68 @@
 		left: 84px;
 		transition:left 1s;
 	}
+	*/
+	.navbox_width {
+    	width: 80px;
+	}
+	.nav_box {
+	    position: absolute;
+	    right: 0;
+	    height: 40px;
+	    width: 70px;
+	}
+	.nav {
+	    background-color: white;
+	    width: 100%;
+	    position: absolute;
+	    top: 40px;
+	    height: auto;
+	    text-align: center;
+	}
+	.nav_active {
+	    width: 100%;
+	    height: 100%;
+	    padding: 0;
+	    float: left;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+	.nav > li {
+	    display: block;
+	    padding: 2px 0;
+	}
+	.nav > li > a {
+	    line-height: normal;
+	    padding: 0;
+	}
 
 
 
-
+	.banner_img_box > .banner_title {
+	    margin-top: 85px;
+	    font-size: 30px;
+	}
+	.footer_box > div:nth-child(1) > div:nth-child(1) > div {
+	    width: 48%;
+	    margin: 20px 0;
+	}
+	.footer_box > div:nth-child(1) > div:nth-child(1) > div:nth-child(2n) {
+		margin-left: 2%;   	
+	}
+	.footer_box > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+	    margin-left: 0%;
+	}
+	.footer_box > div:nth-child(1) > div:nth-child(1) {
+	    padding: 10px;
+	}
+	.footer_box > div:nth-child(1) {
+	   
+	}
+	.footer {
+	    width: 96%;
+	    padding: 0 2%;
+	}
 
 }
 

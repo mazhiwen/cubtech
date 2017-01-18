@@ -25,11 +25,11 @@ UEDITORTOPOFFSET=71;
 
 
 //正式环境
-//REQUESTHEAD='//www.asset3.com';
-//REQUESTHEAD='http://www.asset3.com';
+REQUESTHEAD='//www.asset3.com';
+REQUESTHEAD='http://www.asset3.com';
 
 //测试环境
-REQUESTHEAD='http://testadmin.asset3.com';
+//REQUESTHEAD='http://testadmin.asset3.com';
 
 //本地环境
 //REQUESTHEAD='//localhost/e-quanta/develop/asset3.com';
