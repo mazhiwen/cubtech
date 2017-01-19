@@ -20,8 +20,8 @@
 }
 .banner_1_animate>button{
 	animation:banner_button 2s forwards;
+	display: none;
 }
-
 .banner_1_animate>h2{
 
 	animation-name: banner_one_txt;
@@ -222,7 +222,7 @@ to {margin-top: 200px;}
 	vertical-align: middle;
 	width: 90%;
 	margin: auto 20px;
-	height: 450px;
+	height: 520px;
 	overflow: hidden;
 	position: relative;
 }
@@ -253,25 +253,30 @@ to {margin-top: 200px;}
 .scroll_p1{
 
 }
+/*
 .scroll_p1,.scroll_p3,.scroll_p4,.scroll_p5{
 	width: 35%;
 	padding: 30px 70px;
+}*/
+.scroll_head_oo>div{
+	width: 35%;
+	padding: 30px 70px;
 }
-.scroll_p2{
+div.scroll_p2{
 	left: 35%;
 	border-top: 4px solid #31bbeb;
 	background-color: #ededed;
 	width: 30%;
 	padding: 30px;
 }
-.scroll_p2>img{
+div.scroll_p2>img{
 	margin-top: 0px !important;
 	width: 80% !important;
 }
-.scroll_p2>p{
+div.scroll_p2>p{
 	font-size: 16px !important;
 }
-.scroll_p2>h2{
+div.scroll_p2>h2{
 	font-size: 20px !important;
 }
 .scroll_p3{
@@ -281,6 +286,21 @@ to {margin-top: 200px;}
 	left: 100%;
 }
 .scroll_p5{
+	left:100%;
+}
+.scroll_p6{
+	left:100%;
+}
+.scroll_p7{
+	left:100%;
+}
+.scroll_p8{
+	left:100%;
+}
+.scroll_p9{
+	left:100%;
+}
+.scroll_p8{
 	left:-35%;
 }
 .scroll_head_headtxt{
@@ -456,18 +476,18 @@ to {margin-top: 200px;}
 	.scroll_head_oo{
 		margin: auto 20px;
 		width: 60%;
-		height: 280px;
+		height: 320px;
 	}
-	.scroll_p2{
+	div.scroll_p2{
 		left: 0;
 		width: 100%;
 		border: none;
 		padding: 10px;
 	}
-	.scroll_p1,.scroll_p3,.scroll_p4,.scroll_p5{
+	.scroll_p1,.scroll_p3,.scroll_p4,.scroll_p5,.scroll_p6,.scroll_p7,.scroll_p8{
 		left: -100%;
 	}
-	.scroll_p2 > img {
+	div.scroll_p2 > img {
 		width: 50% !important;
 	}
 	.scroll_head_oo > div > img {
@@ -607,10 +627,10 @@ to {margin-top: 200px;}
 		width: auto;
 		padding: 2px 15px;
 	}
-	.scroll_p2 > h2 {
+	div.scroll_p2 > h2 {
 	    font-size: 16px !important;
 	}
-	.scroll_p2 > p {
+	div.scroll_p2 > p {
 	    font-size: 14px !important;
 	}
 

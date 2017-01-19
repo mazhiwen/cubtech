@@ -21,9 +21,9 @@ define(function(require) {
 	$(".scroll_left").click(function(){
 		$(".scroll_head_oo>div").each(function(key,value){
 			var nowClass=$(this).attr('class');
-			var nowIndex=nowClass[8];
+			var nowIndex=parseInt(nowClass.substr(8));
 			var nextIndex=null;
-			if(nowIndex==5)
+			if(nowIndex==8)
 				nextIndex=1;
 			else
 				nextIndex=++nowIndex;
@@ -34,10 +34,11 @@ define(function(require) {
 	$(".scroll_right").click(function(){
 		$(".scroll_head_oo>div").each(function(key,value){
 			var nowClass=$(this).attr('class');
-			var nowIndex=nowClass[8];
+			//var nowIndex=nowClass[8];
+			var nowIndex=nowClass.substr(8);
 			var nextIndex=null;
 			if(nowIndex==1)
-				nextIndex=5;
+				nextIndex=8;
 			else
 				nextIndex=--nowIndex;
 			$(this).removeClass(nowClass).addClass('scroll_p'+nextIndex);

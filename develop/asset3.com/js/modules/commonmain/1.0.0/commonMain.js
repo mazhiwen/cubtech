@@ -13,8 +13,6 @@ define(function(require,exports,module) {
 		popUpWindow=new(require('popUpWindow'));
 
 
-		
-
 		$(".banner").prepend('<div class="banner_top"><a href="home.html"><img src="images/logo.png"></a><div class="nav_box"><ul class="nav"><li><a href="home.html">首页</a></li><li><a href="http://www.e-quanta.com">立方社区</a></li><li><a href="dynamic.html">立方动态</a></li><li><a href="thinktank.html">立方智库</a></li><li><a href="product.html">立方产品</a></li><li><a href="aboutus.html">关于我们</a></li><li><a href="http://www.gaa100.org/">百人会</a></li><li><a href="http://en.asset3.com/">EN</a></li></ul><button class="awesome_icon nav_active"></button></div></div>');
 
 
@@ -35,22 +33,34 @@ define(function(require,exports,module) {
 			}
 		});
 
-		var bannerLeft=84;
 		$(".banner").swipeLeft(function(){
-			if(bannerLeft!=(-420)){
-				bannerLeft-=84;
-				$(".nav>li:nth-child(n+2)").css("left",bannerLeft+'px');
-			}
 			
+		});
+		$(".banner").swipeRight(function(){
 		});
 
-		$(".banner").swipeRight(function(){
-			if(bannerLeft!=84){
-				bannerLeft+=84;
-				$(".nav>li:nth-child(n+2)").css("left",bannerLeft+'px');
-			}
-			
+
+		$(window).scroll(function(){
+			var cliWid=document.body.clientWidth;
+			var scrTop=$(window).scrollTop();
+			if (scrTop>610){
+				if(cliWid>600){
+					$(".nav_box").removeClass('color_transparent ');
+					$(".nav_box").addClass('color_white navbox_width');
+					$(".nav").show();
+					showNavFlag=true;
+				}else{
+					$(".nav_box").addClass('color_transparent');
+					$(".nav_box").removeClass('color_white navbox_width');
+					$(".nav").hide();
+					showNavFlag=false;
+				}
+			}	
 		});
+
+		
+
+
 
 	}
 	

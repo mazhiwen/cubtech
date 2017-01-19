@@ -39,6 +39,10 @@
 .content_left>strong{
 	display: block;
 }
-
+.content_left img{
+	max-width: 100%;
+	display: block;
+	margin: auto;
+}
 
 

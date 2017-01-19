@@ -186,7 +186,8 @@ function() {
 		        });
         	}
         });
-        
+        var authorVita='';
+        authorVita=t(s.vita).substr(0,20)+'...';
         return c += '<div class="news-wrap"> <div class="news-title-area "> <h6 class="news-title">',
         c += t(a.title),
         c += '</h6> <div class="news-subtitle mt10 pr"> <span class="news-icon abs-lm"></span> <span class="news-time ml15">',
@@ -196,7 +197,7 @@ function() {
         c += '" alt=""> </div> <div class="author-info boxItem"> <div class="author-name pr"> <span>',
         c += t(s.nickName),
         c += '</span><span class="author-icon ml5"></span>  </div> <h6 class="author-des"> ',
-        s.vita && (c += ' <span class="mr5">', c += t(s.vita), c += "</span> "),
+        s.vita && (c += ' <span class="mr5">', c += authorVita, c += "</span> "),
         c += ' <span>\u6587\u7ae0\u603b\u6570<span class="main_gold"> ',
         c += t(s.articleNum),
         c += ' </span>\u7bc7</span> </h6> </div> </div> <article class="news-cont-area"> ',

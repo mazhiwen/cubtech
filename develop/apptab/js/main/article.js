@@ -48,8 +48,11 @@ pageController = {
                 $(".news-author-area").hide();
                 $(".news-subtitle").hide();
             }
-            if(a==2)
-            $(".morning_top_pic").show();
+            if(a==2){
+                $(".morning_top_pic").show();
+                $(".news-title-area").hide();
+            }
+            
         });
         
         var e = downloader.createBar("//testapi.e-quanta.com/images/banner.png", "");
