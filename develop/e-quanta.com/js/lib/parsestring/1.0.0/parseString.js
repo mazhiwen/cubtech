@@ -72,6 +72,17 @@ define(function(require, exports, module) {
 		return false;
 	}
 
+	parseString.prototype.behindDot=function(str,length){
+		var result;
+		if (str.length>length){
+			result=str.substr(0,length)+'...';
+		}else{
+			result=str;
+		}
+		
+		return result;
+	}
+
 
 });
 

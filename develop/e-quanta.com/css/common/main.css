@@ -370,7 +370,16 @@ banner区域
 }
 .article_box_h>div:nth-child(2){
 	text-align: right;
+	width: 160px;
 }
+.article_box_h > div:nth-child(1) > span:nth-child(3) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
 .article_box>a>div:nth-child(1)>p,
 .article_box_h>div:nth-child(1)>span:nth-child(3),
 .article_box_t{

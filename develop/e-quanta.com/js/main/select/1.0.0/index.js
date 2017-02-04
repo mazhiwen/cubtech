@@ -5,6 +5,7 @@ define(function(require) {
 		toTop=(require('toTop'))(),
 		ajaxMy=new(require('ajaxMy')),
 		transformTime=new(require('transformTime')),
+		parseString=new(require('parseString')),
 		center=$("#center"),
 		bottom_line=$("#bottom_line"),
 		getPaging=1;
