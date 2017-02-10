@@ -1,0 +1,22 @@
+@import url('../common/main.css');
+
+
+button:enabled:active,button:enabled:hover {
+    background-color: transparent;
+    border-color: #999;
+}
+button.text_button{
+	border-radius: 0; 
+    box-shadow: none; 
+    border: 1px solid transparent;
+    height: auto;
+    padding: 2px;
+    background-color: transparent;
+    color: #333333;
+    font-size: 13px;
+    text-shadow:none;
+    white-space: nowrap; 
+}
+#paging-outer{ text-align: center; padding: 50px;}
+
+

@@ -57,6 +57,21 @@ define(function(require) {
 		bannerPos=chosIndex;
 	});
 
+	function bannerSwitch(){
+		
+		$(".banner_choose_box>label:eq("+bannerPos+")").addClass("radio_active");
+		$(".banner_choose_box>label:eq("+bannerPos+")").siblings().removeClass("radio_active");
+		
+		//var chosIndex=$(this).val();
+		bannerPos++;
+		$(".banner_img_box:eq("+(bannerPos-1)+")").removeClass("banner_"+bannerPos+"_animate");
+		$(".banner_img_box:eq("+(bannerPos-1)+")").addClass("banner_"+bannerPos+"_animate");
+		bannerPos=chosIndex;
+	}
+	//setInterval(bannerSwitch,2000);
+
+
+	//第四部分字体滚动
 	function sectionFourAnimateFn(){
 		$(".section_4_animate_box>li").each(function(){
             var nowClass=$(this).attr("class");

@@ -34,7 +34,7 @@ pageController = {
                 if(a==1)$(".news-cont-area").css("padding-top","15px");
             } catch(i) {}
             var r = $mainWrap.height();
-            location.href = "equanta://setHeight=" + r
+            //location.href = "equanta://setHeight=" + r
         })
     },
     //分享
@@ -57,16 +57,9 @@ pageController = {
         
         var e = downloader.createBar("//testapi.e-quanta.com/images/banner.png", "");
         $(".main-wrap").after(e);
-         ////////////////
-         $(document).on("click", ".download-block", function () {
+         
+        $(document).on("click", ".download-block", function () {
             window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.equanta';
-            /*
-            downloader.openApp({
-                packageName: "com.eq.stock",
-                scheme: 'equanta://',
-                downloadAndroid: "http://a.app.qq.com/o/simple.jsp?pkgname=com.equanta",
-                downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
-            });*/
         });
 
         $(".main-wrap").on("click", "img", function () {
@@ -74,7 +67,6 @@ pageController = {
             window.location.href = _scheme;
         });
 
-        //////////////////////
     }
 };
 $(function() {

@@ -4,7 +4,8 @@ define(function(require,exports,module) {
 		this.navigationIndexArray={
 			comment_details:19,
 			user_feed_details:22,
-			role_permission:28
+			role_permission:28,
+			activity_verify:12
 		};
 		this.curInd=0;
 		var that=this;		
@@ -26,6 +27,10 @@ define(function(require,exports,module) {
 		        '专题':{
 		            '专题列表':['subject_list',3],
 		            '添加/编辑专题':['subject_edit',4]
+		        },
+		        '活动':{
+		            '活动列表':['activity_list',3],
+		            '添加/编辑活动':['activity_edit',4]
 		        }/*,
 		        '话题管理':{
 		            '话题列表':['topic_list',1],

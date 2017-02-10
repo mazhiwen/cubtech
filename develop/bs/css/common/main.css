@@ -2,8 +2,9 @@
 /******************************************************
 共用*/
 /******************************************************
-弹出窗口*/
-@import url('https://admin.e-quanta.com/css/component/popupwindow/1.0.0/popupwindow.css');
+弹出窗口
+@import url('https://admin.e-quanta.com/css/component/popupwindow/1.0.0/popupwindow.css');*/
+@import url('../component/popupwindow/1.0.0/popupwindow.css');
 /******************************************************
 私有*/
 @import url('../component/navigation-crumb/1.0.0/navigation-crumb.css');

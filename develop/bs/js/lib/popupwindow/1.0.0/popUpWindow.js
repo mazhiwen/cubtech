@@ -34,6 +34,27 @@ define(function(require,exports,module) {
 			noFunction.call(this);
 		});
 	}
+	popUpWindow.prototype.confirmInput=function(title,content,yesFunction,noFunction){
+		var tthis=this;
+		this.initPUW();
+		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div><textarea class="popupwindow_textarea"></textarea></div><div><button>取消</button><button>确认</button></div></div>');
+		$('body').unbind('keydown').keydown(function(e){
+			e.preventDefault();
+		});
+		//确定事件
+		$('#popupwin>div:nth-child(3)>button:nth-child(2)').click(function(e){
+			$('body').unbind('keydown');
+			tthis.puwb.hide();
+			$('body').removeClass('stop_scroll');
+			yesFunction.call(this,$(this),$(".popupwindow_textarea").val());
+		});
+		$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(e){
+			$('body').unbind('keydown');
+			tthis.puwb.hide();
+			$('body').removeClass('stop_scroll');
+			noFunction.call(this);
+		});
+	}
 
 	popUpWindow.prototype.hide=function(){
 		this.puwb.hide();
