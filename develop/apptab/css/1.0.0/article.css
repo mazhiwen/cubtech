@@ -105,7 +105,7 @@ news-detail（新闻详情）
   padding: 0;
   border:none;
   color: #000000;
-  letter-spacing: 0.5px;
+  letter-spacing: 0px;
 }
 .news-cont-area>*{
   margin:auto 16px;

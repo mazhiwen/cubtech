@@ -185,6 +185,23 @@ button.onlyicon:enabled:hover::before,a.glyphicon:hover::before{
 	text-shadow: 1px 1px 1px rgb(120,120,120);
 }
 
+
+button.text_button:enabled:active,button.text_button:enabled:hover {
+    background-color: transparent;
+    border-color: #999;
+}
+button.text_button{
+	border-radius: 0; 
+    box-shadow: none; 
+    border: 1px solid transparent;
+    height: auto;
+    padding: 2px;
+    background-color: transparent;
+    color: #333333;
+    font-size: 13px;
+    text-shadow:none;
+    white-space: nowrap; 
+}
 /******************************************************
 全局样式*/
 .active{
@@ -315,6 +332,10 @@ tr:hover {
 }
 td[contenteditable="true"]{
 	background-color: white;
+}
+
+.table td.td_nowrap {
+    white-space: nowrap ;
 }
 /******************************************************
 paging 分页*/

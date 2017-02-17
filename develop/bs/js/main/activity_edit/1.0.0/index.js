@@ -43,7 +43,7 @@ define(function(require) {
 		if(parseString.isEmpty([title_v,start_time,end_time,addressV,ImageId,addressDetail])&&parseString.isNumber(apply_count)){
 			var apply_status=is_sign.prop("checked");
 			var sendData={
-				title:title_v,
+				event_name:title_v,
 				sys_image_id:ImageId,
 				cover_pic:cover_img.attr("src"),
 				content:ue.getContent(),
@@ -74,6 +74,9 @@ define(function(require) {
 						});
 						
 					}
+					
+				},
+				function(){
 					tthis.prop('disabled',false);
 				}
 			);
@@ -91,7 +94,7 @@ define(function(require) {
 		if(id){
 			AJAXMY.send('/event/edit',{id:id},function(data){
 				var dr=data['result'];
-				title.val(dr['title']);
+				title.val(dr['eventName']);
 				ImageId=dr['sysImageId'];
 				cover_img.attr('src',dr['coverPic']);
 				ue.setContent(dr['content']);

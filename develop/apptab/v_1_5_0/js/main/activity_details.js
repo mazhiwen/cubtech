@@ -5,6 +5,21 @@ define(function(require) {
     var downloader=new(require('downloader'));
     var components=new(require("components"));
 
+
+    AJAXMY.send(
+        1,
+        '/event/detail/content',
+        {event_id:components.getGet('id')},
+        {},
+        function(data){
+            $(".news-cont-area").append(data['result']['content']);
+        }
+    );
+
+
+
+    //$(".news-cont-area").append('<p>这是一条测试语句..........</p>');
+/*
     AJAXMY.send(1,'/timeline/web_detail',{timeline_id:components.getGet('id')||'584fb8b2bffc3f303b02a359'},{},function(data){
          var result=data['result']['timeline'],
             commentlist=data['result']['commentList'],
@@ -173,7 +188,7 @@ define(function(require) {
          //   downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
        // });
     });
- 
+ */
 
 
 

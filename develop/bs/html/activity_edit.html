@@ -21,13 +21,11 @@
 
 		<div id="sub_content">
 			<div class="form-input author_wrap"><span>活动名称:</span><input type="text" class="title"></div>
-			<div class="upload_preview">
-				<div class="form-input"><span>封面:</span><input type="file" id="cover_image_input"></div>
-				<img id="cover_img" src="">
-				<button id="dele_cov_img" class="glyphicon-trash glyphicon onlyicon"></button>
-			</div>
-			<!--<div class="form-input"><span>价格:</span><input type="text"></div>-->
-			<div class="form-input"><span>主办方:</span><input type="text" class="organizer"></div>
+			<div class="form-input"><span>是否支持报名:</span><input type="checkbox" class="is_sign"><div class="switch_sign_box switch_box"><span>第三方报名链接:</span><input type="text" class="third_url"></div></div>
+			<div class="form-input"><span>是否免费:</span><input type="checkbox" class="is_free"><div style="display: none;" class="switch_box"><span>第三方报名链接:</span><input type="text"></div></div>
+			<div class="form-input"><span>报名人数:</span><input type="text" class="sign_count" placeholder="不限制人数填0"></div>
+			<div class="form-input"><span>是否提交名片:</span><input type="checkbox" class="is_card"></div>
+			<div class="form-input organizer_wrap"><span>主办方:</span><input type="text" class="organizer"></div>
 			<div class="form-input"><span>主办方联系方式(选填):</span><input type="text" class="organizer_contact"></div>
 			<div class="form-input"><span>主办方主页(选填):</span><input type="text" class="organizer_url"></div>
 			<div class="form-input">
@@ -44,12 +42,13 @@
 			</div>
 			<div class="form-input"><span>地点:</span><input type="text" class="address"></div>
 			<div class="form-input"><span>详细地址:</span><input type="text" class="address_details"></div>
-			<div class="form-input"><span>是否支持报名:</span><input type="checkbox" class="is_sign"><div class="switch_sign_box switch_box"><span>第三方报名链接:</span><input type="text" class="third_url"></div></div>
-			<div class="form-input"><span>报名人数:</span><input type="text" class="sign_count" placeholder="不限制人数填0"></div>
-			<div class="form-input"><span>是否提交名片:</span><input type="checkbox" class="is_card"></div>
-			<div class="form-input"><span>是否免费:</span><input type="checkbox" class="is_free"><div style="display: none;" class="switch_box"><span>第三方报名链接:</span><input type="text"></div></div>
 			<span id="con_span">活动详情:</span>
 			<div id="edit">
+			</div>
+			<div class="upload_preview">
+				<div class="form-input"><span>封面:</span><input type="file" id="cover_image_input"></div>
+				<img id="cover_img" src="">
+				<button id="dele_cov_img" class="glyphicon-trash glyphicon onlyicon"></button>
 			</div>
 			<div class="operation_box">
 				<button class="save_button">保存</button> <button id="commit-button">保存并发布</button>

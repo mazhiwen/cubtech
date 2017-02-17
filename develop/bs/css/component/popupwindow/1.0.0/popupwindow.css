@@ -19,7 +19,9 @@ width: 100%;
 	text-indent: 1em;
 }
 #popupwin>div:nth-child(1)>span{float: right;
-background: url("../../../../images/popup_x.png") center center /20px 20px no-repeat;
+/*background: url("../../../../images/popup_x.png") center center /20px 20px no-repeat;
+*/
+background: transparent center center /20px 20px no-repeat;
 display: inline-block;
 width: 40px; height: 100%; 
 cursor: pointer;

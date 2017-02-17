@@ -1,0 +1,60 @@
+@import url('../../../css/common/reset.css');
+@import url('../../../css/common/common.css');
+@import url('../../../css/1.0.0/article.css');
+body{
+	background-color: #f0f0f0;
+}
+header{
+    
+	background-color: white;
+	padding: 0 10px;
+}
+.content{
+	background-color: white;
+    
+}
+.content>p:nth-child(1){
+    margin: 0 10px 10px;
+}
+header,.content{
+	margin-top: 10px;
+	overflow: auto;
+}
+.cover_img{
+	width: 100%;
+	margin: 10px auto;
+}
+.first_title{
+    font-size: 13px;
+	color: #333333;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.p_details{
+	color: #666666;
+	font-size: 11px;
+	margin: 10px auto 14px;
+	padding-left: 30px;
+	background:transparent no-repeat left center/13px auto;
+}
+.time{
+	background-image: url('./images/time.png');
+}
+.address{
+	background-image: url('./images/address.png');
+}
+.count_person{
+	background-image: url('./images/person.png');
+}
+.org{
+	background-image: url('./images/org.png');
+}
+.news-cont-area {
+    padding-top: 0px;
+    padding-bottom: 50px;
+}
+.news-cont-area>* {
+    margin: auto 10px;
+}
+

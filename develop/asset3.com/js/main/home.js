@@ -49,6 +49,7 @@ define(function(require) {
 	//banner图
 	var bannerPos=1;
 	$("input[name='choose_img_radio']").change(function(){
+		clearInterval(bannerInterval);
 		$(this).parent().addClass("radio_active");
 		$(this).parent().siblings().removeClass("radio_active");
 		var chosIndex=$(this).val();
@@ -56,19 +57,26 @@ define(function(require) {
 		$(".banner_img_box:eq("+(chosIndex-1)+")").addClass("banner_"+chosIndex+"_animate");
 		bannerPos=chosIndex;
 	});
-
+ 	//banner图定时
 	function bannerSwitch(){
-		
-		$(".banner_choose_box>label:eq("+bannerPos+")").addClass("radio_active");
-		$(".banner_choose_box>label:eq("+bannerPos+")").siblings().removeClass("radio_active");
-		
-		//var chosIndex=$(this).val();
-		bannerPos++;
-		$(".banner_img_box:eq("+(bannerPos-1)+")").removeClass("banner_"+bannerPos+"_animate");
-		$(".banner_img_box:eq("+(bannerPos-1)+")").addClass("banner_"+bannerPos+"_animate");
-		bannerPos=chosIndex;
+		if(bannerPos<4)
+			bannerPos++;
+		else
+			bannerPos=1;
+		var nowIndex=bannerPos-1;
+		$(".banner_choose_box>label:eq("+nowIndex+")").addClass("radio_active");
+		$(".banner_img_box:eq("+nowIndex+")").addClass("banner_"+bannerPos+"_animate");
+		$(".banner_choose_box>label:eq("+nowIndex+")").siblings().removeClass("radio_active");
+		var lastIndex=null;
+		if(nowIndex==0){ 
+			lastIndex=3;	
+		}else{
+			lastIndex=nowIndex-1;
+		}
+		$(".banner_img_box:eq("+lastIndex+")").removeClass("banner_"+(lastIndex+1)+"_animate");
 	}
-	//setInterval(bannerSwitch,2000);
+
+	var bannerInterval=setInterval(bannerSwitch,5000);
 
 
 	//第四部分字体滚动
@@ -86,7 +94,7 @@ define(function(require) {
         });
 	}
 	
-	setInterval(sectionFourAnimateFn,2000);
+	setInterval(sectionFourAnimateFn,2500);
 
 
 	

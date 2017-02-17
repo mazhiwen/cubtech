@@ -2,6 +2,7 @@
 
 .banner_img_box{
 	transition:all 2s;
+	background: transparent center center/cover no-repeat;
 }
 
 .banner_img_box>h2{
@@ -14,6 +15,7 @@
 }
 .banner_img_box1{
 	background-image: url('../../images/home/banner_1.jpg');
+
 }
 .banner_1_animate{
 	z-index: 1;
@@ -23,11 +25,11 @@
 	display: none;
 }
 .banner_1_animate>h2{
-
 	animation-name: banner_one_txt;
 	animation-duration: 2s;
 	animation-fill-mode:forwards;
 }
+
 @keyframes banner_button
 {
 from {margin-top: 185px;}
@@ -106,15 +108,16 @@ to {margin-top: 200px;}
 }
 .section_4_animate_box>li{
 	position: absolute;
-	transition:top 1s,font-size 1s;
+	transition:top 2s linear,font-size 2s linear;
 	line-height: 1em;
 	width: 100%;
 	white-space: nowrap;
 }
 .sec_4_ani_1{
 	top: -190px;
-	animation:secfourlastDown 1s 1;
+	animation:secfourlastDown 2s;
 	transition:none !important;
+
 }
 .sec_4_ani_2{
 	top: -160px;

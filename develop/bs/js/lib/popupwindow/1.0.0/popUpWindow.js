@@ -27,11 +27,14 @@ define(function(require,exports,module) {
 			$('body').removeClass('stop_scroll');
 			yesFunction.call(this,$(this));
 		});
+		
 		$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(e){
 			$('body').unbind('keydown');
 			tthis.puwb.hide();
 			$('body').removeClass('stop_scroll');
-			noFunction.call(this);
+			if(typeof(noFunction)=="function"){
+				noFunction.call(this);
+			}
 		});
 	}
 	popUpWindow.prototype.confirmInput=function(title,content,yesFunction,noFunction){

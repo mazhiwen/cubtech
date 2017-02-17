@@ -65,7 +65,7 @@ define(function(require, exports, module) {
 		else
 		return false;
 	}
-	//毫秒转换 年月日时分秒
+	//毫秒转换 年-月-日 时:分:秒
 	components.prototype.MSToYMDHMS=function(millisecond){
 		var o=new Date(millisecond);
 		var y=o.getFullYear();
@@ -76,6 +76,18 @@ define(function(require, exports, module) {
 		var min=o.getMinutes()>9?o.getMinutes():'0'+o.getMinutes();
 		var s=o.getSeconds()>9?o.getSeconds():'0'+o.getSeconds();
 		return y+'-'+m+'-'+d+' '+h+':'+min+':'+s;
+	}
+
+	//毫秒转换 年-月-日 时:分
+	components.prototype.MSToYMDHM=function(millisecond){
+		var o=new Date(millisecond);
+		var y=o.getFullYear();
+		var m=o.getMonth()+1;
+		m=m>9?m:'0'+m;
+		var d=o.getDate()>9?o.getDate():'0'+o.getDate();
+		var h=o.getHours()>9?o.getHours():'0'+o.getHours();
+		var min=o.getMinutes()>9?o.getMinutes():'0'+o.getMinutes();
+		return y+'-'+m+'-'+d+' '+h+':'+min;
 	}
 	
 	//毫秒距离现在时间

@@ -2,8 +2,8 @@
 
 //本地
 
-//URLHEAD='//localhost/e-quanta/develop/apptab';
-//REQUESTHEAD='//localhost:8080';
+URLHEAD='//localhost/e-quanta/develop/apptab';
+REQUESTHEAD='//localhost:8080';
 
 
 //测试
@@ -11,7 +11,7 @@
 
 
 //线上
-URLHEAD=REQUESTHEAD='//api.e-quanta.com';
+//URLHEAD=REQUESTHEAD='//api.e-quanta.com';
 
 
 var pageName=document.getElementById('page_main').getAttribute('data-main');
@@ -30,15 +30,11 @@ seajs.config({
       "weixinshare":"lib/weixinshare/1.0.0/weiXinShare.js",
       "sha1":"lib/sha1/1.0.0/sha1.js",
       //"downloader":"base/downloader/downloader.js",
+      "downloader":"../../../v_1_4_0/js/base/downloader/downloader.js",
+      "weixin":"weixindomain/open/js/jweixin-1.1.0.js",
 
-
-      "downloader":"../../js/base/downloader/downloader.js",
-      "commonMain":'../../js/modules/commonmain/1.0.0/commonMain.js',
       
-    
-
-      "weixin":"weixindomain/open/js/jweixin-1.1.0.js"
-
+      "commonMain":'../../js/modules/commonmain/1.0.0/commonMain.js'
     },
     paths:{
        'admin':URLHEAD,
@@ -46,6 +42,6 @@ seajs.config({
     }
 });
 //seajs.use(URLHEAD+"/js/main/"+pageName+"/"+pageVersionObj[pageName]+"/index");
-seajs.use(URLHEAD+"/v_1_4_0/js/main/"+pageName);
+seajs.use(URLHEAD+"/v_1_5_0/js/main/"+pageName);
 
 

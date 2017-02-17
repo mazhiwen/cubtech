@@ -42,38 +42,56 @@ define(function(require, exports, module) {
 	json 数据
 
   	*/
-	ajaxMy.prototype.send=function(urlTail,sendData,successFn){
+	ajaxMy.prototype.send=function(urlTail,sendData,successFn,alwaysFn,responseCodeFn){
+		
+
 		$.ajax({
 			type:"POST",
 			url:this.requestHead+'/admin'+urlTail,
 			data:sendData,
 			dataType:"json",
-			traditional:true,
-			success:function(d){
-				if(d['sys']==200){
-					var code=d['code'];
-					if(code==0){
-						if(d['data']['result']==='false'){
-							POPUPWINDOW.alert('操作失败：未知原因');
-						}else{
-							successFn.call(this,d['data']);
-							return;
+			traditional:true
+		})
+		.done(function(data, textStatus, jqXHR){
+			if(data['sys']==200){
+				var code=data['code'];
+				if(code==0){
+					if(data['data']['result']==='false'){
+						POPUPWINDOW.alert('操作失败：未知原因');
+					}else{
+						successFn.call(this,data['data']);
+						return;
+					}
+				}
+				else{
+					if(code==102){
+						DOCCOOKIES.removeItem('loginName','/');
+						DOCCOOKIES.removeItem('loginPassword','/');
+						POPUPWINDOW.alert('操作失败：'+data['desc'],function(){
+							window.location.href=URLHEAD+'/login.html';
+						});	
+					}else{
+						POPUPWINDOW.alert('操作失败：'+data['desc'],function(){});
+						console.log(responseCodeFn);
+						console.log(typeof(responseCodeFn));
+						if(typeof(responseCodeFn)=="object"){
+							if(responseCodeFn[0]==code){
+								responseCodeFn[1].call(this);
+							}
 						}
 					}
-					else{
-						if(code==102){
-							DOCCOOKIES.removeItem('loginName','/');
-							DOCCOOKIES.removeItem('loginPassword','/');
-							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){
-								window.location.href=URLHEAD+'/login.html';
-							});	
-						}else{
-							POPUPWINDOW.alert('操作失败：'+d['desc'],function(){});
-						}
-					} 
-				}else{
-					POPUPWINDOW.alert('操作失败：网络原因',function(){});
-				}
+				} 
+			}else{
+				POPUPWINDOW.alert('操作失败：网络原因',function(){});
+			}
+
+		})
+		.fail(function( jqXHR, textStatus, errorThrown ) {
+			POPUPWINDOW.alert('错误码:'+jqXHR.status);
+		})
+		.always(function(dataOrjqXHR,textStatus,jqXHROrErrorThrown) {
+			if(typeof(alwaysFn)=="function"){
+				alwaysFn.call(this);
 			}
 		});		
 	}
