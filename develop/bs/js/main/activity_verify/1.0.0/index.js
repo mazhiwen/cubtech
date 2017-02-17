@@ -46,6 +46,19 @@ define(function(require) {
 	}
 
 	//requestListFn();
+	function verifyYes(tthis){
+		AJAXMY.send('/event/order/check',{id:tthis.parent().parent().attr("data-id"),isPass:true,desc:'',force:isForcePass},function(d){
+			if(d['result']){
+				POPUPWINDOW.alert('操作成功');
+				tthis.parent().empty().text('已通过');
+			}else{
+				POPUPWINDOW.alert('操作失败');	
+			}
+		},function(){
+			tthis.prop('disabled',false);
+		});
+	}
+
 
 	table_body_lsit.on('click','.verify_yes',function(event){
 		var tthis=$(this);
@@ -64,6 +77,7 @@ define(function(require) {
 			function(){
 				POPUPWINDOW.confirm('一匡后台','是否强制执行通过操作.在之后的操作中将执行强制通过.',function(){
 					isForcePass=true;
+					verifyYes(tthis);			
 				});
 			}
 		]);

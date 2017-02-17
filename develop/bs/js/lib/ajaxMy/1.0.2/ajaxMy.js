@@ -71,14 +71,13 @@ define(function(require, exports, module) {
 							window.location.href=URLHEAD+'/login.html';
 						});	
 					}else{
-						POPUPWINDOW.alert('操作失败：'+data['desc'],function(){});
-						console.log(responseCodeFn);
-						console.log(typeof(responseCodeFn));
-						if(typeof(responseCodeFn)=="object"){
-							if(responseCodeFn[0]==code){
-								responseCodeFn[1].call(this);
+						POPUPWINDOW.alert(data['desc'],function(){
+							if(typeof(responseCodeFn)=="object"){
+								if(responseCodeFn[0]==code){
+									responseCodeFn[1].call(this);
+								}
 							}
-						}
+						});
 					}
 				} 
 			}else{
