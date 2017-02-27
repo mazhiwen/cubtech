@@ -132,11 +132,28 @@ define(function(require) {
 			});
 		}
 	});
-	AJAXMY.upLoadImg('cover_image_input','/admin/event/upload_image',function(responseUrl,sysImageId){
-		cover_img.attr("src",responseUrl);
-		ImageId=sysImageId;
-	});
 
+	AJAXMY.upLoadImg('cover_image_input','/admin/event/upload_image',function(data){
+		cover_img.attr("src",data['pic_url']);
+		ImageId=data['sysImageId'];
+	});
+	dele_cov_img.click(function(){
+		/*$(this).prop('disabled',true);
+		var that=$(this);
+		AJAXMY.send(
+			'/article/delete_pic',
+			{sys_image_id:ImageId},
+			function(d){
+				if(d['result']) {
+					ImageId='';
+					
+				}
+				that.prop('disabled',false);
+			}
+		);*/
+		ImageId='';
+		cover_img.attr("src",'');
+	});
 
 	$(".is_sign").change(function(){
 		$(this).is(":checked")?switch_sign_box.hide():switch_sign_box.show();

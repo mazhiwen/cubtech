@@ -437,8 +437,13 @@ a.join_link>button:hover{
 	transition:initial;
 }
 
-@media(max-width:1300px) {
-
+@media(max-width:450px) {
+	#page_outer{
+		display: none;
+	}
+	#section_1>div {
+	    background-size:50% auto;
+	}
 
 }
 

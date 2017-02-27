@@ -224,6 +224,21 @@ define(function(require) {
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;
 	},1);
+	dele_cov_img.click(function(){
+		$(this).prop('disabled',true);
+		var that=$(this);
+		AJAXMY.send(
+			'/article/delete_pic',
+			{sys_image_id:ImageId},
+			function(d){
+				if(d['result']) {
+					ImageId='';
+					cover_img.attr("src",'');
+				}
+				that.prop('disabled',false);
+			}
+		);
+	});
 	//关键字删除事件
 	kw_out.on('click','.keyword>.glyphicon',function(){
 		$(this).parent().remove();
@@ -240,21 +255,7 @@ define(function(require) {
 	check_time.click(function(){
 		$(this).is(':checked')?activedate.prop("disabled",false):activedate.prop("disabled",true);
 	});
-	dele_cov_img.click(function(){
-		$(this).prop('disabled',true);
-		var that=$(this);
-		AJAXMY.send(
-			'/article/delete_pic',
-			{sys_image_id:ImageId},
-			function(d){
-				if(d['result']) {
-					ImageId='';
-					cover_img.attr("src",'');
-				}
-				that.prop('disabled',false);
-			}
-		);
-	});
+	
 	/*添加附件事件*/
 	add_file_btn.click(function(){
 		$(this).before('<div class="add_file_box"><div><button class="s glyphicon normal glyphicon-minus del_atta_btn">删除</button></div><div class="form-input"><span>链接</span><input type="text" class="add_file_box_link"></div><div class="form-input"><span>文件名</span><input type="text" class="add_file_box_file"></div></div>');

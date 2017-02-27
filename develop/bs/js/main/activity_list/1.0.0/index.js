@@ -11,6 +11,7 @@ define(function(require) {
 			var s='',
 				sOperate,
 				statusArray={
+					'-2':'报名已截止',
 					'-1':'已取消',
 					'1':'报名中',
 					'2':'进行中',

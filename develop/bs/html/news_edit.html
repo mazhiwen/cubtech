@@ -21,10 +21,16 @@
 			<input type="text" id="title">
 			<h4>摘要</h4>
 			<textarea id="summary"></textarea>
-			<div id="edit-article-outer">
-				<h4>内容</h4>
-				<div id="edit">
-				</div>	
+			<!--<div class="upload_preview">
+				<div class="form-input"><span>文章封面:</span><input type="file" id="cover_image_input"></div>
+				<img id="cover_img" src="">
+				<button id="dele_cov_img" class="glyphicon-trash glyphicon onlyicon"></button>
+			</div>-->
+			<h4>文章封面</h4>
+			<div class="upload_box">
+				<input type="file" class="upload_box_input" id="cover_image_input">
+				<div class="upload_box_img_box"><span></span><img class="upload_box_img" src=""></div>
+				<button class="glyphicon-trash glyphicon onlyicon upload_box_delete"></button>
 			</div>
 			<h4>原文链接</h4>
 			<input type="url" id="original_url">

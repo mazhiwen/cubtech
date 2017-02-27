@@ -63,7 +63,9 @@ define(function(require) {
 				if(k==da['categoryCode'])se='selected';
 				s+='<option value="'+k+'" '+se+'>'+v+'</option>';
 			});
-			da['categoryCode']=='all'?ad_pos_index.val(da['indexCategory']):ad_pos_index.val(da['indexArticle']);
+			//da['categoryCode']=='all'?
+			ad_pos_index.val(da['indexCategory']);
+			//:ad_pos_index.val(da['indexArticle'])
 			ad_pos_type.append(s);
 			if (type.val()==3){
 				url_span.text('链接:');
@@ -80,8 +82,12 @@ define(function(require) {
 			ad_pos_type.append(s);
 		});
 	}
+	/*
 	AJAXMY.upLoadAdPic('cover_image_input',function(responseUrl){
 		cover_img.attr("src",responseUrl);
+	});*/
+	AJAXMY.upLoadImg('cover_image_input','/upload_pic',function(data){
+		cover_img.attr("src",data['result']);
 	});
 	type.change(function(){
 		if (type.val()==3){
@@ -105,55 +111,7 @@ define(function(require) {
 			recommend_list_wrap.show();
 		}
 	}
-	////////////////
-	/*
-	function request(getPaging,otherData){
-		var data={page:getPaging,size:10};
-		var url='';
-		switch(parseInt(ad_type.val())){
-			case 1:
-			data.nick_name=otherData;
-			url='/user/list';
-			break;
-			case 2:
-			data.title=otherData;
-			url='/article/search_list';
-			break;
-			case 3:
-			data.name=otherData;
-			url='/subject/search_list';
-			break;
-		};
-		AJAXMY.send(url,data,function(d){
-			search_result_wrap.empty();
-			var s='';
-			if(ad_type.val()==1){
-				$.each(d['result'],function(k,v){				
-					s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['vita']+'</td><td><button class="glyphicon-plus glyphicon onlyicon" title="添加"></button></td></tr>';	 
-				});
-			}else if(ad_type.val()==2){
-				$.each(d['result'],function(k,v){				
-					s+='<tr><td>'+v['id']+'</td><td>'+v['title']+'</td><td><button class="glyphicon-plus glyphicon onlyicon" title="添加"></button></td></tr>';	 
-				});
-			}else{
-				$.each(d['result'],function(k,v){				
-					s+='<tr><td>'+v['id']+'</td><td>'+v['name']+'</td><td><button class="glyphicon-plus glyphicon onlyicon" title="添加"></button></td></tr>';	 
-				});
-			}
-			search_result_wrap.append(s);
-			var myPaging=new paging("#paging",d['pages'],MAXPAGING,getPaging,
-				function(){
-					request(this.clickPaging,otherData);
-				}
-			);
-			myPaging._init();
-		});
-	}
 
-	search_btn.click(function(){
-		request(1,search_input.val());
-	});
-	*/
 	///////////////
 	var myPaging=new paging("#paging",MAXPAGING,function(currentPage){
 	});
@@ -201,14 +159,6 @@ define(function(require) {
 	});
 
 
-
-
-
-
-
-
-
-
 	search_result_wrap.on('click','.glyphicon-plus',function(){
 		recommend_list.append($(this).parent().parent());
 		$(this).replaceWith('<button class="glyphicon-up glyphicon onlyicon" title="上移"></button><button class="glyphicon-down glyphicon onlyicon" title="下移"></button><button  class="glyphicon-trash glyphicon onlyicon" title="删除"></button>');
@@ -253,11 +203,11 @@ define(function(require) {
 		}else{
 			requestUrl='/adslots/save';
 		}	
-		if(category_code=='all'){
-			data.index_category=ad_pos_indexV;
-		}else{
+		//if(category_code=='all'){
+		//	data.index_category=ad_pos_indexV;
+		//}else{
 			data.index_article=ad_pos_indexV;
-		}
+		//}
 		if(ad_typeV==4){
 			data.pic_url=cover_img.attr("src");
 			data.target_type=type.val();

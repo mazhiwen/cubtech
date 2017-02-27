@@ -2,8 +2,8 @@
 
 //本地
 
-URLHEAD='//localhost/e-quanta/develop/apptab';
-REQUESTHEAD='//localhost:8080';
+//URLHEAD='//localhost/e-quanta/develop/apptab';
+//REQUESTHEAD='//localhost:8080';
 
 
 //测试
@@ -11,7 +11,7 @@ REQUESTHEAD='//localhost:8080';
 
 
 //线上
-//URLHEAD=REQUESTHEAD='//api.e-quanta.com';
+URLHEAD=REQUESTHEAD='//api.e-quanta.com';
 
 
 var pageName=document.getElementById('page_main').getAttribute('data-main');

@@ -211,33 +211,6 @@ define(function(require, exports, module) {
 		},false);
 	}
 
-	/*
-	上传广告位图片
-  	*/
-	ajaxMy.prototype.upLoadAdPic=function(inputId,responseFn){
-		var e=document.getElementById(inputId),
-			fd=new FormData(),
-			tthis=this;
-		e.addEventListener("change",function(event){
-			var files=e.files,
-				xhr = new XMLHttpRequest();
-			for(var i=0,file;file=files[i];i++){
-				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(e.value)){
-					alert("非图片格式，重新来");
-					return false;
-				}else{
-					fd.append('file', file);	
-				}
-			}
-			xhr.addEventListener('load',function(event){
-					var responseUrl=JSON.parse(this.responseText)['data']['result'];	
-					responseFn.call(this,responseUrl);
-			});
-			xhr.open("POST", tthis.requestHead+"/upload_pic", true);
-			xhr.send(fd);
-		},false);
-	}
-
 
 	//通用上传图片
 	ajaxMy.prototype.upLoadImg=function(inputId,requestTail,responseFn){
@@ -248,6 +221,7 @@ define(function(require, exports, module) {
 			var files=e.files,
 				xhr = new XMLHttpRequest();
 			for(var i=0,file;file=files[i];i++){
+				console.log(file);
 				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(e.value)){
 					alert("非图片格式，重新来");
 					return false;
@@ -255,10 +229,10 @@ define(function(require, exports, module) {
 					fd.append('file', file);	
 				}
 			}
+			fd.append('time',new Date().getTime());
 			xhr.addEventListener('load',function(event){
-				var responseUrl=JSON.parse(this.responseText)['data']['pic_url'];
-				var sysImageId=JSON.parse(this.responseText)['data']['sysImageId'];
-				responseFn.call(this,responseUrl,sysImageId);
+				var responseData=JSON.parse(this.responseText)['data'];
+				responseFn.call(this,responseData);
 			});
 			xhr.open("POST", tthis.requestHead+requestTail, true);
 			xhr.send(fd);

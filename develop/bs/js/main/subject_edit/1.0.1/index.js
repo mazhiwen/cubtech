@@ -48,19 +48,54 @@ define(function(require) {
 			);
 		});
 
-		var isPaging=new paging("#is_paging",MAXPAGING,function(currentPage){
-			AJAXMY.send('/subject/subject_article_list',
-				{subject_id:subjectId,page:currentPage,size:PERPAGINGCOUNT
-				},function(d){
-					dr=d['result'];
-					var s='';
-					$.each(dr,function(k,v){
-						s+='<div><span>'+v['title']+'</span><button class="s"  data-id="'+v['id']+'">删除</button></div>';
-					});
-					is_article_list_outer.append(s);
-					isPaging.refreshDom(d['pages']);
-			});
-		});	
+
+		AJAXMY.send('/subject/subject_article_list',
+			{subject_id:subjectId
+				//,page:currentPage,size:PERPAGINGCOUNT
+			},function(d){
+				dr=d['result'];
+				var s='';
+				$.each(dr,function(k,v){
+					s+='<div><span>'+v['title']+'</span><button class="s"  data-id="'+v['id']+'">删除</button></div>';
+				});
+				is_article_list_outer.append(s);
+				//isPaging.refreshDom(d['pages']);
+		});
+		
+		var activeDragDom=null;
+		is_article_list_outer.on('dragstart','div',function(event){
+			activeDragDom=$(event.target);
+			activeDragDom.css("opacity","0.3");
+		});
+		is_article_list_outer.on('dragenter','div',function(event){
+			event.preventDefault();
+			$(event.target).parents(".is_subject_article_box").css("background-color","rgb(153, 153, 153)");
+		});
+		is_article_list_outer.on('dragover','div',function(event){
+			event.preventDefault();
+			$(event.target).parents(".is_subject_article_box").siblings().css("background-color","transparent");
+			$(event.target).parents(".is_subject_article_box").css("background-color","rgb(153, 153, 153)");
+			$(event.target).parents(".is_subject_article_box").next().css("background-color","rgb(204, 204, 204)");
+		});
+		is_article_list_outer.on('dragleave','div',function(event){
+			$(event.target).parents(".is_subject_article_box").css("background-color","transparent");
+		});
+		is_article_list_outer.on('drop','div',function(event){
+			event.preventDefault();
+			//event.stopPropagation();
+			$(event.target).parents(".is_subject_article_box").css("background-color","transparent");
+			var dromDom=null;
+			if($(event.target).hasClass(".is_subject_article_box")){
+				dromDom=$(event.target);
+			}else{
+				dromDom=$(event.target).parents(".is_subject_article_box");
+			}
+			dromDom.after(activeDragDom);
+		});
+		is_article_list_outer.on('dragend','div',function(event){
+			activeDragDom.css("opacity","1");
+		});
+		
 
 
 		is_article_list_outer.on('click','div>button:nth-child(2)',function(event){

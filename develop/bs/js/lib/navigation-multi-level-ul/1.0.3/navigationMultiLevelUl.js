@@ -2,10 +2,11 @@ define(function(require,exports,module) {
 	module.exports=navigationMultiLevelUl;
 	function navigationMultiLevelUl(outerId){
 		this.navigationIndexArray={
+			activity_verify:12,
 			comment_details:19,
 			user_feed_details:22,
-			role_permission:28,
-			activity_verify:12
+			appcomponents_edit:34,
+			role_permission:35
 		};
 		this.curInd=0;
 		var that=this;		
@@ -82,7 +83,8 @@ define(function(require,exports,module) {
 		    //'APP版本控制':['app_version'],
 		    'APP控制':{
 		    	'版本':['app_version'],
-		    	'一键关注':['onekey_focus']
+		    	'一键关注':['onekey_focus'],
+		    	'组件':['appcomponents_list']
 		    },
 		    '权限':{
 		        '角色管理':['role_list',5],

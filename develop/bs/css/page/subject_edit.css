@@ -45,3 +45,6 @@ box-sizing: border-box;
 #search_input {
     width: auto;
 }
+#is_article_list_outer>div{
+	padding: 1px;
+}

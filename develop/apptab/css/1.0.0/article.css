@@ -161,7 +161,10 @@ news-detail（新闻详情）
   line-height: 24px;
   margin-bottom: 13px;
   font-size: 14px;
+  /*
   text-align: justify;
+  */
+  word-break: break-all;
 }
 .news-cont-area img {
   max-width: 100% !important;

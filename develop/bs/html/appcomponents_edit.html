@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7;IE=8;IE=9;IE=edge,chrome=1" />
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta id="page_main" data-main="appcomponents_edit">
+<link rel="stylesheet" href="../css/page/appcomponents_edit.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<a href="appcomponents_list.html"><button>组件列表</button></a>
+		</div>
+		<div id="edit-area">
+			<label class="form-input"><span>组件编码:</span><input type="text" class="component_code"></label>
+			<label class="form-input"><span>组件名称:</span><input type="text" class="name"></label>
+			<label class="form-input"><span>所在页面编码:</span><input type="text" class="page_code"></label>
+			<div class="form-input"><span>是否显示:</span><input class="is_display" type="checkbox"></div>
+			<div class="form-input"><span>是否多重组件:</span><input class="is_mutiple" type="checkbox">
+				<table class="table">
+				    <caption>子组件列表</caption>
+				    <thead>
+				      <tr>
+				        <th>名称</th>
+				        <th>编码</th>
+				        <th>是否显示</th>
+				        <th>操作</th>
+				      </tr>
+				    </thead>
+				    <tbody class="table_body_component">
+				    	<!--<tr><td><input type="text" class="son_component_name" value='1'></td><td><input type="text" class="son_component_code" value='2'></td><td><input type="checkbox" class="is_show_son_component"></td><td><button title="删除" class="glyphicon-trash glyphicon onlyicon"></button></td></tr>
+				    	<tr><td><input type="text" class="son_component_name" value='3'></td><td><input type="text" class="son_component_code" value='4'></td><td><input type="checkbox" class="is_show_son_component"></td><td><button title="删除" class="glyphicon-trash glyphicon onlyicon"></button></td></tr>-->
+				    </tbody>
+		  		</table>
+		  		<button class="add_component_btn paging_wrap_btn">添加</button>
+			</div>
+			<div id="confirm-outer"><button id="commit_button">提交保存</button></div>
+		</div>
+  		
+  		
+	</div>
+</div>
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+
+</body>
+</html>

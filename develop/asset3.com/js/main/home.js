@@ -1,7 +1,6 @@
 define(function(require) {
 	require('commonMain')();
-	var	
-		scrollLeft=-1;
+	var	scrollLeft=-1;
 
 	/*计算滚动头像相关宽度*/
 	var  scroll_head_oo_width_cal=Math.floor($("#scroll_head").width())-40-80;
@@ -59,7 +58,7 @@ define(function(require) {
 	});
  	//banner图定时
 	function bannerSwitch(){
-		if(bannerPos<4)
+		if(bannerPos<3)
 			bannerPos++;
 		else
 			bannerPos=1;
@@ -69,7 +68,7 @@ define(function(require) {
 		$(".banner_choose_box>label:eq("+nowIndex+")").siblings().removeClass("radio_active");
 		var lastIndex=null;
 		if(nowIndex==0){ 
-			lastIndex=3;	
+			lastIndex=2;	
 		}else{
 			lastIndex=nowIndex-1;
 		}

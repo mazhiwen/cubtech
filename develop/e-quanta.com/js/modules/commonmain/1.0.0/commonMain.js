@@ -16,7 +16,7 @@ define(function(require,exports,module) {
 			'myarticle':2
 		};
 		var noLoginHtml='<a href="login.html" id="top_login_button_outer">登录</a>',
-			initHtml='<div class="dp_tc"><a href="home.html"><img src="./images/home/logo.png"></a></div><ul class="navigation-hori dp_tbtc" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li><li><a href="about.html">关于我们</a></li></ul><div class="dp_tc"><a href="edit.html" id="write_btn_top">写文章</a>'+noLoginHtml+'<a href="login.html"></a></div>';
+			initHtml='<div class="dp_tc"><a href="home.html"><img src="./images/home/logo.png"></a></div><button class="awesome_icon switch_nav_btn"></button><ul class="navigation-hori dp_tbtc" id="navigation_ul"><li><a href="home.html">首页</a></li><li><a href="select.html">精选</a></li><li><a href="myarticle.html">我的文章</a></li><li><a href="about.html">关于我们</a></li></ul><div class="dp_tc login_off_box"><a href="edit.html" id="write_btn_top">写文章</a>'+noLoginHtml+'<a href="login.html"></a></div>';
 		$(".top").append(initHtml);
 		$(".top").on('mouseenter',"#user_head_outer",function(){
 			$("#quit_button").show();

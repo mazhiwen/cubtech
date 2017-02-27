@@ -17,26 +17,46 @@ define(function(require, exports, module) {
 
   	function strNoEmpty(str){
   		var s=$.trim(str);
-		if(s.length>0)
+		if(s.length>0){
 			return true;
+		}
 		else 
 			return false;
   	};
-  	//判断 是否为空
+  	//判断 是否为空  可以传入数组
   	parseString.prototype.isEmpty=function(str){
-  		var result=true;
+  		var result=true,tthis=this;
   		if(str instanceof Array)
-		{
+		{	
 			$.each(str,function(key,value){
-				if(!strNoEmpty(value)){
+				if(!tthis.isValid(value)){
 					result=false;
 					return false;
 				}	
 			});
 		}else{
-			result=strNoEmpty(str);
+			
+			//result=strNoEmpty(str);
+			result=this.isValid(str);
 		}
 		return result;
+  	}
+  	//判断 是否为有效值
+  	parseString.prototype.isValid=function(str){
+		if(strNoEmpty(str)&&str!=false&&str!=undefined){
+			return true;
+		}else{
+			return false;
+		}
+  	}
+
+  	//判断 是否为有效值 并转换
+  	parseString.prototype.toValid=function(str,toStr){
+		if(strNoEmpty(str)&&str!='null'&&str!='false'&&str!='undefined'){
+			return str;
+		}else{
+			return toStr;
+		}
   	}
   	
   	/*判断 是否为  0或者大于0的  可以是0开头的  数字   */

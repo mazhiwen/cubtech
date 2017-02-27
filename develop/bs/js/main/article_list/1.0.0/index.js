@@ -38,7 +38,7 @@ define(function(require) {
 					sourceType='大V原创';
 					break;
 				};	
-				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td>'+v['title']+'</td><td>'+v['categoryName']+'</td><td>'+v['keyword']+'</td><td>'+v['nickName']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+transformTime.MSToYMDHMS(v['updateTime'])+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td>'+v['viewNum']+'</td>';
+				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td><a href="https://www.e-quanta.com/article_details.html?id='+v['id']+'" target="_blank">'+v['title']+'</a></td><td>'+v['categoryName']+'</td><td>'+v['keyword']+'</td><td>'+v['nickName']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+transformTime.MSToYMDHMS(v['updateTime'])+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td>'+v['viewNum']+'</td>';
 				if(v['indexStatus']) s+='<td><input type="checkbox" checked></td>';
 				else s+='<td><input type="checkbox"></td>';
 				s+='<td>'+sourceType+'</td><td><a href="article_edit.html?id='+v['id']+'" class="glyphicon glyphicon-edit"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';

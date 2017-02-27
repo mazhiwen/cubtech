@@ -127,16 +127,16 @@
 }
 
 .gradient_font{
-
 	font-size: 36px;
-/*	font-weight: 400 !important;*/
 	display: block;
 	background: -webkit-linear-gradient( left,#31bbeb,#4dbb7c);
 	background: -o-linear-gradient( left,#31bbeb,#4dbb7c); 
 	background: -moz-linear-gradient( left,#31bbeb,#4dbb7c); 
-	background: linear-gradient( left,#31bbeb,#4dbb7c);
+	/*background: linear-gradient(to left,#31bbeb,#4dbb7c);
+	*/
 	-webkit-background-clip: text;
-	color: transparent;
+	-webkit-text-fill-color: transparent;
+	color: #31bbeb;
 
 }
 
@@ -163,7 +163,7 @@
 }
 .footer_box>div:nth-child(1)>div:nth-child(1)>div{
 	display: inline-block;
-	width: 23.5%;
+	width: 32%;
 	vertical-align: top;
 }
 .footer_box>div:nth-child(1)>div:nth-child(1)>div:not(:nth-child(1)){
@@ -325,7 +325,7 @@
 	    font-size: 30px;
 	}
 	.footer_box > div:nth-child(1) > div:nth-child(1) > div {
-	    width: 48%;
+	    width: 49%;
 	    margin: 20px 0;
 	}
 	.footer_box > div:nth-child(1) > div:nth-child(1) > div:nth-child(2n) {

@@ -8,8 +8,8 @@ define(function(require, exports, module) {
         o = document.createElement("style"),
         i = e || "bottom";
         //o.innerHTML = ".download-wrap {position: fixed; width: 100%; padding-top: 16%; max-width: 750px;margin: 0 auto; }.download-block { width: 100%; max-width: 750px; position: fixed; " + i + ": 0; left: 0; right: 0; margin: 0 auto; z-index: 15;display:block; }",
-        o.innerHTML = ".download-wrap {width: 100%; max-width: 700px;margin: 0 auto; }.download-block { width: 100%; max-width: 700px; position: fixed; " + i + ": 0; left: 0; right: 0; margin: 0 auto; z-index: 15;display:block; }",
-        n.appendChild(o)
+        o.innerHTML = ".download-wrap {width: 100%; max-width: 700px;margin: 0 auto; }.download-block { width: 100%; max-width: 700px; position: fixed; " + i + ": 0; left: 0; right: 0; margin: 0 auto; z-index: 15;display:block; }";
+        //n.appendChild(o)
     };
 
 
@@ -24,7 +24,8 @@ define(function(require, exports, module) {
     downloader.prototype.createBar=function(n, o){
 
         e(o);
-            var i = [ '<a class="download-block" >', '<img class="pct100"  src="' + n + '" />', "</a>"].join("");
+            //var i = [ '<a class="download-block" >', '<img class="pct100"  src="' + n + '" />', "</a>"].join("");
+            var i='<a class="download-block"><div></div></a>';
             return $(i)
     }
 

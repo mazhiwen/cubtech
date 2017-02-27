@@ -6,11 +6,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta http-equiv="pragma" content="no-cache">
     <meta charset="utf-8">
+    <meta id="page_main" data-main="article_h5">
     <title>一匡资讯</title>
-    <link rel="stylesheet" href="../../css/common/reset.css"/>
+<!--    <link rel="stylesheet" href="../../css/common/reset.css"/>
     <link rel="stylesheet" href="../../css/common/common.css"/>
     <link rel="stylesheet" href="../../css/1.0.0/article.css"/>
-    <link rel="stylesheet" href="../css/1.0.0/article_v_type.css"/>
+    <link rel="stylesheet" href="../css/1.0.0/article_v_type.css"/>-->
+    <link rel="stylesheet" href="../css/page/article_h5.css"/>
 </head>
 <body class="bg-gray">
 <div>
@@ -59,10 +61,11 @@
     </div>-->
     
 </div>
+
 <div class="download-tips fix-lt" id="tipsShow">
     <img class="pct100 mt20" src="../../images/share.png" alt="">
 </div>
-<script type="text/javascript" src="../../js/lib/zepto/zepto.js"></script>
+<!--<script type="text/javascript" src="../../js/lib/zepto/zepto.js"></script>
 <script type="text/javascript" src="../../js/base/eq/eq.js"></script>
 <script type="text/javascript" src="../../js/base/downloader/downloader.js"></script>
 <script type="text/javascript" src="../js/main/proHub.js"></script>
@@ -70,21 +73,9 @@
 <script type="text/javascript" src="../../js/main/article.js"></script>
 <script type="text/javascript" src="../../js/lib/sha1/1.0.0/sha1.js"></script>
 <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
-<!--<script type="text/javascript">
-    $(document).on("click", ".download-block", function () {
-        downloader.openApp({
-            packageName: "com.eq.stock",
-            scheme: 'equanta://',
-            downloadAndroid: "http://a.app.qq.com/o/simple.jsp?pkgname=com.equanta",
-            downloadIOS: "https://itunes.apple.com/cn/app/yi-kuang/id1137638296?mt=8"
-        });
-    })
-
-    $(".main-wrap").on("click", "img", function () {
-        var _scheme = 'hyb-image-preview:' + $(this).attr("src")
-        window.location.href = _scheme;
-    })
-</script>-->
+-->
+<script type="text/javascript" src="../../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
 
 </body>
 </html>
