@@ -7,7 +7,7 @@ color: #333333;
 }
 img{font-size: 0;}
 a{
-	
+	text-decoration: none;
 }
 li{list-style: none;}
 h2{line-height: 2em;font-size: 1.2em;}
@@ -446,22 +446,22 @@ content:"\e022";
 .navigation-multi-level-ul>li:nth-child(2)>div::before{
 content:"\e150";
 }
-.navigation-multi-level-ul>li:nth-child(4)>a::before{
+.navigation-multi-level-ul>li:nth-child(4)>div::before{
 content:"\e111";
 }
 .navigation-multi-level-ul>li:nth-child(3)>div::before{
 content:"\e171";
 }
-.navigation-multi-level-ul>li:nth-child(5)>div::before{
+.navigation-multi-level-ul>li:nth-child(3)>div::before{
 content:"\e008";
 }
-.navigation-multi-level-ul>li:nth-child(6)>div::before{
+.navigation-multi-level-ul>li:nth-child(4)>div::before{
 content:"\e145";
 }
 .navigation-multi-level-ul>li:nth-child(7)>div::before{
 content:"\e090";
 }
-.navigation-multi-level-ul>li:nth-child(8)>div::before{
+.navigation-multi-level-ul>li:nth-child(5)>div::before{
 content:"\e086";
 }
 

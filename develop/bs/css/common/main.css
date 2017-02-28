@@ -78,13 +78,17 @@ color: rgb(0, 115, 183);
 导航
 */
 #left{
-	width: 200px;float: left;overflow-x:hidden;
+	width: 150px;
+	float: left;overflow-x:hidden;
 	border-right: 1px solid #cccccc; 
 	min-height: 800px; 
 	overflow-y:auto; position: fixed;  top: 51px;
 	background-color: rgb(244, 244, 244);
 }
-#right{margin-left: 200px;padding:0 3px;padding-top: 51px; }
+#right{
+	margin-left: 150px;
+	padding:0 3px;padding-top: 51px; 
+}
 .navigation-multi-level-ul{
 	font-size: 14px;border-right: 1px solid black;width: 100%;
 }

@@ -86,7 +86,8 @@ var pageVersionObj = {
     activity_edit:'1.0.0',
     activity_verify:'1.0.0',
     appcomponents_edit:'1.0.0',
-    appcomponents_list:'1.0.0'
+    appcomponents_list:'1.0.0',
+    v_order:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({
@@ -111,6 +112,7 @@ seajs.config({
       "paging": "paging/1.0.0/paging.js",
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
+      "myUI":'myui/1.0.0/myUI.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js',
       "integratedcomponents":'../../../modules/integratedcomponents/integratedComponents.js'

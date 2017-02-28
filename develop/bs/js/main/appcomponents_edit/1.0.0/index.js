@@ -8,6 +8,7 @@ define(function(require) {
 		is_display=$(".is_display"),
 		is_mutiple=$(".is_mutiple"),
 		add_component_btn=$(".add_component_btn"),
+		add_component_box=$(".add_component_box"),
 		table_body_component=$(".table_body_component");
 
 
@@ -18,6 +19,14 @@ define(function(require) {
 			name.val(d['componentName']);
 			page_code.val(d['pageCode']);
 			is_mutiple.prop("checked",!d['single']);
+			
+			if(!d['single']){
+				add_component_box.show();
+			}else{
+				add_component_box.hide();
+			}
+			
+
 			is_display.prop("checked",d['display']);
 			$.each(JSON.parse(d['components']),function(k,v){
 				table_body_component.append('<tr><td><input type="text" class="son_component_name" value="'+v['componentName']+'"></td><td><input type="text" class="son_component_code" value="'+v['componentCode']+'"></td><td><input type="checkbox" class="is_show_son_component" checked="'+v['display']+'"></td><td><button title="删除" class="glyphicon-trash glyphicon onlyicon"></button></td></tr>');
@@ -75,7 +84,16 @@ define(function(require) {
 	//删除操作
 	table_body_component.on('click','.glyphicon-trash',function(event){
 		$(this).parent().parent().remove();
-	});	
+	});
+
+	is_mutiple.change(function(e){
+		if($(this).prop("checked")){
+			$(".add_component_box").show();
+		}else{
+			$(".add_component_box").hide();
+		}
+	});
+
 
 });
 

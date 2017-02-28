@@ -2,14 +2,20 @@ define(function(require) {
 	var	commonMain=require('commonMain'),
 		paging = require('paging'),
 		
-		table_body=$("#table_body"),
+		table_body=$(".table_body"),
+		navigation_crumb=$(".navigation-crumb"),
 		ifFinishEdit=false;
 
+	
+		
+
+	var table=new MYUI.table('组件列表',['页面编码','组件编码','组件名字','是否显示','布局','是否多重组件','操作']);
+	navigation_crumb.after(table.initHtml);
 
 	var myPaging=new paging("#paging",MAXPAGING,function(currentPage){
 		AJAXMY.send('/component/list',{page:currentPage,size:PERPAGINGCOUNT},function(d){
-			table_body.empty();
-			var s,is={
+			//table_body.empty();
+			var s='',is={
 				true:'是',
 				false:'否'
 			},isChecked={
@@ -17,16 +23,31 @@ define(function(require) {
 				false:''
 			};
 			$.each(d['result'],function(k,v){	
-				s+='<tr data-id="'+v['id']+'"><td>'+v['pageCode']+'</td><td>'+v['componentCode']+'</td><td>'+v['componentName']+'</td><td><input type="checkbox" '+isChecked[v['display']]+'></td><td>'+v['layout']+'</td><td>'+is[!v['single']]+'</td><td><a href="appcomponents_edit.html?id='+v['id']+'" class="glyphicon-edit glyphicon"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
+				s+=table.trHtml('data-id="'+v['id']+'"',[
+					v['pageCode'],
+					v['componentCode'],
+					v['componentName'],
+					{
+						'text':[{'type':'checkbox','attributes':'class="is_show" '+isChecked[v['display']],'text':''}]
+					},
+					v['layout'],
+					is[!v['single']],
+					{
+						'text':[
+							{'type':'a','attributes':'href="appcomponents_edit.html?id='+v['id']+'"','text':'编辑'},
+							{'type':'button','attributes':'class="text_button delete"','text':'删除'}				
+						]
+					}
+				]);
 			});
-			table_body.append(s);
+			table.tableBody().html(s);
 			myPaging.refreshDom(d['pages']);
 		});
 	});	
 
 
 
-	table_body.on('click','.glyphicon-trash',function(event){
+	table.tableBody().on('click','.delete',function(event){
 		var tthis=$(this);
 		tthis.prop('disabled',true);
 		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
@@ -44,27 +65,25 @@ define(function(require) {
 			tthis.prop('disabled',false);
 		});
 	});
-/*
-	table_body.on('input','tr>td:nth-child(2)',function(event){
-		ifFinishEdit=true;
+
+	
+
+	//选中事件
+	table.tableBody().on('change','.is_show',function(event){
+		var tthis=$(this),
+			display=tthis.prop('checked');
+		tthis.prop('disabled',true);		
+		AJAXMY.send('/component/display',{id:tthis.parent().parent().attr("data-id"),display:display},function(data){
+			tthis.prop('disabled',false);
+			if(data['result']){
+				POPUPWINDOW.alert('编辑成功');
+			}
+		});
 	});
-	table_body.on('mouseout','tr>td:nth-child(2)',function(event){
-		if(ifFinishEdit){
-			var s=$(this).text();
-			$(this).attr('contenteditable',false);
-			$(this).toggleClass('disabled');
-			that=$(this);
-			AJAXMY.send('/ /update',{id:$(this).parent().attr("data-id"),priority:$(this).text()},function(d){
-				if(d['result']){
-					alert('修改成功');
-				}else{
-					alert('修改失败');
-				}
-				$(this).toggleClass('disabled');
-				that.attr('contenteditable',true);
-			});
-			ifFinishEdit=false;
-		}
-	});*/
+
+
+
+
+
 });
 

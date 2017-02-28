@@ -3,9 +3,13 @@ define(function(require) {
 	$=jQuery;
 	new(require('compatible'));
 	AJAXMY=new(require('ajaxMy'));
+
 	POPUPWINDOW=new(require('popUpWindow'));
 	DOCCOOKIES=new(require('docCookies'));
 	PARSESTRING=new(require('parseString'));
+
+	MYUI = new (require('myUI'));
+	
 	var navMulLevUl=require('navigationMultiLevelUl'),
 		navMulLevUlMy=new navMulLevUl('#left'),
 		currentDom=navMulLevUlMy.getCurDom();

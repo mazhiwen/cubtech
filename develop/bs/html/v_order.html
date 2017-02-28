@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta id="page_main" data-main="v_order">
+
+<link rel="stylesheet" href="../css/page/v_order.css">
+<title>推荐页管理</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+		</div>
+		<table class="table">
+		    <caption></caption>
+		    <thead>
+		      <tr>
+		        <th>ID</th>
+		        <th>昵称</th>
+		        <th>applyType</th>
+		        <th>排序</th>
+		        <th>头像</th>
+		        <th>简介</th>
+		      </tr>
+		    </thead>
+		    <tbody id="table_body">
+		      <tr>
+		        <td>一级分类</td>
+		        <td>2</td>
+		        <td>3</td>
+		        <td contenteditable="true">2</td>
+		        <td><input type="checkbox"></td>
+		        <td>1</td>
+		        <td><button>移除</button></td>
+		      </tr>
+		    </tbody>
+  		</table>
+  		<div id="paging-outer">
+			<ul class="paging" id="paging"></ul>
+  		</div>
+  		
+	</div>
+</div>
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+
+</body>
+</html>

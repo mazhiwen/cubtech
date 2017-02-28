@@ -1,0 +1,9 @@
+@import url('../common/main.css');
+#paging-outer{
+	text-align: center;margin-top: 50px;
+}
+
+
+.table img{
+	width: 100px;
+}

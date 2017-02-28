@@ -2,24 +2,44 @@ define(function(require,exports,module) {
 	module.exports=navigationMultiLevelUl;
 	function navigationMultiLevelUl(outerId){
 		this.navigationIndexArray={
-			activity_verify:12,
-			comment_details:19,
-			user_feed_details:22,
-			appcomponents_edit:34,
-			role_permission:35
+			morningpost_edit:0,
+			news_edit:0,
+			article_edit:2,
+			class_edit:3,
+			subject_edit:4,
+			activity_edit:5,
+			activity_verify:5,
+			banner_edit:8,
+			ad_edit:9,
+			sys_push_edit:10,
+			user_feed_details:12,
+			verify_commit:13,
+			verify_personal:13,
+			verify_org:13,
+			verify_media:13,
+			verify_reply:13,
+			organization:13,
+			comment_details:14,
+			role_edit:15,
+			role_permission:15,
+			appcomponents_edit:18
+
 		};
 		this.curInd=0;
 		var that=this;		
 		var directoryObj={
 		    '内容':{
-		        '资讯':{
-		            '资讯列表':['information_list',1],
-		            '添加/编辑早报':['morningpost_edit',1],
-		            '添加/编辑要闻':['news_edit',1],
+		        '资讯':['information_list',1],
+		        '新闻':['fetched_news_list',1],
+		        '文章':['article_list',1],
+		        '分类':['class_article',1],
+		        '专题':['subject_list',1],
+		        '活动':['activity_list',1],
+		        /*'资讯':{
+		            '资讯列表':,
 		            '新闻抓取列表':['fetched_news_list',1],
 		            '添加抓取源':['add_fetch_source',1]
-		        },
-		        '文章':{
+		        },'文章':{
 		        	'文章列表':['article_list',1],
 		            '添加/编辑文章':['article_edit',3],
 		            '分类列表':['class_article',1],
@@ -32,7 +52,8 @@ define(function(require,exports,module) {
 		        '活动':{
 		            '活动列表':['activity_list',3],
 		            '添加/编辑活动':['activity_edit',4]
-		        }/*,
+		        }
+				,
 		        '话题管理':{
 		            '话题列表':['topic_list',1],
 		            '新增/编辑话题':['topic_edit',1]
@@ -48,29 +69,33 @@ define(function(require,exports,module) {
 		    '排序/广告':{
 		            '顶栏TAB':['top_tab'],
 		            '推荐页':['recommendtab_list'],
-		            'BANNER':{
+		            'BANNER':['banner_list',1],
+		            '广告位':['ad_list',1],
+		            '系统推送':['sys_push_list',1]
+		            /*'BANNER':{
 		            	'BANNER列表':['banner_list'],
 		            	'添加/编辑BANNER':['banner_edit']
-		            	//'分类首图列表':['banner_list'],
-		            	//'添加/编辑分类首图':['banner_list']
 		            },
 		            '广告位':{
 		            	'广告位列表':['ad_list'],
 		            	'添加/编辑广告位':['ad_edit']
-		            }  
+		            }  */
 		    },
-		    '推送':{
-		        '系统消息推送列表':['sys_push_list',1],
+		    /*'推送':{
+		    	'系统推送':['sys_push_list',1]
+		    	
+		        '系统推送列表':['sys_push_list',1],
 		        '新增/编辑系统推送':['sys_push_edit',1]
-		        //'APP内消息推送':['app_push_list',1],
-		        //'新增/编辑APP内推送':['app_push_edit',1]
-		    },
-		    '评论':['comment_list'],
+		    
+		    },*/
+		    //'评论':['comment_list'],
 		    '用户管理':{
 		        '用户列表':['user_list',1],
-		        '添加/编辑用户':['user_edit',1],
-		        '用户反馈':['user_feed_list',1] ,
-		       	'认证审核':{
+		        '用户反馈':['user_feed_list',1],
+		       	'审核':['verify',1],
+		       	'评论':['comment_list'],
+		       	'角色管理':['role_list',5]
+		       	/*'认证审核':{
 		       		'提交审核':['verify_commit'],
 		        	'审核':['verify'],
 	            	'个人认证配置':['verify_personal'],
@@ -78,20 +103,23 @@ define(function(require,exports,module) {
 	            	'媒体认证配置':['verify_media'],
 	            	'回复语配置':['verify_reply'],
 	            	'申请机构':['organization']
-	            }
+	            },*/
+	            
 		    },
 		    //'APP版本控制':['app_version'],
-		    'APP控制':{
+		    '其他APP控制':{
 		    	'版本':['app_version'],
 		    	'一键关注':['onekey_focus'],
-		    	'组件':['appcomponents_list']
+		    	'组件':['appcomponents_list'],
+		    	'大V排序':['v_order']
 		    },
+		    /*
 		    '权限':{
 		        '角色管理':['role_list',5],
 		        '添加/编辑角色':['role_edit',5],
 		        //'角色权限':['role_permission',5],
 		        '用户角色管理':['user_role',5]
-		    },
+		    },*/
 		    '帮助':{
 		        '版本更新':['bs_version',5],
 		        '常见问题':['bs_help',5]
