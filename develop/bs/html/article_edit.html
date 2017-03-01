@@ -17,54 +17,44 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
-			<a href="article_list.html"><button>文章列表</button></a>
+			<a href="article_list.html" class="button">文章列表</a>
 		</div>
-
 		<div id="sub_content">
-			<div class="form-input author_wrap"><span>作者:</span><div class="select_author_wrap"><input type="text" placeholder="作者" id="author"><ul class="author_result" id="author_dl"></ul></div></div>
-			<div class="upload_preview">
-				<div class="form-input"><span>文章封面:</span><input type="file" id="cover_image_input"></div>
-				<img id="cover_img" src="">
-				<button id="dele_cov_img" class="glyphicon-trash glyphicon onlyicon"></button>
-			</div>
-			<div class="form-input"><span>分类:</span><select id="article_class"><!--<option value="vw">VW</option><option value="audi" selected>Audi</option>--></select></div>
-			<div class="form-input"><span>来源[版权申明]:</span><select id="article_source"><option value="">不选择</option><option value="1">转载</option><option value="2">一匡原创</option><option value="3">大V原创</option></select></div>
-			<div class="form-input" id="kw_out">
-				<span id="keyword_label">关键词</span>
-				<div>
-					<!--<span class="keyword">呵呵呵<span class="glyphicon"></span></span>-->
-					<div id="add_kw_outer"><input type="text" id="add_kw_input"><span id="add_kw_btn" class="glyphicon"></span></div>
-				</div>	
-			</div>
-			<div class="form-input" id="add_file_outer">
-				<span>附件</span>
-				<div>
-					<!--<div class="add_file_box">
-						<div>
-							<button class="s glyphicon normal glyphicon-minus del_atta_btn">删除</button>
-						</div>
-						<div class="form-input">
-							<span>链接</span><input type="text" class="add_file_box_link">
-						</div>
-						<div class="form-input">
-							<span>文件名</span><input type="text" class="add_file_box_file">
-						</div>
-					</div>-->
-					
-					<button class="s glyphicon normal glyphicon-plus" id="add_file_btn">添加</button>
+			<div class="input_box author_wrap"><span class="label">作者:</span><div class="select_author_wrap"><input type="text" placeholder="作者" id="author" class="input"><ul class="author_result" id="author_dl"></ul></div></div>
+
+			<div class="input_box">
+				<span class="label label_top">文章封面</span><div class="upload_box input_box_right">
+					<input type="file" class="upload_box_input" id="cover_image_input">
+					<div class="upload_box_img_box"><span></span><img class="upload_box_img" src=""></div>
+					<button class="glyphicon-trash glyphicon onlyicon upload_box_delete"></button>
 				</div>
 			</div>
-				
-			<div>
-				<label id="check_time_outer" class="form-input for_inp_hor"><input type="checkbox" id="check_time"><span>自定义在app显示的时间</span></label>
-				<div class="date-time-picker-outer"><button id="activedate" disabled>选择</button><input type="text" id="filldate" disabled></div>
+			<div class="input_box"><span class="label">分类:</span><select class="input" id="article_class"></select></div>
+			<div class="input_box"><span class="label">来源[版权申明]:</span><select class="input" id="article_source"><option value="">不选择</option><option value="1">转载</option><option value="2">一匡原创</option><option value="3">大V原创</option></select></div>
+			<div class="input_box" id="kw_out">
+				<span class="label" id="keyword_label">关键词</span>
+				<div>
+					<div id="add_kw_outer"><input type="text" class="input" id="add_kw_input"><span id="add_kw_btn" class="glyphicon"></span></div>
+				</div>	
 			</div>
-			<div class="form-input"><span>标题:</span><input type="text" id="title"></div>
-			<div class="form-input"><span>摘要:</span><textarea id="summary"></textarea></div>
-			<span id="con_span">内容:</span>
-			<div id="edit">
+			<div class="input_box" id="add_file_outer">
+				<span class="label">附件</span>
+				<div>
+					<button class="s glyphicon normal glyphicon-plus button" id="add_file_btn">添加</button>
+				</div>
 			</div>
-			<button id="commit-button">确认</button>
+			<div class="input_box">
+				<label id="check_time_outer" class="label"><input type="checkbox" id="check_time"><span>自定义在app显示的时间</span></label>
+				<div class="date-time-picker-outer"><button id="activedate" class="button" disabled>选择</button><input type="text" class="input" id="filldate" disabled></div>
+			</div>
+			<div class="input_box"><span class="label">标题:</span><input class="input" type="text" id="title"></div>
+			<div class="input_box"><span class="label label_top">摘要:</span><textarea class="input" id="summary"></textarea></div>
+			<div class="input_box">
+				<span class="label" id="con_span">内容:</span>
+				<div id="edit">
+				</div>
+			</div>
+			<button id="commit-button" class="button">确认</button>
 			<div class="add_comment_wrap" style="display:none;">
 				<p><span>评论内容</span></p>
 				<textarea class="add_comment_t" id="comment_c" placeholder="每个回车为一条评论，作者及发布时间随机"></textarea>
@@ -74,20 +64,20 @@
 				<div class="form-input">
 					<span>评论时间</span><div class="date-time-picker-outer"><button id="activedate_c">选择时间</button><input type="text" id="filldate_c" disabled></div>
 				</div>-->
-				<button id="add_comment_b">提交评论</button>
+				<button id="add_comment_b" class="button">提交评论</button>
 			</div>
 			<div id="subject_article" class="relation_two">
 				<div>
-					<div class="include_list_title"><span>关联文章列表</span></div>
-					<div id="is_article_list_outer">
+					<div class="include_title"><span>关联文章列表</span></div>
+					<div class="include_box">
 						<!--<div data-id="1"><span>dsds</span><button class="s">删除</button></div>
 						<div data-id="2"><span>dsd1545454s</span><button class="s">删除</button></div>-->
 					</div>
 					<ul class="paging" id="is_paging"></ul>
 				</div>
 				<div>
-					<div class="all_list_title">搜索文章 <input type="text" id="search_input"> <button id="search_button">搜</button></div>
-					<div id="no_article_list_outer">
+					<div class="all_title">搜索文章 <input type="text" class="input search_input"> <button class="search_button button">搜</button></div>
+					<div class="all_box">
 						<!--<div data-id="1"><span>dsds</span><button class="s">添加</button></div>
 						<div data-id="2"><span>dsd1545454s</span><button class="s">添加</button></div>-->
 					</div>

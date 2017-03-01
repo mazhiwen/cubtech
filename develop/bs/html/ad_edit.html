@@ -20,9 +20,9 @@
 			<span></span><span></span><span></span>
 		</div>
 		<div id="edit-area">
-			<label class="form-input"><span>广告位名称:</span><input type="text" placeholder="名称" id="name"></label>
-			<div class="form-input"><span>广告位类型</span><select id="ad_type"><option value="1">作者推荐</option><option value="2">文章推荐</option><option value="3">专题推荐</option><option value="4">图片类广告</option></select></div>
-			<div id="recommend_list_wrap"><table class="table"><caption>推荐列表</caption><tbody id="recommend_list"><!--<tr><td>马治文</td><td>dasdsa</td><td>d4sa</td><td><button class="glyphicon-up glyphicon onlyicon" title="上移"></button><button class="glyphicon-down glyphicon onlyicon" title="下移"></button><button  class="glyphicon-trash glyphicon onlyicon" title="删除"></button></td></tr>--></tbody></table><input type="text" id="search_input" placeholder="搜索用户昵称/文章标题/专题标题"><button id="search_btn">搜索</button><table class="table"><caption>搜索结果列表</caption><tbody id="search_result_wrap"></tbody></table>
+			<label class="form-input"><span>广告位名称:</span><input type="text" class="input" placeholder="名称" id="name"></label>
+			<div class="form-input"><span>广告位类型</span><select class="input" id="ad_type"><option value="1">作者推荐</option><option value="2">文章推荐</option><option value="3">专题推荐</option><option value="4">图片类广告</option></select></div>
+			<div id="recommend_list_wrap"><table class="table"><caption>推荐列表</caption><tbody id="recommend_list"><!--<tr><td>马治文</td><td>dasdsa</td><td>d4sa</td><td><button class="glyphicon-up glyphicon onlyicon" title="上移"></button><button class="glyphicon-down glyphicon onlyicon" title="下移"></button><button  class="glyphicon-trash glyphicon onlyicon" title="删除"></button></td></tr>--></tbody></table><input type="text" class="input" id="search_input" placeholder="搜索用户昵称/文章标题/专题标题"><button id="search_btn" class="button">搜索</button><table class="table"><caption>搜索结果列表</caption><tbody id="search_result_wrap"></tbody></table>
 			<ul class="paging" id="paging"></ul></div>
 			<div id="type_img_wrap" style="display:none;">
 				<div class="upload_preview">
@@ -34,9 +34,9 @@
 				<div class="form-input"><span>跳转目标类型:</span><select id="type"><option value="0">无跳转</option><option value="1">文章</option><option value="2">要闻</option><option value="3">早报</option><option value="4">指定url</option><option value="5">专题</option></select></div>
 				<div class="form-input"><span id="url_span">目标ID:</span><input type="text" id="url"></div>
 			</div>	
-			<div class="form-input ad_pos_wrap"><span>所在Tab</span><select id="ad_pos_type"></select><span class="ad_pos_txt">位置：第</span><input class="ad_pos_num" type="number" id="ad_pos_index" placeholder="推荐内容位置在第几个之后"><span id="ad_pos_change">(篇文章/个板块)</span><span>之后</span></div>
+			<div class="form-input ad_pos_wrap"><span>所在Tab</span><select class="input" id="ad_pos_type"></select><span class="ad_pos_txt">位置：第</span><input class="ad_pos_num input" type="number" id="ad_pos_index" placeholder="推荐内容位置在第几个之后"><span id="ad_pos_change">(篇文章/个板块)</span><span>之后</span></div>
 			
-			<div id="confirm-outer"><button id="commit_button">确认</button></div>
+			<div id="confirm-outer"><button id="commit_button" class="button">确认</button></div>
 		</div>
   		
   		

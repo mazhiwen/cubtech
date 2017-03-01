@@ -17,7 +17,7 @@ define(function(require, exports, module) {
 		var fillHtmlText='<li class="paging_last"><a>&laquo;</a></li>';
 		var tthis=this;
 		fillHtmlText+='<li class="paging_next"><a>&raquo;</a></li>';
-		fillHtmlText+='<span class="paging_search_wrap"><input type="text" class="paging_search_input"><button class="paging_search_btn">Go</button></span>';
+		fillHtmlText+='<span class="paging_search_wrap"><input type="text" class="paging_search_input input"><button class="paging_search_btn button">Go</button></span>';
 		this.pagingDom.append(fillHtmlText);
 		this.executePageFn();
 		this.pagingDom.on('click','li.paging_page',function(){

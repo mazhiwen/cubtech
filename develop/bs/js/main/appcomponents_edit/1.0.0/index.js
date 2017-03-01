@@ -29,7 +29,7 @@ define(function(require) {
 
 			is_display.prop("checked",d['display']);
 			$.each(JSON.parse(d['components']),function(k,v){
-				table_body_component.append('<tr><td><input type="text" class="son_component_name" value="'+v['componentName']+'"></td><td><input type="text" class="son_component_code" value="'+v['componentCode']+'"></td><td><input type="checkbox" class="is_show_son_component" checked="'+v['display']+'"></td><td><button title="删除" class="glyphicon-trash glyphicon onlyicon"></button></td></tr>');
+				table_body_component.append('<tr><td><input type="text" class="input son_component_name" value="'+v['componentName']+'"></td><td><input type="text" class="input son_component_code" value="'+v['componentCode']+'"></td><td><input type="checkbox" class="is_show_son_component" checked="'+v['display']+'"></td><td><button title="删除" class="glyphicon-trash glyphicon onlyicon"></button></td></tr>');
 			});
 		});
 	}
@@ -77,7 +77,7 @@ define(function(require) {
 
 	//添加操作
 	add_component_btn.click(function(){
-		table_body_component.append('<tr><td><input type="text" class="son_component_name"></td><td><input class="son_component_code" type="text"></td><td><input type="checkbox" class="is_show_son_component"></td><td><button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>');
+		table_body_component.append('<tr><td><input type="text" class="input son_component_name"></td><td><input class="input son_component_code" type="text"></td><td><input type="checkbox" class="is_show_son_component"></td><td><button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>');
 	});
 
 

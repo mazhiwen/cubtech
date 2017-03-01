@@ -1,8 +1,10 @@
 @import url('../common/main.css');
 #sub_content{padding: 20px;}
-
-#title,#summary{width: 80%;}
 /*
+#title,#summary{
+	width: 80%;
+}
+
 #other_outer{display: inline-block;text-align: left;}
 */
 .form-input>span{width:150px;}
@@ -20,7 +22,6 @@ margin-top: 20px;}
 	display: table-cell;
 	vertical-align: middle;
 	height: 100%;
-	width: 150px;
 }
 #kw_out>div{
 	display: inline-block;
@@ -155,7 +156,7 @@ margin-top: 20px;}
 	display: inline-block;
 }
 .author_wrap > span {
-    vertical-align: top !important;
+    
 }
 .author_result>li>span:nth-child(3){
 	font-size: 0.9em !important;
@@ -169,17 +170,19 @@ margin-top: 20px;}
 
 
 
+.upload_preview>div {
+    float: none;
+}
 
 
 
 
 
 
+/*关联样式*/
 
 
-
-
-#subject_article{
+.relation_two{
 	box-sizing: border-box;
 	width: 100%;
 	overflow: hidden;
@@ -187,24 +190,26 @@ margin-top: 20px;}
 	border: 1px solid gray;
 	padding: 10px;
 }
-#subject_article>div:nth-child(1){
+.relation_two>div:nth-child(1){
 	float: left;width: 50%;
 	padding-right: 5px;
-box-sizing: border-box;
+	box-sizing: border-box;
 	min-height: 100px;
 }
-#subject_article>div:nth-child(2){float: left;width: 50%;
+.relation_two>div:nth-child(2){
+	float: left;
+	width: 50%;
 	padding-left: 5px;
-box-sizing: border-box;
+	box-sizing: border-box;
 	min-height: 100px;
 }
-.include_list_title,.all_list_title{
+.relation_two .include_title,.relation_two .all_title{
 	height: 30px;
 	line-height: 30px;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 	border-bottom: 1px solid gray;
 }
-#search_input {
+.relation_two .search_input {
     width: auto;
 }

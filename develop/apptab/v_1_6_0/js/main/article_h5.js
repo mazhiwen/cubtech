@@ -76,6 +76,8 @@ define(function(require) {
                 $(".news-author-area").hide();
                 $(".news-subtitle").hide();
             }
+            
+
             // 1文章 2 要闻 3 早报
             if(articleType==3){
                 $(".morning_top_pic").show();
@@ -91,6 +93,21 @@ define(function(require) {
     $(".download-block").click(function(){
         window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.equanta";
     });
+
+    if(articleType==1){
+        AJAXMY.send(
+            1,
+            '/article/related_article_list',
+            {article_id:components.getGet('id')},
+            {},
+            function(data) {
+                
+
+                
+            }
+        );
+        $(".readings").show();
+    }
 
 
 

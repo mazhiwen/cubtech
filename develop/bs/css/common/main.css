@@ -94,6 +94,11 @@ color: rgb(0, 115, 183);
 }
 #navigation-crumb{padding: 10px 10px;}
 #navigation-crumb>span:nth-child(1){line-height: 33px;}
-#navigation-crumb button{font-size: 0.9em;margin: 0 10px;}
+#navigation-crumb button{
+	/*font-size: 0.9em;*/
+
+	margin: 0 10px;
+
+}
 .table{
 }

@@ -1,7 +1,9 @@
 @import url('../common/main.css');
 #sub_content{padding: 20px;}
 
-#title,#summary{width: 80%;}
+#title,#summary{
+
+}
 .form-input>span{
 	width:140px;
 }

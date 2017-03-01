@@ -20,38 +20,38 @@
 		</div>
 
 		<div id="sub_content">
-			<div class="form-input author_wrap"><span>活动名称:</span><input type="text" class="title"></div>
-			<div class="form-input"><span>是否支持报名:</span><input type="checkbox" class="is_sign"><div class="switch_sign_box switch_box"><span>第三方报名链接:</span><input type="text" class="third_url"></div></div>
-			<div class="form-input"><span>是否免费:</span><input type="checkbox" class="is_free"><div style="display: none;" class="switch_box"><span>第三方报名链接:</span><input type="text"></div></div>
-			<div class="form-input"><span>报名人数:</span><input type="text" class="sign_count" placeholder="不限制人数填0"></div>
-			<div class="form-input"><span>是否提交名片:</span><input type="checkbox" class="is_card"></div>
-			<div class="form-input organizer_wrap"><span>主办方:</span><input type="text" class="organizer"></div>
-			<div class="form-input"><span>主办方联系方式(选填):</span><input type="text" class="organizer_contact"></div>
-			<div class="form-input"><span>主办方主页(选填):</span><input type="text" class="organizer_url"></div>
-			<div class="form-input">
-				<span>活动开始时间</span>
-				<div class="date-time-picker-outer"><button id="activedate">选择</button><input type="text" id="filldate" disabled></div>
+			<div class="input_box"><span class="label">活动名称:</span><input type="text" class="title input"></div>
+			<div class="input_box"><span class="label">是否支持报名:</span><input type="checkbox" class="is_sign"><div class="switch_sign_box switch_box"><span>第三方报名链接:</span><input type="text" class="third_url input"></div></div>
+			<div class="input_box"><span class="label">是否免费:</span><input type="checkbox" class="is_free"><div style="display: none;" class="switch_box"><span>第三方报名链接:</span><input type="text"></div></div>
+			<div class="input_box"><span class="label">报名人数:</span><input type="text" class="sign_count input" placeholder="不限制人数填0"></div>
+			<div class="input_box"><span class="label">是否提交名片:</span><input type="checkbox" class="is_card"></div>
+			<div class="input_box organizer_wrap"><span class="label">主办方:</span><input type="text" class="organizer input"></div>
+			<div class="input_box"><span class="label">主办方联系方式(选填):</span><input type="text" class="organizer_contact input"></div>
+			<div class="input_box"><span class="label">主办方主页(选填):</span><input type="text" class="organizer_url input"></div>
+			<div class="input_box">
+				<span class="label">活动开始时间</span>
+				<div class="date-time-picker-outer"><button class="button" id="activedate">选择</button><input type="text" id="filldate" disabled class="input"></div>
 			</div>
-			<div class="form-input">
-				<span>活动结束时间</span>
-				<div class="date-time-picker-outer"><button id="activedate_end">选择</button><input type="text" id="filldate_end" disabled></div>
+			<div class="input_box">
+				<span class="label">活动结束时间</span>
+				<div class="date-time-picker-outer"><button  class="button" id="activedate_end">选择</button><input type="text" id="filldate_end" disabled class="input"></div>
 			</div>
-			<div class="form-input">
-				<span>报名截至时间(选填)</span>
-				<div class="date-time-picker-outer"><button id="activedate_line">选择</button><input type="text" id="filldate_line" disabled></div>
+			<div class="input_box">
+				<span class="label">报名截至时间(选填)</span>
+				<div class="date-time-picker-outer"><button class="button" id="activedate_line">选择</button><input type="text" id="filldate_line" disabled class="input"></div>
 			</div>
-			<div class="form-input"><span>地点:</span><input type="text" class="address"></div>
-			<div class="form-input"><span>详细地址:</span><input type="text" class="address_details"></div>
+			<div class="input_box"><span class="label">地点:</span><input type="text" class="address input"></div>
+			<div class="input_box"><span class="label">详细地址:</span><input type="text" class="address_details input"></div>
 			<span id="con_span">活动详情:</span>
 			<div id="edit">
 			</div>
 			<div class="upload_preview">
-				<div class="form-input"><span>封面[尺寸:750*340]:</span><input type="file" id="cover_image_input"></div>
+				<div class="input_box"><span class="label">封面[尺寸:750*340]:</span><input type="file" id="cover_image_input"></div>
 				<img id="cover_img" src="">
 				<button id="dele_cov_img" class="glyphicon-trash glyphicon onlyicon"></button>
 			</div>
 			<div class="operation_box">
-				<button class="save_button">保存</button> <button id="commit-button">保存并发布</button>
+				<button class="save_button button">保存</button> <button class="button" id="commit-button">保存并发布</button>
 			</div>
 			
 			

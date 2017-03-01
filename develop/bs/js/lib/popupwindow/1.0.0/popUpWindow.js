@@ -17,7 +17,7 @@ define(function(require,exports,module) {
 	popUpWindow.prototype.confirm=function(title,content,yesFunction,noFunction){
 		var tthis=this;
 		this.initPUW();
-		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div>'+content+'</div><div><button>取消</button><button>确认</button></div></div>');
+		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div>'+content+'</div><div><button class="button">取消</button><button class="button">确认</button></div></div>');
 		$('body').unbind('keydown').keydown(function(e){
 			e.preventDefault();
 		});
@@ -40,7 +40,7 @@ define(function(require,exports,module) {
 	popUpWindow.prototype.confirmInput=function(title,content,yesFunction,noFunction){
 		var tthis=this;
 		this.initPUW();
-		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div><textarea class="popupwindow_textarea"></textarea></div><div><button>取消</button><button>确认</button></div></div>');
+		this.puwb.append('<div id="popupwin"><div>'+title+'<span style="display:none;"></span></div><div><textarea class="popupwindow_textarea"></textarea></div><div><button  class="button">取消</button><button class="button">确认</button></div></div>');
 		$('body').unbind('keydown').keydown(function(e){
 			e.preventDefault();
 		});
@@ -69,7 +69,7 @@ define(function(require,exports,module) {
 		//如果当前没有弹出层
 		if(this.puwb.css("display")=='none'){
 			this.initPUW();
-			this.puwb.append('<div id="popupwin"><div>提示<span style="display:none;"></span></div><div>'+content+'</div><div><button>确认</button></div></div>');
+			this.puwb.append('<div id="popupwin"><div>提示<span style="display:none;"></span></div><div>'+content+'</div><div><button class="button">确认</button></div></div>');
 			function eventFn(){	
 				tthis.puwb.hide();
 				$('body').removeClass('stop_scroll');
@@ -92,7 +92,7 @@ define(function(require,exports,module) {
 		else{
 			$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(){
 				tthis.initPUW();
-				tthis.puwb.append('<div id="popupwin"><div>提示<span style="display:none;"></span></div><div>'+content+'</div><div><button>确认</button></div></div>');
+				tthis.puwb.append('<div id="popupwin"><div>提示<span style="display:none;"></span></div><div>'+content+'</div><div><button  class="button">确认</button></div></div>');
 				$('#popupwin>div:nth-child(3)>button:nth-child(1)').click(function(){
 					tthis.puwb.hide();
 					$('body').removeClass('stop_scroll');
