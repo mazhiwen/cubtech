@@ -131,7 +131,7 @@ define(function(require,exports,module) {
 		//console.log(this.generateHtml(directoryObj));
 		//活动操作
 		$(outerId).append(this.generateHtml(directoryObj));
-		$(".navigation-multi-level-ul ul").hide();
+		//$(".navigation-multi-level-ul ul").hide();
 		$(".navigation-multi-level-ul div").click(function(){
 			$(this).next().css("display")=="block"?$(this).next().hide():$(this).next().show();				
 		});

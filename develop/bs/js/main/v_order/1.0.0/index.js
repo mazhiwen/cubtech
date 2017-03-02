@@ -10,18 +10,12 @@ define(function(require) {
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){
-				/*
-				var type='';
-				switch(v['type']){
-					case 1:
-					type='文章';break;
-					case 2:
-					type='话题';break;
-					case 3:
-					type='专题';break;
-				}*/
 				
-				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['applyType']+'</td><td class="priority_value" contenteditable="true">'+v['priority']+'</td><td><img src="'+v['headPic']+'"></td><td>'+v['vita']+'</td></tr>';
+				var applyType={
+					1:'个人认证',2:'机构认证',3:'媒体认证'
+				};
+
+				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+applyType[v['applyType']]+'</td><td class="priority_value" contenteditable="true">'+v['priority']+'</td><td><img src="'+v['headPic']+'"></td><td>'+v['vita']+'</td></tr>';
 			});
 			table_body.append(s);
 			myPaging.refreshDom(d['pages']);

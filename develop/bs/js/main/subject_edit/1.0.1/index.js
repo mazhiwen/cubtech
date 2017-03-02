@@ -58,7 +58,7 @@ define(function(require) {
 				dr=d['result'];
 				var s='';
 				$.each(dr,function(k,v){
-					s+='<div draggable="true" class="is_subject_article_box" data-id="'+v['id']+'"><span>'+v['title']+'</span><button class="s">删除</button></div>';
+					s+='<div draggable="true" class="is_subject_article_box" data-id="'+v['id']+'"><span>'+v['title']+'</span><button class="s button">删除</button></div>';
 				});
 				is_article_list_outer.append(s);
 				//isPaging.refreshDom(d['pages']);
@@ -143,7 +143,7 @@ define(function(require) {
 				no_article_list_outer.empty();
 				var s='';
 				$.each(d['result'],function(key,v){	
-					s+='<div data-id="'+v['id']+'"><span>'+v['title']+'</span><button class="s">添加</button></div>';
+					s+='<div data-id="'+v['id']+'"><span>'+v['title']+'</span><button class="s button">添加</button></div>';
 				});
 				no_article_list_outer.append(s);
 				myPaging.refreshDom(d['pages']);

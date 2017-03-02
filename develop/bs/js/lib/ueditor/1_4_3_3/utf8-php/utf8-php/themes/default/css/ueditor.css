@@ -141,6 +141,7 @@ div.edui-box {
     -moz-border-radius: 4px;
     border-radius: 4px;
     margin: auto;
+    box-sizing: initial;
 }
 .edui-editor div{
     width:auto;

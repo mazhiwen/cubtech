@@ -45,9 +45,17 @@
 .dateTimePicker>div:nth-child(1)>button>span{font-size: 18px;}
 .dateTimePicker>div:nth-child(1)>span{font-size: 17px;}
 .dateTimePicker>div:nth-child(2){background-color: rgb(250,250,250);}
-.dateTimePicker>div:nth-child(2)>span{display: inline-block;width: 35px;height: 35px;line-height: 35px;border: 1px solid rgb(220,220,220);box-sizing:border-box;}
+.dateTimePicker>div:nth-child(2)>span{
+  display: inline-block;width: 34px;
+  height: 35px;line-height: 35px;
+  border: 1px solid rgb(220,220,220);box-sizing:border-box;
+}
 .dateTimePicker>div:nth-child(3){background-color: rgb(240,240,240);}
-.dateTimePicker>div:nth-child(3)>span{display: inline-block;width: 35px;height: 35px;line-height: 35px;border: 1px solid rgb(250,250,250);box-sizing:border-box;cursor: pointer; }
+.dateTimePicker>div:nth-child(3)>span{
+  display: inline-block;width: 34px;height: 35px;
+  line-height: 35px;border: 1px solid rgb(250,250,250);
+  box-sizing:border-box;cursor: pointer; 
+}
 .dateTimePicker>div:nth-child(4){background-color: rgb(250,250,250);padding: 10px 0;border-top: 1px solid rgb(220,220,220);}
 .dateTimePicker select{width: 50px;
   margin:0 3px;

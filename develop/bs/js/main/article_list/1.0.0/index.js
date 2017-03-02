@@ -41,7 +41,9 @@ define(function(require) {
 				s+='<tr data-id="'+v['id']+'"><td>'+v['id']+'</td><td><a href="https://www.e-quanta.com/article_details.html?id='+v['id']+'" target="_blank">'+v['title']+'</a></td><td>'+v['categoryName']+'</td><td>'+v['keyword']+'</td><td>'+v['nickName']+'</td><td>'+v['editorNickName']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+transformTime.MSToYMDHMS(v['updateTime'])+'</td><td>'+v['praiseNum']+'</td><td>'+v['collectNum']+'</td><td>'+v['shareNum']+'</td><td>'+v['viewNum']+'</td>';
 				if(v['indexStatus']) s+='<td><input type="checkbox" checked></td>';
 				else s+='<td><input type="checkbox"></td>';
-				s+='<td>'+sourceType+'</td><td><a href="article_edit.html?id='+v['id']+'" class="glyphicon glyphicon-edit"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
+				s+='<td>'+sourceType+'</td><td><div class="btn_group"><a href="article_edit.html?id='+v['id']+'" class="button btn_xs">编辑</a><button class="button btn_xs article_delete">删除</button></div></td></tr>';
+				//s+='<td>'+sourceType+'</td><td><a href="article_edit.html?id='+v['id']+'" class="glyphicon glyphicon-edit"></a> <button class="glyphicon-trash glyphicon onlyicon"></button></td></tr>';
+				//<div class="btn_group"><a href="article_edit.html?id='+v['id']+'" class="button btn_s">编辑</a><button class="button btn_s article_delete">删除</button></div>
 			});
 			table_body.append(s);
 			articleListPaging.refreshDom(d['pages']);
@@ -83,7 +85,7 @@ define(function(require) {
 		that=$(this);
 		AJAXMY.send('/index/save',{type:1,id:$(this).parent().parent().attr("data-id"),status_index:$(this).prop('checked')?true:false},function(d){
 			if(d['result']){
-				alert('修改成功');
+				POPUPWINDOW.alert('修改成功');
 			}else{
 				that.prop('checked')?that.prop('checked',false):that.prop('checked',true);
 			}
@@ -91,17 +93,18 @@ define(function(require) {
 		});
 	});
 
-	table_body.on('click','.glyphicon-trash',function(event){
+	table_body.on('click','.article_delete',function(event){
 		var tthis=$(this);
 		tthis.prop('disabled',true);
 		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
 			AJAXMY.send('/article/delete',{id:tthis.parent().parent().attr("data-id")},function(d){
 				if(d['result']){
-					alert('删除成功');
+					POPUPWINDOW.alert('删除成功');
 					tthis.parent().parent().remove();
 				}else{
-					alert('删除失败');	
+					POPUPWINDOW.alert('删除失败');	
 				}
+			},function(){
 				tthis.prop('disabled',false);
 			});
 		},function(){

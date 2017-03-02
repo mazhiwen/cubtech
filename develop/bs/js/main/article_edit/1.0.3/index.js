@@ -100,6 +100,7 @@ define(function(require) {
 	
 	ue.ready(function(){
 		if(id){
+			$(".relation_article").show();
 			add_comment_wrap.show();
 			AJAXMY.send('/article/edit',{id:id},function(data){
 				var d=data['result'];
@@ -173,7 +174,7 @@ define(function(require) {
 
 
 
-			//关联文章
+			//已关联文章
 			var isPaging=new paging("#is_paging",MAXPAGING,function(currentPage){
 				AJAXMY.send('/article/related_article_list',
 					{article_id:id,page:currentPage,size:PERPAGINGCOUNT
@@ -181,9 +182,9 @@ define(function(require) {
 						dr=d['result'];
 						var s='';
 						$.each(dr,function(k,v){
-							s+='<div><span>'+v['title']+'</span><button class="s"  data-id="'+v['id']+'">删除</button></div>';
+							s+='<div><span>'+v['title']+'</span><button class="button btn_xs"  data-id="'+v['id']+'">删除</button></div>';
 						});
-						include_box.append(s);
+						include_box.html(s);
 						isPaging.refreshDom(d['pages']);
 				});
 			});	
@@ -205,7 +206,7 @@ define(function(require) {
 				AJAXMY.send('/article/search_list',{title:search_input.val(),page:currentPage,size:PERPAGINGCOUNT},function(d){
 					var s='';
 					$.each(d['result'],function(key,v){	
-						s+='<div><span>'+v['title']+'</span><button class="s" data-id="'+v['id']+'">添加</button></div>';
+						s+='<div><span>'+v['title']+'</span><button class="button btn_xs" data-id="'+v['id']+'">添加</button></div>';
 					});
 					all_box.html(s);
 					myPaging.refreshDom(d['pages']);

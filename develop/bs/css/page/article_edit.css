@@ -1,5 +1,7 @@
 @import url('../common/main.css');
-#sub_content{padding: 20px;}
+#sub_content{
+
+}
 /*
 #title,#summary{
 	width: 80%;
@@ -8,7 +10,9 @@
 #other_outer{display: inline-block;text-align: left;}
 */
 .form-input>span{width:150px;}
-#commit-button{display: block;margin:100px auto;}
+#commit-button{
+	display: block;
+	margin:20px auto;}
 #con_span{line-height: 40px;
 	display: inline-block;
 margin-top: 20px;}
@@ -108,18 +112,10 @@ margin-top: 20px;}
 	left: -20px;
 	top: 20px;
 }
-.add_comment_wrap{
-	width: 500px;
-	padding:10px;
-	border: 1px solid rgb(192, 192, 192); 
-	margin: 10px auto;
-}
-.add_comment_wrap>*{
-	margin: 5px 0;
-}
+
 .add_comment_t{
 	width: 100%;
-	height: 500px;
+	height: 200px;
 }
 .add_comment_w>*{
 	vertical-align: middle;
@@ -133,7 +129,7 @@ margin-top: 20px;}
 	position: relative;
 	background-color: white;
 	
-	z-index: 1;
+	z-index: 2;
 	border: 1px solid gray;
 	box-sizing: border-box;
 	display: none;
@@ -175,41 +171,13 @@ margin-top: 20px;}
 }
 
 
-
-
-
-
-/*关联样式*/
-
-
-.relation_two{
-	box-sizing: border-box;
-	width: 100%;
-	overflow: hidden;
-	text-align: left;
-	border: 1px solid gray;
-	padding: 10px;
+.add_comment_wrap{
+	display: none;
 }
-.relation_two>div:nth-child(1){
-	float: left;width: 50%;
-	padding-right: 5px;
-	box-sizing: border-box;
-	min-height: 100px;
+.relation_article{
+	display: none;
 }
-.relation_two>div:nth-child(2){
-	float: left;
-	width: 50%;
-	padding-left: 5px;
-	box-sizing: border-box;
-	min-height: 100px;
-}
-.relation_two .include_title,.relation_two .all_title{
-	height: 30px;
-	line-height: 30px;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid gray;
-}
-.relation_two .search_input {
-    width: auto;
-}
+
+
+
+

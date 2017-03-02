@@ -13,28 +13,30 @@ define(function(require) {
 	var navMulLevUl=require('navigationMultiLevelUl'),
 		navMulLevUlMy=new navMulLevUl('#left'),
 		currentDom=navMulLevUlMy.getCurDom();
-	//if(!DOCCOOKIES.hasItem('loginName')){
-	//	POPUPWINDOW.alert('未登录，请登录',function(){
-	//		window.location.href='../login.html';
-	//	});
-	//}else{
+	
+
+
+/*	if(!DOCCOOKIES.hasItem('loginName')){
+		POPUPWINDOW.alert('未登录，请登录',function(){
+			window.location.href='../login.html';
+		});
+	}else{
+*/
+
 		//顶部右侧用户状态
-		$("#top").append('<span>一匡后台管理系统_测试版,测试版,测试版</span><div id="top_right"><img id="login_user_head" src="http://cdn.e-quanta.com/headpic/default.png"><span id="login_user_nic_name">nickName</span></div><div id="user_info_outer"><div><img id="user_info_head" src="http://cdn.e-quanta.com/headpic/default.png"><p id="user_info_name">nickName</p><p id="user_info_intro">vita</p></div><p><span id="user_info_gen">gender</span><span id="user_info_phone">mobile</span><span id="user_info_id">id</span></p><div><button id="sign_out">退出登录</button></div></div>');
+		
+		$(".top").append('<div class="top_left"><span class="label">一匡后台管理系统_测试版,测试版,测试版</span></div><div class="top_right">'+'<span class="label">hello , '+DOCCOOKIES.getItem('userNickName')+'</span><img class="login_user_head" src="http://cdn.e-quanta.com/headpic/default.png"><button class="button sign_out">退出系统</button></div>');
 		$("#login_user_nic_name,#user_info_name").text(DOCCOOKIES.getItem('userNickName'));	
-		$("#login_user_head,#user_info_head").attr("src",DOCCOOKIES.getItem('userHead'));
-		$("#user_info_intro").text(DOCCOOKIES.getItem('userVita'));
-		$("#user_info_gen").text('性别:'+DOCCOOKIES.getItem('userGender'));
-		$("#user_info_phone").text('手机:'+DOCCOOKIES.getItem('userMobile'));
-		$("#user_info_id").text('ID:'+DOCCOOKIES.getItem('userId'));
-		var top_right=$("#top_right"),
+		$(".login_user_head").attr("src",DOCCOOKIES.getItem('userHead'));
+		var top_right=$(".top_right"),
 			user_info_outer=$("#user_info_outer");
 		user_info_outer.hide();	
 		top_right.click(function(){
 			user_info_outer.css("display")=='none'?
-			(user_info_outer.show(),top_right.css("background-color","rgb( 54, 127, 169)"))
-			:(user_info_outer.hide(),top_right.css("background-color","transparent"));
+			user_info_outer.show()
+			:user_info_outer.hide()
 		});
-		$("#sign_out").click(function(){
+		$(".sign_out").click(function(){
 			AJAXMY.send('/login/logout',{},function(d){
 				if(d['result']){
 					DOCCOOKIES.removeItem('loginName','/');
@@ -47,8 +49,7 @@ define(function(require) {
 		});
 		//生成左侧导航
 		
-		$("#left").css("height",document.body.clientHeight-51);
-		currentDom.css("color","rgb(60, 142, 188)");
+		currentDom.parent().addClass("active");
 		currentDom.parent().parent().show();
 		currentDom.parent().parent().parent().parent().show();
 

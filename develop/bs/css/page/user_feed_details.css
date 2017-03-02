@@ -1,8 +1,12 @@
 @import url('../common/main.css');
 #right{text-align: center;}
 #navigation-crumb{text-align: left;}
-#edit-area{margin: auto;display: inline-block;text-align: left;}
+#edit-area{
+
+}
 #confirm-outer{text-align: center;margin-top: 50px;}
 .form-input>span{display: block;}
 
-textarea{width: 500px; height: 200px;}
+textarea{
+	width: 500px; height: 200px;
+}

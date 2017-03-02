@@ -25,7 +25,7 @@ define(function(require) {
 			table_body.empty();
 			var s;
 			$.each(d['result'],function(k,v){	
-				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['content']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td><a href="user_feed_details.html?id='+v['id']+'"><button class="s">查看</button></a> <button class="s" data-id="'+v['id']+'">删除</button></td></tr>';
+				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+v['content']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td><a href="user_feed_details.html?id='+v['id']+'"><button class="s button">查看</button></a> <button class="s button" data-id="'+v['id']+'">删除</button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging.refreshDom(d['pages']);

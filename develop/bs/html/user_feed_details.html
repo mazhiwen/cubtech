@@ -10,7 +10,7 @@
 
 <body>
 <div id="container">
-	<div id="top"></div>
+	<div class="top"></div>
 	<div id="left">
 	</div>
 	<div id="right">
@@ -18,9 +18,10 @@
 			<span></span><span></span><span></span>
 		</div>
 		<div id="edit-area">
-			<div class="form-input"><span>留言者:</span><input class="input" type="text" disabled id="name"></div>
-			<label class="form-input"><span>留言内容:</span><textarea class="input" id="feed_back_content" disabled></textarea></label>
-			<span>留言时间 </span><span id="time">2016  07-09-10：24：24</span>	
+			<div class="input_box"><span class="label">留言者:</span><input class="input" type="text" readonly id="name"></div>
+			<div class="input_box"><span class="label label_top">留言内容:</span><textarea class="input" id="feed_back_content" readonly></textarea></div>
+			<div class="input_box"><span class="label ">留言时间</span><span id="time"></span></div>
+			<div class="input_box"><span class="label">手机:</span><input class="input phone" type="text" readonly></div>	
 			<div id="confirm-outer"><button id="delete_btn" class="button">删除</button></div>
 		</div>
 	</div>
