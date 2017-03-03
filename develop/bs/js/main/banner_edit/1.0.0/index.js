@@ -70,6 +70,38 @@ define(function(require) {
 			);
 		});	
 	}
+
+
+	//按钮  以及提交事件
+
+	
+
+
+/*
+	$(".confirm-outer").append(MYUI.button({
+		selector:'#commit_button',
+		type:'commit',
+		clickFn:function(){
+
+		}
+	}));*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
 		cover_img.attr("src",responseUrl);
 		ImageId=sysImageId;

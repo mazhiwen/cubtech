@@ -15,8 +15,8 @@ define(function(require) {
 		currentDom=navMulLevUlMy.getCurDom();
 	
 
-
-/*	if(!DOCCOOKIES.hasItem('loginName')){
+/*
+	if(!DOCCOOKIES.hasItem('loginName')){
 		POPUPWINDOW.alert('未登录，请登录',function(){
 			window.location.href='../login.html';
 		});

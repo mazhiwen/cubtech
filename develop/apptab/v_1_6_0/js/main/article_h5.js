@@ -21,7 +21,7 @@ define(function(require) {
         1,
         '/article/web_detail',
         {article_id:components.getGet('id')},
-        {},
+        {"api-version":"1.6"},
         function(data) {
 
             var //e = this,
@@ -48,6 +48,17 @@ define(function(require) {
                 author_v_type_class='author_icon_media';
                 break;
             };
+            var content=a.content;
+            
+            
+
+            if(articleType==2){
+                var newImg='';
+                if(components.isValid(a.coverPic)){
+                    newImg=a.coverPic;
+                }
+                content='<p>'+content+'</p><p><img class="new_img" src="'+newImg+'"></p>';
+            }
             var authorVita='';
             authorVita=s.vita.substr(0,20)+'...';
             c += '<div class="news-wrap"> <div class="news-title-area "> <h6 class="news-title">';
@@ -63,7 +74,7 @@ define(function(require) {
             c += ' <span>\u6587\u7ae0\u603b\u6570<span class="main_gold"> ';
             c += s.articleNum;
             c += ' </span>\u7bc7</span> </h6> </div> </div> <article class="news-cont-area mt10"> ',
-            c += a.content;
+            c += content;
             c += " ";
             a.originalUrl && (c += ' <div class="ta-r pr15"> <a class="origin-link" href="', 
             c += a.originalUrl,
@@ -99,14 +110,19 @@ define(function(require) {
             1,
             '/article/related_article_list',
             {article_id:components.getGet('id')},
-            {},
+            {"api-version":"1.6"},
             function(data) {
-                
-
-                
+                var str='';
+                if(data['result'].length!=0){
+                    $.each(data['result'],function(key,value){
+                        str+='<div class="readings_item_box"><a class="first" href="article-h5.html?type=1&id='+value['id']+'">'+value['title']+'</a><p>'+ components.MSToYMDHM(value['createTime'])+'</p></div>';
+                        //str+='<a href="article-h5.html?type=1&id='+value['id']+'">'+value['title']+'</a>';
+                    });
+                    $(".top_title").after(str);
+                    $(".readings").show();
+                }  
             }
-        );
-        $(".readings").show();
+        ); 
     }
 
 

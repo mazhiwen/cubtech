@@ -2,12 +2,12 @@
 
 //本地
 
-URLHEAD='//localhost/e-quanta/develop/apptab';
-REQUESTHEAD='//localhost:8080';
+//URLHEAD='//localhost/e-quanta/develop/apptab';
+//REQUESTHEAD='//localhost:8080';
 
 
 //测试
-//REQUESTHEAD=URLHEAD='//testapi.e-quanta.com';
+REQUESTHEAD=URLHEAD='//testapi.e-quanta.com';
 
 
 //线上

@@ -29,9 +29,17 @@ pageController = {
 
             try {
                 var e = t.data.result.originalUrl;
-                //3 要闻  2早报  1文章 
-                3 == a && e && $originLink.attr("href", e).css("display","inline-block") ;
+                //3 早报  2 要闻 1文章 
+                2 == a && e && $originLink.attr("href", e).css("display","inline-block") ;
                 if(a==1)$(".news-cont-area").css("padding-top","15px");
+                 
+                if(a==2){
+                    var newImg='';
+                    if(t.data.result.coverPic){
+                        newImg=t.data.result.coverPic;
+                    }
+                    $(".news-cont-area").html('<p>'+$(".news-cont-area").html()+'</p><p><img class="new_img" src="'+newImg+'"></p>');
+                }
             } catch(i) {}
             var r = $mainWrap.height();
             //location.href = "equanta://setHeight=" + r
@@ -48,7 +56,7 @@ pageController = {
                 $(".news-author-area").hide();
                 $(".news-subtitle").hide();
             }
-            if(a==2){
+            if(a==3){
                 $(".morning_top_pic").show();
                 $(".news-title-area").hide();
             }

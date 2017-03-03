@@ -81,6 +81,12 @@ define(function(require) {
 				}
 			);
 		}else{
+			console.log(parseString.isEmpty([title_v,start_time,end_time,addressV,ImageId,addressDetail]));
+			console.log(apply_count);
+			console.log(parseString.isNumber(apply_count));
+
+
+
 			POPUPWINDOW.alert('部分选项未填/格式错误');
 			tthis.prop('disabled',false);
 			return false;

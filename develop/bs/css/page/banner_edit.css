@@ -2,4 +2,6 @@
 #right{text-align: center;}
 #navigation-crumb{text-align: left;}
 #edit-area{display: inline-block;text-align: left;}
-#confirm-outer{text-align: center;margin-top: 50px;}
+.confirm-outer{
+	text-align: center;margin-top: 50px;
+}

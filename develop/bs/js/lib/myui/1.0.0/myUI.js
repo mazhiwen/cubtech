@@ -6,17 +6,16 @@ define(function(require, exports, module) {
 
   	function myUI(){
   		this.table=table;
+  		this.button=button;
   		this.DOM=DOM;
-  		//this.creatElement=creatElement;
-  		//this.tableBody=creatElement;
 
   	}
 
   	
   	//生成表格 
   	function table(ttitle,theads){
-		//ttitle ''
-		//theads ['dsa','eee','wwwww']
+		//ttitle '' 标题
+		//theads ['dsa','eee','wwwww']  头部
 		var tthis=this;
 		this.myuiid=++myuiid;
 		this.initHtml='<table class="table" data-myuiid="'+this.myuiid+'"><caption>'
@@ -24,7 +23,6 @@ define(function(require, exports, module) {
 			+'</caption><thead><tr><th>'
 			+theads.join('</th><th>')
 			+'</th></tr></thead><tbody class="table_body"></tbody></table>';
-
 		this.tableBody=function(){
 			return DOM(tthis.myuiid).find(".table_body");
 		}
@@ -39,7 +37,6 @@ define(function(require, exports, module) {
 						trHtml+='<td>';
 					}
 					if(typeof(value['text'])=='object'){
-
 						$.each(value['text'],function(keya,valuea){
 							if(valuea['type']=='a'){
 								trHtml+='<a '+valuea['attributes']+'><button class="text_button">'+valuea['text']+'</button></a> ';
@@ -70,35 +67,47 @@ define(function(require, exports, module) {
 		return result;
   	}
 
-  	/*
-  	function tableData(trMode){
-		//tdata [['1','2','3'],['4','5','6']]		
-		//var result='';
-		//$.each(tdata,function(key,value){
-		//	result+='<tr><td>'
-				+value.join('</td><td>')
-		//		+'</td></tr>';	
-		//});
-		//return result;
+
+
+  	function button(inputConfig){
+
+  		var config={
+	  			//唯一选择器 selector
+	  			selector:inputConfig['selector'],
+	  			//类型 type
+	  			type:inputConfig['type'],
+	  			//可无  是否持续点击 isKeepClicking   默认 false
+	  			isKeepClicking:inputConfig['isKeepClicking']||false,
+	  			//点击函数clickFn
+	  			clickFn:inputConfig['clickFn']
+	  		},
+	  		html='';
+  		
+  		 if(config['type']=='commit'){
+
+  		 	html='';
+  		 }
+
+
+  		//$(config['selector'])
+  		
+  		$(document).on('click',config['selector'],function(event){
 
 
 
-		//creatElement('td','',);
-
-
-		//creatElement('tr','',);
-
-  	}*/
+  		});
+  		return html;
 
 
 
 
 
-  	/*
-  	function creatElement(name,attr,innerHtml){
-  		var s='<'+name+' '+attr+'>'+innerHtml+'</'+name+'>';
-  		return s; 
-  	}*/
+
+
+
+  	}
+
+
 
 
 

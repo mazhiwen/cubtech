@@ -9,7 +9,6 @@ news-detail（新闻详情）
 .news-wrap {
   color: #323232;
   overflow: hidden;
-  padding-bottom: 70px;
   background-color: white;
 }
 
@@ -225,6 +224,7 @@ br {
 .source_copyright{
   width: 100%;
   text-align: center;
+  padding-bottom: 20px;
 }
 .source_copyright *{
   font-size: 10px;
@@ -255,7 +255,7 @@ br {
     /*大屏幕 25*/
      margin-left: 25px;
     }
-    .news-wrap {
+    body{
       padding-bottom: 110px;
     }
 

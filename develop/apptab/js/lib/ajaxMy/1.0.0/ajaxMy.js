@@ -9,13 +9,18 @@ define(function(require, exports, module) {
 	}
 
 	ajaxMy.prototype.send=function(secondDirIndex,urlTail,sendData,headers,successFn){
+		
+		var sendHeaders=this.requestHeaders;
+		$.each(headers,function(key,value){
+			sendHeaders[key]=value;
+		});
 		$.ajax({
 			type:"POST",
 			url:this.requestDomain+this.requestSecondDomain[secondDirIndex]+urlTail,
 			data:sendData,
 			dataType:"json",
 			traditional:true,
-			headers:this.requestHeaders,
+			headers:sendHeaders,
 			success:function(d){
 				if(d['sys']==200){
 					var code=d['code'];

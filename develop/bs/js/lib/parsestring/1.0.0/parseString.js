@@ -42,7 +42,7 @@ define(function(require, exports, module) {
   	}
   	//判断 是否为有效值
   	parseString.prototype.isValid=function(str){
-		if(strNoEmpty(str)&&str!=false&&str!=undefined){
+		if(strNoEmpty(str)&&str!==false&&str!=undefined){
 			return true;
 		}else{
 			return false;
@@ -60,9 +60,8 @@ define(function(require, exports, module) {
   	
   	/*判断 是否为  0或者大于0的  可以是0开头的  数字   */
   	parseString.prototype.isNumber=function(str){
-  		if(this.isEmpty(str)){
-  			return /^[0-9]*$/.test(str); 
-  		}else return false;
+		return /^[0-9]+$/.test(str); 
+
   	}
   	/*判断 几个字符串*/
   	parseString.prototype.lessLength=function(str,length){

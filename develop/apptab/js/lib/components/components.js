@@ -39,13 +39,27 @@ define(function(require, exports, module) {
   			return /[http|https]:\/\/[^\s]+/.test(str); 
   		//}else return false;
   	}
-
+  	function strNoEmpty(str){
+  		var s=$.trim(str);
+		if(s.length>0){
+			return true;
+		}
+		else 
+			return false;
+  	};
   	/*获得 不为空的字符串*/
   	components.prototype.getNoEmpty=function(str){
   		var s=$.trim(str);
   		if(s.length>0)return s;else return false; 
   	}
-
+  	//判断 是否为有效值
+  	components.prototype.isValid=function(str){
+		if(strNoEmpty(str)&&str!==false&&str!=undefined){
+			return true;
+		}else{
+			return false;
+		}
+  	}
 	/*获取地址get参数*/
 	components.prototype.getGet=function(key){
 		var a=window.location.href;

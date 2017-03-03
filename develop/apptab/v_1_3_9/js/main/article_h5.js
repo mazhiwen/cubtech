@@ -48,6 +48,7 @@ define(function(require) {
                 author_v_type_class='author_icon_media';
                 break;
             };
+
             var authorVita='';
             authorVita=s.vita.substr(0,20)+'...';
             c += '<div class="news-wrap"> <div class="news-title-area "> <h6 class="news-title">';
@@ -80,6 +81,7 @@ define(function(require) {
                 $(".morning_top_pic").show();
                 $(".news-title-area").hide();
             }
+
             //微信分享配置
             require("weixinshare")(window.location.href,myTitle,mySummary,'https://api.e-quanta.com/images/favicon.png');
         }
