@@ -42,7 +42,7 @@ define(function(require) {
             if(value['coverPic']!=''){
                 coverPicHtml='<div><img src="'+value['coverPic']+'"></div>';
             }
-            articleListHtml+='<a href="../../v_1_3_9/html/article-h5.html?id='+value['id']+'&type=1"><div class="article_box"><p><img class="user_head" src="'+value['headPic']+'"><span class="user_name '+getVClass(value['applyType'])+'">'+value['nickName']+'</span><span class="user_desc">'+value['vita']+'</span><span class="time"></span></p><div class="article_content"><div class="article_text"><h3>'+value['title']+'</h3><p>'+value['summary']+'</p></div>'+coverPicHtml+'</div></div></a>';
+            articleListHtml+='<a href="../../v_1_6_0/html/article-h5.html?id='+value['id']+'&type=1"><div class="article_box"><p><img class="user_head" src="'+value['headPic']+'"><span class="user_name '+getVClass(value['applyType'])+'">'+value['nickName']+'</span><span class="user_desc">'+value['vita']+'</span><span class="time"></span></p><div class="article_content"><div class="article_text"><h3>'+value['title']+'</h3><p>'+value['summary']+'</p></div>'+coverPicHtml+'</div></div></a>';
         });
         $(".article_list").append(articleListHtml);
         //微信分享配置

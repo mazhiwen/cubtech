@@ -43,7 +43,7 @@ define(function(require) {
 					break;
 				}
 				status=v['status']?'隐藏':'显示';
-				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+type+'</td><td>'+v['content']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td data-id="'+v['id']+'"><a href="comment_details.html?id='+v['id']+'"><button class="input">查看</button></a> <button class="input">'+status+'</button></td></tr>';
+				s+='<tr><td>'+v['id']+'</td><td>'+v['nickName']+'</td><td>'+type+'</td><td>'+v['content']+'</td><td>'+transformTime.MSToYMDHMS(v['createTime'])+'</td><td>'+v['operatorName']+'</td><td data-id="'+v['id']+'"><a href="comment_details.html?id='+v['id']+'"><button class="input">查看</button></a> <button class="input">'+status+'</button></td></tr>';
 			});
 			table_body.append(s);
 			myPaging.refreshDom(d['pages']);
