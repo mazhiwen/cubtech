@@ -76,6 +76,12 @@ p,span,h1,h2,h3,h4,h5,h6{
 .user_desc{
 	font-size: 12px;
 	margin-left: 4px;
+    display: inline-block;
+    width: 70%;
+    height: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .time{
 	font-size: 10px;

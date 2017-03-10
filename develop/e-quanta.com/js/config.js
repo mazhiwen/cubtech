@@ -39,20 +39,16 @@ UEDITORTOPOFFSET=71;
 1.更改REQUESTHEAD  ajaxmy 的请求头部
 2.ueditor请求
 */
-/*
-正式环境
 
-REQUESTHEAD='https://www.e-quanta.com';
-*/
-/*
-测试环境
+//正式环境
+//REQUESTHEAD='https://www.e-quanta.com';
 
-REQUESTHEAD='https://test.e-quanta.com';
-*/
-/*
-本地环境
-*/
-REQUESTHEAD='//localhost:8080';
+
+//测试环境
+//REQUESTHEAD='https://test.e-quanta.com';
+
+//本地环境
+//REQUESTHEAD='//localhost:8080';
 
 seajs.config({
     base: "./js/lib/",
@@ -65,9 +61,8 @@ seajs.config({
       "getGet": "admin/js/lib/getget/1.0.0/getGet.js",
       "docCookies":"admin/js/lib/doccookies/1.0.0/docCookies.js",
       "transformTime":'admin/js/lib/transformtime/1.0.0/transformTime.js',
-      /*
-      私有
-      */
+      //私有
+      "zepto":'../../../lib/zepto/zepto.js',
       "popUpWindow":'../../../lib/popupwindow/1.0.0/popUpWindow.js',
       "getHtml":'gethtml/1.0.0/getHtml.js',
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',

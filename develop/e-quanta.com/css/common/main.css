@@ -103,17 +103,17 @@ a.cl_wt{
 	padding: 5px 0 5px 40px;
 	background:  url("../../images/home/write_btn.png") 0px 7px no-repeat;
 }
-header>div:nth-child(3)>a{
+.login_off_box>a{
 	color: rgba(200,200,200,0.8);
 	font-size: 0.9em;
 	white-space: nowrap;
 }
-header>div:nth-child(3)>a:not(:nth-child(1)){
+.login_off_box>a:not(:nth-child(1)){
 	margin-left: 10%;
 }
 #user_head{width: 40px;height: 40px;vertical-align: middle; border-radius: 20px;
 	margin-left: 10px;}
-header>div:nth-child(3)>div:nth-child(2){display: inline-block;position: relative;
+.login_off_box>div:nth-child(2){display: inline-block;position: relative;
 padding: 10px 0;}
 #quit_button{
 	font-size: 15px; line-height: 30px;
@@ -125,12 +125,14 @@ padding: 10px 0;}
 	width: 50px;text-align: center;
 	z-index: 2;
 }
-header>div:nth-child(3)>a:nth-child(2)>button{ 
+.login_off_box>a:nth-child(2)>button{ 
 	border: 1px solid #48bc7a; background-color: white; color: #48bc7a; 
 	margin-left:20px;font-size: 15px;vertical-align: middle;
 }
 .color_font{color: #48bc7a;}
-
+.switch_nav_btn {
+	display: none;
+}
 
 /******************************************************
 底部copy样式
@@ -417,7 +419,8 @@ banner区域
 @media(max-width:450px) {
 	header{
 		min-width:100%;
-		height: 70px;
+		height: 65px;
+	    background-color: rgba(0,0,0,0.8);
 	}
 	.right_arrow{
 		display: none;
@@ -426,16 +429,14 @@ banner区域
 	    display: block;
 	}
 	#navigation_ul {
-        width: 68px;
 	    margin-left: 0;
 	    position: absolute;
-	    top: 46px;
-	    background: red;
-	    right: 0;
+	    top: 45px;
+        background: rgb(80,79,79);
 	}	
 	#navigation_ul>li {
 	    width: 100% !important;
-	    padding: 0;
+        padding: 5px 0;
 	}
 	header>div:nth-child(1)>a {
 	    width: 80%;
@@ -448,16 +449,38 @@ banner区域
 	}
 	.switch_nav_btn{
 	    padding: 0;
-	    width: 100px;
 	    background: rgb(80,79,79);
 	    position: absolute;
 	    top: 15px;
-        right: 0;
         height: 30px;
+        display: initial;
+        border: none;
 	}
 	.switch_nav_btn::before {
 	    content: "\f0c9";
 	    color: white;
 	}
+	.switch_nav_btn,#navigation_ul{
+		right: 10px;
+		width: 68px;
+	}
+	footer>div:nth-child(1)>img {
+	    width: 70px;
+	}
+	footer>div:nth-child(3)>img {
+        width: 70px;
+	}
+	footer>div:nth-child(2)>div * {
+	    font-size: 12px;
+	}
+	footer>div:nth-child(2)>div>p:nth-child(2)>span:nth-child(2) {
+	    margin-left: 0;
+	    display: inline-block;
+	}
+	.navigation-hori a {
+	    font-size: 12px;
+
+	}
+
 
 }

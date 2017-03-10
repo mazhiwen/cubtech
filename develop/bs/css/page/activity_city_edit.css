@@ -1,0 +1,49 @@
+@import url('../common/main.css');
+
+
+#title,#summary{
+
+}
+.form-input>span{
+	width:140px;
+}
+
+.switch_box{
+	display: inline-block;
+    margin-left: 20px;
+}
+.switch_sign_box,.switch_limitpeople_box{
+	
+}
+
+#commit-button{
+	margin:100px 20px;
+}
+#con_span{
+	line-height: 40px;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+
+#edit{
+	/*width: 50em;*/
+}
+
+#check_time_outer>span{
+	width: auto;
+}
+/*删除封面*/
+#dele_cov_img{
+	position: relative;
+	left: -20px;
+	top: 20px;
+}
+.operation_box{
+	text-align: center;
+}
+
+.organizer_wrap{
+	margin-top: 30px;
+}
+

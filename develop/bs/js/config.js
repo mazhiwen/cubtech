@@ -87,7 +87,9 @@ var pageVersionObj = {
     activity_verify:'1.0.0',
     appcomponents_edit:'1.0.0',
     appcomponents_list:'1.0.0',
-    v_order:'1.0.0'
+    v_order:'1.0.0',
+    activity_city_config:'1.0.0',
+    activity_city_edit:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({

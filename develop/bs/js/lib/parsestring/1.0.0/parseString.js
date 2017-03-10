@@ -3,11 +3,9 @@ define(function(require, exports, module) {
   	function parseString(){
   	}
 
-  	
   	//替换空字符
   	parseString.prototype.trimSpaces=function(str){
 		if(this.isEmpty(str)){
-			//var re = new RegExp(/\s/,'g');
 			return str.replace(/\s/g,'');
 		}else{
 			return false;
@@ -22,8 +20,10 @@ define(function(require, exports, module) {
 		else 
 			return false;
   	};
-  	//判断 是否为空  可以传入数组
+
+  	//判断 是否为有效值  传入数组
   	parseString.prototype.isEmpty=function(str){
+  		//str string Array
   		var result=true,tthis=this;
   		if(str instanceof Array)
 		{	
@@ -34,35 +34,41 @@ define(function(require, exports, module) {
 				}	
 			});
 		}else{
-			
-			//result=strNoEmpty(str);
 			result=this.isValid(str);
 		}
 		return result;
   	}
+  	//string number boolean undefined null symbol        object 
+
+
   	//判断 是否为有效值
+  	//true: 非空string  number  非空object
+  	//false :   boolean  undefined  null  空对象  1  0     
   	parseString.prototype.isValid=function(str){
-		if(strNoEmpty(str)&&str!==false&&str!=undefined){
+		if(str!=null&&((Object.keys(str).length>0&&typeof(str)=='object')||(strNoEmpty(str)&&typeof(str)=='string')||typeof(str)=='number')){
 			return true;
 		}else{
 			return false;
 		}
   	}
 
-  	//判断 是否为有效值 并转换
+  	//将无效意义的字符串转换   
   	parseString.prototype.toValid=function(str,toStr){
-		if(strNoEmpty(str)&&str!='null'&&str!='false'&&str!='undefined'){
+		// string str
+		if(strNoEmpty(str)&&str!='null'&&str!='undefined'&&typeof(str)=='string'){
 			return str;
 		}else{
 			return toStr;
 		}
   	}
-  	
-  	/*判断 是否为  0或者大于0的  可以是0开头的  数字   */
+
+  	//判断 是否为  0或者大于0的  可以是0开头的  数字
   	parseString.prototype.isNumber=function(str){
 		return /^[0-9]+$/.test(str); 
 
   	}
+
+
   	/*判断 几个字符串*/
   	parseString.prototype.lessLength=function(str,length){
   		var s=$.trim(str);

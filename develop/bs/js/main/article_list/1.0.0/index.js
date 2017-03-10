@@ -97,10 +97,10 @@ define(function(require) {
 		var tthis=$(this);
 		tthis.prop('disabled',true);
 		POPUPWINDOW.confirm("一匡后台","确认执行删除操作吗？再想想？",function(){
-			AJAXMY.send('/article/delete',{id:tthis.parent().parent().attr("data-id")},function(d){
+			AJAXMY.send('/article/delete',{id:tthis.parent().parent().parent().attr("data-id")},function(d){
 				if(d['result']){
 					POPUPWINDOW.alert('删除成功');
-					tthis.parent().parent().remove();
+					tthis.parent().parent().parent().remove();
 				}else{
 					POPUPWINDOW.alert('删除失败');	
 				}

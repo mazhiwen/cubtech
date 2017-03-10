@@ -1,7 +1,8 @@
 define(function(require) {
-	var $=require('jquery');
-	$=jQuery;
-	var	commonMain=new(require('commonMain')),
+
+    
+
+    var	commonMain=new(require('commonMain')),
         ball1=(require('ball'))('s1_canvas',200,2),
         ball2=(require('ball'))('s2_canvas',200,2),
         content_outer=$(".content_outer");
@@ -83,6 +84,28 @@ define(function(require) {
             }
         }
     });
+
+
+/*
+    
+    //上下滑动事件
+    function preventTouchDefault(event){
+        event.preventDefault();
+
+    }
+    document.addEventListener('touchmove', preventTouchDefault, false);
+    ZEPTO(document).on('swipeUp',function(e){
+            //down
+            scrollDown(1);
+        }
+    );
+    ZEPTO(document).on('swipeDown',function(e){          
+            //up
+            scrollUp(1);  
+        }
+    );
+
+    */
     //上下按键事件
     $(document).on('keydown',function(e){
         if(controlScroll){
@@ -110,9 +133,6 @@ define(function(require) {
         }
     });
 
-
-
-
     //s2 hover 文字的框
     $(".s2_text_box").each(function(i,e){
         $(this).hover(function(e){
@@ -121,7 +141,7 @@ define(function(require) {
             $("#s2_border").css("top",30+i*150+"px");            
         });
     });
-    //$("footer").hide();
+
 
 
     //右侧箭头事件
@@ -212,6 +232,95 @@ define(function(require) {
             }      
         });
     });
+    
+
+    ZEPTO('#section_2').swipeLeft(function(){
+        alert(2);
+        var clickClassIndex=$(this).attr("class").substr(5,1);     
+        //顺时针偏移一位
+        if(clickClassIndex==4){
+            $(".album_box>div").each(function(){
+                var nowClass=$(this).attr("class");
+                var nowClassIndex=nowClass.substr(5,1);
+                var changeIndex;
+                if(nowClassIndex==1){
+                    changeIndex=7;
+                }else{
+                    changeIndex=nowClassIndex-1;
+                }
+                $(this).addClass('album'+changeIndex).removeClass(nowClass);
+            });
+        }
+        //顺时针偏移两位
+        if(clickClassIndex==5){
+            $(".album_box>div").each(function(){
+                var nowClass=$(this).attr("class");
+                var nowClassIndex=nowClass.substr(5,1);
+                var changeIndex;
+                if(nowClassIndex==2){
+                    changeIndex=7;
+                }else if(nowClassIndex==1){
+                    changeIndex=6;
+                }
+                else{
+                    changeIndex=nowClassIndex-2;
+                }
+                $(this).addClass('album'+changeIndex).removeClass(nowClass);
+            });
+        }
+        //逆时针偏移一位
+        if(clickClassIndex==2){
+            $(".album_box>div").each(function(){
+                var nowClass=$(this).attr("class");
+                var nowClassIndex=nowClass.substr(5,1);
+                var changeIndex;
+                if(nowClassIndex==7){
+                    changeIndex=1;
+                }else{
+                    changeIndex=parseInt(nowClassIndex)+1;
+                }
+                $(this).addClass('album'+changeIndex).removeClass(nowClass);
+            });
+        }
+        //逆时针偏移两位
+        if(clickClassIndex==1){
+            $(".album_box>div").each(function(){
+                var nowClass=$(this).attr("class");
+                var nowClassIndex=nowClass.substr(5,1);
+                var changeIndex;
+                if(nowClassIndex==6){
+                    changeIndex=1;
+                }else if(nowClassIndex==7){
+                    changeIndex=2;
+                }
+                else{
+                    changeIndex=parseInt(nowClassIndex)+2;
+                }
+                $(this).addClass('album'+changeIndex).removeClass(nowClass);
+            });
+        }      
+    });
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 

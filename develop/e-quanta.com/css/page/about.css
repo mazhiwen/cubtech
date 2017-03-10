@@ -58,3 +58,25 @@ html,body,.container,.center,.center>img{
 .text_wrap_p3,.text_wrap_p1{
 	color: rgb(125,125,125);
 }
+
+
+
+@media(max-width:450px) {
+	.content_wrap {
+	    width: 90%;
+	}
+	.text_wrap>h2 {
+	    font-size: 15px;
+	}
+	.text_wrap_p3, .text_wrap_p1 {
+	    font-size: 14px;
+	}
+	.text_wrap_p2 {
+	    font-size: 13px;
+	}
+
+
+
+
+}
+

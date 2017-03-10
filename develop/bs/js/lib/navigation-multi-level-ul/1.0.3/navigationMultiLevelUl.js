@@ -9,6 +9,8 @@ define(function(require,exports,module) {
 			subject_edit:4,
 			activity_edit:5,
 			activity_verify:5,
+			activity_city_config:5,
+			activity_city_edit:5,
 			banner_edit:8,
 			ad_edit:9,
 			sys_push_edit:10,
