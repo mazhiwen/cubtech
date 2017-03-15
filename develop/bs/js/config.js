@@ -114,7 +114,7 @@ seajs.config({
       "paging": "paging/1.0.0/paging.js",
       "dateTimePicker": "date-time-picker/1.0.0/dateTimePicker.js",
       "ajaxMy":'ajaxMy/1.0.2/ajaxMy.js',
-      "myUI":'myui/1.0.0/myUI.js',
+      "MyUI":'myui/1.0.0/myUI.js',
       "commonNavigation":'../../../modules/commonnavigation/1.0.0/commonNavigation.js',
       "commonMain":'../../../modules/commonmain/1.0.0/commonMain.js',
       "integratedcomponents":'../../../modules/integratedcomponents/integratedComponents.js'

@@ -19,7 +19,7 @@ define(function(require) {
 				};
 
 			$.each(dr['result'],function(k,v){
-				s+='<tr data-id='+v['id']+'><td>'+v['id']+'</td><td>'+domestic[v['domestic']]+'</td><td>'+v['addressName']+'</td><td>'+v['pinyin']+'</td><td><input class="hotstatus" type="checkbox" '+status[v['hotStatus']]+'></td><td><input class="status" type="checkbox" '+status[v['status']]+'></td><td><a href="activity_city_edit.html?id='+v['id']+'"><button class="text_button">编辑</button></a> <button class="text_button city_delete">删除</button></td></tr>';
+				s+='<tr data-id='+v['id']+'><td>'+v['id']+'</td><td>'+domestic[v['domestic']]+'</td><td>'+v['addressName']+'</td><td>'+v['fullName']+'</td><td>'+v['englishName']+'</td><td>'+v['pinyin']+'</td><td>'+v['fullSpell']+'</td><td><input class="hotstatus" type="checkbox" '+status[v['hotStatus']]+'></td><td><input class="status" type="checkbox" '+status[v['status']]+'></td><td><a href="activity_city_edit.html?id='+v['id']+'"><button class="text_button">编辑</button></a> <button class="text_button city_delete">删除</button></td></tr>';
 			});
 			table_body_lsit.append(s);
 			myPaging.refreshDom(dr['pages']);

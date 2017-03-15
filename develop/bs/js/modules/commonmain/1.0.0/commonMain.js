@@ -8,7 +8,7 @@ define(function(require) {
 	DOCCOOKIES=new(require('docCookies'));
 	PARSESTRING=new(require('parseString'));
 
-	MYUI = new (require('myUI'));
+	MYUI = new (require('MyUI'));
 	
 	var navMulLevUl=require('navigationMultiLevelUl'),
 		navMulLevUlMy=new navMulLevUl('#left'),

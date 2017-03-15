@@ -6,7 +6,10 @@ define(function(require) {
 		parseString=new(require('parseString')),
 		transformTime=new(require('transformTime')),
 		dateTimePicker=require('dateTimePicker'),
-		my_dateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){}),
+		my_dateTimePicker=new dateTimePicker({
+					activateDom:'#activedate',
+					fillDom:'#filldate'
+				}),
 		commit_button=$("#commit-button"),
 		filldate=$("#filldate"),
 		summary=$("#summary"),

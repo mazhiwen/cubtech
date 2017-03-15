@@ -2,7 +2,10 @@ define(function(require) {
 	var commonMain=require('commonMain'),
 		dateTimePicker=require('dateTimePicker'),
 		parseString=new(require('parseString')),
-		myDateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){}),
+		myDateTimePicker=new dateTimePicker({
+					activateDom:'#activedate',
+					fillDom:'#filldate'
+				}),
 		type=$("#type"),
 		upload_user=$("#upload_user"),
 		button_push_now=$("#button_push_now"),

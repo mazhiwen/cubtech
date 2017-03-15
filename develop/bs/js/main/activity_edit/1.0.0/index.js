@@ -3,12 +3,54 @@ define(function(require) {
 	var commonMain=require('commonMain'),
 		parseString=new(require('parseString')),
 		dateTimePicker=require('dateTimePicker'),
-		dateStart=new dateTimePicker('#activedate','#filldate',function(d){}),
-		dateEnd=new dateTimePicker('#activedate_end','#filldate_end',function(d){}),
-		dateLine=new dateTimePicker('#activedate_line','#filldate_line',function(d){}),
+		/*dateStart=new dateTimePicker(
+				{
+					activateDom:'#activedate',
+					fillDom:'#filldate',
+					HMSEmpty:true
+				}
+
+			),*/
+		dateStart=new MYUI.DateTimePicker(
+				{
+					box:'.date_start_box',
+					HMSEmpty:true
+				}
+
+			),
+		dateEnd=new MYUI.DateTimePicker(
+				{
+					box:'.date_end_box',
+					HMSEmpty:true
+				}
+
+			),
+		/*
+		dateEnd=new dateTimePicker(
+				{
+					activateDom:'#activedate_end',
+					fillDom:'#filldate_end',
+					HMSEmpty:true
+				}
+
+			),
+		dateLine=new dateTimePicker(
+				{
+					activateDom:'#activedate_line',
+					fillDom:'#filldate_line'
+				}
+			),*/
+		dateLine=new MYUI.DateTimePicker(
+				{
+					box:'.date_line_box'
+				}
+
+			),
 		id=parseString.getGet('id'),
 		title=$('.title'),
-		address=$('.address'),
+		country=$('.country'),
+		province=$('.province'),
+		city=$('.city'),
 		organizer=$('.organizer'),
 		third_url=$('.third_url'),
 		organizer_url=$('.organizer_url'),
@@ -28,29 +70,36 @@ define(function(require) {
 		filldate_line=$("#filldate_line"),
 		save_button=$(".save_button"),
 		ImageId='';	
-	dateStart._init();
-	dateEnd._init();
-	dateLine._init();
+	//dateStart._init();
+	//dateEnd._init();
+	//dateLine._init();
+
 	function commonSendFn(id,tthis,publish_status,sendTail){
 		tthis.prop("disabled",true);
-		var title_v=title.val();
-		var start_time=filldate.val();
-		var end_time=filldate_end.val();
-		var apply_count=sign_count.val();
-		var addressV=address.val();
-		var addressDetail=address_details.val();
-		var isId=parseString.isEmpty(id);
-		if(parseString.isEmpty([title_v,start_time,end_time,addressV,ImageId,addressDetail])&&parseString.isNumber(apply_count)){
+		var title_v=title.val(),
+			//start_time=filldate.val(),
+			//end_time=filldate_end.val(),
+			start_time=dateStart.getDate('YMD'),
+			end_time=dateEnd.getDate('YMD'),
+			apply_count=sign_count.val(),
+			countryV=country.val(),
+			provinceV=province.val(),
+			addressDetail=address_details.val(),
+			isId=parseString.isEmpty(id);
+		console.log([title_v,start_time,end_time,countryV,provinceV,ImageId,addressDetail]);	
+		if(parseString.isEmpty([title_v,start_time,end_time,countryV,provinceV,ImageId,addressDetail])&&parseString.isNumber(apply_count)){
 			var apply_status=is_sign.prop("checked");
 			var sendData={
 				event_name:title_v,
 				sys_image_id:ImageId,
 				cover_pic:cover_img.attr("src"),
 				content:ue.getContent(),
-				start_time:start_time,
-				end_time:end_time,
-				deadline:filldate_line.val(),
-				address:addressV,
+				event_start_date:start_time,
+				event_end_date:end_time,
+				deadline:dateLine.getDate('YMD')+' '+dateLine.getDate('HMS'),
+				country:countryV,
+				province:provinceV,
+				city:city.val(),
 				address_detail:addressDetail,
 				organizer:organizer.val(),
 				url:organizer_url.val(),
@@ -62,6 +111,12 @@ define(function(require) {
 				keyword:'',
 				publish_status:publish_status
 			};
+			if(PARSESTRING.isEmpty([dateStart.chooseDate['hour'],dateStart.chooseDate['min'],dateStart.chooseDate['sec']])){
+				sendData['event_start_time']=dateStart.getDate('HMS');
+			}
+			if(PARSESTRING.isEmpty([dateEnd.chooseDate['hour'],dateEnd.chooseDate['min'],dateEnd.chooseDate['sec']])){
+				sendData['event_end_time']=dateEnd.getDate('HMS');
+			}
 			if(isId) sendData['id']=id;
 			if(!apply_status) sendData['apply_page_url']=third_url.val();
 			AJAXMY.send(
@@ -81,11 +136,6 @@ define(function(require) {
 				}
 			);
 		}else{
-			console.log(parseString.isEmpty([title_v,start_time,end_time,addressV,ImageId,addressDetail]));
-			console.log(apply_count);
-			console.log(parseString.isNumber(apply_count));
-
-
 
 			POPUPWINDOW.alert('部分选项未填/格式错误');
 			tthis.prop('disabled',false);
@@ -93,8 +143,6 @@ define(function(require) {
 		}
 
 	}
-
-
 
 	ue.ready(function(){
 		if(id){
@@ -104,10 +152,42 @@ define(function(require) {
 				ImageId=dr['sysImageId'];
 				cover_img.attr('src',dr['coverPic']);
 				ue.setContent(dr['content']);
-				filldate.val(parseString.MSToYMDHMS(dr['startTime']));
-				filldate_end.val(parseString.MSToYMDHMS(dr['endTime']));
-				filldate_line.val(parseString.MSToYMDHMS(dr['deadline']));
-				address.val(dr['address']);
+				//filldate.val(parseString.MSToYMDHMS(dr['startTime']));
+				//filldate_end.val(parseString.MSToYMDHMS(dr['endTime']));
+				dateStart.renderDateDom.val(dr['eventStartDate']+' '+dr['eventStartTime']);
+				dateStart.setDate({
+					year:dr['eventStartDate'].split('-')[0],
+					month:dr['eventStartDate'].split('-')[1],
+					day:dr['eventStartDate'].split('-')[2],
+					hour:dr['eventStartTime'].split(':')[0],
+					minute:dr['eventStartTime'].split(':')[1],
+					second:dr['eventStartTime'].split(':')[2]
+				});
+				dateEnd.renderDateDom.val(dr['eventEndDate']+' '+dr['eventEndTime']);
+				
+				dateEnd.setDate({
+					year:dr['eventEndDate'].split('-')[0],
+					month:dr['eventEndDate'].split('-')[1],
+					day:dr['eventEndDate'].split('-')[2],
+					hour:dr['eventEndTime'].split(':')[0],
+					minute:dr['eventEndTime'].split(':')[1],
+					second:dr['eventEndTime'].split(':')[2]
+				});
+				dateLine.renderDateDom.val(PARSESTRING.MSToYMDHMS(dr['deadline']));
+				/*
+				dateLine.setDate({
+					year:dr['eventStartDate'].split('-')[0],
+					month:dr['eventStartDate'].split('-')[1],
+					day:dr['eventStartDate'].split('-')[2],
+					hour:dr['eventStartTime'].split(':')[0],
+					minute:dr['eventStartTime'].split(':')[1],
+					second:dr['eventStartTime'].split(':')[2]
+				});
+				*/
+				//filldate_line.val();
+				country.val(dr['country']);
+				province.val(dr['province']);
+				city.val(dr['city']);
 				organizer.val(dr['organizer']);
 				organizer_url.val(dr['url']);
 				organizer_contact.val(dr['contact']);
@@ -144,19 +224,7 @@ define(function(require) {
 		ImageId=data['sysImageId'];
 	});
 	dele_cov_img.click(function(){
-		/*$(this).prop('disabled',true);
-		var that=$(this);
-		AJAXMY.send(
-			'/article/delete_pic',
-			{sys_image_id:ImageId},
-			function(d){
-				if(d['result']) {
-					ImageId='';
-					
-				}
-				that.prop('disabled',false);
-			}
-		);*/
+
 		ImageId='';
 		cover_img.attr("src",'');
 	});

@@ -1,7 +1,13 @@
 
 define(function(require) {
 	var dateTimePicker=require('dateTimePicker');
-	var my_dateTimePicker=new dateTimePicker('#activedate','#filldate',function(d){});
+	var my_dateTimePicker=new dateTimePicker(
+				{
+					activateDom:'#activedate',
+					fillDom:'#filldate'
+				}
+
+			);
 	my_dateTimePicker._init();
 
 	var commonMain=require('commonMain'),

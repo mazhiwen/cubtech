@@ -5,8 +5,17 @@ define(function(require) {
 		t=new(require('transformTime')),
 		//parseString=new(require('parseString')),
 		a=require('dateTimePicker'),
-		d=new a('#activedate','#filldate',function(d){}),
-		c=new a('#activedate_c','#filldate_c',function(d){}),
+		d=new a(
+				{
+					activateDom:'#activedate',
+					fillDom:'#filldate'
+				}
+
+			),
+		c=new a({
+					activateDom:'#activedate_c',
+					fillDom:'#filldate_c'
+				}),
 		id=PARSESTRING.getGet('id'),
 		title=$("#title"),
 		paging = require('paging'),
