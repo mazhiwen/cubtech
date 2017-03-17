@@ -24,6 +24,10 @@ define(function(require) {
 				publishStatus={
 					'true':'已发布',
 					'false':'未发布'
+				},
+				domesticStatus={
+					'true':'国内',
+					'false':'海外'
 				};
 
 			$.each(dr['result'],function(k,v){
@@ -34,7 +38,7 @@ define(function(require) {
 				}else{
 					sOperate='<a href="activity_verify.html?id='+v['id']+'"><button class="text_button">审核</button></a> <a href="activity_edit.html?id='+v['id']+'"><button class="text_button">编辑</button></a> <button class="text_button cancel_activity">取消活动</button>';
 				}
-				s+='<tr data-id='+v['id']+'><td>'+v['id']+'</td><td>'+v['eventName']+'</td><td>'+statusArray[v['status']]+'</td><td>'+v['startDateTime']+'</td><td>'+v['endDateTime']+'</td><td>'+v['address']+'</td><td>'+v['organizer']+'</td><td>'+boolText[v['applyStatus']]+'</td><td>'+v['applyCount']+'</td><td>'+v['applicantCount']+'</td><td>'+publishStatus[v['publishStatus']]+'</td><td>'+sOperate+'</td></tr>';
+				s+='<tr data-id='+v['id']+'><td>'+v['id']+'</td><td>'+v['eventName']+'</td><td>'+statusArray[v['status']]+'</td><td>'+v['startDateTime']+'</td><td>'+v['endDateTime']+'</td><td>'+v['address']+'</td><td>'+v['organizer']+'</td><td>'+boolText[v['applyStatus']]+'</td><td>'+v['applyCount']+'</td><td>'+v['applicantCount']+'</td><td>'+publishStatus[v['publishStatus']]+'</td><td>'+domesticStatus[v['domestic']]+'</td><td>'+sOperate+'</td></tr>';
 			});
 			table_body_lsit.append(s);
 			myPaging.refreshDom(dr['pages']);

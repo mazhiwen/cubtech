@@ -1,0 +1,16 @@
+@import url('../common/main.css');
+#paging-outer{text-align: center;margin-top: 50px;}
+#table_body>tr>td:nth-child(15){min-width: 80px;}
+#search_outer>button{margin-right: 20px;}
+#title_input{width: 200px;}
+#author_input,#uploader_input,#article_type,#keyword_input{
+	width: 100px;
+}
+#search_outer>.form-input{
+	
+}
+#search_outer>.form-input>span{
+	width: auto;
+	margin:0 1em;
+}
+

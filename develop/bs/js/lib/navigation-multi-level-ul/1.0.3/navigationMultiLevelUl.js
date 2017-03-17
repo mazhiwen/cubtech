@@ -24,7 +24,8 @@ define(function(require,exports,module) {
 			comment_details:14,
 			role_edit:15,
 			role_permission:15,
-			appcomponents_edit:18
+			appcomponents_edit:18,
+			statistic:18
 
 		};
 		this.curInd=0;
@@ -113,7 +114,8 @@ define(function(require,exports,module) {
 		    	'版本':['app_version'],
 		    	'一键关注':['onekey_focus'],
 		    	'组件':['appcomponents_list'],
-		    	'大V排序':['v_order']
+		    	'大V排序':['v_order'],
+		    	'搜索统计':['statistic']
 		    },
 		    /*
 		    '权限':{

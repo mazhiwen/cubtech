@@ -24,7 +24,8 @@ define(function(require) {
             document.title='一匡活动-'+title;    
             $(".cover_img").attr("src",coverImg);
             $(".activity_title").text(title);
-            $(".time").text(components.MSToYMDHM(dr['startTime'])+' 至 '+components.MSToYMDHM(dr['endTime']));
+            //$(".time").text(components.MSToYMDHM(dr['startTime'])+' 至 '+components.MSToYMDHM(dr['endTime']));
+            $(".time").text(dr['dateTimeInfo']);
             $(".address").text(dr['addressDetail']);
             $(".count_person").text(applyCount);
             $(".org").text('主办方：'+dr['organizer']);

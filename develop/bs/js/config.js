@@ -19,12 +19,12 @@ ueditor-config-serverurl
 
 
 //本地
-URLHEAD='//localhost/e-quanta/develop/bs';
-REQUESTHEAD='//localhost:8080';
+//URLHEAD='//localhost/e-quanta/develop/bs';
+//REQUESTHEAD='//localhost:8080';
 
 //测试
 
-//REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
+REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
 
 //线上
 //URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
@@ -89,7 +89,8 @@ var pageVersionObj = {
     appcomponents_list:'1.0.0',
     v_order:'1.0.0',
     activity_city_config:'1.0.0',
-    activity_city_edit:'1.0.0'
+    activity_city_edit:'1.0.0',
+    statistic:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({

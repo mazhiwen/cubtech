@@ -8,7 +8,17 @@ define(function(require) {
 	DOCCOOKIES=new(require('docCookies'));
 	PARSESTRING=new(require('parseString'));
 
-	MYUI = new (require('MyUI'));
+	MYUI = new (require('MyUI'))({
+  			DateTimePicker:{
+  				pattern:{
+  					YMD:'YY-MM-DD',
+  					HIS:'HH:II:SS',
+  					YMDHIS:'YY-MM-DD HH:II:SS'
+  				}
+  			}
+  		});
+
+	
 	
 	var navMulLevUl=require('navigationMultiLevelUl'),
 		navMulLevUlMy=new navMulLevUl('#left'),

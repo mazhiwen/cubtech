@@ -219,6 +219,20 @@ input[type=checkbox]{
     vertical-align: middle;
 }
 
+.ipt_xs{
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.ipt_s {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
 
 
 /******************************************************
@@ -789,9 +803,6 @@ button.upload_box_delete{
 button.upload_box_delete:enabled:active {
     position: absolute;
 }
-
-
-
 /*********************************************************
 关联样式*/
 
@@ -823,3 +834,69 @@ button.upload_box_delete:enabled:active {
 .relation_two .search_input {
     width: auto;
 }
+
+/*********************************************************
+时间选择器  date-time-picker*/
+.glyphicon-chevron-left:before {
+  content: "\e079";
+}
+.glyphicon-chevron-right:before {
+  content: "\e080";
+}
+/*时间选择器外部*/
+.date-time-picker-outer{
+ position: relative;
+  display: inline-block;}
+.date-time-picker-outer>button{
+  border-radius: 0.5em 0 0 0.5em;
+}
+.date-time-picker-outer>input{
+  border-radius:0 5px 5px 0; 
+  background-color: rgb(250,250,250);width: auto; 
+  text-align: center;
+}
+
+
+/*时间选择器*/
+.dateTimePicker{width: 245px;text-align: center; border:1px solid black;border-radius: 5px; position: absolute; z-index: 1000;}
+.dateTimePicker button{
+	/*
+	height: 30px;width: 50px; margin:0 5px;box-sizing:border-box;padding: 0;border: none;
+*/
+}
+.dateTimePicker>div:nth-child(1){text-align: center;background-color: rgb(250,250,250); font-size: 20px;padding: 8px 0;}
+.dateTimePicker>div:nth-child(1)>button{cursor: pointer;border-radius: 5px;background-color: transparent;color: rgba(0,0,0,0.3);}
+.dateTimePicker>div:nth-child(1)>button:hover{
+	color: rgba(0,0,0,1);
+}
+.dateTimePicker>div:nth-child(1)>button>span{
+	font-size: 18px;
+}
+.dateTimePicker>div:nth-child(1)>span{
+	font-size: 17px;
+}
+.dateTimePicker>div:nth-child(2){background-color: rgb(250,250,250);}
+.dateTimePicker>div:nth-child(2)>span{
+  display: inline-block;width: 34px;
+  height: 35px;line-height: 35px;
+  border: 1px solid rgb(220,220,220);box-sizing:border-box;
+}
+.dateTimePicker>div:nth-child(3){background-color: rgb(240,240,240);}
+.dateTimePicker>div:nth-child(3)>span{
+  display: inline-block;width: 34px;height: 35px;
+  line-height: 35px;border: 1px solid rgb(250,250,250);
+  box-sizing:border-box;cursor: pointer; 
+}
+.dateTimePicker>div:nth-child(4){background-color: rgb(250,250,250);padding: 10px 0;border-top: 1px solid rgb(220,220,220);}
+.dateTimePicker select{
+	width: 50px;
+  margin:0 3px;
+ padding:0 3px;
+  
+}
+
+
+
+
+
+
