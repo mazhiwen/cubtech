@@ -48,7 +48,7 @@ UEDITORTOPOFFSET=71;
 //REQUESTHEAD='https://test.e-quanta.com';
 
 //本地环境
-//REQUESTHEAD='//localhost:8080';
+REQUESTHEAD='//localhost:8080';
 
 seajs.config({
     base: "./js/lib/",

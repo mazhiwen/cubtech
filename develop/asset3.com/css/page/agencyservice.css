@@ -1,0 +1,21 @@
+@import url('../common/main.css');
+
+.content_oneblock>img{
+
+}
+
+
+.agencyservice1,.agencyservice2{
+
+	display: block;
+	margin: auto;
+    max-width: 500px;
+	margin-bottom:100px;
+}
+
+
+
+
+
+
+

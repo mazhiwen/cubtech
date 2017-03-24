@@ -195,10 +195,19 @@ to {margin-top: 200px;}
 
 
 /*内容区域*/
+
 .content{
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0,0.2);
-	width: 80%;margin: auto;background-color: black;
+	/*
+	width: 80%;
+	margin: auto;
 	height: auto;
+	*/
+	
+	background-color: black;
+	   
+}
+.container {
+    background: white;
 }
 .slogan_outer{
 	background-color: rgb(237, 237, 237);

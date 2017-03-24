@@ -25,17 +25,17 @@ define(function(require) {
 		currentDom=navMulLevUlMy.getCurDom();
 	
 
-/*
-	if(!DOCCOOKIES.hasItem('loginName')){
+
+/*	if(!DOCCOOKIES.hasItem('loginName')){
 		POPUPWINDOW.alert('未登录，请登录',function(){
 			window.location.href='../login.html';
 		});
 	}else{
-*/
 
+*/
 		//顶部右侧用户状态
 		
-		$(".top").append('<div class="top_left"><span class="label">一匡后台管理系统_测试版,测试版,测试版</span></div><div class="top_right">'+'<span class="label">hello , '+DOCCOOKIES.getItem('userNickName')+'</span><img class="login_user_head" src="http://cdn.e-quanta.com/headpic/default.png"><button class="button sign_out">退出系统</button></div>');
+		$(".top").append('<div class="top_left"><span class="label">一匡后台管理系统</span></div><div class="top_right">'+'<span class="label">hello , '+DOCCOOKIES.getItem('userNickName')+'</span><img class="login_user_head" src="http://cdn.e-quanta.com/headpic/default.png"><button class="button sign_out">退出系统</button></div>');
 		$("#login_user_nic_name,#user_info_name").text(DOCCOOKIES.getItem('userNickName'));	
 		$(".login_user_head").attr("src",DOCCOOKIES.getItem('userHead'));
 		var top_right=$(".top_right"),
@@ -68,7 +68,7 @@ define(function(require) {
 		$("#navigation-crumb>span:eq(0)").text(currentDom.parent().parent().prev().parent().parent().prev().text()+'-');
 		$("#navigation-crumb>span:eq(1)").text(currentDom.parent().parent().prev().text()+'-');
 		$("#navigation-crumb>span:eq(2)").text(currentDom.text());	
-	//}	
+//	}	
 	
 });
 

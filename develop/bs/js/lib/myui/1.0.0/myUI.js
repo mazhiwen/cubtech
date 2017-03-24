@@ -4,7 +4,9 @@ define(function(require, exports, module) {
 
 	var myUIConfig=null;
 	var myuiid=0;
-	var isShowDTP=false;
+
+	//日历选择器显示状态
+	var isShowDTPID=0;
 
   	function MyUI(config){
   		myUIConfig=config;
@@ -125,9 +127,7 @@ define(function(require, exports, module) {
 			}
 		});
 		this.config=config;
-		//选择器 显示状态
-
-		this.isShow=false;	
+			
 
 		//当前选中 或者 设置 的日期  xxxx xx xx xx  xx  xx格式
 		//默认 年月日为当天 
@@ -278,7 +278,7 @@ define(function(require, exports, module) {
 							'<div><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-chevron-left"></span></button><span>2016</span>年<span>6</span>月<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-chevron-right"></span></button></div>',
 							'<div><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>',
 							'<div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>',
-							'<div><select class="dtm_hour input">'+defaultHMS+'<option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>时<select class="dtm_minute input">'+defaultHMS+'<option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>分<select class="dtm_second input">'+defaultHMS+'<option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>秒<button class="button dtp_confirm btn_xs">确认</button> <button class="button btn_xs dtp_empty">清空</button></div>',
+							'<div><select class="dtm_hour input ipt_xs">'+defaultHMS+'<option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>时<select class="ipt_xs dtm_minute input">'+defaultHMS+'<option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>分<select class="ipt_xs dtm_second input">'+defaultHMS+'<option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>秒<button class="button dtp_confirm btn_xs">确认</button> <button class="button btn_xs dtp_empty">清空</button></div>',
 						'</div>'].join('');
 		var html=['<div class="date-time-picker-outer" data-myuiid="'+theMyuiid+'"><button class="button date_time_picker_activebtn">选择</button>',pickerHtml,'<input type="text" disabled class="input date_time_picker_filldate"></div>'].join('');
 		$(this.config['box']).append(html);
@@ -286,6 +286,7 @@ define(function(require, exports, module) {
 		//获取日历触发按钮  日历填充按钮
 		this.activateDom=DOM(theMyuiid).find(".date_time_picker_activebtn");
 		this.renderDateDom=DOM(theMyuiid).find(".date_time_picker_filldate");
+		this.pickerPanel=DOM(theMyuiid).find(".dateTimePicker");
 		//初始化 默认填充选中的 年月
 		this.fillDateDom(this.chooseDate['year'],this.chooseDate['month']);	
 		this.addFillDateListener();
@@ -307,23 +308,33 @@ define(function(require, exports, module) {
 	DateTimePicker.prototype.addSwitchDateListener=function(){
 		var mythis=this;
 		this.activateDom.click(function(){
-			//如果正在显示
-			if(mythis.isShow){
-				mythis.activateDom.next().hide();
-				mythis.isShow=false;
-			//如果正在关闭
-			}else{
-				console.log(isShowDTP);
-
-				if(mythis.showDate['year']!=mythis.chooseDate['year']||mythis.showDate['month']!=mythis.chooseDate['month']){
+			//如果当前无显示
+			if(isShowDTPID==0){
+				var theChooseDate=mythis.chooseDate;
+				var theChooseYear=theChooseDate['year'];
+				var theChooseMonth=theChooseDate['month'];
+				if(mythis.showDate['year']!=theChooseYear||mythis.showDate['month']!=theChooseMonth){
 					//设置显示日期为 选中日期
-					mythis.showDate['year']=mythis.chooseDate['year'];
-					mythis.showDate['month']=mythis.chooseDate['month'];
-					mythis.showDate['day']=mythis.chooseDate['day'];
-					mythis.fillDateDom(mythis.chooseDate['year'],mythis.chooseDate['month']);
+					mythis.showDate['year']=theChooseYear;
+					mythis.showDate['month']=theChooseMonth;
+					mythis.showDate['day']=theChooseDate['day'];
+					mythis.fillDateDom(theChooseYear,theChooseMonth);
 				}
-				mythis.activateDom.next().show();
-				mythis.isShow=true;
+				mythis.pickerPanel.show();
+				//隐藏其他选择其
+				isShowDTPID=mythis.myuiid;
+				
+			//如果当前有显示
+			}else{
+				//如果显示的是触发按钮所在
+				if(isShowDTPID==mythis.myuiid){
+					mythis.pickerPanel.hide();
+					isShowDTPID=0;	
+				}else{
+					mythis.pickerPanel.show();
+					DOM(isShowDTPID).find(".dateTimePicker").hide();
+					isShowDTPID=mythis.myuiid;
+				}
 			}	
 		});
 	}
@@ -340,7 +351,7 @@ define(function(require, exports, module) {
 		var IsChooseYearMonth=this.chooseDate['year']==year&&this.chooseDate['month']==month;
 		//遍历填充月的 日期数
 		while(a<=countMonthDays[month-1]){
-			var dom=this.activateDom.next().children("div:eq(2)").children("span:eq("+c+")");
+			var dom=this.pickerPanel.children("div:eq(2)").children("span:eq("+c+")");
 			//如果显示年月日完全等于设置 或者 选中的 年月日 设置样式
 			if(IsChooseYearMonth&&a==this.chooseDate['day']){
 				this.choosedStyle(dom);
@@ -353,8 +364,8 @@ define(function(require, exports, module) {
 		//遍历下一个月的 日期数  并填充
 		a=1;
 		while(c<=41){
-			this.activateDom.next().children("div:eq(2)").children("span:eq("+c+")").attr("data-isnow","next");
-			this.activateDom.next().children("div:eq(2)").children("span:eq("+c+")").text(a);
+			this.pickerPanel.children("div:eq(2)").children("span:eq("+c+")").attr("data-isnow","next");
+			this.pickerPanel.children("div:eq(2)").children("span:eq("+c+")").text(a);
 			c++;
 			a++;
 		}
@@ -370,14 +381,14 @@ define(function(require, exports, module) {
 		}
 		//填充上一个月的日期数
 		while((b-1)>=0){
-			this.activateDom.next().children("div:eq(2)").children("span:eq("+(b-1)+")").attr("data-isnow","pre");
-			this.activateDom.next().children("div:eq(2)").children("span:eq("+(b-1)+")").text(a);
+			this.pickerPanel.children("div:eq(2)").children("span:eq("+(b-1)+")").attr("data-isnow","pre");
+			this.pickerPanel.children("div:eq(2)").children("span:eq("+(b-1)+")").text(a);
 			a--;
 			b--;
 		}
 		//填充上方现实的 年 月
-		this.activateDom.next().children("div:eq(0)").children("span:eq(0)").text(year);
-		this.activateDom.next().children("div:eq(0)").children("span:eq(1)").text(month);
+		this.pickerPanel.children("div:eq(0)").children("span:eq(0)").text(year);
+		this.pickerPanel.children("div:eq(0)").children("span:eq(1)").text(month);
 	}
 	DateTimePicker.prototype.monthDaysArray=function(year){
 		var countMonthDays=[31,28,31,30,31,30,31,31,30,31,30,31];
@@ -389,18 +400,17 @@ define(function(require, exports, module) {
 	DateTimePicker.prototype.addFillDateListener=function(){
 		var mythis=this;
 		//确定按钮事件  dtp_confirm  
-		//this.activateDom.next().children("div:eq(3)").children("button").click(function(){
 		DOM(this.myuiid).find(".dtp_confirm").click(function(){
 			
 			mythis.chooseDate['hour']=DOM(mythis.myuiid).find(".dtm_hour").val();
 			mythis.chooseDate['min']=DOM(mythis.myuiid).find(".dtm_minute").val();
 			mythis.chooseDate['sec']=DOM(mythis.myuiid).find(".dtm_second").val();
 			mythis.fillChoosedDate();
-			mythis.activateDom.next().hide();
-			mythis.isShow=false;
+			mythis.pickerPanel.hide();
+			isShowDTPID=0;
 		});
 		//选中日期事件  样式
-		this.activateDom.next().children("div:eq(2)").children().each(function(index, element) {
+		this.pickerPanel.children("div:eq(2)").children().each(function(index, element) {
 			$(this).click(function(){
 				
 				mythis.choosedStyle($(this));
@@ -452,11 +462,11 @@ define(function(require, exports, module) {
 	DateTimePicker.prototype.addChangeMonthListener=function(){
 		var mythis=this;
 		function clearStyle(){
-			var dom=mythis.activateDom.next().children("div:eq(2)").children();
+			var dom=mythis.pickerPanel.children("div:eq(2)").children();
 			dom.css("background-color","transparent").css("color","black");
 		}
 		//上个月
-		this.activateDom.next().children("div:eq(0)").children("button:eq(0)").click(function(){
+		this.pickerPanel.children("div:eq(0)").children("button:eq(0)").click(function(){
 			if(mythis.showDate['month']==1){
 				mythis.showDate['year']--;
 				mythis.showDate['month']=13;	
@@ -465,7 +475,7 @@ define(function(require, exports, module) {
 			mythis.fillDateDom(mythis.showDate['year'],--mythis.showDate['month']);
 		});
 		//下个月
-		this.activateDom.next().children("div:eq(0)").children("button:eq(1)").click(function(){
+		this.pickerPanel.children("div:eq(0)").children("button:eq(1)").click(function(){
 			if(mythis.showDate['month']==12){
 				mythis.showDate['year']++;
 				mythis.showDate['month']=0;	

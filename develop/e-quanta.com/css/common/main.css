@@ -384,7 +384,8 @@ banner区域
 
 .article_box>a>div:nth-child(1)>p,
 .article_box_h>div:nth-child(1)>span:nth-child(3),
-.article_box_t{
+.article_box_t,
+.article_box_n{
 	color: #8e8e8e;
 }
 /*名字*/
@@ -480,6 +481,62 @@ banner区域
 	.navigation-hori a {
 	    font-size: 12px;
 
+	}
+	.article_box_h > div:nth-child(1) > span:nth-child(3){
+		width: 150px;
+	}
+	.article_box_h>div:nth-child(2) {
+	   
+	}
+	.advertisement {
+		display: none;
+	}
+	.article_wrap{
+	    width: 96%;
+	}
+	.article_box>a>div:nth-child(1)>h2 {
+	    font-size: 1.2rem;
+	}
+	.banner {
+		height: 300px;
+	}
+	.banner_text_box {
+	    width: 96%;
+	    left: 2%;
+	}
+	.banner>img {
+	    height: 100%;
+	}
+	.banner_text_box>div:nth-child(2)>h1 {
+	    font-size: 1.3em;
+	}
+	.banner_text_box>div:nth-child(2)>p {
+	    font-size:0.8rem;
+	}
+	.banner_text_box>div:nth-child(2) {
+	    width: 60%;
+	}
+	.banner_text_box>div:nth-child(1) {
+	    border-width: 3px 0 3px 3px;
+	}
+	.banner_text_border {
+	    width: 7%;
+	}
+	.banner_text_box>div:nth-child(3) {
+	    border-width: 3px 3px 3px 0;
+	}
+	.article_box_h>div>* {
+	    
+	}
+	.article_box {
+	    padding: 10px;
+	}
+	.article_box_h>div:nth-child(1)>img {
+	    width: 30px;
+	    height: 30px;
+	}
+	.article_box>a>div:nth-child(1)>p, .article_box_h>div:nth-child(1)>span:nth-child(3), .article_box_t, .article_box_n {
+	    font-size: 0.8rem;
 	}
 
 

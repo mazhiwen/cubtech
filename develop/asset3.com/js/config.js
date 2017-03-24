@@ -7,7 +7,9 @@ var pageVersionObj = {
     about:'1.0.0',
     login:'1.0.0',
     edit:'1.0.0',
-    select:'1.0.0'
+    select:'1.0.0',
+    joinus:'1.0.0',
+    ourteam:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 
@@ -29,7 +31,7 @@ UEDITORTOPOFFSET=71;
 //REQUESTHEAD='http://www.asset3.com';
 
 //测试环境
-//REQUESTHEAD='http://testadmin.asset3.com';
+//REQUESTHEAD='http://test.asset3.com';
 
 //本地环境
 REQUESTHEAD='//localhost/e-quanta/develop/asset3.com';
@@ -59,6 +61,7 @@ seajs.config({
     },
     paths:{
        'admin':'https://admin.e-quanta.com'
+        //'admin':'//localhost/e-quanta/develop/bs'
     }
 
 

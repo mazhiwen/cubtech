@@ -26,7 +26,7 @@ text-align: center;}
 
 }
 #summary_text{width: 100%;}
-#center>div:nth-child(5)>div>select{height: 30px;padding-right: 20px;background-position: 180px center;width: 200px;}
+.article_type{height: 30px;padding-right: 20px;background-position: 180px center;width: 200px;}
 #send_button{margin: 50px auto;height: 40px;display: block;}
 
 .top{

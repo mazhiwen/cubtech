@@ -38,11 +38,14 @@ define(function(require,exports,module) {
 			$("#top_login_button_outer").replaceWith('<div id="user_head_outer"><img id="user_head" onerror="this.src='+"'./images/default_head.png'"+'" src="'+docCookies.getItem('userHead')+'"><span id="quit_button">退出</span></div>');
 			$("#quit_button").hide();
 		}else{
+
+			
 			$("#user_head_outer").replaceWith(noLoginHtml);
 			$(".top").on('click',"#write_btn_top,#navigation_ul>li:eq(2)>a",function(){
 				popUpWindow.alert('您还没有登录',function(){window.location.href="login.html";});
 				return false;
 			});
+
 		}
 		var location=window.location.href;
 		if(getHtml(location)=='article_details'){

@@ -1,0 +1,23 @@
+@import url('../common/main.css');
+
+.job_outer_box{
+/*	font-size: 14px;
+	color:rgb(114, 114, 114);*/
+	line-height: 23px;
+}
+.job_outer_box strong{
+	display: block;
+}
+.job_outer_box>div>h2{
+	background: url(../../images/aboutus/about_4_title.jpg) no-repeat center center;
+	text-align: center;
+	color: #49bb7d;
+	border-bottom: 1px solid #ededed;
+	margin: 40px 0;
+}
+.job_outer_box>div>p:nth-child(2){	
+	/*color: rgb(114, 114, 114);
+*/
+}
+
+

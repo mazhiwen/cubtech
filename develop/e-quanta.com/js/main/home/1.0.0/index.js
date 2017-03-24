@@ -233,12 +233,24 @@ define(function(require) {
         });
     });
     
-
+    var appClickClassIndex=3;
     ZEPTO('#section_2').swipeLeft(function(){
-        alert(2);
-        var clickClassIndex=$(this).attr("class").substr(5,1);     
+        ++appClickClassIndex;   
+        $(".album_box>div").each(function(){
+            var nowClass=$(this).attr("class");
+            var nowClassIndex=nowClass.substr(5,1);
+            var changeIndex;
+            if(nowClassIndex==1){
+                changeIndex=7;
+            }else{
+                changeIndex=nowClassIndex-1;
+            }
+            $(this).addClass('album'+changeIndex).removeClass(nowClass);
+        });
+
+        /*  
         //顺时针偏移一位
-        if(clickClassIndex==4){
+        if(appClickClassIndex==4){
             $(".album_box>div").each(function(){
                 var nowClass=$(this).attr("class");
                 var nowClassIndex=nowClass.substr(5,1);
@@ -252,7 +264,7 @@ define(function(require) {
             });
         }
         //顺时针偏移两位
-        if(clickClassIndex==5){
+        if(appClickClassIndex==5){
             $(".album_box>div").each(function(){
                 var nowClass=$(this).attr("class");
                 var nowClassIndex=nowClass.substr(5,1);
@@ -269,7 +281,7 @@ define(function(require) {
             });
         }
         //逆时针偏移一位
-        if(clickClassIndex==2){
+        if(appClickClassIndex==2){
             $(".album_box>div").each(function(){
                 var nowClass=$(this).attr("class");
                 var nowClassIndex=nowClass.substr(5,1);
@@ -283,7 +295,7 @@ define(function(require) {
             });
         }
         //逆时针偏移两位
-        if(clickClassIndex==1){
+        if(appClickClassIndex==1){
             $(".album_box>div").each(function(){
                 var nowClass=$(this).attr("class");
                 var nowClassIndex=nowClass.substr(5,1);
@@ -298,7 +310,7 @@ define(function(require) {
                 }
                 $(this).addClass('album'+changeIndex).removeClass(nowClass);
             });
-        }      
+        }*/      
     });
 
 

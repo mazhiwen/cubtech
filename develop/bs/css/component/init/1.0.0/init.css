@@ -191,6 +191,8 @@ input:enabled:hover,input:enabled:focus,select:hover,textarea:hover{
 
 }
 
+	    
+
 .label_text{
 	
 }
@@ -220,10 +222,9 @@ input[type=checkbox]{
 }
 
 .ipt_xs{
-    padding: 1px 5px;
     font-size: 12px;
-    line-height: 1.5;
     border-radius: 3px;
+    height: 22px;
 }
 
 .ipt_s {
@@ -858,11 +859,14 @@ button.upload_box_delete:enabled:active {
 
 
 /*时间选择器*/
-.dateTimePicker{width: 245px;text-align: center; border:1px solid black;border-radius: 5px; position: absolute; z-index: 1000;}
+.dateTimePicker{
+	width: 212px;
+	text-align: center; border:1px solid black;
+	border-radius: 5px;
+	 position: absolute; z-index: 99;
+}
 .dateTimePicker button{
-	/*
-	height: 30px;width: 50px; margin:0 5px;box-sizing:border-box;padding: 0;border: none;
-*/
+
 }
 .dateTimePicker>div:nth-child(1){text-align: center;background-color: rgb(250,250,250); font-size: 20px;padding: 8px 0;}
 .dateTimePicker>div:nth-child(1)>button{cursor: pointer;border-radius: 5px;background-color: transparent;color: rgba(0,0,0,0.3);}
@@ -877,22 +881,39 @@ button.upload_box_delete:enabled:active {
 }
 .dateTimePicker>div:nth-child(2){background-color: rgb(250,250,250);}
 .dateTimePicker>div:nth-child(2)>span{
-  display: inline-block;width: 34px;
-  height: 35px;line-height: 35px;
+  display: inline-block;
   border: 1px solid rgb(220,220,220);box-sizing:border-box;
 }
 .dateTimePicker>div:nth-child(3){background-color: rgb(240,240,240);}
 .dateTimePicker>div:nth-child(3)>span{
-  display: inline-block;width: 34px;height: 35px;
-  line-height: 35px;border: 1px solid rgb(250,250,250);
+  display: inline-block;
+  border: 1px solid rgb(250,250,250);
   box-sizing:border-box;cursor: pointer; 
 }
-.dateTimePicker>div:nth-child(4){background-color: rgb(250,250,250);padding: 10px 0;border-top: 1px solid rgb(220,220,220);}
+
+
+.dateTimePicker>div:nth-child(4){
+	background-color: rgb(250,250,250);padding: 10px 0;
+	border-top: 1px solid rgb(220,220,220);
+}
 .dateTimePicker select{
 	width: 50px;
   margin:0 3px;
  padding:0 3px;
   
+}
+
+.dateTimePicker>div:nth-child(2)>span,
+.dateTimePicker>div:nth-child(3)>span
+{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+    user-select: none;
+}
+.dtp_confirm,.dtp_empty{
+	margin-top: 10px;
 }
 
 
