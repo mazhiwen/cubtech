@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head lang="zh-cn">
+<meta charset="utf-8">
+<meta id="page_main" data-main="jobs_edit">
+
+<link rel="stylesheet" href="../css/page/jobs_edit.css">
+<title>title</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="left">
+	</div>
+	<div id="right">
+		<div id="navigation-crumb" class="navigation-crumb">
+			<span></span><span></span><span></span>
+			<a href="jobs_list.html"><button>职位列表</button></a>
+		</div>
+		<div id="edit_area">
+			<label class="form-input"><span>*名称:</span><input type="text" class="title"></label>
+			<label class="form-input"><span>*地址:</span><input type="text" class="address"></label>
+			<label class="form-input"><span>薪水:</span><input type="text" class="salary"></label>
+			<label class="form-input"><span>*岗位职责:</span><textarea type="text" class="content"></textarea></label>
+			<label class="form-input"><span>*任职要求:</span><textarea type="text" class="requirements"></textarea></label>
+			<div class="form-input">
+				<span>发布日期</span>
+				<div class="date-time-picker-outer"><button class="" id="activedate">选择</button><input type="text" id="filldate" disabled></div>
+			</div>
+			<div id="confirm-outer"><button class="confirm_button">确认</button></div>
+		</div>
+  		
+  		
+	</div>
+</div>
+
+<script src="../js/lib/seajs/seajs/2.2.0/sea.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+</body>
+</html>

@@ -1,38 +1,12 @@
 @import url('../common/main.css');
-.familyservice{
-	
-}
-.describtion{
-	font-size: 1.714rem;
-}
-.familyservice>h2{
-	margin-top: 0;
-	padding-bottom: 15px;
-    margin-bottom: 9px;
-	background: url('../../images/article_details/main_category_bottom.jpg') no-repeat center bottom/100% auto;
-}
-.familyservice>h3>span{
-	display: inline-block;
-	border: 3px solid #eee;
-	padding: 5px 15px;
-}
-.familyservice>h4{
-	border-left: 5px solid rgb(89,200,228);
-	padding-left: 6px;
-}
-.familyservice>img{
-	display: block;
-	margin:10px auto;
-}
-.familyservice>h2,.familyservice>h3{
-	color: rgb(89,200,228);
-}
-.familyservice_circle{
-	max-width: 500px;
-}
-.familyservice_img1{
 
+
+
+img.familyservice_img1{
+	width: 700px;
+	max-width: 100%;
 }
+
 
 
 

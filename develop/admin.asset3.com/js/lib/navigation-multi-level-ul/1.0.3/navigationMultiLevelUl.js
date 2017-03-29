@@ -4,7 +4,9 @@ define(function(require,exports,module) {
 		this.navigationIndexArray={
 			comment_details:19,
 			user_feed_details:22,
-			role_permission:28
+			role_permission:28,
+			jobs_edit:4,
+			cooperation_edit:5
 		};
 		this.curInd=0;
 		var that=this;		
@@ -15,7 +17,9 @@ define(function(require,exports,module) {
 		            '添加/编辑文章':['article_edit',3],
 		            '分类列表':['class_article',1],
 		            '添加/编辑分类':['class_edit',1]
-		        }     
+		        },
+		        '职位':['jobs_list',1],
+		        '合作机构':['cooperation_list',1]     
 		    },
 		    '用户管理':{
 		        '用户列表':['user_list',1],

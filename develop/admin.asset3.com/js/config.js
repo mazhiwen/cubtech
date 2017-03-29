@@ -19,15 +19,15 @@ ueditor-config-serverurl
 
 
 //本地
-//URLHEAD='//localhost/e-quanta/develop/admin.asset3.com';
-//REQUESTHEAD='//localhost:8080';
+URLHEAD='//localhost/e-quanta/develop/admin.asset3.com';
+REQUESTHEAD='//localhost:8080';
 
 //测试
 //REQUESTHEAD=URLHEAD='http://testadmin.asset3.com';
 
 //线上
 //URLHEAD=REQUESTHEAD='//admin.asset3.com';
-URLHEAD=REQUESTHEAD='http://admin.asset3.com';
+//URLHEAD=REQUESTHEAD='http://admin.asset3.com';
 
 var pageVersionObj = {
     ad_edit:"1.0.0",
@@ -44,22 +44,12 @@ var pageVersionObj = {
     class_edit : "1.0.0",
     article_list: "1.0.0",
     article_edit:"1.0.3",
-    subject_list : "1.0.0",
-    subject_edit: "1.0.1",
-    topic_list:"1.0.0",
-    topic_edit : "1.0.0",
-    anonymousjuicy_list: "1.0.0",
-    anonymousname_list:"1.0.0",
-    anonymousname_add : "1.0.0",
+    
     a: "1.0.0",
     banner_list:"1.0.0",
     banner_edit : "1.0.0",
-    comment_list: "1.0.0",
-    comment_details:"1.0.0",
-    sys_push_list : "1.0.0",
-    sys_push_edit: "1.0.0",
-    app_push_list:"1.0.0",
-    app_push_edit : "1.0.0",
+
+    
     user_list: "1.0.0",
     user_edit:"1.0.0",
     user_feed_list:"1.0.0",
@@ -68,17 +58,13 @@ var pageVersionObj = {
     role_edit:"1.0.0",
     administrator_list:"1.0.0",
     administrator_edit:"1.0.0",
-    top_tab:'1.0.0',
-    recommendtab_list:'1.0.0',
+    jobs_edit:'1.0.0',
+    jobs_list:'1.0.0',
     user_role:'1.0.0',
-    role_permission:'1.0.0',
-    verify_personal:'1.0.0',
-    verify_media:'1.0.0',
-    verify_org:'1.0.0',
-    verify_reply:'1.0.0',
-    verify:'1.0.0',
-    app_version:'1.0.0',
-    organization:'1.0.0'
+    cooperation_list:"1.0.0",
+    cooperation_edit : "1.0.0",
+    role_permission:'1.0.0'
+    
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({
@@ -93,6 +79,7 @@ seajs.config({
       "getGet": "equantaAdmin/js/lib/getget/1.0.0/getGet.js",
       "docCookies":"equantaAdmin/js/lib/doccookies/1.0.0/docCookies.js",
       "transformTime":'equantaAdmin/js/lib/transformtime/1.0.0/transformTime.js',
+      "publicParseString": "equantaAdmin/js/lib/parsestring/1.0.0/parseString.js",
       /*
       私有
       */

@@ -1,0 +1,6 @@
+@import url('../common/main.css');
+#paging-outer{ text-align: center; padding: 50px;}
+#edit_area {
+    width: 700px;
+    margin: auto;
+}

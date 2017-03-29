@@ -5,6 +5,7 @@ define(function(require) {
 	AJAXMY=new(require('ajaxMy'));
 	POPUPWINDOW=new(require('popUpWindow'));
 	DOCCOOKIES=new(require('docCookies'));
+	PARSESTRING=new(require('publicParseString')); 
 	var navMulLevUl=require('navigationMultiLevelUl'),
 		navMulLevUlMy=new navMulLevUl('#left'),
 		currentDom=navMulLevUlMy.getCurDom();

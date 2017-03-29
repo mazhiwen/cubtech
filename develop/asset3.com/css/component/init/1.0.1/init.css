@@ -13,6 +13,9 @@ img{
 ul{
 	list-style: none;
 }
+li,p{
+	
+}
 html{
 	font-size: 14px;
 }
