@@ -450,7 +450,7 @@ banner区域
 	}
 	.switch_nav_btn{
 	    padding: 0;
-	    background: rgb(80,79,79);
+	    background:rgba(150,150,150,0.5);
 	    position: absolute;
 	    top: 15px;
         height: 30px;
@@ -537,6 +537,9 @@ banner区域
 	}
 	.article_box>a>div:nth-child(1)>p, .article_box_h>div:nth-child(1)>span:nth-child(3), .article_box_t, .article_box_n {
 	    font-size: 0.8rem;
+	}
+	#navigation_ul>li>a:hover {
+	    font-size: 12px;
 	}
 
 

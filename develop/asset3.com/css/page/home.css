@@ -38,8 +38,8 @@ to {margin-top: 85px;}
 }
 @keyframes banner_one_txt
 {
-from {margin-top: 315px;}
-to {margin-top: 200px;}
+from {margin-top: 400px;}
+to {margin-top: 240px;}
 }
 
 .banner_img_box2{
@@ -48,7 +48,7 @@ to {margin-top: 200px;}
 }
 .banner_img_box2>img{
 	display: block;
-	margin: 200px auto 0;
+	margin: 240px auto 0;
 	max-width: 80%;
 }
 .banner_2_animate{
@@ -63,8 +63,8 @@ to {margin-top: 200px;}
 }
 @keyframes banner_two_img
 {
-	from {margin-top: 315px;}
-	to {margin-top: 200px;}
+	from {margin-top: 400px;}
+	to {margin-top: 240px;}
 }
 
 
@@ -73,6 +73,9 @@ to {margin-top: 200px;}
 }
 .banner_img_box3>h2:nth-child(1){
 	margin-top: 185px;
+}
+.banner_img_box3>h2:nth-child(2){
+	margin-top: 1rem;
 }
 .banner_3_animate{
 	z-index: 1;
@@ -361,7 +364,7 @@ div.scroll_p2>h2{
 	font-size: 22px;
 }
 .section_style>.p2>p{
-	color: #727272;
+	color: rgb(150,150,150);
 	    font-size: 1.2rem;
 }
 .section_style .button_style{

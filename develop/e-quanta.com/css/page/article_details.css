@@ -225,3 +225,36 @@ br {
 #article_text_outer span > strong {
     color: inherit;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:450px) {
+
+	.article_box{
+		padding: 5px;
+	}
+
+}

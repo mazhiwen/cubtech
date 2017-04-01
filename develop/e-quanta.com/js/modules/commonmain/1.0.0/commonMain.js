@@ -76,8 +76,11 @@ define(function(require,exports,module) {
 	
 		var navShowFlag=false;
 		$(window).scroll(function(){
-			$("#navigation_ul").hide();
-			navShowFlag=false;	
+			var cliWid=document.body.clientWidth;
+			if(cliWid<=450){
+				$("#navigation_ul").hide();
+				navShowFlag=false;
+			}	
 		});
 
 		$(".switch_nav_btn").click(function(){

@@ -156,8 +156,10 @@ define(function(require) {
 					d,
 					function(d){
 						if(d['result']) {
-							alert('编辑成功');
-							window.location.href='article_list.html';
+							POPUPWINDOW.alert('编辑成功',function(){
+								window.location.href='article_list.html';
+							});
+							
 						}
 						that.prop('disabled',false);
 					}
@@ -263,7 +265,7 @@ define(function(require) {
 							d,
 							function(d){
 								if(d['result']) {
-									alert('添加成功');
+									POPUPWINDOW.alert('添加成功');
 									window.location.href='article_list.html';
 								}
 								that.prop('disabled',false);

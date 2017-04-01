@@ -52,14 +52,28 @@ body{
 	background:url("../../images/select/big_v.png") no-repeat right center/16px auto;
 	padding-right:18px;
 	margin-right:10px;
-	font-size: 1.3em;
+	
 	font-weight: 600;
 	color: black;
 }
+.master_box_h>span{
+	font-size: 1.3em;
+}
 .master_box_h>span:nth-child(2){
 	font-weight: 100;
-	font-size: 1.3em;
+	
 }
 .master_box>div:nth-child(2)>p,.master_box_h>span:nth-child(2){
 	color: rgb(125,125,125);
+}
+
+
+@media(max-width:450px) {
+	.master_box_h>span {
+	    font-size: 0.9rem;
+	}
+	.master_box>div:nth-child(2)>p {
+	    font-size: 0.9rem;
+	}
+
 }

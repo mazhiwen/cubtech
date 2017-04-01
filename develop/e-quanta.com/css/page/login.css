@@ -99,7 +99,31 @@ html,body,.container{
 */
 
 
+@media(max-width:450px) {
+	.center{
+		background: black url(../../images/login/left_bac.png) center 20%/50% auto no-repeat;	
+	}
+	.login_wrap {
+	    width: 80%;
+	    right: 10%;
+	    top: 60%;
+	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
