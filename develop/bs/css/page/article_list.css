@@ -13,4 +13,35 @@
 	width: auto;
 	margin:0 1em;
 }
+th.creattime {
+    min-width: 80px;
+}
+th.collectnum,th.sharenum,th.browsesnum  {
+    min-width: 50px;
+}
+.listorderitem{
+	background-color: transparent;
+	cursor: pointer;
+}
 
+.listorderitem:hover{
+	background-color:#eee;
+}
+
+.listorderdown,.listorderup{
+
+background:#eee no-repeat right center/auto 15px;
+
+}
+
+
+.listorderdown{
+
+	background-image:url('../../images/listorderarrowdown.png');
+
+}
+.listorderup{
+
+	background-image:url('../../images/listorderarrowup.png');
+
+}

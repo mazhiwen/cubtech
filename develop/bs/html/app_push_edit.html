@@ -18,12 +18,20 @@
 			<span></span><span></span><span></span>
 		</div>
 		<div id="edit-area">
-			<label class="form-input"><span>推送内容</span><textarea class="input"></textarea></label>
-			<label class="form-input"><span>内容所对应链接:</span><input class="input" type="text" placeholder="内容所对应链接"></label>
-			<div id="choose-push-time">
-				<span>推送时间</span><div class="date-time-picker-outer"><button id="activedate" class="button">选择时间</button><input class="input" type="text" id="filldate" disabled></div>或<button id="button-push-now" class="button">立即推送</button>
+			<label class="input_box"><span class="label">方式</span><select class="input"><option value="1">文字</option><option value="2">图片</option></select>
+			</label>
+			<label class="input_box"><span class="label">推送用户类型</span><select class="input"><option value="1">指定用户</option><option value="2">批量用户</option></select>
+			</label>
+			<label class="input_box"><span class="label label_top">推送用户</span><textarea class="input"></textarea></label>
+			<label class="input_box"><span class="label label_top">推送内容</span><textarea class="input"></textarea></label>
+			<div class="input_box">
+				<span class="label label_top">文章封面</span><div class="upload_box input_box_right">
+					<input type="file" class="upload_box_input" id="cover_image_input">
+					<div class="upload_box_img_box"><span></span><img class="upload_box_img" src=""></div>
+					<button class="glyphicon-trash glyphicon onlyicon upload_box_delete"></button>
+				</div>
 			</div>
-			<button id="confirm-button" class="button">确认</button>
+			<button class="button confirmbutton">确认</button>
 		</div>
   		
   		

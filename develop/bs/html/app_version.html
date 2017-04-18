@@ -17,31 +17,37 @@
 	<div id="right">
 		<div id="navigation-crumb" class="navigation-crumb">
 			<span></span><span></span><span></span>
+			<a href="version_edit.html"  class="button">添加版本</a>
+			<select class="platform input"><option value="ios">IOS</option><option value="android">Android</option></select>
 		</div>
-		<table class="table">
-		    <caption>APP版本控制</caption>
-		    <thead>
-		      <tr>
-		        <th>版本号</th>
-		        <th>描述</th>
-		        <th>强制升级</th>
-		        <th>生效</th>
-		        <th>操作</th>
-		      </tr>
-		    </thead>
-		    <tbody id="table_body">
-			  <tr >
-		        <td>2</td>
-		        <td></td>
-		        <td data-id="111"><button class="glyphicon-save glyphicon onlyicon"></button></td>
-		      </tr>
-		    </tbody>
-  		</table>
-  		<div class="paging-outer">
-			<ul class="paging" id="paging"></ul> <button title="添加" id="add_btn" class="paging_wrap_btn button">添加</button>
-  		</div>
-
-
+		<div class="rightmain">
+			<table class="table">
+			    <caption>版本列表</caption>
+			    <thead>
+			      <tr>
+			      	<th>ID</th>
+			      	<th>商店名称</th>
+			      	<th>版本描述</th>
+			        <th>版本号</th>
+			        <th>强制升级</th>
+			        <th>安卓APP版本标识</th>
+			        <th>安卓APP新版下载路径</th>
+			        <th>是否启用</th>
+			        <th class="editwid">操作</th>
+			      </tr>
+			    </thead>
+			    <tbody id="table_body">
+				  <tr >
+			        <td>2</td>
+			        <td></td>
+			        <td data-id="111"><button class="glyphicon-save glyphicon onlyicon"></button></td>
+			      </tr>
+			    </tbody>
+	  		</table>
+	  		<div class="paging-outer">
+				<ul class="paging" id="paging"></ul> <button title="添加" id="add_btn" class="paging_wrap_btn button">添加</button>
+	  		</div>
+		</div>
 	</div>
 </div>
 

@@ -29,8 +29,12 @@ define(function(require) {
 					'true':'国内',
 					'false':'海外'
 				};
-
+				
 			$.each(dr['result'],function(k,v){
+				var isTop='';
+				if(v['stick']=='1'){
+					isTop='checked';
+				}
 				if(v['status']=='-1'){
 					sOperate='已取消';					
 				}else if(v['status']=='3'){
@@ -38,10 +42,25 @@ define(function(require) {
 				}else{
 					sOperate='<a href="activity_verify.html?id='+v['id']+'"><button class="text_button">审核</button></a> <a href="activity_edit.html?id='+v['id']+'"><button class="text_button">编辑</button></a> <button class="text_button cancel_activity">取消活动</button>';
 				}
-				s+='<tr data-id='+v['id']+'><td>'+v['id']+'</td><td>'+v['eventName']+'</td><td>'+statusArray[v['status']]+'</td><td>'+v['startDateTime']+'</td><td>'+v['endDateTime']+'</td><td>'+v['address']+'</td><td>'+v['organizer']+'</td><td>'+boolText[v['applyStatus']]+'</td><td>'+v['applyCount']+'</td><td>'+v['applicantCount']+'</td><td>'+publishStatus[v['publishStatus']]+'</td><td>'+domesticStatus[v['domestic']]+'</td><td>'+sOperate+'</td></tr>';
+				s+='<tr data-id='+v['id']+'><td>'+v['id']+'</td><td>'+v['eventName']+'</td><td>'+statusArray[v['status']]+'</td><td>'+v['startDateTime']+'</td><td>'+v['endDateTime']+'</td><td>'+v['address']+'</td><td>'+v['organizer']+'</td><td>'+boolText[v['applyStatus']]+'</td><td>'+v['applyCount']+'</td><td>'+v['applicantCount']+'</td><td>'+publishStatus[v['publishStatus']]+'</td><td>'+domesticStatus[v['domestic']]+'</td><td><input class="istop" type="checkbox" '+isTop+'></td><td>'+sOperate+'</td></tr>';
 			});
 			table_body_lsit.append(s);
 			myPaging.refreshDom(dr['pages']);
+		});
+	});
+
+	table_body_lsit.on('click','.istop',function(event){
+		$(this).prop('disabled',true);
+		that=$(this);
+		AJAXMY.send('/event/stick',{id:$(this).parent().parent().attr("data-id"),stick:$(this).prop('checked')?1:0},function(d){
+			if(d['result']){
+				POPUPWINDOW.alert('修改成功');
+			}else{
+				that.prop('checked')?that.prop('checked',false):that.prop('checked',true);
+			}
+			that.prop('disabled',false);
+		},function(){
+			that.prop('disabled',false);
 		});
 	});
 

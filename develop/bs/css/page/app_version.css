@@ -24,3 +24,10 @@
 td.td_version_desc{
 	padding: 0;
 }
+
+
+
+
+th.editwid{
+	min-width: 90px;
+}   

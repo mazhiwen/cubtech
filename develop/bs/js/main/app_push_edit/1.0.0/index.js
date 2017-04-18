@@ -1,31 +1,33 @@
 
 define(function(require) {
-	var dateTimePicker=require('dateTimePicker');
-	var my_dateTimePicker=new dateTimePicker(
-				{
-					activateDom:'#activedate',
-					fillDom:'#filldate'
-				}
-
-			);
-	my_dateTimePicker._init();
 
 	var commonMain=require('commonMain'),
-		paging = require('paging');
-
-	$("#button-push-now").click(function(){
-
-		confirm("确认立即推送以上内容及链接？");
-
-
-	});
+		confirmbutton=$(".confirmbutton"),
+		upload_box_img=$(".upload_box_img"),
+		upload_box_img_box=$(".upload_box_img_box")
+		ImageId=null;
 
 	
-	$("#confirm-button").click(function(){
 
-		confirm("确认于"+$("#filldate").val()+"推送以上内容及链接？");
+	
+
+	AJAXMY.upLoad('cover_image_input',function(responseUrl,sysImageId){
+		upload_box_img.attr("src",responseUrl);
+		upload_box_img_box.css("background-color",'white');
+		ImageId=sysImageId;
+	},1);
 
 
+	confirmbutton.click(function(){
+		AJAXMY.send('/message/send',{
+			user_id:'',
+			user_ids:'',
+			content:''
+		},function(data){
+			
+		});
 	});
+
+
 });
 

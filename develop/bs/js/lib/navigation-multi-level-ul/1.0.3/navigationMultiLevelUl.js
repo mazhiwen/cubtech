@@ -14,6 +14,7 @@ define(function(require,exports,module) {
 			banner_edit:8,
 			ad_edit:9,
 			sys_push_edit:10,
+			app_push_edit:11,
 			user_feed_details:12,
 			verify_commit:13,
 			verify_personal:13,
@@ -24,6 +25,7 @@ define(function(require,exports,module) {
 			comment_details:14,
 			role_edit:15,
 			role_permission:15,
+			version_edit:16,
 			appcomponents_edit:18,
 			statistic:18
 
@@ -74,7 +76,8 @@ define(function(require,exports,module) {
 		            '推荐页':['recommendtab_list'],
 		            'BANNER':['banner_list',1],
 		            '广告位':['ad_list',1],
-		            '系统推送':['sys_push_list',1]
+		            '系统推送':['sys_push_list',1],
+		            '消息推送':['app_push_edit']
 		            /*'BANNER':{
 		            	'BANNER列表':['banner_list'],
 		            	'添加/编辑BANNER':['banner_edit']

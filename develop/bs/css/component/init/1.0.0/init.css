@@ -25,6 +25,12 @@ td.disabled{
 	background-color: rgb(240,240,240);
 	color:rgb(150,150,150);
 }
+th{
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 /******************************************************
 form-style*/
 /*
@@ -173,7 +179,7 @@ input:enabled:hover,input:enabled:focus,select:hover,textarea:hover{
 .input_box{
 	padding-right: 7.5%;
     margin-bottom: 15px;
- 
+    display: block;
     width: 100%;
 }
 .input_box>.label{
@@ -400,7 +406,7 @@ button.text_button{
 
 /******************************************************
 全局样式*/
-.active{
+button .active{
 	background-color: #888 !important;
 	color:#eee !important;
 	
@@ -638,6 +644,60 @@ button.paging_search_btn:active{
 .panel_content{
 	padding: 15px;
 }
+
+
+/*********************************************************
+导航*/
+:after,:before{
+	    box-sizing: border-box;
+}
+.nav{
+    
+}
+.nav:before{
+	display: table;
+    content: " ";
+}
+.nav:after{
+	clear: both;
+    display: table;
+    content: " ";
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav_tabs{
+    border-bottom: 1px solid #ddd;
+}
+.nav_tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+
+.nav_tabs>li.active>a, .nav_tabs>li.active>a:focus, .nav_tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.nav_tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+
+
+
 
 
 

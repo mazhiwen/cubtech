@@ -57,6 +57,7 @@ define(function(require) {
 		is_free=$('.is_free'),
 		is_card=$('.is_card'),
 		is_sign=$('.is_sign'),
+		istop=$('.istop'),
 		is_domestic=$('.is_domestic'),
 		organizer_contact=$('.organizer_contact'),
 		sign_count=$('.sign_count'),
@@ -122,6 +123,7 @@ define(function(require) {
 					contact:organizer_contact.val(),
 					free_status:is_free.prop("checked"),
 					card_status:is_card.prop("checked"),
+					stick:istop.prop("checked")?1:0,
 					apply_status:apply_status,
 					apply_count:apply_count,
 					keyword:'',
@@ -190,6 +192,7 @@ define(function(require) {
 				is_domestic.prop('checked',dr['domestic']);
 				is_free.prop('checked',dr['freeStatus']);
 				is_sign.prop('checked',dr['applyStatus']);
+				istop.prop('checked',dr['stick']);
 				if(dr['applyStatus']) switch_sign_box.hide();
 				sign_count.val(dr['applyCount']);
 				third_url.val(dr['applyPageUrl']);

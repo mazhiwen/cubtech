@@ -90,7 +90,10 @@ var pageVersionObj = {
     v_order:'1.0.0',
     activity_city_config:'1.0.0',
     activity_city_edit:'1.0.0',
-    statistic:'1.0.0'
+    statistic:'1.0.0',
+    version_edit:'1.0.0',
+    app_push_list:'1.0.0',
+    app_push_edit:'1.0.0'
 },
 pageName=document.getElementById('page_main').getAttribute('data-main');
 seajs.config({
