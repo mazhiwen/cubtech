@@ -23,6 +23,8 @@ define(function(require) {
 					type='指定url';break;
 					case 5:
 					type='专题';break;
+					case 8:
+					type='活动';break;
 				};
 				var pushTo='';
 				switch (value['pushTo']){

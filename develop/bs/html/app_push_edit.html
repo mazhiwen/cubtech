@@ -18,14 +18,15 @@
 			<span></span><span></span><span></span>
 		</div>
 		<div id="edit-area">
-			<label class="input_box"><span class="label">方式</span><select class="input"><option value="1">文字</option><option value="2">图片</option></select>
+			<label class="input_box sendtype"><span class="label">方式</span><select class="input"><option value="1">文字</option><option value="2">图片</option></select>
 			</label>
-			<label class="input_box"><span class="label">推送用户类型</span><select class="input"><option value="1">指定用户</option><option value="2">批量用户</option></select>
+			<label class="input_box"><span class="label">推送用户方式</span><select class="input inputusertype"><option value="1">输入用户</option><option value="2">上传用户excel</option></select>
 			</label>
-			<label class="input_box"><span class="label label_top">推送用户</span><textarea class="input"></textarea></label>
-			<label class="input_box"><span class="label label_top">推送内容</span><textarea class="input"></textarea></label>
-			<div class="input_box">
-				<span class="label label_top">文章封面</span><div class="upload_box input_box_right">
+			<label class="input_box inputuserbox"><span class="label label_top">推送用户</span><textarea placeholder="格式 : 用户ID1,用户ID2,用户ID3" class="input inputuser"></textarea></label>
+			<div class="input_box uploaduserbox"><span class="label">上传用户组excel:</span><input type="file" class="uploaduser" id="uploaduser"></div>
+			<label class="input_box"><span class="label label_top">推送内容</span><textarea class="input pushcontent"></textarea></label>
+			<div class="input_box uploadimgbox">
+				<span class="label label_top">图片</span><div class="upload_box input_box_right">
 					<input type="file" class="upload_box_input" id="cover_image_input">
 					<div class="upload_box_img_box"><span></span><img class="upload_box_img" src=""></div>
 					<button class="glyphicon-trash glyphicon onlyicon upload_box_delete"></button>

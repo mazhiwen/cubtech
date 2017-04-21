@@ -15,19 +15,22 @@ define(function(require,exports,module) {
 			ad_edit:9,
 			sys_push_edit:10,
 			app_push_edit:11,
-			user_feed_details:12,
-			verify_commit:13,
-			verify_personal:13,
-			verify_org:13,
-			verify_media:13,
-			verify_reply:13,
-			organization:13,
-			comment_details:14,
-			role_edit:15,
-			role_permission:15,
-			version_edit:16,
-			appcomponents_edit:18,
-			statistic:18
+			user_role:12,
+			user_edit:12,
+			user_feed_details:13,
+			verify_commit:14,
+			verify_personal:14,
+			verify_org:14,
+			verify_media:14,
+			verify_reply:14,
+			organization:14,
+			comment_details:15,
+			
+			role_edit:16,
+			role_permission:16,
+			version_edit:17,
+			appcomponents_edit:19,
+			statistic:19
 
 		};
 		this.curInd=0;

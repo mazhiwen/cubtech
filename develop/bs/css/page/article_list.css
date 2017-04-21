@@ -16,7 +16,7 @@
 th.creattime {
     min-width: 80px;
 }
-th.collectnum,th.sharenum,th.browsesnum  {
+th.collectnum,th.sharenum,th.browsesnum,th.goodnum  {
     min-width: 50px;
 }
 .listorderitem{

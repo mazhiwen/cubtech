@@ -96,10 +96,11 @@ define(function(require) {
 			countryV=country.val(),
 			provinceV=province.val(),
 			cityV=city.val(),
+			organizerV=organizer.val(),
 			addressDetail=address_details.val(),
 			isId=parseString.isEmpty(id);
 		console.log([title_v,start_time,end_time,countryV,cityV,ImageId,addressDetail]);	
-		if(parseString.isEmpty([title_v,start_time,end_time,countryV,cityV,ImageId,addressDetail])&&parseString.isNumber(apply_count)){
+		if(parseString.isEmpty([title_v,organizerV,start_time,end_time,countryV,cityV,ImageId,addressDetail])&&parseString.isNumber(apply_count)){
 			if(dateLine.getDateTime()!=null&&dateLine.getTime()==null){
 				POPUPWINDOW.alert('请选择报名截止时间');
 				tthis.prop('disabled',false);
@@ -118,7 +119,7 @@ define(function(require) {
 					province:provinceV,
 					city:cityV,
 					address_detail:addressDetail,
-					organizer:organizer.val(),
+					organizer:organizerV,
 					url:organizer_url.val(),
 					contact:organizer_contact.val(),
 					free_status:is_free.prop("checked"),

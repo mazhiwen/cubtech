@@ -1,10 +1,14 @@
 @import url('../common/main.css');
-#edit-area{
-	
 
+.sendtype,.uploaduserbox,.uploadimgbox{
+
+	display: none;
 }
 
-
+.confirmbutton{
+	display: block;
+	margin: auto;
+}
 
 
 

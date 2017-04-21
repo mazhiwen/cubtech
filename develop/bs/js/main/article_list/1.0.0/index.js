@@ -142,6 +142,9 @@ define(function(require) {
 	$(".browsesnum").click(function(){
 		listOrder.call(this,1001);
 	});
+	$(".goodnum").click(function(){
+		listOrder.call(this,1004);
+	});
 
 
 
@@ -160,6 +163,8 @@ define(function(require) {
 			}else{
 				that.prop('checked')?that.prop('checked',false):that.prop('checked',true);
 			}
+			that.prop('disabled',false);
+		},function(){
 			that.prop('disabled',false);
 		});
 	});

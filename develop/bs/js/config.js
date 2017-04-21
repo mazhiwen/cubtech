@@ -19,15 +19,15 @@ ueditor-config-serverurl
 
 
 //本地
-URLHEAD='//localhost/e-quanta/develop/bs';
-REQUESTHEAD='//localhost:8080';
+//URLHEAD='//localhost/e-quanta/develop/bs';
+//REQUESTHEAD='//localhost:8080';
 
 //测试
 
 //REQUESTHEAD=URLHEAD='//testadmin.e-quanta.com';
 
 //线上
-//URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
+URLHEAD=REQUESTHEAD='//admin.e-quanta.com';
 
 
 var pageVersionObj = {
